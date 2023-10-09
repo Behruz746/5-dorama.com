@@ -5,6 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
+import './sass/default.scss';
+
 // Hooks
 import { useState, useEffect } from "react";
 
@@ -27,6 +29,7 @@ import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
   const [isData, setIsData] = useState([]);
+  const [isToggle, setIsToggle] = useState(true);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -44,7 +47,7 @@ function App() {
   );
 
   return (
-    <AppContext.Provider value={isData}>
+    <AppContext.Provider value={{isData, isToggle, setIsToggle}}>
       <div className="App">
         <RouterProvider router={routes} />
       </div>

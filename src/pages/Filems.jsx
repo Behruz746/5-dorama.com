@@ -2,7 +2,11 @@ import React from 'react'
 
 function Filems() {
   return (
-    <div>Filems</div>
+    <section className='App__filems w-full page'>
+      <div className="container">
+        <h1>Filems</h1>
+      </div>
+    </section>
   )
 }
 

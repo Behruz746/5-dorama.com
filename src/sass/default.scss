@@ -1,0 +1,84 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;  
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+// ::-webkit-scrollbar {
+//   max-width: 15px; 
+// }
+
+// ::-webkit-scrollbar-track {
+//   background-color: #3B3B3B;  
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: #FC573B;
+
+//   &:hover {
+//     background-color: #c55007;
+//   }
+// }
+
+body {
+  font-family: SF Pro Display, sans-serif;
+  background-color: #0E1621;
+  color: #768C9E;
+}
+
+main {
+  display: flex;
+  gap: 40px;
+  // border: 1px solid #d00;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 80px 0 40px;
+  // border: 1px solid #d00;
+}
+
+.sf-pro-display {
+  font-family: SF Pro Display, sans-serif;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.page {
+  padding-top: 12px;
+  // border: 1px solid #d00;
+}

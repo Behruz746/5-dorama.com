@@ -1,9 +1,17 @@
 import { NavLink, Outlet } from "react-router-dom";
 
+// Components
+import Header from "../components/Header/Header";
+import Menu from "../components/Menu/Menu";
+
 function RootLeyout() {
   return (
     <>
-      <Outlet />
+      <Header />
+      <main> 
+        <Menu />
+        <Outlet />
+      </main>
     </>
   );
 }

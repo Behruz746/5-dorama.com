@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 function Actor() {
   return (
-    <div>Actor</div>
-  )
+    <section className="App__actor w-full page">
+      <div className="container">
+        <h1>Actor</h1>
+      </div>
+    </section>
+  );
 }
 
-export default Actor
+export default Actor;
