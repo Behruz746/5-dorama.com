@@ -36,7 +36,9 @@ function Menu() {
         <div
           className={isToggle ? "nav__line" : "nav__line nav__line--active"}
         ></div>
-        <div className="famous__filems">
+        <div
+          className={isToggle ? "famous__filems" : "famous__filems famous__filems--active"}
+        >
           {famousData.map(({ text, link }) => (
             <NavLink
               to={link}

@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
+
+// Compoenents
+import HaderPage from "../components/HeaderPage/HaderPage";
+import Sliders from "../components/Sliders/Sliders";
 
 function Home() {
   return (
-    <section className='App__home w-full page'>
-      <div className="container">
-        <h1>Home</h1>
-      </div>
-    </section>
-  )
+    <div className="App__home w-full page">
+      <HaderPage />
+      <Sliders />
+    </div>
+  );
 }
 
 export default Home;

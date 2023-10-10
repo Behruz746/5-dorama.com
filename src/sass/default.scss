@@ -78,7 +78,17 @@ main {
   width: 100%;
 }
 
+.title {
+  font-family: SF Pro Display, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 100% */
+  letter-spacing: -0.48px;
+}
+
 .page {
   padding-top: 12px;
   // border: 1px solid #d00;
+  overflow: hidden !important;
 }

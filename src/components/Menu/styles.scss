@@ -77,24 +77,6 @@
     }
 }   
 
-.famous__filems {
-    // border: 1px solid #d00;
-
-    .list__link {
-       overflow: hidden;
-        // border: 1px solid #d00;
-    }
-
-    .list__link--active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 19px;
-
-        h3 {
-            position: absolute;
-            opacity: 0;
-            z-index: -5;
-        }
-    }
+.famous__filems--active {
+    display: none;
 }
