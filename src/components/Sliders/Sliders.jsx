@@ -1,9 +1,12 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 
 // Compoenets
 import Cards from "../Cards/Cards";
+
+import { testCard } from "../../data/data";
 
 import "./styles.scss";
 
@@ -19,6 +22,8 @@ function Sliders() {
     variableWidth: true,
   };
 
+  const arr = [1, 2, 3, 4];
+
   return (
     <section className="Home__Sliders w-full">
       <div className="container">
@@ -31,11 +36,9 @@ function Sliders() {
               </NavLink>
             </div>
             <Slider {...settings}>
-              <Cards />
-              <Cards />
-              <Cards />
-              <Cards />
-              <Cards />
+              {testCard.map((data) => (
+                <Cards {...data} key={uuidv4()} />
+              ))}
             </Slider>
           </div>
         </div>

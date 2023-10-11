@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 
 import "./styles.scss";
 
@@ -7,8 +7,9 @@ import AppContext from "../../AppContext";
 
 function Header() { 
   const {isToggle, setIsToggle} = useContext(AppContext);
+  const inputVal = useRef();
 
-  const Svg = () => (
+  const Svg = () => ( 
     <svg
       width="24"
       height="24"
@@ -48,6 +49,7 @@ function Header() {
         <div className="header__search sf-pro-display">
           <div className="search__input">
             <input
+            ref={inputVal}
               type="text"
               placeholder="Введите название дорамы или фильмы"
             />

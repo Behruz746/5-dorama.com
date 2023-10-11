@@ -26,6 +26,7 @@ time, mark, audio, video {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  gap: 0;
   font-weight: inherit;
   font-size: inherit;
 }
@@ -34,21 +35,24 @@ html, body {
   scroll-behavior: smooth;
 }
 
-// ::-webkit-scrollbar {
-//   max-width: 15px; 
-// }
+::-webkit-scrollbar {
+  max-width: 15px; 
+}
 
-// ::-webkit-scrollbar-track {
-//   background-color: #3B3B3B;  
-// }
+::-webkit-scrollbar-track {
+  background-color: #17212B;  
+}
 
-// ::-webkit-scrollbar-thumb {
-//   background-color: #FC573B;
+::-webkit-scrollbar-thumb {
+  background-color: #273242;
+  border-bottom: .01rem solid #768C9E;
+  border-top: .01rem solid #768C9E;
+  transition: background-color 5s ease-in-out !important;
 
-//   &:hover {
-//     background-color: #c55007;
-//   }
-// }
+  &:hover {
+    background-color: #48515a;
+  }
+}
 
 body {
   font-family: SF Pro Display, sans-serif;

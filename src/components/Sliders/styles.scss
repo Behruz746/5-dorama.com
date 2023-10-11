@@ -26,12 +26,60 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
+    // border: 1px solid #d00;
+    position: relative;
+}
+
+.Slider__navigation {
+    width: 100%;
+    min-height: 44px;
 }
 
 .variable-width {
     overflow: hidden !important;
-    // border: 1px solid #d00;
+
+    .slick-arrow {
+        border: 0;
+        outline: 0;
+        background-color: #17212B;
+        color: transparent;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        top: 0;
+        overflow: hidden;
+        padding: 8px;
+        user-select: none;   
+
+        &::before {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .slick-prev {
+        position: absolute;
+        right: 45px;
+        transform: rotate(180deg);
+        
+        &::before {
+            content: url('../../../public/images/svg/card-arrow__icon01.svg');
+        }
+    } 
+
+    .slick-next {
+        position: absolute;
+        right: 0;
+
+        &::before {
+            content: url('../../../public/images/svg/card-arrow__icon01.svg');
+        }
+    }  
     
     .slick-list {
         .slick-track {
@@ -39,20 +87,6 @@
             overflow: hidden !important;
             display: flex !important;
             gap: 16px;
-        }
-
-        .slick-prev {
-            display: none !important;
-
-            &::before {
-                display: none !important;
-            }
-        } 
-
-        .slick-arrow {
-            display: none !important;
-            color: transparent !important;
-            opacity: 0 !important;
         }
     }
 }

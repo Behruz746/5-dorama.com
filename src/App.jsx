@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import './sass/default.scss';
+import "./sass/default.scss";
 
 // Hooks
 import { useState, useEffect } from "react";
@@ -24,12 +24,26 @@ import Home from "./pages/Home";
 import Shorts from "./pages/Shorts";
 import Dramas from "./pages/Dramas";
 import Filems from "./pages/Filems";
-import Actor from './pages/Actor';
+import Actor from "./pages/Actor";
 import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
   const [isData, setIsData] = useState([]);
   const [isToggle, setIsToggle] = useState(true);
+
+  console.log(isData);
+
+  // useEffect(() => {
+  //   const fetchData = async ()=> {
+  //     try {
+  //       const data = await axios.get('https://kodik.cc/video/93/2fc1d3b9759726b2bc5b104b225d2b4a/720p?geoblock=RU');
+  //       setIsData(data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchData();
+  // }, []);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -47,7 +61,7 @@ function App() {
   );
 
   return (
-    <AppContext.Provider value={{isData, isToggle, setIsToggle}}>
+    <AppContext.Provider value={{ isData, isToggle, setIsToggle }}>
       <div className="App">
         <RouterProvider router={routes} />
       </div>

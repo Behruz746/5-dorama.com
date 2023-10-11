@@ -9,6 +9,9 @@ function Home() {
     <div className="App__home w-full page">
       <HaderPage />
       <Sliders />
+      <Sliders />
+      <Sliders />
+      <Sliders />
     </div>
   );
 }

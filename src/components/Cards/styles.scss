@@ -7,7 +7,7 @@
     // border: 1px solid #d00;
     position: relative;
     cursor: pointer;
-   
+    
     &:hover {
         .card__image {
             transform: scale(1.05, 1.05);
@@ -19,7 +19,7 @@
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-
+    
     h4 {
         font-size: 14px;
         font-style: normal;
@@ -27,11 +27,12 @@
         line-height: 22px; /* 157.143% */
         color: #fff;
     }
-
+    
     .card__image {
         max-width: 291px;
         width: 100%;
         height: auto;
+        border-radius: 10px;
         transition: .2s linear;
     }
 }

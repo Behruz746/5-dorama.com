@@ -34,4 +34,67 @@ export const famousData = [
     text: "Дорама Охотничьи псы",
     link: "*",
   },
-]
+];
+
+export const testCard = [
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Kино",
+  },
+  {
+    rating: "5.5",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Name is none",
+    sort: "Kино",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+  {
+    rating: "4.6",
+    image: "/images/png/filem__img-00.png",
+    name: "Худшее из зол",
+    sort: "Сериал",
+  },
+];
