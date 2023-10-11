@@ -14,15 +14,33 @@ function Sliders() {
   const settings = {
     className: "slider variable-width",
     dots: false,
-    infinite: true,
+    infinite: false,
     centerMode: false,
     speed: 1300,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 3,
+    pauseOnHover: true,
     variableWidth: true,
+    arrows: true,
+    // autoplay: true,
+    // autoplaySpeed: 10000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-  const arr = [1, 2, 3, 4];
 
   return (
     <section className="Home__Sliders w-full">

@@ -4,6 +4,8 @@ import React from "react";
 import HaderPage from "../components/HeaderPage/HaderPage";
 import Sliders from "../components/Sliders/Sliders";
 
+import './styles.scss'
+
 function Home() {
   return (
     <div className="App__home w-full page">

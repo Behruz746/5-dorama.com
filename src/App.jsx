@@ -33,6 +33,20 @@ function App() {
 
   console.log(isData);
 
+  useEffect(()=> {
+    const slickNext = document.querySelector('.slick-next');
+    const slickPrev = document.querySelector('.slick-next');
+
+    slickNext.addEventListener('click', ()=> {
+      console.log("click");
+
+      console.log(slickPrev);
+
+      // slickPrev.classList.remove('slider-prev--active');
+    });
+
+  }, []);
+
   // useEffect(() => {
   //   const fetchData = async ()=> {
   //     try {
