@@ -32,24 +32,24 @@ function App() {
   const [isData, setIsData] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchFun = async () => {
-  //     try {
-  //       setIsLoad(false);
-  //       const data = await axios.get('https://kodikapi.com/genres?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime-serial')
-  //       setIsData(data.data.results
-  //         );
-  //       setIsLoad(true);
-  //     } catch (error) {
-  //       console.log(error, 'Error: 404');
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchFun = async () => {
+      try {
+        setIsLoad(false);
+        const data = await axios.get('https://kodikapi.com/genres?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime-serial')
+        setIsData(data.data.results
+          );
+        setIsLoad(true);
+      } catch (error) {
+        console.log(error, 'Error: 404');
+      }
+    };
   
-  //   fetchFun();
-  // }, []);
+    fetchFun();
+  }, []);
 
-  // console.log(isData);
-  // console.log(isLoad);
+  console.log(isData);
+  console.log(isLoad);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
