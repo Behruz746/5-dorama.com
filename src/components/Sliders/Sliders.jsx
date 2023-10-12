@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
@@ -26,13 +26,6 @@ function Sliders() {
     // autoplaySpeed: 10000,
     responsive: [
       {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
         breakpoint: 1008,
         settings: {
           slidesToShow: 2,
@@ -41,6 +34,23 @@ function Sliders() {
       },
     ],
   };
+
+  const [isTransform, setIsTransform] = useState('translate3d(0px, 0px, 0px)');
+
+  console.log(isTransform);
+
+  useEffect(() => {
+    const slickNext = document.querySelector(".slick-next");
+    // const slickPrev = document.querySelector('.slick-prev');
+    const slickTrack = document.querySelector(".slick-track");
+
+    // if(isTransform === 'transform: translate3d(-563px, 0px, 0px);') {
+    //   console.log('Hello');
+    // }
+
+
+    setIsTransform(slickTrack.style.transform);
+  }, [isTransform]);
 
   return (
     <section className="Home__Sliders w-full">

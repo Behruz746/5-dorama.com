@@ -32,6 +32,8 @@
 }
 
 .Slider__navigation {
+    display: flex;
+    align-items: center;
     width: 100%;
     min-height: 44px;
 }
@@ -73,7 +75,7 @@
     }
 
     .slider-prev--active {
-        // display: none !important;
+        display: none !important;
         transform: rotate(180deg);
 
         &::before {

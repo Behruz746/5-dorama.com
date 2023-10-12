@@ -5,11 +5,11 @@ import "./styles.scss";
 
 import AppContext from "../../AppContext";
 
-function Header() { 
-  const {isToggle, setIsToggle} = useContext(AppContext);
+function Header() {
+  const { isToggle, setIsToggle } = useContext(AppContext);
   const inputVal = useRef();
 
-  const Svg = () => ( 
+  const Svg = () => (
     <svg
       width="24"
       height="24"
@@ -35,7 +35,11 @@ function Header() {
     <header className="App__header">
       <div className="header__container">
         <div className="header__menu-toggle">
-          <button type="button" className="header__btn" onClick={()=> setIsToggle(!isToggle)}>
+          <button
+            type="button"
+            className="header__btn"
+            onClick={() => setIsToggle(!isToggle)}
+          >
             <Svg />
           </button>
 
@@ -49,7 +53,7 @@ function Header() {
         <div className="header__search sf-pro-display">
           <div className="search__input">
             <input
-            ref={inputVal}
+              ref={inputVal}
               type="text"
               placeholder="Введите название дорамы или фильмы"
             />
