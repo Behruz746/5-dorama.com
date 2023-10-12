@@ -1,0 +1,39 @@
+
+
+.App__pageNotFound {
+    width: 100%;
+    // background-color: #000;
+
+    .container--blur {
+        padding: 0 !important; 
+    }
+}
+
+.App__pageNotFound__container {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    min-height: 360px;
+    height: 100%;
+    flex-direction: column;
+    border: 1px solid #d00;     
+}
+
+.App__pageNotFound__content {
+    max-width: 470px;
+    width: 100%;
+    border: 1px solid #d00;  
+
+    .box__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    img {
+        width: 470px;
+        // width: 100%;
+        height: auto;
+    }
+}

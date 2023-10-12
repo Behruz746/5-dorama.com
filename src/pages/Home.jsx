@@ -1,7 +1,7 @@
 import React from "react";
 
 // Compoenents
-import HaderPage from "../components/HeaderPage/HaderPage";
+import HeaderPage from "../components/HeaderPage/HeaderPage";
 import Sliders from "../components/Sliders/Sliders";
 
 import './styles.scss'
@@ -9,11 +9,11 @@ import './styles.scss'
 function Home() {
   return (
     <div className="App__home w-full page">
-      <HaderPage />
+      <HeaderPage image='./images/png/backound__img01.png' />
       <Sliders />
+      {/* <Sliders />
       <Sliders />
-      <Sliders />
-      <Sliders />
+      <Sliders /> */}
     </div>
   );
 }

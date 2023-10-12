@@ -13,8 +13,6 @@ import "./styles.scss";
 function Menu() {
   const { isToggle, setIsToggle } = useContext(AppContext);
 
-  console.log(isToggle);
-
   return (
     <div className={isToggle ? "App__nav" : "App__nav App__nav--active"}>
       <nav className="nav__list">

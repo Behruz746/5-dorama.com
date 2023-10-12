@@ -28,36 +28,32 @@ import Actor from "./pages/Actor";
 import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
-  const [isData, setIsData] = useState([]);
   const [isToggle, setIsToggle] = useState(true);
+  const [isData, setIsData] = useState([]);
+  const [isLoad, setIsLoad] = useState(false);
 
-  console.log(isData);
-
-  useEffect(()=> {
-    const slickNext = document.querySelector('.slick-next');
-    const slickPrev = document.querySelector('.slick-next');
-
-    slickNext.addEventListener('click', ()=> {
-      console.log("click");
-
-      console.log(slickPrev);
-
-      // slickPrev.classList.remove('slider-prev--active');
-    });
-
+  useEffect(() => {
+    const fetchFun = async () => {
+      try {
+        setIsLoad(false);
+        const response = await axios.get('https://kodikapi.com/qualities', {
+          headers: {
+              'X-Auth-Token': '7e04e50106ab3a654bef8c638ea36fa8',
+              'Content-Type': 'application/json',
+          },
+        });
+        setIsData(response.data);
+        setIsLoad(true);
+      } catch (error) {
+        console.log(error, 'Error: 404');
+      }
+    };
+  
+    fetchFun();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = async ()=> {
-  //     try {
-  //       const data = await axios.get('https://kodik.cc/video/93/2fc1d3b9759726b2bc5b104b225d2b4a/720p?geoblock=RU');
-  //       setIsData(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchData();
-  // }, []);
+  console.log(isData);
+  console.log(isLoad);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -77,6 +73,7 @@ function App() {
   return (
     <AppContext.Provider value={{ isData, isToggle, setIsToggle }}>
       <div className="App">
+        {/* <div className=""></div> */}
         <RouterProvider router={routes} />
       </div>
     </AppContext.Provider>
