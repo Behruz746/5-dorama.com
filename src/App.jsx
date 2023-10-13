@@ -25,31 +25,33 @@ import Shorts from "./pages/Shorts";
 import Dramas from "./pages/Dramas";
 import Filems from "./pages/Filems";
 import Actor from "./pages/Actor";
+import VideoPlayer from "./pages/VideoPlayer";
 import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
   const [isData, setIsData] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
+  const [isVideoLink, setIsVideoLink] = useState("");
 
   useEffect(() => {
     const fetchFun = async () => {
       try {
         setIsLoad(false);
-        const data = await axios.get('https://kodikapi.com/genres?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime-serial')
-        setIsData(data.data.results
-          );
+        // const data = await axios.get('https://kodikapi.com/genres?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime-serial')
+        const data = await axios.get('https://652912b055b137ddc83e2a2a.mockapi.io/doramaApi001');
+        setIsData(data.data);
         setIsLoad(true);
       } catch (error) {
-        console.log(error, 'Error: 404');
+        console.log(error, "Error: 404");
       }
     };
-  
+
     fetchFun();
   }, []);
 
-  console.log(isData);
-  console.log(isLoad);
+  // console.log(isData);
+  // console.log(isLoad);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -59,6 +61,7 @@ function App() {
         <Route path="dramas" element={<Dramas />} />
         <Route path="filems" element={<Filems />} />
         <Route path="actor" element={<Actor />} />
+        <Route path="video" element={<VideoPlayer />} />
 
         {/* Error page: 404 :(+ */}
         <Route path="*" element={<PageNotFound />} />
@@ -67,7 +70,9 @@ function App() {
   );
 
   return (
-    <AppContext.Provider value={{ isData, isToggle, setIsToggle }}>
+    <AppContext.Provider
+      value={{ isData, isToggle, setIsToggle, isVideoLink, setIsVideoLink }}
+    >
       <div className="App">
         {/* <div className=""></div> */}
         <RouterProvider router={routes} />

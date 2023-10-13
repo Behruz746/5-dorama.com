@@ -16,9 +16,11 @@
 }
 
 .card__img {
-    width: 100%;
+    width: 291px;
+    height: 164px;
     border-radius: 10px;
     overflow: hidden;
+    border: 1px solid #d00;
     
     h4 {
         font-size: 14px;
@@ -29,11 +31,12 @@
     }
     
     .card__image {
-        max-width: 291px;
+        max-width: 291px !important;
         width: 100%;
         height: auto;
         border-radius: 10px;
         transition: .2s linear;
+        border: 1px solid #d00;
     }
 }
 

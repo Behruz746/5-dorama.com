@@ -1,16 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 
 // Compoenets
 import Cards from "../Cards/Cards";
+import AppContext from "../../AppContext";
 
-import { testCard } from "../../data/data";
+import { testCard } from "../../data/data"; 
 
 import "./styles.scss";
 
 function Sliders() {
+
+  const {isData} = useContext(AppContext);
+
+  // console.log(isData);
+
   const settings = {
     className: "slider variable-width",
     dots: false,
@@ -35,22 +41,22 @@ function Sliders() {
     ],
   };
 
-  const [isTransform, setIsTransform] = useState('translate3d(0px, 0px, 0px)');
+  // const [isTransform, setIsTransform] = useState('translate3d(0px, 0px, 0px)');
 
-  console.log(isTransform);
+  // console.log(isTransform);
 
-  useEffect(() => {
-    const slickNext = document.querySelector(".slick-next");
-    // const slickPrev = document.querySelector('.slick-prev');
-    const slickTrack = document.querySelector(".slick-track");
+  // useEffect(() => {
+  //   const slickNext = document.querySelector(".slick-next");
+  //   // const slickPrev = document.querySelector('.slick-prev');
+  //   const slickTrack = document.querySelector(".slick-track");
 
-    // if(isTransform === 'transform: translate3d(-563px, 0px, 0px);') {
-    //   console.log('Hello');
-    // }
+  //   // if(isTransform === 'transform: translate3d(-563px, 0px, 0px);') {
+  //   //   console.log('Hello');
+  //   // }
 
 
-    setIsTransform(slickTrack.style.transform);
-  }, [isTransform]);
+  //   setIsTransform(slickTrack.style.transform);
+  // }, [isTransform]);
 
   return (
     <section className="Home__Sliders w-full">
@@ -64,7 +70,7 @@ function Sliders() {
               </NavLink>
             </div>
             <Slider {...settings}>
-              {testCard.map((data) => (
+              {isData.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
             </Slider>

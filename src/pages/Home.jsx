@@ -11,9 +11,7 @@ function Home() {
     <div className="App__home w-full page">
       <HeaderPage image='./images/png/backound__img01.png' />
       <Sliders />
-      {/* <Sliders />
-      <Sliders />
-      <Sliders /> */}
+
     </div>
   );
 }
