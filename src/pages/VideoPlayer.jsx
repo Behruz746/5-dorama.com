@@ -12,6 +12,7 @@ function VideoPlayer() {
       <p>link: {isVideoLink}</p>
 
       <iframe
+        className="videoPlayer"
         src={isVideoLink}
         width="846px"
         height="476px"
@@ -19,15 +20,6 @@ function VideoPlayer() {
         allowFullScreen
         allow="autoplay *; fullscreen *"
       ></iframe>
-
-      {/* <iframe
-        src={isVideoLink}
-        width="607"
-        height="360"
-        frameborder="0"
-        AllowFullScreen
-        allow="autoplay *; fullscreen *"
-      ></iframe> */}
     </div>
   );
 }
