@@ -30,28 +30,26 @@ import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
-  const [isData, setIsData] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
   const [isVideoLink, setIsVideoLink] = useState("");
+  const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
-    const fetchFun = async () => {
+    const fetchList = async () => {
       try {
-        setIsLoad(false);
-        // const data = await axios.get('https://kodikapi.com/genres?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime-serial')
-        const data = await axios.get('https://652912b055b137ddc83e2a2a.mockapi.io/doramaApi001');
-        setIsData(data.data);
-        setIsLoad(true);
+        const data = await axios.get(
+          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime&with_episodes=true&with_material_data=true&limit=12"
+        );
+        setDataList(data.data.results);
       } catch (error) {
-        console.log(error, "Error: 404");
+        console.log(error);
       }
     };
 
-    fetchFun();
+    fetchList();
   }, []);
 
-  // console.log(isData);
-  // console.log(isLoad);
+  console.log(dataList);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -71,7 +69,14 @@ function App() {
 
   return (
     <AppContext.Provider
-      value={{ isData, isToggle, setIsToggle, isVideoLink, setIsVideoLink }}
+      value={{
+        dataList,
+        isLoad,
+        isToggle,
+        setIsToggle,
+        isVideoLink,
+        setIsVideoLink,
+      }}
     >
       <div className="App">
         {/* <div className=""></div> */}

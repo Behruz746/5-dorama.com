@@ -3,13 +3,7 @@
     background-color: transparent;
     border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
-
-    &:hover {
-        .image {
-            transform: scale(1.05, 1.05);
-        }
-    }
+    cursor: pointer; 
    
     .image {
         width: 100%;

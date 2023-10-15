@@ -12,7 +12,7 @@ function HeaderPage({image, containerBlur}) {
           <div className="HaderPage__image">
             <div className="image">
               <img
-                src={image}
+                src={image} 
                 alt="background image"
               />
             </div>

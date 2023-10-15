@@ -19,6 +19,29 @@
 
     .title {
         color: #fff;
+        transition: .2s linear;
+    }
+
+    svg {
+        transition: .2s ease-in-out;
+
+        path {
+            transition: .2s linear;
+        }
+    }
+
+    &:hover {
+        .title {
+            color: #5EB5F7FF;
+        }
+
+        svg {
+            transform: translateX(10px);
+
+            path {
+                fill: #5EB5F7FF;
+            }
+        }    
     }
 }
 
