@@ -8,10 +8,9 @@ import AppContext from "../../AppContext";
 import { testCard } from "../../data/data";
 
 function Cards(data) {
-  const { setIsVideoLink, isVideoLink, dataList } =
-    useContext(AppContext);
+  const { setIsVideoLink, isVideoLink, dataList } = useContext(AppContext);
 
-  const Svg = () => ( 
+  const Svg = () => (
     <svg
       className="card__icon"
       width="14"
@@ -29,22 +28,24 @@ function Cards(data) {
       </g>
     </svg>
   );
-  
-    return (
-      <div className="Card">
-        <NavLink to="video" onClick={() => setIsVideoLink(data.link)}>
+
+  return (
+    <div className="Card">
+      <NavLink to="video" onClick={() => setIsVideoLink(data.link)}>
         <div className="card__img">
           <div className="card__reting">
             <Svg />
             <h4>
-              {data.material_data.imdb_rating
-                ? data.material_data.imdb_rating
-                : 5.6}
+              {data.material_data ? data.material_data.mydramalist_rating : 5.6}
             </h4>
           </div>
           <img
             className="card__image"
-            src={data.material_data.poster_url ? data.material_data.poster_url : null}
+            src={
+              data.material_data 
+                ? data.material_data.poster_url
+                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
+            }
             alt="card image"
           />
         </div>
@@ -52,9 +53,9 @@ function Cards(data) {
           <h1 className="card__title">{data.title}</h1>
           <p>{data.sort}</p>
         </div>
-        </NavLink>
-      </div>
-    );
+      </NavLink>
+    </div>
+  );
 }
 
 export default Cards;

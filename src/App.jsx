@@ -37,20 +37,21 @@ function App() {
   useEffect(() => {
     const fetchList = async () => {
       try {
-        const data = await axios.get(
-          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime&with_episodes=true&with_material_data=true&limit=18&lgbt=false"
+        setIsLoad(false);
+        const dataList = await axios.get(
+          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-serial"
         );
-        setDataList(data.data.results);
+        setDataList(dataList.data.results);
+        setIsLoad(true);
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchList();
-    console.log(dataList);
   }, []);
-
-  console.log(dataList);
+  
+  // console.log(dataList);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(

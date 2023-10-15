@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 // Compoenets
 import Cards from "../Cards/Cards";
@@ -11,10 +12,25 @@ import { testCard } from "../../data/data";
 
 import "./styles.scss";
 
-function Sliders() {
+function Sliders({ url, title }) {
   const { dataList } = useContext(AppContext);
 
-  // console.log(isData);
+  const [dataAnime, setDataAnime] = useState([]);
+
+  useEffect(() => {
+    const fetctAnime = async () => {
+      try {
+        const data = await axios.get(url);
+        setDataAnime(data.data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetctAnime();
+  }, []);
+
+  console.log(dataAnime);
 
   const settings = {
     className: "slider variable-width",
@@ -86,12 +102,12 @@ function Sliders() {
           <div className="Slider__cards">
             <div className="Slider__navigation">
               <NavLink to="*" className="navigation__title">
-                <h1 className="title">Популярные сейчас</h1>
+                <h1 className="title">{title}</h1>
                 <Svg />
               </NavLink>
             </div>
             <Slider {...settings}>
-              {dataList.map((data) => (
+              {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
             </Slider>
