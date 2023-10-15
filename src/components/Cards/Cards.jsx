@@ -30,9 +30,22 @@ function Cards(data) {
     </svg>
   );
 
+  console.log(isVideoLink);
+
+  // useEffect(()=> {
+  //   const cardAEl = document.querySelectorAll('.Card a');
+
+  //   cardAEl.forEach((item, index)=> {
+  //     item.addEventListener('click', ()=> {
+
+  //     });
+  //   })
+
+  // }, []);
+
   return (
     <div className="Card">
-      <NavLink to="video">
+      <NavLink to="video" onClick={()=> setIsVideoLink(data.link)}>
         <div className="card__img">
           <div className="card__reting">
             <Svg />
