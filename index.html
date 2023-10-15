@@ -24,6 +24,21 @@
 
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <script type="text/javascript">
+      function kodikMessageListener(message) {
+        if (message.data.key == "kodik_player_time_update") {
+          console.log(message.data.value);
+        }
+      }
+
+      if (window.addEventListener) {
+        window.addEventListener("message", kodikMessageListener);
+      } else {
+        window.attachEvent("onmessage", kodikMessageListener);
+      }
+    </script>
+
     <!-- Yandex.RTB R-A-3413282-1
     <div id="yandex_rtb_R-A-3413282-1"></div>
     <script>

@@ -38,7 +38,7 @@ function App() {
     const fetchList = async () => {
       try {
         const data = await axios.get(
-          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&types=documentary-serial&with_episodes=true&with_material_data=true&limit=8&lgbt=false"
+          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&types=anime&with_episodes=true&with_material_data=true&limit=18&lgbt=false"
         );
         setDataList(data.data.results);
       } catch (error) {
@@ -47,6 +47,7 @@ function App() {
     };
 
     fetchList();
+    console.log(dataList);
   }, []);
 
   console.log(dataList);

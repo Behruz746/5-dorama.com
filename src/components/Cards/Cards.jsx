@@ -11,7 +11,7 @@ function Cards(data) {
   const { setIsVideoLink, isVideoLink, dataList } =
     useContext(AppContext);
 
-  const Svg = () => (
+  const Svg = () => ( 
     <svg
       className="card__icon"
       width="14"
@@ -29,23 +29,10 @@ function Cards(data) {
       </g>
     </svg>
   );
-
-  console.log(isVideoLink);
-
-  // useEffect(()=> {
-  //   const cardAEl = document.querySelectorAll('.Card a');
-
-  //   cardAEl.forEach((item, index)=> {
-  //     item.addEventListener('click', ()=> {
-
-  //     });
-  //   })
-
-  // }, []);
-
-  return (
-    <div className="Card">
-      <NavLink to="video" onClick={()=> setIsVideoLink(data.link)}>
+  
+    return (
+      <div className="Card">
+        <NavLink to="video" onClick={() => setIsVideoLink(data.link)}>
         <div className="card__img">
           <div className="card__reting">
             <Svg />
@@ -57,7 +44,7 @@ function Cards(data) {
           </div>
           <img
             className="card__image"
-            src={data.material_data.poster_url}
+            src={data.material_data.poster_url ? data.material_data.poster_url : null}
             alt="card image"
           />
         </div>
@@ -65,9 +52,9 @@ function Cards(data) {
           <h1 className="card__title">{data.title}</h1>
           <p>{data.sort}</p>
         </div>
-      </NavLink>
-    </div>
-  );
+        </NavLink>
+      </div>
+    );
 }
 
 export default Cards;
