@@ -35,15 +35,19 @@ function Cards(data) {
     const slickTrack = document.querySelector(".slick-track");
     const slickSlide = document.querySelector(".slick-slide");
 
-    if(!data.title_orig === "Absolute Zero")
+    if (!data.title_orig === "Absolute Zero") {
       cardEl.remove();
+    }
   }, []);
 
   return (
     <>
       {data.material_data ? (
         <div className="Card">
-          <NavLink to="video" onClick={() => localStorage.setItem('dataLink', data.link)}>
+          <NavLink
+            to="video"
+            onClick={() => localStorage.setItem("dataLink", data.link)}
+          >
             <div className="card__img">
               <div className="card__reting">
                 <Svg />
@@ -70,7 +74,9 @@ function Cards(data) {
           </NavLink>
         </div>
       ) : (
-        <div className="Card" style={{ display: "none" }}>null</div>
+        <div className="Card" style={{ display: "none" }}>
+          null
+        </div>
       )}
     </>
   );
