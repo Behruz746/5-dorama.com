@@ -95,6 +95,7 @@ function Sliders({ url, title }) {
 
   //   setIsTransform(slickTrack.style.transform);
   // }, [isTransform]);
+  
 
   return (
     <section className="Home__Sliders w-full">

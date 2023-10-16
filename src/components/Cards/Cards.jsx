@@ -43,7 +43,7 @@ function Cards(data) {
     <>
       {data.material_data ? (
         <div className="Card">
-          <NavLink to="video" onClick={() => localStorage.setItem('dataLink', data.link)}>
+          <NavLink to="/" onClick={() => localStorage.setItem('dataLink', data.link)}>
             <div className="card__img">
               <div className="card__reting">
                 <Svg />

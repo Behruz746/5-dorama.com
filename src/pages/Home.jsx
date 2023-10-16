@@ -18,6 +18,19 @@ function Home() {
       <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2021,2022,2023&kinopoisk_rating=5-8&imdb_rating=5-8" title="Популярные сейчас" />
       <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2021,2022,2023" title="Новинки" />
       <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=13&lgbt=false&types=anime&sort=year" title="Фильмы" />
+
+
+      <div>
+      <iframe
+        className="videoPlayer"
+        src={localStorage.getItem('dataLink')} // video link form locakStorage.getItem('data');
+        width="846px"
+        height="476px"
+        frameBorder="0"
+        allowFullScreen
+        allow="autoplay *; fullscreen *"
+      ></iframe>
+    </div>
     </div>
   );
 }
