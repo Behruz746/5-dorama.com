@@ -34,24 +34,6 @@ function Cards(data) {
     const cardEl = document.querySelector(".Card");
     const slickTrack = document.querySelector(".slick-track");
     const slickSlide = document.querySelector(".slick-slide");
-
-    // if (!data.material_data) {
-    //   cardEl.remove();
-    //   slickSlide.style.display = "none";
-
-    //   console.log(dataLength);
-
-    //   // // slickTrack.remove();
-    //   // slickSlide.forEach((item, index) => {
-    //   //   // for (let i = 0; i < dataLength; i++) {
-    //   //   //   console.log(i);
-
-    //   //     if (index === dataLength) {
-    //   //       item.style.display = "none";
-    //   //     }
-    //   //   // }
-    //   // });
-    // }
   }, []);
 
   return (
