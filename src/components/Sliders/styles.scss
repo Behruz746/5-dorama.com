@@ -90,19 +90,19 @@
     .slick-prev {
         position: absolute;
         right: 45px;
-        transform: rotate(0deg);
+        transform: rotate(var(--rotate));
         
         &::before {
-            content: url('../../../public/images/svg/card-arrow__icon00.svg');
+            content: var(--background);
         }       
     }
 
     .slider-prev--active {
         display: none !important;
-        transform: rotate(180deg);
+        transform: rotate(180deg) !important;
 
         &::before {
-            content: url('../../../public/images/svg/card-arrow__icon01.svg');
+            content: url('../../../public/images/svg/card-arrow__icon01.svg') !important;
         }
     }
 

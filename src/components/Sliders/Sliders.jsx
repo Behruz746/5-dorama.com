@@ -80,22 +80,32 @@ function Sliders({ url, title }) {
     </svg>
   );
 
-  // const [isTransform, setIsTransform] = useState('translate3d(0px, 0px, 0px)');
+  useEffect(() => {
+    const slickNext = document.querySelectorAll(".slick-next");
+    const slickPrev = document.querySelectorAll(".slick-prev");
 
-  // console.log(isTransform);
+    slickPrev.forEach((item) => {
+      item.style.setProperty(
+        "--background",
+        "url(../../../public/images/svg/card-arrow__icon00.svg)"
+      );
+      item.style.setProperty("--rotate", "0deg");
+    });
 
-  // useEffect(() => {
-  //   const slickNext = document.querySelector(".slick-next");
-  //   // const slickPrev = document.querySelector('.slick-prev');
-  //   const slickTrack = document.querySelector(".slick-track");
-
-  //   // if(isTransform === 'transform: translate3d(-563px, 0px, 0px);') {
-  //   //   console.log('Hello');
-  //   // }
-
-  //   setIsTransform(slickTrack.style.transform);
-  // }, [isTransform]);
-  
+    slickNext.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        slickPrev.forEach((i, id) => {
+          if (index === id) {
+            i.style.setProperty(
+              "--background",
+              "url(../../../public/images/svg/card-arrow__icon01.svg)"
+            );
+            i.style.setProperty("--rotate", "180deg");
+          }
+        });
+      });
+    });
+  }, [dataAnime]);
 
   return (
     <section className="Home__Sliders w-full">

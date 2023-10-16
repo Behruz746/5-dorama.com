@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import "./styles.scss";
 
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AppContext from "../../AppContext";
 
 import { testCard } from "../../data/data";
@@ -10,6 +10,8 @@ import { testCard } from "../../data/data";
 function Cards(data) {
   const { setIsVideoLink, isVideoLink, dataList, dataLength } =
     useContext(AppContext);
+
+  const [isItemBo, setIsItemBo] = useState(false);
 
   const Svg = () => (
     <svg
@@ -35,14 +37,27 @@ function Cards(data) {
     const slickTrack = document.querySelector(".slick-track");
     const slickSlide = document.querySelector(".slick-slide");
 
-    if (!data.title_orig === "Absolute Zero") {
-      cardEl.remove();
+    if (data.material_data && data.material_data.poster_url) {
+      setIsItemBo(true);
+
+      // console.log(data.title);
+    } else {
+      setIsItemBo(false);
     }
   }, []);
 
+ 
+
+  // const handleRemove = () => {
+  //   const filteredData = data.filter(
+  //     (item) => !filterArray.includes(item.name)
+  //   );
+  //   setData(filteredData);
+  // };
+
   return (
     <>
-      {data.material_data ? (
+      {isItemBo ? (
         <div className="Card">
           <NavLink
             to="video"
