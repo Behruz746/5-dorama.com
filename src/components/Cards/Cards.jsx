@@ -34,13 +34,16 @@ function Cards(data) {
     const cardEl = document.querySelector(".Card");
     const slickTrack = document.querySelector(".slick-track");
     const slickSlide = document.querySelector(".slick-slide");
+
+    if(!data.title_orig === "Absolute Zero")
+      cardEl.remove();
   }, []);
 
   return (
     <>
       {data.material_data ? (
         <div className="Card">
-          <NavLink to="video" onClick={() => setIsVideoLink(data.link)}>
+          <NavLink to="video" onClick={() => localStorage.setItem('dataLink', data.link)}>
             <div className="card__img">
               <div className="card__reting">
                 <Svg />

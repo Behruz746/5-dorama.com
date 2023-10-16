@@ -15,9 +15,9 @@ function Home() {
   return (
     <div className="App__home w-full page">
       <HeaderPage image="./images/png/backound__img01.png" />
-      <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-serial&sort=КиноПоиска&drama_genres=" title="Популярные сейчас" />
-      <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=anime" title="Аниме" />
-      <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=13&lgbt=false&types=anime&sort=year" title="Популярные сейчас аниме" />
+      <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2021,2022,2023&kinopoisk_rating=5-8&imdb_rating=5-8" title="Популярные сейчас" />
+      <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2021,2022,2023" title="Новинки" />
+      <Sliders url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=13&lgbt=false&types=anime&sort=year" title="Фильмы" />
     </div>
   );
 }
