@@ -13,7 +13,7 @@ import { testCard } from "../../data/data";
 import "./styles.scss";
 
 function Sliders({ url, title }) {
-  const { dataList } = useContext(AppContext);
+  const { dataList, dataLength, setDataLength } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
 
@@ -21,7 +21,9 @@ function Sliders({ url, title }) {
     const fetctAnime = async () => {
       try {
         const data = await axios.get(url);
+        // console.log(data.data);
         setDataAnime(data.data.results);
+        setDataLength(data.data.results.length)
       } catch (error) {
         console.log(error);
       }
@@ -31,6 +33,7 @@ function Sliders({ url, title }) {
   }, []);
 
   console.log(dataAnime);
+  console.log(dataLength);
 
   const settings = {
     className: "slider variable-width",
@@ -39,7 +42,7 @@ function Sliders({ url, title }) {
     centerMode: false,
     speed: 1300,
     slidesToShow: 4,
-    slidesToScroll: 3,
+    slidesToScroll: 4,
     pauseOnHover: true,
     variableWidth: true,
     arrows: true,

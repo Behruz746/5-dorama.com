@@ -33,6 +33,7 @@ function App() {
   const [isLoad, setIsLoad] = useState(false);
   const [isVideoLink, setIsVideoLink] = useState("");
   const [dataList, setDataList] = useState([]);
+  const [dataLength, setDataLength] = useState(0);
 
   useEffect(() => {
     const fetchList = async () => {
@@ -78,6 +79,8 @@ function App() {
         setIsToggle,
         isVideoLink,
         setIsVideoLink,
+        dataLength,
+        setDataLength
       }}
     >
       <div className="App">

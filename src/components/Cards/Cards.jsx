@@ -8,7 +8,8 @@ import AppContext from "../../AppContext";
 import { testCard } from "../../data/data";
 
 function Cards(data) {
-  const { setIsVideoLink, isVideoLink, dataList } = useContext(AppContext);
+  const { setIsVideoLink, isVideoLink, dataList, dataLength } =
+    useContext(AppContext);
 
   const Svg = () => (
     <svg
@@ -29,32 +30,64 @@ function Cards(data) {
     </svg>
   );
 
+  useEffect(() => {
+    const cardEl = document.querySelector(".Card");
+    const slickTrack = document.querySelector(".slick-track");
+    const slickSlide = document.querySelector(".slick-slide");
+
+    // if (!data.material_data) {
+    //   cardEl.remove();
+    //   slickSlide.style.display = "none";
+
+    //   console.log(dataLength);
+
+    //   // // slickTrack.remove();
+    //   // slickSlide.forEach((item, index) => {
+    //   //   // for (let i = 0; i < dataLength; i++) {
+    //   //   //   console.log(i);
+
+    //   //     if (index === dataLength) {
+    //   //       item.style.display = "none";
+    //   //     }
+    //   //   // }
+    //   // });
+    // }
+  }, []);
+
   return (
-    <div className="Card">
-      <NavLink to="video" onClick={() => setIsVideoLink(data.link)}>
-        <div className="card__img">
-          <div className="card__reting">
-            <Svg />
-            <h4>
-              {data.material_data ? data.material_data.mydramalist_rating : 5.6}
-            </h4>
-          </div>
-          <img
-            className="card__image"
-            src={
-              data.material_data 
-                ? data.material_data.poster_url
-                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
-            }
-            alt="card image"
-          />
+    <>
+      {data.material_data ? (
+        <div className="Card">
+          <NavLink to="video" onClick={() => setIsVideoLink(data.link)}>
+            <div className="card__img">
+              <div className="card__reting">
+                <Svg />
+                <h4>
+                  {data.material_data.mydramalist_rating
+                    ? data.material_data.mydramalist_rating
+                    : 5.6}
+                </h4>
+              </div>
+              <img
+                className="card__image"
+                src={
+                  data.material_data.poster_url
+                    ? data.material_data.poster_url
+                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
+                }
+                alt="card image"
+              />
+            </div>
+            <div className="card__content">
+              <h1 className="card__title">{data.title}</h1>
+              <p>{data.sort}</p>
+            </div>
+          </NavLink>
         </div>
-        <div className="card__content">
-          <h1 className="card__title">{data.title}</h1>
-          <p>{data.sort}</p>
-        </div>
-      </NavLink>
-    </div>
+      ) : (
+        <div className="Card" style={{ display: "none" }}>null</div>
+      )}
+    </>
   );
 }
 
