@@ -10,7 +10,7 @@
 }
 
 .App__nav--active {
-    max-width: 84px;
+    max-width: 84px; 
     width: 100%;
     overflow: hidden;
     transition: all .5s ease-in-out;
@@ -22,6 +22,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0 !important;
+
+    .toggle__arrow {
+        display: none !important;
+    }
 
     h3 {
         font-size: 14px;
@@ -48,17 +52,41 @@
     }
 }
 
+.list__box--active {
+    flex-direction: column;
+    gap: 5px !important;
+    transition: all .5s ease-in-out;
+}
+
+.list__box {
+    display: flex;
+    align-items: center;
+    max-width: 24px + 61px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 24px;
+    transition: all .5s ease-in-out;
+}
+
 .list__link {
     width: 100%;
     padding: 12px 12px;
     display: flex;
     align-items: center;
+    // justify-content: space-between;
     gap: 24px;
     border-radius: 10px;
     transition: 0.140s linear;
 
     &:hover {
         background-color: #17212B;
+    }
+
+    .toggle__arrow {
+        display: block;
+        margin-left: auto;
+        width: 24px;
+        height: 24px;
     }
 
     img {

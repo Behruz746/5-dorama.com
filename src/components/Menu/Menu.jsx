@@ -17,7 +17,7 @@ function Menu() {
     <div className={isToggle ? "App__nav" : "App__nav App__nav--active"}>
       <nav className="nav__list">
         <div className="list__items">
-          {dataNav.map(({ text, link, icon }) => (
+          {dataNav.map(({ text, link, icon, toggle, toggleIcon }) => (
             <NavLink
               to={link}
               className={
@@ -26,8 +26,12 @@ function Menu() {
               key={uuidv4()}
               onClick={() => setIsToggle(true)}
             >
-              <img src={icon} alt="item icon" />
-              <h3>{text}</h3>
+              <div className={ isToggle ? 'list__box' : "list__box list__box--active"}>
+                <img src={icon} alt="item icon" />
+                <h3>{text}</h3>
+              </div>
+
+              {toggleIcon && <img className="toggle__arrow" src={toggleIcon} alt="toggle icon" />}
             </NavLink>
           ))}
         </div>
@@ -35,7 +39,11 @@ function Menu() {
           className={isToggle ? "nav__line" : "nav__line nav__line--active"}
         ></div>
         <div
-          className={isToggle ? "famous__filems" : "famous__filems famous__filems--active"}
+          className={
+            isToggle
+              ? "famous__filems"
+              : "famous__filems famous__filems--active"
+          }
         >
           {famousData.map(({ text, link }) => (
             <NavLink
