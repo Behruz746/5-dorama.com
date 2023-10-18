@@ -12,18 +12,35 @@ export const dataNav = [
     toggle: false,
   },
   {
+    id: 0,
     text: "Дорамы",
     link: "dramas",
     icon: "./images/svg/treler__icon.svg",
     toggle: true,
-    toggleIcon: './images/svg/arrow-down__icon.svg',
+    toggleIcon: "./images/svg/arrow-down__icon.svg",
   },
   {
+    id: 1,
     text: "Фильмы",
     link: "filems",
     icon: "./images/svg/filems__icon.svg",
     toggle: true,
-    toggleIcon: './images/svg/arrow-down__icon.svg',
+    toggleIcon: "./images/svg/arrow-down__icon.svg",
+  },
+];
+
+export const dropData = [
+  {
+    name: "Триллеры",
+    link: "/",
+  },
+  {
+    name: "комедии",
+    link: "/",
+  },
+  {
+    name: "драмы",
+    link: "/",
   },
 ];
 

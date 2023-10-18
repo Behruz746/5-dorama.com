@@ -13,23 +13,27 @@ import { testCard } from "../../data/data";
 import "./styles.scss";
 
 function Sliders({ url, title }) {
-  const { dataList } = useContext(AppContext);
+  const { isLoad, setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
+  // const [isLoad, setIsLoad] = useState(false);
 
   useEffect(() => {
     const fetctAnime = async () => {
       try {
+        setIsLoad(false);
         const data = await axios.get(url);
         setDataAnime(data.data.results);
+        setIsLoad(true);
       } catch (error) {
         console.log(error);
       }
     };
-
+    
     fetctAnime();
   }, []);
-
+  
+  // console.log(isLoad);
   // console.log(dataAnime);
   // console.log(dataLength);
 

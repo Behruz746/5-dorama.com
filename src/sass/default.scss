@@ -91,6 +91,16 @@ main {
   letter-spacing: -0.48px;
 }
 
+.borderRadius10 {
+  border-radius: 10px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .page {
   padding-top: 12px;
   // border: 1px solid #d00;

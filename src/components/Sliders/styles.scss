@@ -97,15 +97,6 @@
         }       
     }
 
-    .slider-prev--active {
-        display: none !important;
-        transform: rotate(180deg) !important;
-
-        &::before {
-            content: url('../../../public/images/svg/card-arrow__icon01.svg') !important;
-        }
-    }
-
     .slick-next {
         position: absolute;
         right: 0;

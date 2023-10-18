@@ -30,29 +30,15 @@ import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
-  const [isLoad, setIsLoad] = useState(false);
+  const [isLoad, setIsLoad] = useState(true);
   const [isVideoLink, setIsVideoLink] = useState("");
   const [dataList, setDataList] = useState([]);
   const [dataLength, setDataLength] = useState(0);
+  const [isArrorToggle, setIsArrowToggle] = useState(false);
 
-  useEffect(() => {
-    const fetchList = async () => {
-      try {
-        setIsLoad(false);
-        const dataList = await axios.get(
-          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-serial"
-        );
-        setDataList(dataList.data.results);
-        setIsLoad(true);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchList();
-  }, []);
-  
-  // console.log(dataList);
+  function ToggleHandel() {
+    setIsArrowToggle(!isArrorToggle);
+  }
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -75,16 +61,19 @@ function App() {
       value={{
         dataList,
         isLoad,
+        setIsLoad,
         isToggle,
         setIsToggle,
         isVideoLink,
         setIsVideoLink,
         dataLength,
-        setDataLength
+        setDataLength,
+        isArrorToggle,
+        setIsArrowToggle,
+        ToggleHandel,
       }}
     >
       <div className="App">
-        {/* <div className=""></div> */}
         <RouterProvider router={routes} />
       </div>
     </AppContext.Provider>

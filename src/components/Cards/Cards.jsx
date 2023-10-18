@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
 
 import "./styles.scss";
 
@@ -7,8 +8,37 @@ import AppContext from "../../AppContext";
 
 import { testCard } from "../../data/data";
 
+import React from "react";
+import ContentLoader from "react-content-loader";
+
+const MyLoader = (props) => {
+  const arr = [1,2];
+  return (
+    <>
+      {arr.map(() => {
+        return (
+          <ContentLoader
+            key={uuidv4()}
+            speed={2}
+            width={162}
+            height={347}
+            viewBox="0 0 162 347"
+            backgroundColor="#17212BFF"
+            foregroundColor="#768B9EFF"
+            {...props}
+          >
+            <rect x="0" y="0" rx="10" ry="10" width="162" height="300" />
+            <rect x="0" y="310" rx="3" ry="3" width="128" height="8" />
+            <rect x="0" y="323" rx="3" ry="3" width="93" height="8" />
+          </ContentLoader>
+        );
+      })}
+    </>
+  );
+};
+
 function Cards(data) {
-  const { setIsVideoLink, isVideoLink, dataList, dataLength } =
+  const { setIsVideoLink, isVideoLink, dataList, isLoad } =
     useContext(AppContext);
 
   const [isItemBo, setIsItemBo] = useState(false);
@@ -33,66 +63,57 @@ function Cards(data) {
   );
 
   useEffect(() => {
-    const cardEl = document.querySelector(".Card");
-    const slickTrack = document.querySelector(".slick-track");
-    const slickSlide = document.querySelector(".slick-slide");
-
     if (data.material_data && data.material_data.poster_url) {
       setIsItemBo(true);
-
-      // console.log(data.title);
     } else {
       setIsItemBo(false);
     }
   }, []);
 
- 
-
-  // const handleRemove = () => {
-  //   const filteredData = data.filter(
-  //     (item) => !filterArray.includes(item.name)
-  //   );
-  //   setData(filteredData);
-  // };
-
   return (
     <>
-      {isItemBo ? (
-        <div className="Card">
-          <NavLink
-            to="video"
-            onClick={() => localStorage.setItem("dataLink", data.link)}
-          >
-            <div className="card__img">
-              <div className="card__reting">
-                <Svg />
-                <h4>
-                  {data.material_data.mydramalist_rating
-                    ? data.material_data.mydramalist_rating
-                    : 5.6}
-                </h4>
-              </div>
-              <img
-                className="card__image"
-                src={
-                  data.material_data.poster_url
-                    ? data.material_data.poster_url
-                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
-                }
-                alt="card image"
-              />
+      {isLoad ? (
+        <>
+          {isItemBo ? (
+            <div className="Card">
+              <NavLink
+                to="video"
+                onClick={() => localStorage.setItem("dataLink", data.link)}
+              >
+                <div className="card__img">
+                  <div className="card__reting">
+                    <Svg />
+                    <h4>
+                      {data.material_data.mydramalist_rating
+                        ? data.material_data.mydramalist_rating
+                        : 5.6}
+                    </h4>
+                  </div>
+                  <img
+                    className="card__image"
+                    src={
+                      data.material_data.poster_url
+                        ? data.material_data.poster_url
+                        : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
+                    }
+                    alt="card image"
+                  />
+                </div>
+                <div className="card__content">
+                  <h1 className="card__title">{data.title}</h1>
+                  <p>{data.sort}</p>
+                </div>
+              </NavLink>
             </div>
-            <div className="card__content">
-              <h1 className="card__title">{data.title}</h1>
-              <p>{data.sort}</p>
+          ) : (
+            <div className="Card" style={{ display: "none" }}>
+              null
             </div>
-          </NavLink>
-        </div>
+          )}
+        </>
       ) : (
-        <div className="Card" style={{ display: "none" }}>
-          null
-        </div>
-      )}
+        <MyLoader />
+        )}
     </>
   );
 }
