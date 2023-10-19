@@ -27,6 +27,10 @@ function Home() {
         url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-movie&year=2000,2016,2017,2018,2019,2020,2021,2022,2023&kinopoisk_rating=6-10"
         title="Фильмы"
       />
+      <Sliders
+        url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=5&lgbt=false&year=2019,2020&kinopoisk_rating=8-10"
+        title="Test"
+      />
     </div>
   );
 }

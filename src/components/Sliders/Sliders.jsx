@@ -34,7 +34,7 @@ function Sliders({ url, title }) {
   }, []);
   
   // console.log(isLoad);
-  // console.log(dataAnime);
+  console.log(dataAnime);
   // console.log(dataLength);
 
   const settings = {
