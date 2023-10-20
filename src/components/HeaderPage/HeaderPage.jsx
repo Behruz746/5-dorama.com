@@ -8,6 +8,8 @@ function HeaderPage({image, containerBlur}) {
   return (
     <section className="Home__HaderPage w-full">
       <div className={`container ${containerBlur}`}>
+        <h1>Salom Suhrob aka</h1>
+        <br />
         <NavLink to="*">
           <div className="HaderPage__image">
             <div className="image">
