@@ -40,7 +40,7 @@ function Sliders({ url, title }) {
   const settings = {
     className: "slider variable-width",
     dots: false,
-    infinite: true,
+    infinite: false,
     centerMode: false,
     speed: 1300,
     slidesToShow: 4,

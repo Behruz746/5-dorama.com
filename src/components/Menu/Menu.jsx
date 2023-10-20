@@ -124,11 +124,13 @@ function Menu() {
                 }}
               >
                 <img
-                  className="toggle__arrow"
+                  className={
+                    !isArrorToggle00 ? "toggle__arrow" : "toggle__arrow--actve"
+                  }
                   src="./images/svg/arrow-down__icon.svg"
                   alt="toggle icon"
                 />
-              </div> 
+              </div>
             </div>
             <ListDrop />
             <div
@@ -159,7 +161,9 @@ function Menu() {
                 }}
               >
                 <img
-                  className="toggle__arrow"
+                  className={
+                    !isArrorToggle01 ? "toggle__arrow" : "toggle__arrow--actve"
+                  }
                   src="./images/svg/arrow-down__icon.svg"
                   alt="toggle icon"
                 />
@@ -168,7 +172,7 @@ function Menu() {
             <ListMovies />
           </div>
         </div>
-        
+
         <div
           className={isToggle ? "nav__line" : "nav__line nav__line--active"}
         ></div>

@@ -28,8 +28,8 @@ function Home() {
         title="Фильмы"
       />
       <Sliders
-        url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=5&lgbt=false&year=2019,2020&kinopoisk_rating=8-10"
-        title="Test"
+        url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=50&lgbt=false&types=foreign-serial&year=2021,2022,2023&kinopoisk_rating=5-10"
+        title="Дорамы"
       />
     </div>
   );

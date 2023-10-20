@@ -29,14 +29,17 @@
 .drop__list {
     width: 0;
     height: 0;
-    overflow: hidden;
-    transition: .5s ease-in-out !important;
+    // overflow: hidden;
+    transform: scale(0, 0);
+    transition: 5s ease-in-out;
 }
 
 .drop__list--active {
     width: 100%; 
     height: 100%;
-    transition: .5s ease-in-out !important;
+    transform: scale(1, 1);
+    transition: 5s ease-in-out;
+    padding: 10px;
 }
 
 .App__nav--active {
@@ -45,7 +48,7 @@
     overflow: hidden;
     transition: all .5s ease-in-out;
     align-items: flex-start;
-
+    
     .drop__item {
         display: none;
     }
@@ -123,7 +126,7 @@
         font-weight: 400;
         line-height: 22px;
         color: #768C9E;
-    }   
+    }    
 }
 
 .image__box {
@@ -138,6 +141,14 @@
 
     &:hover {
         background-color: #17212B;
+    }
+
+    .toggle__arrow {
+        transform: rotate(0deg);
+    }
+
+    .toggle__arrow--actve {
+        transform: rotate(180deg);
     }
 }
 
