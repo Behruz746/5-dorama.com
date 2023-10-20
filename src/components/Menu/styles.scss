@@ -12,7 +12,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-}
+} 
 
 .drop__item {
     padding: 10px;
@@ -115,7 +115,6 @@
     display: flex;
     border-radius: 10px;
     transition: 0.140s linear;
-
    
     h3 {
         display: block;
@@ -131,6 +130,11 @@
     padding: 10px;
     border-radius: 0 10px 10px 0;
     transition: 0.140s linear;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
 
     &:hover {
         background-color: #17212B;
@@ -154,7 +158,7 @@
 
 .list__link {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border-radius: 10px;
     transition: 0.140s linear;
 
@@ -188,6 +192,20 @@
         &:hover {
             background-color: #17212B;
         }
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        h3 {
+            display: block;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+            color: #768C9E;
+        }   
     }
 }
 

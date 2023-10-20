@@ -40,7 +40,7 @@ function Sliders({ url, title }) {
   const settings = {
     className: "slider variable-width",
     dots: false,
-    infinite: false,
+    infinite: true,
     centerMode: false,
     speed: 1300,
     slidesToShow: 4,
@@ -91,7 +91,7 @@ function Sliders({ url, title }) {
     slickPrev.forEach((item) => {
       item.style.setProperty(
         "--background",
-        "url('./images/svg/card-arrow__icon00.svg')"
+        "./images/svg/card-arrow__icon00.svg"
       );
       item.style.setProperty("--rotate", "0deg");
     });
@@ -102,7 +102,7 @@ function Sliders({ url, title }) {
           if (index === id) {
             i.style.setProperty(
               "--background",
-              "url('./images/svg/card-arrow__icon01.svg')"
+              "./images/svg/card-arrow__icon01.svg"
             );
             i.style.setProperty("--rotate", "180deg");
           }

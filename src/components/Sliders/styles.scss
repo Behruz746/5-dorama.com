@@ -93,7 +93,7 @@
         transform: rotate(var(--rotate));
         
         &::before {
-            content: var(--background);
+            content: url('var(--background)');
         }       
     }
 

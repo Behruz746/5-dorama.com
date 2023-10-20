@@ -70,7 +70,7 @@ function Menu() {
                     isToggle ? "list__box" : "list__box list__box--active"
                   }
                 >
-                  <img src="./images/svg/home__icon.svg" alt="item icon" />
+                  <img src="./images/svg/home__icon02.svg" alt="item icon" />
                   <h3>Главная</h3>
                 </div>
               </NavLink>
@@ -90,7 +90,7 @@ function Menu() {
                     isToggle ? "list__box" : "list__box list__box--active"
                   }
                 >
-                  <img src="./images/svg/shortes__icon.svg" alt="item icon" />
+                  <img src="./images/svg/shortes__icon02.svg" alt="item icon" />
                   <h3>Трейлер</h3>
                 </div>
               </NavLink>
@@ -111,7 +111,7 @@ function Menu() {
                     isToggle ? "list__box" : "list__box list__box--active"
                   }
                 >
-                  <img src="/images/svg/treler__icon.svg" alt="item icon" />
+                  <img src="/images/svg/treler__icon02.svg" alt="item icon" />
                   <h3>Дорамы</h3>
                 </div>
               </NavLink>
@@ -128,7 +128,7 @@ function Menu() {
                   src="./images/svg/arrow-down__icon.svg"
                   alt="toggle icon"
                 />
-              </div>
+              </div> 
             </div>
             <ListDrop />
             <div
@@ -147,7 +147,7 @@ function Menu() {
                     isToggle ? "list__box" : "list__box list__box--active"
                   }
                 >
-                  <img src="./images/svg/filems__icon.svg" alt="item icon" />
+                  <img src="./images/svg/filems__icon02.svg" alt="item icon" />
                   <h3>Фильмы</h3>
                 </div>
               </NavLink>
@@ -179,7 +179,7 @@ function Menu() {
               : "famous__filems famous__filems--active"
           }
         >
-          {famousData.map(({ text, link }) => (
+          {famousData.map(({ text, link, icon }) => (
             <NavLink
               to={link}
               className={
@@ -188,7 +188,7 @@ function Menu() {
               key={uuidv4()}
               onClick={() => setIsToggle(true)}
             >
-              <img src="./images/svg/play__icon.svg" alt="item icon" />
+              <img src={icon} alt="item icon" />
               <h3>{text}</h3>
             </NavLink>
           ))}
