@@ -91,7 +91,7 @@ function Sliders({ url, title }) {
     slickPrev.forEach((item) => {
       item.style.setProperty(
         "--background",
-        "./images/svg/card-arrow__icon00.svg"
+        "url('../../../public/images/svg/card-arrow__icon00.svg')"
       );
       item.style.setProperty("--rotate", "0deg");
     });
@@ -102,7 +102,7 @@ function Sliders({ url, title }) {
           if (index === id) {
             i.style.setProperty(
               "--background",
-              "./images/svg/card-arrow__icon01.svg"
+              "url('../../../public/images/svg/card-arrow__icon01.svg')"
             );
             i.style.setProperty("--rotate", "180deg");
           }
