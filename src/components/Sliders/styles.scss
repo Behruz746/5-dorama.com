@@ -88,10 +88,10 @@
     .slick-prev {
         position: absolute;
         right: 45px;
-        transform: rotate(var(--rotate));
+        transform: rotate(180deg);
         
         &::before {
-            content:  var(--background);
+            content:   url('../../../public/images/svg/card-arrow__icon01.svg');
         }       
     }
 
