@@ -106,11 +106,17 @@
 .list__box {
     display: flex;
     align-items: center;
-    max-width: 24px + 61px;
+    max-width: 48px + 61px;
     width: 100%;
     justify-content: space-between;
     gap: 24px;
     transition: all .5s ease-in-out;
+
+    .icons {
+        color: green !important;
+    }
+
+   
 }
 
 .list__item {
