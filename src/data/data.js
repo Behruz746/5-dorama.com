@@ -58,7 +58,7 @@ export const famousData = [
   {
     text: "Поддержать проект",
     icon: "./images/svg/thunder__icon.svg",
-    link: "*",
+    link: "https://www.buymeacoffee.com/5dorama",
   },
   {
     text: "Связаться с нами",
