@@ -235,7 +235,7 @@ function Menu() {
               : "famous__filems famous__filems--active"
           }
         >
-          {famousData.map(({ text, link, icon, target }) => (
+          {famousData.map(({ text, link, icon, target, color }) => (
             <NavLink
               target={target ? "_blank" : ""}
               to={link}
@@ -247,7 +247,7 @@ function Menu() {
             >
               {icon ? <img src={icon} alt="item icon" /> : <Svg01 />}
 
-              <h3>{text}</h3>
+              <h3 style={{color: `${color}`}}>{text}</h3>
             </NavLink>
           ))}
         </div>
