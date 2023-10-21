@@ -10,8 +10,6 @@ import { useContext } from "react";
 import AppContext from "../AppContext";
 
 function Home() {
-  const { dataList } = useContext(AppContext);
-
   return (
     <div className="App__home w-full page">
       <HeaderPage image="./images/png/backound__img01.png" />

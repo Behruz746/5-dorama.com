@@ -125,7 +125,7 @@ function Sliders({ url, title }) {
             <Slider {...settings}>
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
-              ))}
+              ))} 
             </Slider>
           </div>
         </div>

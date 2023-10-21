@@ -35,10 +35,20 @@ function App() {
   const [dataList, setDataList] = useState([]);
   const [dataLength, setDataLength] = useState(0);
   const [isArrorToggle, setIsArrowToggle] = useState(false);
+  const [modalSec, setModalSec] = useState(false);
 
   function ToggleHandel() {
     setIsArrowToggle(!isArrorToggle);
   }
+
+  useEffect(()=> {
+    const time = 10000 * (6 * 5);
+  
+    setTimeout(()=> {
+      setModalSec(true);
+    }, time);
+
+  }, []);
 
   const routes = createBrowserRouter(
     createRoutesFromElements(
@@ -71,6 +81,8 @@ function App() {
         isArrorToggle,
         setIsArrowToggle,
         ToggleHandel,
+        modalSec,
+        setModalSec
       }}
     >
       <div className="App">

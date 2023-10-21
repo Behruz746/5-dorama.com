@@ -18,6 +18,7 @@
     .title {
         color: #fff;
         transition: .2s linear;
+        font-size: 24px;
     }
 
     svg {
@@ -47,8 +48,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    // border: 1px solid #d00;
+    gap: 14px;
     position: relative;
 }
 
@@ -96,7 +96,7 @@
     }
 
     .slick-next {
-        position: absolute;
+        position: absolute; 
         right: 0;
 
         &::before {

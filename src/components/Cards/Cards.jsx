@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 import "./styles.scss";
 
@@ -12,7 +12,7 @@ import React from "react";
 import ContentLoader from "react-content-loader";
 
 const MyLoader = (props) => {
-  const arr = [1,2];
+  const arr = [1, 2];
   return (
     <>
       {arr.map(() => {
@@ -81,6 +81,11 @@ function Cards(data) {
                 onClick={() => localStorage.setItem("dataLink", data.link)}
               >
                 <div className="card__img">
+                  <img
+                    className="card__logo"
+                    src="./images/svg/web-Logo.svg"
+                    alt="logo"
+                  />
                   <div className="card__reting">
                     <Svg />
                     <h4>
@@ -113,7 +118,7 @@ function Cards(data) {
         </>
       ) : (
         <MyLoader />
-        )}
+      )}
     </>
   );
 }

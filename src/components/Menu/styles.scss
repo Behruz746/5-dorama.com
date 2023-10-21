@@ -208,6 +208,20 @@
 
         &:hover {
             background-color: #17212B;
+
+            #Union {
+                stroke-width: 3 !important;
+            }
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;  
+        }
+
+        #Union {
+            stroke-width: 1.5 !important;
+            transition: .2s linear;
         }
 
         img {
