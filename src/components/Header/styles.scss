@@ -1,6 +1,6 @@
 .App__header {
     width: 100%;
-    padding: 20px 8px;
+    padding: 20px 10px;
     background-color: #0E1621;
 }
 
@@ -13,7 +13,7 @@
 .header__menu-toggle {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     max-width: 249px;
     width: 100%;
 }
@@ -75,7 +75,7 @@
         line-height: 22px;
 
         &::placeholder {
-            color: #768C9E;
+            color: #768C9E; 
         }
     }
 

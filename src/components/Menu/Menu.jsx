@@ -127,10 +127,7 @@ function Menu() {
                     isToggle ? "list__box" : "list__box list__box--active"
                   }
                 >
-                  {/* <img src="./images/svg/shortes__icon02.svg" alt="item icon" /> */}
-                  {/* <Icon28ClipOutline width={24} height={24} /> */}
                   <Svg width={24} height={24} />
-
                   <h3>Трейлер</h3>
                 </div>
               </NavLink>
