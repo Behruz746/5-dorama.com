@@ -11,7 +11,7 @@
 .menu__container {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 } 
 
 .drop__item {
@@ -185,6 +185,10 @@
     &.active {
         background-color: #17212B;
         transition: 0.140s linear;
+        
+        h3 {
+            color: #fff;
+        }
     }
 
     img {
