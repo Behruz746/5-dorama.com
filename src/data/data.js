@@ -59,7 +59,7 @@ export const famousData = [
     text: "Поддержать проект",
     icon: "",
     link: "https://www.buymeacoffee.com/5dorama",
-    target: "",
+    target: "true",
     color: "#FFBA33FF",
   },
   {
