@@ -1,3 +1,62 @@
+.HeaderSlider {
+    width: 100%;
+
+    .slider {
+        position: relative !important;
+        overflow: hidden;
+
+        &:hover {
+            .slick-next {
+                transform: translateY(-50%) scale(1, 1) !important;
+                right: 16px;
+            }
+
+            .slick-prev {
+                transform: translateY(-50%) rotate(180deg) !important;
+                left: 16px !important
+            }
+        }
+
+        .slick-arrow {
+          background-color: #7d7b7b87;
+          transition: .2s ease-in-out;
+
+          &:hover {
+            background-color: #2b2a2a63;
+          }
+        }
+
+        .slick-prev {
+            position: absolute !important;
+            top: 50%;
+            left: -50px !important;
+            transform: translateY(-50%) rotate(180deg) scale(0, 0)  !important;
+            z-index: 5;
+            
+            &::before {
+                content: url('../../../public/images/svg/card-arrow__icon01.svg');
+            }       
+        }
+    
+        .slick-next {
+            position: absolute; 
+            top: 50%;
+            right: -25px;
+            transform: translateY(-50%) scale(0, 0);
+            
+            &::before {
+                content: url('../../../public/images/svg/card-arrow__icon01.svg');
+            }
+        }
+
+        .slick-list {
+            .slick-track {
+                gap: 2px;
+            }
+        }
+    }
+}
+
 .slider__card {
     max-width: 1440px;
     width: 100%;
@@ -11,47 +70,10 @@
         }
     }   
  }
-
+ 
  .slider__card-img {
     max-width: 1440px;
     width: 100%;
     border-radius: 10px;
     transition: .2s linear;
- }
-
- .HeaderSlider {
-    width: 100%;
-
-    .slider {
-        position: relative !important;
-        overflow: auto;
-        // border: 1px solid #d00;
-
-        .slick-arrow {
-          background-color: #ffffff63;
-        }
-
-        .slick-prev {
-            position: absolute !important;
-            top: 50%;
-            left: 16px !important;
-            transform: translateY(-50%) rotate(180deg);
-            z-index: 5;
-            
-            &::before {
-                content: url('../../../public/images/svg/card-arrow__icon01.svg');
-            }       
-        }
-    
-        .slick-next {
-            position: absolute; 
-            top: 50%;
-            right: 16px + 9px;
-            transform: translateY(-50%);
-            
-            &::before {
-                content: url('../../../public/images/svg/card-arrow__icon01.svg');
-            }
-        }
-    }
  }
