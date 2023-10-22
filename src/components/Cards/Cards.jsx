@@ -6,7 +6,7 @@ import "./styles.scss";
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../../AppContext";
 
-import { testCard } from "../../data/data";
+// import { testCard } from "../../data/data";
 
 import React from "react";
 import ContentLoader from "react-content-loader";

@@ -41,13 +41,13 @@ function App() {
     setIsArrowToggle(!isArrorToggle);
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     const time = 10000 * (6 * 5);
-  
-    setTimeout(()=> {
-      setModalSec(true);
-    }, time);
 
+    setTimeout(() => {
+      setModalSec(true);
+      document.querySelector("body").style.overflow = "hidden";
+    }, time);
   }, []);
 
   const routes = createBrowserRouter(
@@ -82,7 +82,7 @@ function App() {
         setIsArrowToggle,
         ToggleHandel,
         modalSec,
-        setModalSec
+        setModalSec,
       }}
     >
       <div className="App">

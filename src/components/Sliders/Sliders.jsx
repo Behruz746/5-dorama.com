@@ -3,12 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-
+ 
 // Compoenets
 import Cards from "../Cards/Cards";
 import AppContext from "../../AppContext";
-
-import { testCard } from "../../data/data";
 
 import "./styles.scss";
 
@@ -42,7 +40,7 @@ function Sliders({ url, title }) {
     dots: false,
     infinite: false,
     centerMode: false,
-    speed: 1300,
+    speed: 700,
     slidesToShow: 4,
     slidesToScroll: 4,
     pauseOnHover: true,
@@ -52,7 +50,7 @@ function Sliders({ url, title }) {
     // autoplaySpeed: 10000,
     responsive: [
       {
-        breakpoint: 1008,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -83,33 +81,6 @@ function Sliders({ url, title }) {
       </defs>
     </svg>
   );
-
-  // useEffect(() => {
-  //   const slickNext = document.querySelectorAll(".slick-next");
-  //   const slickPrev = document.querySelectorAll(".slick-prev");
-
-  //   slickPrev.forEach((item) => {
-  //     item.style.setProperty(
-  //       "--background",
-  //       "url('../../../public/images/svg/card-arrow__icon00.svg')"
-  //     );
-  //     item.style.setProperty("--rotate", "0deg");
-  //   });
-
-  //   slickNext.forEach((item, index) => {
-  //     item.addEventListener("click", () => {
-  //       slickPrev.forEach((i, id) => {
-  //         if (index === id) {
-  //           i.style.setProperty(
-  //             "--background",
-  //             "url('../../../public/images/svg/card-arrow__icon01.svg')"
-  //           );
-  //           i.style.setProperty("--rotate", "180deg");
-  //         }
-  //       });
-  //     });
-  //   });
-  // }, [dataAnime]);
 
   return (
     <section className="Home__Sliders w-full">

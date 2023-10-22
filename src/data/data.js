@@ -69,87 +69,21 @@ export const famousData = [
   },
 ];
 
-export const testCard = [
+export const dataSlider = [
   {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Kино",
-    link: "video",
-    videoLink:
-      "//kodik.info/seria/1218116/08751c963d0ca923a7321f47d954b64b/720p",
+    image: "./images/png/backound__img02.png",
+    link: "/",
   },
   {
-    rating: "5.5",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
+    image: "./images/png/backound__img03.png",
+    link: "/",
   },
   {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Name is none",
-    sort: "Kино",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
+    image: "./images/png/backound__img04.png",
+    link: "/",
   },
   {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
+    image: "./images/png/backound__img05.png",
+    link: "/",
   },
-  {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
-  },
-  {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
-  },
-  {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
-  },
-  {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
-  },
-  {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink: "//kodik.cc/find-player",
-  },
-  {
-    rating: "4.6",
-    image: "/images/png/filem__img-00.png",
-    name: "Худшее из зол",
-    sort: "Сериал",
-    link: "video",
-    videoLink:
-      "//kodik.info/seria/1218116/08751c963d0ca923a7321f47d954b64b/720p",
-  },
-];
+]
