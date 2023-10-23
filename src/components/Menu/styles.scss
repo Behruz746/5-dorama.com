@@ -12,6 +12,7 @@
     width: 100%;
     display: flex;
     flex-direction: column; 
+    gap: 2px;
 } 
 
 .drop__item {
@@ -20,7 +21,7 @@
     color: #768C9E !important; 
     transition: 0.140s linear;
     border-radius: 10px;
-    
+     
     &:hover {
         background-color: #17212B;
     }
@@ -207,6 +208,11 @@
 }   
 
 .famous__filems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px !important;
+    
     .list__item {
         display: flex;
         align-items: center;
@@ -251,3 +257,20 @@
 .famous__filems--active {
     display: none;
 }
+
+.svg-animation {
+    animation: svgAnimtion 1s cubic-bezier(0.9, 0.7, 0.5, 0.9) infinite;
+}
+
+@keyframes svgAnimtion {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    30% {
+      transform: scale(1.1) rotate(5deg);
+    }
+    60% {
+      transform: scale(0.9) rotate(-5deg);
+    }
+  }
+  

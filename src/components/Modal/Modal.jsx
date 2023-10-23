@@ -22,7 +22,7 @@ function Modal() {
           <img
             className="modal__icon"
             src="./images/svg/x__icon.svg"
-            alt="x icon"
+            alt="x icon" 
           />
         </button>
         <NavLink

@@ -42,7 +42,8 @@ function App() {
   }
 
   useEffect(() => {
-    const time = 10000 * (6 * 5);
+    // const time = 10000 * (6 * 5);
+    const time = 1000;
 
     setTimeout(() => {
       setModalSec(true);

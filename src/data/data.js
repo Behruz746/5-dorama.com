@@ -71,19 +71,19 @@ export const famousData = [
 
 export const dataSlider = [
   {
-    image: "./images/png/backound__img02.png",
+    image: "https://i.imgur.com/ZwC7BFW.png",
     link: "/",
   },
   {
-    image: "./images/png/backound__img03.png",
+    image: "https://i.imgur.com/ae0bfHc.png",
     link: "/",
   },
   {
-    image: "./images/png/backound__img04.png",
+    image: "https://i.imgur.com/ddqKEH0.png",
     link: "/",
   },
   {
-    image: "./images/png/backound__img05.png",
+    image: "https://i.imgur.com/UdwKJgU.png",
     link: "/",
   },
 ]

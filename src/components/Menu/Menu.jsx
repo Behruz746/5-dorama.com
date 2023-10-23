@@ -10,7 +10,7 @@ import { dataNav, famousData, dropData } from "../../data/data";
 import AppContext from "../../AppContext";
 import "./styles.scss";
 
-function Menu() {
+function Menu() { 
   const { isToggle, setIsToggle } = useContext(AppContext);
 
   const [isArrorToggle00, setIsArrowToggle00] = useState(false);
@@ -48,9 +48,10 @@ function Menu() {
       />
     </svg>
   );
-
+ 
   const Svg01 = () => (
     <svg
+      className="svg-animation"
       width="16"
       height="22"
       viewBox="0 0 16 22"
