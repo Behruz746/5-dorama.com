@@ -2,11 +2,12 @@ import { NavLink } from "react-router-dom";
 import { useContext, useRef } from "react";
 
 import "./styles.scss";
-
 import AppContext from "../../AppContext";
+import Search from "../Search/Search";
 
 function Header() {
-  const { isToggle, setIsToggle } = useContext(AppContext);
+  const { isToggle, setIsToggle, searchvalue, setIsUrl, setToggleSeach } =
+    useContext(AppContext);
   const inputVal = useRef();
 
   const Svg = () => (
@@ -53,12 +54,22 @@ function Header() {
         <div className="header__search sf-pro-display">
           <div className="search__input">
             <input
-              ref={inputVal}
               type="text"
               placeholder="Введите название дорамы или фильмы"
+              ref={searchvalue}
+              onChange={() => {
+                console.log(searchvalue.current.value);
+                setIsUrl(
+                  `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${searchvalue.current.value}&with_material_data=true`
+                );
+                setToggleSeach(true);
+
+                !searchvalue.current.value ? setToggleSeach(false) : setToggleSeach(true);
+              }}
             />
             <img src="./images/svg/search__icon.svg" alt="search icon" />
           </div>
+          <Search />
         </div>
       </div>
     </header>

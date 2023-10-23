@@ -1,0 +1,32 @@
+.Search {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 628px;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: -1000px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+    overflow: auto;
+
+    .card {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+    }   
+}
+
+.Search--active {
+    top: 78px;
+    background:  #17212B;
+    transition: all .3s ease;
+    // transform: translateX(-50%) scale(1);
+}
+

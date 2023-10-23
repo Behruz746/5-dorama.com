@@ -8,7 +8,7 @@ import {
 import "./sass/default.scss";
 
 // Hooks
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Axios
 import axios from "axios";
@@ -36,6 +36,27 @@ function App() {
   const [dataLength, setDataLength] = useState(0);
   const [isArrorToggle, setIsArrowToggle] = useState(false);
   const [modalSec, setModalSec] = useState(false);
+  const searchvalue = useRef();
+  const [isSearchData, setIsDataSearch] = useState([]);
+  const [isUrl, setIsUrl] = useState("none");
+  const [toggleSeach, setToggleSeach] = useState(false);
+
+  useEffect(() => {
+    const featchData = async () => {
+      try {
+        const data = await axios.get(isUrl);
+        setIsDataSearch(data.data.results);
+      } catch (error) {
+        console.log("Error: 404;", error);
+      }
+    };
+
+    featchData();
+  }, [isUrl]);
+
+  console.log(isUrl);
+
+  console.log(isSearchData);
 
   function ToggleHandel() {
     setIsArrowToggle(!isArrorToggle);
@@ -83,6 +104,11 @@ function App() {
         ToggleHandel,
         modalSec,
         setModalSec,
+        searchvalue,
+        setIsUrl,
+        isSearchData,
+        setToggleSeach,
+        toggleSeach
       }}
     >
       <div className="App">
