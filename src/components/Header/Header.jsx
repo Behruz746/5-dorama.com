@@ -76,7 +76,7 @@ function Header() {
                 <img src="./images/svg/web__logo.svg" alt="logo" />
               </NavLink>
             </div>
-          </div>
+          </div> 
 
           <div className="header__search sf-pro-display">
             <div className="search__input">
