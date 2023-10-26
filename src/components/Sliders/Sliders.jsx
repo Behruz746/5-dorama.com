@@ -30,10 +30,6 @@ function Sliders({ url, title }) {
     
     fetctAnime();
   }, []);
-  
-  // console.log(isLoad);
-  // console.log(dataAnime);
-  // console.log(dataLength);
 
   const settings = {
     className: "slider variable-width",

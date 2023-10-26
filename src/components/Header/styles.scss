@@ -1,9 +1,18 @@
 .App__header {
     width: 100%;
-    padding: 20px 10px;
-    background-color: #0E1621;
+    height: 88px;
 }
 
+.header__box {
+    padding: 20px 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    background-color: #0E1621;
+}
+ 
 .header__container {
     display: flex;
     gap: 0px; 
@@ -25,6 +34,7 @@
     outline: 0;
     background-color: transparent;
     cursor: pointer;
+    z-index: 100;
 
     svg {
         width: 24px;
@@ -39,6 +49,38 @@
     img {
         width: auto;
         height: auto;
+    }
+}
+
+.btn__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: .1s ease;
+    
+    &:hover {
+        transition: .1s ease;
+        background-color: #0E1621;
+
+        path {
+            fill: #fff;
+        }
+    }
+    
+    svg {
+        width: 24px;
+        height: 24px;
+
+        path {
+            transition: .1s ease;
+        }
     }
 }
 
@@ -78,10 +120,5 @@
         &::placeholder {
             color: #768C9E; 
         }
-    }
-
-    img {
-        width: 24px;
-        height: 24px;
     }
 }

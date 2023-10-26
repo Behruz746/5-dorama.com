@@ -36,27 +36,44 @@ function App() {
   const [dataLength, setDataLength] = useState(0);
   const [isArrorToggle, setIsArrowToggle] = useState(false);
   const [modalSec, setModalSec] = useState(false);
-  const searchvalue = useRef();
+  const searchvalue = useRef("");
   const [isSearchData, setIsDataSearch] = useState([]);
-  const [isUrl, setIsUrl] = useState("none");
   const [toggleSeach, setToggleSeach] = useState(false);
+  const [loadSearch, setLoadShearch] = useState(true);
+  const [isUrl, setIsUrl] = useState(
+    "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
+  );
+
+  useEffect(() => {
+    const inputEl = document.querySelector("#inputEl");
+
+    inputEl.addEventListener("change", (e) => {
+      setIsUrl(
+        `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
+      );
+      e.target.value ? setToggleSeach(true) : setToggleSeach(false);
+      setLoadShearch(false);
+    });
+  }, []);
 
   useEffect(() => {
     const featchData = async () => {
       try {
+        setLoadShearch(false);
         const data = await axios.get(isUrl);
         setIsDataSearch(data.data.results);
+        setLoadShearch(true);
       } catch (error) {
         console.log("Error: 404;", error);
       }
     };
-
     featchData();
+    // setLoadShearch(true);
   }, [isUrl]);
 
-  console.log(isUrl);
-
+  console.log(loadSearch);
   console.log(isSearchData);
+  console.log(isUrl);
 
   function ToggleHandel() {
     setIsArrowToggle(!isArrorToggle);
@@ -108,7 +125,8 @@ function App() {
         setIsUrl,
         isSearchData,
         setToggleSeach,
-        toggleSeach
+        toggleSeach,
+        loadSearch,
       }}
     >
       <div className="App">
