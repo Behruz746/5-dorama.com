@@ -15,10 +15,10 @@ function RootLeyout() {
     <>
       <Header />
       <main>
-        {/* {modalSec && <Modal />}
+        {modalSec && <Modal />}
         <Menu />
-        <Analytics /> */}
         <Outlet />
+        <Analytics />
       </main>
     </>
   );
