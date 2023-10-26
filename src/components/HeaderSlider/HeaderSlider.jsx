@@ -15,7 +15,7 @@ function HeaderSlider({pNone}) {
     slidesToScroll: 1,
     pauseOnHover: true,
     variableWidth: false,
-    // adaptiveHeight: true,
+    // adaptiveHeight: true, 
     arrows: true,
   };
 
