@@ -13,7 +13,7 @@ function Search() {
       width={344}
       height={70}
       viewBox="0 0 344 70"
-      backgroundColor="#f5efef"
+      backgroundColor="#768c9ea1"
       foregroundColor="#e0e0e0"
       {...props}
     >
