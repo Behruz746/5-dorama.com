@@ -33,7 +33,6 @@ time, mark, audio, video {
 
 html, body {
   scroll-behavior: smooth;
-
   
   &::-webkit-scrollbar {
     max-width: 10px; 
@@ -56,6 +55,7 @@ html, body {
 
 body {
   font-family: SF Pro Display, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #0E1621;
   color: #768C9E;
 }

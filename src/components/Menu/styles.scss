@@ -11,7 +11,7 @@
     width: 100%;
     display: flex;
     flex-direction: column; 
-    gap: 2px;
+    gap: 2px; 
 } 
 
 .drop__item {
@@ -185,25 +185,6 @@
     &:hover {
         background-color: #17212B;
         transition: 0.140s linear;
-       
-        h3 {
-            color: #fff;
-        }
-
-        path {
-            stroke: #fff;
-        }
-
-        rect {
-            stroke: #fff;
-        }
-
-        .svg__treler {
-            path {
-                fill: #fff;
-                stroke: transparent;
-            }
-        }
     }
 
     &.active {

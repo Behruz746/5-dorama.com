@@ -1,0 +1,31 @@
+@media screen and (max-width: 1024px) {
+    .nav__list {
+        max-width: 200px;
+    }
+
+    main {
+        gap: 20px;
+    }
+
+    .App__home {
+        .container {
+            padding: 0 10px 0 0px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .App__nav, .header__btn {
+        display: none;
+    }
+
+    main {
+        gap: 20px;
+    }
+
+    .App__home {
+        .container {
+            padding: 0 10px !important;
+        }
+    }
+}

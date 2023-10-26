@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
- 
+
 // Compoenets
 import Cards from "../Cards/Cards";
 import AppContext from "../../AppContext";
@@ -27,7 +27,7 @@ function Sliders({ url, title }) {
         console.log(error);
       }
     };
-    
+
     fetctAnime();
   }, []);
 
@@ -43,15 +43,33 @@ function Sliders({ url, title }) {
     variableWidth: true,
     arrows: true,
     // autoplay: true,
-    // autoplaySpeed: 10000,
+    // autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 1000,
+        breakpoint: 1245,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
+          speed: 600,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
       },
+      {
+        breakpoint: 1039,
+        settings: {
+          speed: 500,
+          slidesToShow: 2,
+          slidesToScroll: 2, 
+          initialSlide: 2,
+        }
+      },
+      {
+        breakpoint: 615,
+        settings: {
+          speed: 400,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
     ],
   };
 
@@ -92,7 +110,7 @@ function Sliders({ url, title }) {
             <Slider {...settings}>
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
-              ))} 
+              ))}
             </Slider>
           </div>
         </div>

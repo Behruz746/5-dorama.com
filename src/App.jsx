@@ -68,8 +68,23 @@ function App() {
       }
     };
     featchData();
-    // setLoadShearch(true);
   }, [isUrl]);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.screen.width <= 850) {
+        setIsToggle(false);
+      } else {
+        setIsToggle(true);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   console.log(loadSearch);
   console.log(isSearchData);
@@ -137,3 +152,5 @@ function App() {
 }
 
 export default App;
+
+import "./sass/mobile.scss";
