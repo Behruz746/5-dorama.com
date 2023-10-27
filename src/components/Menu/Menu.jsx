@@ -7,7 +7,7 @@ import { dataNav, famousData, dropData } from "../../data/data";
 
 // SvgEl
 import { SvgEl, SvgDorama, SvgTreler, SvgMoveis, SvgThunder, SvgDocument } from "../SvgEl/SvgEl";
-
+ 
 // AppContext
 import AppContext from "../../AppContext";
 import "./styles.scss";

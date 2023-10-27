@@ -7,6 +7,7 @@ import Header from "../components/Header/Header";
 import Menu from "../components/Menu/Menu";
 import Modal from "../components/Modal/Modal";
 import AppContext from "../AppContext";
+import MenuMobile from "../components/MenuMobile/MenuMobile";
 
 function RootLeyout() {
   const { modalSec } = useContext(AppContext);
@@ -20,6 +21,7 @@ function RootLeyout() {
         <Outlet />
         <Analytics />
       </main>
+      <MenuMobile />
     </>
   );
 }

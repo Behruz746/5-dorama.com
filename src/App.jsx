@@ -53,7 +53,7 @@ function App() {
       );
       e.target.value ? setToggleSeach(true) : setToggleSeach(false);
       setLoadShearch(false);
-    });
+    }); 
   }, []);
 
   useEffect(() => {
