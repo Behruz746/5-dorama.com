@@ -24,6 +24,30 @@
         justify-content: center;
         padding: 12px;
         color: #768C9E;
+
+        &.active {
+            background-color: #17212B;
+            transition: 0.140s linear;
+            
+            h3 {
+                color: #fff;
+            }
+    
+            path {
+                stroke: #fff;
+            }
+    
+            rect {
+                stroke: #fff;
+            }
+    
+            .svg__treler {
+                path {
+                    fill: #fff;
+                    stroke: transparent;
+                }
+            }
+        }
     }
 
     h3 {

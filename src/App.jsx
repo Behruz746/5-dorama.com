@@ -30,7 +30,7 @@ import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
-  const [isLoad, setIsLoad] = useState(true);
+  const [isLoad, setIsLoad] = useState(true); 
   const [isVideoLink, setIsVideoLink] = useState("");
   const [dataList, setDataList] = useState([]);
   const [dataLength, setDataLength] = useState(0);

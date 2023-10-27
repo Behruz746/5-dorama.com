@@ -5,6 +5,7 @@
     background-color: #0E1621;
     padding-left: 8px;
     transition: all .5s ease-in-out !important;
+    z-index: 5;
 }
 
 .menu__container {
@@ -12,6 +13,7 @@
     display: flex;
     flex-direction: column; 
     gap: 2px; 
+    background-color: #0E1621;
 } 
 
 .drop__item {
@@ -20,7 +22,6 @@
     color: #768C9E !important; 
     transition: 0.140s linear;
     border-radius: 10px;
-    
      
     &:hover {
         background-color: #17212B;
@@ -95,6 +96,7 @@
     position: relative;
     position: fixed; 
     transition: all .5s ease-in-out !important;
+    background-color: #0E1621;
     
     .nav__line {
         max-width: 200px;
@@ -241,6 +243,7 @@
 }   
 
 .famous__filems {
+    background-color: #0E1621;
     display: flex;
     flex-direction: column;
     align-items: center;

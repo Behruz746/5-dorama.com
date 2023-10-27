@@ -4,10 +4,14 @@ import { useContext, useEffect, useRef } from "react";
 import "./styles.scss";
 import AppContext from "../../AppContext";
 import Search from "../Search/Search";
+import OverBlock from "../OverBlock/OverBlock";
 
 function Header() {
-  const { isToggle, setIsToggle, searchvalue, setIsUrl, setToggleSeach, inputToggle } =
-    useContext(AppContext);
+  const {
+    isToggle,
+    setIsToggle,
+    inputToggle,
+  } = useContext(AppContext);
 
   const Svg = () => (
     <svg
@@ -61,6 +65,7 @@ function Header() {
   return (
     <header className="App__header">
       <div className="header__box">
+        {/* <OverBlock /> */}
         <div className="header__container">
           <div className="header__menu-toggle">
             <button
@@ -76,10 +81,14 @@ function Header() {
                 <img src="./images/svg/web__logo.svg" alt="logo" />
               </NavLink>
             </div>
-          </div> 
+          </div>
 
           <div className="header__search sf-pro-display">
-            <div className={inputToggle ? 'search__input--active' : "search__input"}> 
+            <div
+              className={
+                inputToggle ? "search__input--active" : "search__input"
+              }
+            >
               <input
                 id="inputEl"
                 type="text"
