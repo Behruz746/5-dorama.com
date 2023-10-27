@@ -4,10 +4,9 @@
     gap: 8px;
     max-width: 194px;
     width: 100%;
+    border-radius: 10px;
     position: relative;
     cursor: pointer;
-    overflow: hidden;
-    border-radius: 10px;
     
     &:hover {
         svg {
@@ -97,6 +96,11 @@
         line-height: 22px; 
         color: #fff;
         transition: .2s linear;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width:  450px;
+        width: 100%;
     }
 
     p {

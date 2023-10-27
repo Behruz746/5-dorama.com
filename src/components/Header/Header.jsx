@@ -6,7 +6,7 @@ import AppContext from "../../AppContext";
 import Search from "../Search/Search";
 
 function Header() {
-  const { isToggle, setIsToggle, searchvalue, setIsUrl, setToggleSeach } =
+  const { isToggle, setIsToggle, searchvalue, setIsUrl, setToggleSeach, inputToggle } =
     useContext(AppContext);
 
   const Svg = () => (
@@ -79,14 +79,13 @@ function Header() {
           </div> 
 
           <div className="header__search sf-pro-display">
-            <div className="search__input">
+            <div className={inputToggle ? 'search__input--active' : "search__input"}> 
               <input
                 id="inputEl"
                 type="text"
                 placeholder="Введите название дорамы или фильмы"
               />
               <button type="submit" className="btn__submit">
-                {/* <img src="./images/svg/search__icon.svg" alt="search icon" /> */}
                 <Svg01 />
               </button>
             </div>

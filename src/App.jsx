@@ -43,9 +43,12 @@ function App() {
   const [isUrl, setIsUrl] = useState(
     "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
   );
+  const [inputToggle, setInputToggle] = useState(false);
 
   useEffect(() => {
     const inputEl = document.querySelector("#inputEl");
+    const searchInput = document.querySelector(".search__input");
+    const btnSubmit = document.querySelector(".btn__submit");
 
     inputEl.addEventListener("change", (e) => {
       setIsUrl(
@@ -53,7 +56,17 @@ function App() {
       );
       e.target.value ? setToggleSeach(true) : setToggleSeach(false);
       setLoadShearch(false);
-    }); 
+
+      e.target.value ? setInputToggle(true) : setInputToggle(false);
+    });
+
+    btnSubmit.addEventListener("click", (e) => {
+      setInputToggle(true);
+    });
+
+    inputEl.addEventListener("click", (e) => {
+      setToggleSeach(true);
+    });
   }, []);
 
   useEffect(() => {
@@ -95,7 +108,8 @@ function App() {
   }
 
   useEffect(() => {
-    const time = 10000 * (6 * 5);
+    // const time = 10000 * (6 * 5);
+    const time = 10000 * (6 * 10000);
 
     setTimeout(() => {
       setModalSec(true);
@@ -142,6 +156,7 @@ function App() {
         setToggleSeach,
         toggleSeach,
         loadSearch,
+        inputToggle,
       }}
     >
       <div className="App">
