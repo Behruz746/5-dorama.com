@@ -7,8 +7,8 @@ function Modal() {
   const { setModalSec } = useContext(AppContext);
 
   const linkHandel = () => {
-    setModalSec(false);
-    document.querySelector("body").style.overflow = "auto";
+    setModalSec(false); 
+    // document.querySelector("body").style.overflow = "auto";
   };
 
   return (

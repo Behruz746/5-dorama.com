@@ -60,6 +60,10 @@ body {
   color: #768C9E;
 }
 
+.body--over {
+  overflow: hidden !important;
+}
+
 main {
   display: flex;
   gap: 40px;

@@ -1,16 +1,18 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect } from "react";
 
 import "./styles.scss";
 import AppContext from "../../AppContext";
 import Search from "../Search/Search";
-import OverBlock from "../OverBlock/OverBlock";
 
 function Header() {
   const {
     isToggle,
     setIsToggle,
     inputToggle,
+    setToggleSeach,
+    toggleSeach,
+    setIsUrl,
   } = useContext(AppContext);
 
   const Svg = () => (
@@ -62,47 +64,64 @@ function Header() {
     </svg>
   );
 
+  useEffect(() => {}, []);
+
+  function toggleOver() {
+    const inputVa = document.querySelector("#inputEl");
+
+    setToggleSeach(false);
+    setIsUrl(
+      "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
+    );
+    inputVa.value = "";
+  }
+
   return (
-    <header className="App__header">
-      <div className="header__box">
-        {/* <OverBlock /> */}
-        <div className="header__container">
-          <div className="header__menu-toggle">
-            <button
-              type="button"
-              className="header__btn"
-              onClick={() => setIsToggle(!isToggle)}
-            >
-              <Svg />
-            </button>
-
-            <div className="header__logo">
-              <NavLink to="/">
-                <img src="./images/svg/web__logo.svg" alt="logo" />
-              </NavLink>
-            </div>
-          </div>
-
-          <div className="header__search sf-pro-display">
-            <div
-              className={
-                inputToggle ? "search__input--active" : "search__input"
-              }
-            >
-              <input
-                id="inputEl"
-                type="text"
-                placeholder="Введите название дорамы или фильмы"
-              />
-              <button type="submit" className="btn__submit">
-                <Svg01 />
+    <>
+      <div
+        className={toggleSeach ? "over--active over" : "over"}
+        onClick={() => toggleOver()}
+      ></div>
+      <header className="App__header">
+        <div className="header__box">
+          <div className="header__container">
+            <div className="header__menu-toggle">
+              <button
+                type="button"
+                className="header__btn"
+                onClick={() => setIsToggle(!isToggle)}
+              >
+                <Svg />
               </button>
+
+              <div className="header__logo">
+                <NavLink to="/">
+                  <img src="./images/svg/web__logo.svg" alt="logo" />
+                </NavLink>
+              </div>
             </div>
-            <Search />
+
+            <div className="header__search sf-pro-display">
+              <div
+                className={
+                  inputToggle ? "search__input--active" : "search__input"
+                }
+              >
+                <input
+                  id="inputEl"
+                  type="text"
+                  placeholder="Введите название дорамы или фильмы"
+                />
+                <button type="submit" className="btn__submit">
+                  <Svg01 />
+                </button>
+              </div>
+              <Search />
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
 
