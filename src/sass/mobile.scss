@@ -59,6 +59,10 @@
             padding: 0 10px !important;
         }
     }
+
+    .modal__container {
+        top: 55%;
+    }
 }
 
 @media screen and (max-width: 640px) {
@@ -68,11 +72,15 @@
 
     .modal__btn {
         top: 20px;
-    }
+    } 
 
     .modal__image {
         max-width: 500px;
         background-size: contain;
+    }
+
+    .modal__container {
+        top: 60%;
     }
 }
 
@@ -140,6 +148,10 @@
     .modal__image {
         max-width: 300px;
     }
+
+    .modal__container {
+        top: 63%;
+    }
 }
 
 @media screen and (max-width: 370px) {
@@ -178,5 +190,9 @@
 
     .modal__image {
         max-width: 250px;
+    }
+
+    .modal__container {
+        top: 67%;
     }
 }

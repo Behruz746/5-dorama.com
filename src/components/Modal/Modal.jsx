@@ -4,7 +4,7 @@ import AppContext from "../../AppContext";
 import './styles.scss'
 
 function Modal() {
-  const { setModalSec } = useContext(AppContext);
+  const { setModalSec, modalSec } = useContext(AppContext);
 
   const linkHandel = () => {
     setModalSec(false); 
@@ -12,8 +12,10 @@ function Modal() {
   };
 
   return (
-    <div className="Modal">
-      <div className="modal__container">
+    <div className={modalSec ? "Modal" : "Modal--over"} onClick={()=> linkHandel()}>
+      <audio id="addSound" src="./audio/notifications-sound-127856.mp3"></audio>
+      <audio id="addSound01" src="./audio/notifications-sound-127856-01.mp3"></audio>
+      <div className={ modalSec ? "modal__container--active" : "modal__container"}>
         <button
           className="modal__btn"
           type="button"

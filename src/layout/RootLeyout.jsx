@@ -16,7 +16,7 @@ function RootLeyout() {
     <>
       <Header />
       <main>
-        {modalSec && <Modal />}
+        <Modal />
         <Menu />
         <Outlet />
         <Analytics />

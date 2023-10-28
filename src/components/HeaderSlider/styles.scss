@@ -13,7 +13,7 @@
 
             .slick-prev {
                 transform: translateY(-50%) rotate(180deg) !important;
-                left: 16px !important
+                left: 16px !important;
             }
         }
 
@@ -34,7 +34,7 @@
             z-index: 5;
             
             &::before {
-                content: url('../../../public/images/svg/card-arrow__icon01.svg');
+                content: url('../../../public/images/svg/card-arrow__icon02.svg');
             }       
         }
     
@@ -45,7 +45,7 @@
             transform: translateY(-50%) scale(0, 0);
             
             &::before {
-                content: url('../../../public/images/svg/card-arrow__icon01.svg');
+                content: url('../../../public/images/svg/card-arrow__icon02.svg');
             }
         }
 

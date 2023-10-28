@@ -86,4 +86,4 @@ export const dataSlider = [
     image: "https://i.imgur.com/UdwKJgU.png",
     link: "/",
   },
-]
+] 

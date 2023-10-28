@@ -27,6 +27,7 @@ import Filems from "./pages/Filems";
 import Actor from "./pages/Actor";
 import VideoPlayer from "./pages/VideoPlayer";
 import PageNotFound from "./pages/pageErrorFound/PageNotFound";
+import { dataSlider } from "./data/data";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
@@ -54,11 +55,11 @@ function App() {
         `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
       );
       setLoadShearch(false);
-      
+
       e.target.value ? setToggleSeach(true) : setToggleSeach(false);
       !e.target.value
-      ? (document.querySelector("body").style.overflow = "auto")
-      : (document.querySelector("body").style.overflow = "hidden");
+        ? (document.querySelector("body").style.overflow = "auto")
+        : (document.querySelector("body").style.overflow = "hidden");
       e.target.value ? setInputToggle(true) : setInputToggle(false);
     });
 
@@ -107,11 +108,18 @@ function App() {
   }
 
   useEffect(() => {
-    const time = 10000 * (6 * 5);
-    // const time = 1000;
+    const addSound = document.querySelector("#addSound");
+    const addSound01 = document.querySelector("#addSound01");
+    const time = 10000 * (6 * 10);
 
     setTimeout(() => {
       setModalSec(true);
+      addSound.play();
+      addSound.loop = false;
+      setTimeout(() => {
+        setModalSec(false);
+        addSound01.play();
+      }, 1000 * 20);
     }, time);
   }, []);
 
