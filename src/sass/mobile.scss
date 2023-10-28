@@ -75,6 +75,16 @@
     .Home__Sliders {
         margin-top: 23px;
     }
+
+    .Card {
+        width: 120px;
+        
+        .card__image {
+            width: 120px;
+            height: 180px;
+        }
+        
+    }
 }
 
 @media screen and (max-width: 370px) {

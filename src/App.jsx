@@ -47,27 +47,23 @@ function App() {
 
   useEffect(() => {
     const inputEl = document.querySelector("#inputEl");
-    const bodyOver = document.querySelector("#bodyOver");
     const btnSubmit = document.querySelector(".btn__submit");
 
     inputEl.addEventListener("change", (e) => {
       setIsUrl(
         `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
       );
-      // e.target.value ? setToggleSeach(true) : setToggleSeach(false);
       setLoadShearch(false);
-
+      
+      e.target.value ? setToggleSeach(true) : setToggleSeach(false);
+      !e.target.value
+      ? (document.querySelector("body").style.overflow = "auto")
+      : (document.querySelector("body").style.overflow = "hidden");
       e.target.value ? setInputToggle(true) : setInputToggle(false);
-      console.log(e.target.value);
     });
-    
+
     btnSubmit.addEventListener("click", () => {
       setInputToggle(true);
-    });
-
-    inputEl.addEventListener("click", () => {
-      setToggleSeach(true);
-      console.log(toggleSeach);
     });
   }, []);
 
@@ -101,6 +97,7 @@ function App() {
     };
   }, []);
 
+  // these are datas in API
   // console.log(loadSearch);
   // console.log(isSearchData);
   // console.log(isUrl);
@@ -115,7 +112,6 @@ function App() {
 
     setTimeout(() => {
       setModalSec(true);
-      document.querySelector("body").style.overflow = "hidden";
     }, time);
   }, []);
 
