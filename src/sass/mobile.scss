@@ -1,3 +1,6 @@
+@media screen and (min-width: 1280px) {}
+@media screen and (min-width: 1536px) {}
+
 @media screen and (max-width: 1024px) {
     .nav__list {
         max-width: 200px;
@@ -14,7 +17,7 @@
     }
 }
 
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 768px) {
     .MenuMobile {
         display: block;
     }
@@ -58,6 +61,21 @@
     }
 }
 
+@media screen and (max-width: 640px) {
+    .modal__container {
+        max-width: 500px;
+    }
+
+    .modal__btn {
+        top: 20px;
+    }
+
+    .modal__image {
+        max-width: 500px;
+        background-size: contain;
+    }
+}
+
 @media screen and (max-width: 550px) {
     .header__box {
         padding: 10px;
@@ -83,7 +101,48 @@
             width: 120px;
             height: 180px;
         }
-        
+    }
+
+    .modal__container {
+        max-width: 400px;
+    }
+
+    .modal__btn {
+        top: 30px;
+    }
+
+    .modal__image {
+        max-width: 400px;
+    }
+
+    .slick-arrow {
+        top: 10px !important;
+        padding: 4px !important;
+        width: 32px !important;
+        height: 32px !important;
+
+        &::before {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .modal__container {
+        max-width: 300px;
+    }
+
+    .modal__btn {
+        top: 40px;
+    }
+
+    .modal__image {
+        max-width: 300px;
+    }
+
+    .slick-list {
+        overflow: auto !important;
     }
 }
 
@@ -103,5 +162,25 @@
                 font-size: 10px;
             }
         }
+    }
+
+    .modal__container {
+        max-width: 250px;
+    }
+
+    .modal__btn {
+        width: 18px;
+        height: 18px;
+        top: 60px;
+        overflow: hidden;
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .modal__image {
+        max-width: 250px;
     }
 }
