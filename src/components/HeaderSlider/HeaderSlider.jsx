@@ -39,7 +39,7 @@ function HeaderSlider({ pNone }) {
     fetchFun();
   }, [ApiUrl]);
 
-  console.log(sliderData);
+  // console.log(sliderData);
 
   return (
     <section className="HeaderSlider  w-full">

@@ -47,23 +47,30 @@ function App() {
   const [inputToggle, setInputToggle] = useState(false);
 
   useEffect(() => {
-    const inputEl = document.querySelector("#inputEl");
+    const inputEl = document.querySelectorAll(".inputEl");
     const btnSubmit = document.querySelector(".btn__submit");
+    const inputBtn = document.querySelector(".input__btn");
 
-    inputEl.addEventListener("change", (e) => {
-      setIsUrl(
-        `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
-      );
-      setLoadShearch(false);
+    inputEl.forEach((item) => {
+      item.addEventListener("change", (e) => {
+        setIsUrl(
+          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
+        );
+        setLoadShearch(false);
 
-      e.target.value ? setToggleSeach(true) : setToggleSeach(false);
-      !e.target.value
-        ? (document.querySelector("body").style.overflow = "auto")
-        : (document.querySelector("body").style.overflow = "hidden");
-      e.target.value ? setInputToggle(true) : setInputToggle(false);
+        e.target.value ? setToggleSeach(true) : setToggleSeach(false);
+        !e.target.value
+          ? (document.querySelector("body").style.overflow = "auto")
+          : (document.querySelector("body").style.overflow = "hidden");
+        e.target.value ? setInputToggle(true) : setInputToggle(false);
+      });
     });
 
     btnSubmit.addEventListener("click", () => {
+      setInputToggle(true);
+    });
+
+    inputBtn.addEventListener("click", () => {
       setInputToggle(true);
     });
   }, []);

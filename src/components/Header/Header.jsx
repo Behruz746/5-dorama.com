@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import "./styles.scss";
 import AppContext from "../../AppContext";
@@ -7,6 +7,8 @@ import Search from "../Search/Search";
 import { CloseSvg } from "../SvgEl/SvgEl";
 
 function Header() {
+  const [toggle, setToggle] = useState(false);
+
   const {
     isToggle,
     setIsToggle,
@@ -67,7 +69,7 @@ function Header() {
   );
 
   function toggleOver() {
-    const inputVa = document.querySelector("#inputEl");
+    const inputVa = document.querySelectorAll(".inputEl");
 
     document.querySelector("body").style.overflow = "auto";
     setToggleSeach(false);
@@ -75,28 +77,11 @@ function Header() {
     setIsUrl(
       "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
     );
-    inputVa.value = "";
+
+    inputVa.forEach((item) => {
+      item.value = "";
+    });
   }
-
-  useEffect(() => {
-    const headerContainer = document.querySelector(".header__container");
-
-    function handleResize0() {
-      if (window.screen.width <= 768) {
-        setInputToggle(false);
-
-        inputToggle
-          ? (headerContainer.style.display = "block")
-          : (headerContainer.style.display = "flex");
-      }
-    }
-
-    window.addEventListener("resize", handleResize0);
-
-    return () => {
-      window.removeEventListener("resize", handleResize0);
-    };
-  }, []);
 
   return (
     <>
@@ -105,10 +90,12 @@ function Header() {
         onClick={() => toggleOver()}
       ></div>
       <header className="App__header">
-
         <div className="header__box">
-
-          <div className="header__container--mobile">
+          <div
+            className={
+              toggle ? "header__container--mobile" : "header__container--MAC"
+            }
+          >
             <div className="header__menu-toggle">
               <div className="header__logo">
                 <NavLink to="/">
@@ -118,20 +105,32 @@ function Header() {
             </div>
 
             <div className="header__input-box">
-
               <div className="input">
-
-                <input type="text" />
-                <button type="submit" className="input__btn">
+                <input
+                  className="inputEl"
+                  type="text"
+                  placeholder="Что Вы ищете?"
+                />
+                <button
+                  type="submit"
+                  className="input__btn"
+                  onClick={() => setToggle(true)}
+                >
                   <Svg01 />
                 </button>
-
               </div>
 
-              <button className="remove__btn">
+              <button
+                className="remove__btn"
+                onClick={() => {
+                  setToggle(false);
+                  setToggleSeach(false);
+                }}
+              >
                 <CloseSvg />
               </button>
             </div>
+            <Search />
           </div>
 
           <div className="header__container">
@@ -158,9 +157,9 @@ function Header() {
                 }
               >
                 <input
-                  id="inputEl"
+                  className="inputEl"
                   type="text"
-                  placeholder="Что Вы ищете?"
+                  placeholder="Введите название дорамы или фильмы"
                 />
                 <button type="submit" className="btn__submit">
                   <Svg01 />
