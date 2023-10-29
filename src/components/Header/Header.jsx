@@ -114,7 +114,10 @@ function Header() {
                 <button
                   type="submit"
                   className="input__btn"
-                  onClick={() => setToggle(true)}
+                  onClick={() => {
+                    setToggle(true);
+                    setToggleSeach(true);
+                  }}
                 >
                   <Svg01 />
                 </button>
