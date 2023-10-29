@@ -109,17 +109,20 @@ function App() {
 
   useEffect(() => {
     const addSound = document.querySelector("#addSound");
-    const addSound01 = document.querySelector("#addSound01");
-    const time = 10000 * (6 * 10);
+    const time = 10000 * (6 * 5); // 5 minut
+    // const time = 5000;
+    addSound.loop = false;
+
+    const removeFun = () => {
+      setTimeout(() => {
+        setModalSec(false);
+      }, 5000);
+    };
 
     setTimeout(() => {
       setModalSec(true);
       addSound.play();
-      addSound.loop = false;
-      setTimeout(() => {
-        setModalSec(false);
-        addSound01.play();
-      }, 1000 * 20);
+      removeFun();
     }, time);
   }, []);
 
@@ -163,6 +166,7 @@ function App() {
         toggleSeach,
         loadSearch,
         inputToggle,
+        setInputToggle,
       }}
     >
       <div className="App">

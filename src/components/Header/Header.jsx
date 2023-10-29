@@ -12,6 +12,7 @@ function Header() {
     inputToggle,
     setToggleSeach,
     toggleSeach,
+    setInputToggle,
     setIsUrl,
   } = useContext(AppContext);
 
@@ -64,18 +65,41 @@ function Header() {
     </svg>
   );
 
-  useEffect(() => {}, []);
-
   function toggleOver() {
     const inputVa = document.querySelector("#inputEl");
 
     document.querySelector("body").style.overflow = "auto";
     setToggleSeach(false);
+
     setIsUrl(
       "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
     );
     inputVa.value = "";
   }
+
+  useEffect(() => {
+    const headerContainer = document.querySelector(".header__container");
+
+    function handleResize0() {
+      if (window.screen.width <= 768) {
+        setInputToggle(false);
+
+        // inputToggle
+        // ? (headerContainer.style.display = "block")
+        // : (headerContainer.style.display = "flex");
+      }
+
+      if (window.screen.width >= 768) {
+        headerContainer.style.display = "flex";
+      }
+    }
+
+    window.addEventListener("resize", handleResize0);
+
+    return () => {
+      window.removeEventListener("resize", handleResize0);
+    };
+  }, []);
 
   return (
     <>
@@ -85,7 +109,10 @@ function Header() {
       ></div>
       <header className="App__header">
         <div className="header__box">
-          <div className="header__container">
+          <div
+            className="header__container"
+            style={inputToggle ? { display: "block" } : { display: "flex" }}
+          >
             <div className="header__menu-toggle">
               <button
                 type="button"
@@ -95,11 +122,13 @@ function Header() {
                 <Svg />
               </button>
 
-              <div className="header__logo">
-                <NavLink to="/">
-                  <img src="./images/svg/web__logo.svg" alt="logo" />
-                </NavLink>
-              </div>
+              {!inputToggle ? (
+                <div className="header__logo">
+                  <NavLink to="/">
+                    <img src="./images/svg/web__logo.svg" alt="logo" />
+                  </NavLink>
+                </div>
+              ) : null}
             </div>
 
             <div className="header__search sf-pro-display">
