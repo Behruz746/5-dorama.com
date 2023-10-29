@@ -22,6 +22,16 @@
         display: block;
     }
 
+    .header__container--mobile {
+        display: flex !important;
+        gap: 0px; 
+        align-items: center;
+    }
+
+    .header__container {
+        display: none !important;
+    }
+
     .App__nav, .header__btn {
       display: none;
     }
@@ -48,6 +58,11 @@
                 color: transparent;
             }
         }
+    }
+
+    .Search {
+        height: 700px;
+        // height: 100%;
     }
 
     main {

@@ -173,3 +173,44 @@ export const SvgAnd = () => (
     />
   </svg>
 );
+
+export const CloseSvg = () => (
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="Close">
+      <rect
+        id="Rectangle 74"
+        x="1"
+        y="1"
+        width="20"
+        height="20"
+        rx="5"
+        stroke="#768C9E"
+        strokeWidth="1.5"
+      />
+      <g id="Group 235">
+        <path
+          id="Line"
+          d="M8.8787 13.1215L13.1213 8.87891"
+          stroke="#768C9E"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          id="Line_2"
+          d="M8.8787 8.87894L13.1213 13.1216"
+          stroke="#768C9E"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
+    </g>
+  </svg>
+);

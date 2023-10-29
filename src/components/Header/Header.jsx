@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import "./styles.scss";
 import AppContext from "../../AppContext";
 import Search from "../Search/Search";
+import { CloseSvg } from "../SvgEl/SvgEl";
 
 function Header() {
   const {
@@ -84,13 +85,9 @@ function Header() {
       if (window.screen.width <= 768) {
         setInputToggle(false);
 
-        // inputToggle
-        // ? (headerContainer.style.display = "block")
-        // : (headerContainer.style.display = "flex");
-      }
-
-      if (window.screen.width >= 768) {
-        headerContainer.style.display = "flex";
+        inputToggle
+          ? (headerContainer.style.display = "block")
+          : (headerContainer.style.display = "flex");
       }
     }
 
@@ -108,11 +105,36 @@ function Header() {
         onClick={() => toggleOver()}
       ></div>
       <header className="App__header">
+
         <div className="header__box">
-          <div
-            className="header__container"
-            style={inputToggle ? { display: "block" } : { display: "flex" }}
-          >
+
+          <div className="header__container--mobile">
+            <div className="header__menu-toggle">
+              <div className="header__logo">
+                <NavLink to="/">
+                  <img src="./images/svg/web__logo.svg" alt="logo" />
+                </NavLink>
+              </div>
+            </div>
+
+            <div className="header__input-box">
+
+              <div className="input">
+
+                <input type="text" />
+                <button type="submit" className="input__btn">
+                  <Svg01 />
+                </button>
+
+              </div>
+
+              <button className="remove__btn">
+                <CloseSvg />
+              </button>
+            </div>
+          </div>
+
+          <div className="header__container">
             <div className="header__menu-toggle">
               <button
                 type="button"
@@ -122,13 +144,11 @@ function Header() {
                 <Svg />
               </button>
 
-              {!inputToggle ? (
-                <div className="header__logo">
-                  <NavLink to="/">
-                    <img src="./images/svg/web__logo.svg" alt="logo" />
-                  </NavLink>
-                </div>
-              ) : null}
+              <div className="header__logo">
+                <NavLink to="/">
+                  <img src="./images/svg/web__logo.svg" alt="logo" />
+                </NavLink>
+              </div>
             </div>
 
             <div className="header__search sf-pro-display">
@@ -140,7 +160,7 @@ function Header() {
                 <input
                   id="inputEl"
                   type="text"
-                  placeholder="Введите название дорамы или фильмы"
+                  placeholder="Что Вы ищете?"
                 />
                 <button type="submit" className="btn__submit">
                   <Svg01 />
