@@ -72,9 +72,13 @@
 
     .Search {
         margin-top: 25px;
-        height: 470px;
+        height: 100vh;
         background-color: #0E1621;
         z-index: -50;
+
+        .card__title {
+            font-size: 12px !important; 
+        }
     }
 
     .MenuMobile {
