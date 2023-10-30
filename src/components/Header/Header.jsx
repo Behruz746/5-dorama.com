@@ -170,7 +170,7 @@ function Header() {
                 <input
                   className="inputEl"
                   type="text"
-                  placeholder="Введите название дорамы или фильмы"
+                  placeholder="Введите название дорамы или фильмы" 
                 />
                 <button type="submit" className="btn__submit">
                   <Svg01 />
