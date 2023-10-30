@@ -153,8 +153,8 @@ function Header() {
               <div className="header__logo">
                 <NavLink to="/">
                   <img
-                    // src="../../../public/images/svg/web__logo.svg"
-                    src="https://i.imgur.com/Dd2VZXB.png"
+                    src="../../../public/images/svg/web__logo.svg"
+                    // src="https://i.imgur.com/Dd2VZXB.png"
                     alt="logo"
                   />
                 </NavLink>
