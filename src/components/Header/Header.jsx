@@ -99,7 +99,8 @@ function Header() {
             <div className="header__menu-toggle">
               <div className="header__logo">
                 <NavLink to="/">
-                  <img src="../public/./images/svg/web__logo.svg" alt="logo" />
+                  {/* <img src="../public/./images/svg/web__logo.svg" alt="logo" /> */}
+                  <img src="../../../public/images/svg/web__logo.svg" alt="logo" />
                 </NavLink>
               </div>
             </div>
