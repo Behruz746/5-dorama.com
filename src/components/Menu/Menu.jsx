@@ -27,7 +27,7 @@ function Menu() {
       {dropData.map((data) => (
         <div key={uuidv4()}>
           <NavLink to="*" className="d-flex drop__item">
-            <img src="./images/svg/play__icon.svg" alt="Icon" />
+            <img src="../public//images/svg/play__icon.svg" alt="Icon" />
             <h1>{data.name}</h1>
           </NavLink>
         </div>
@@ -43,7 +43,7 @@ function Menu() {
     >
       <div>
         <NavLink to="*" className="d-flex drop__item">
-          <img src="./images/svg/play__icon.svg" alt="Icon" />
+          <img src="../public//images/svg/play__icon.svg" alt="Icon" />
           <h1>Movie is name in API</h1>
         </NavLink>
       </div>
@@ -84,7 +84,7 @@ function Menu() {
                 to="shorts"
                 className="list__link"
                 onClick={() => setIsToggle(true)}
-              >
+              > 
                 <div
                   className={
                     isToggle ? "list__box" : "list__box list__box--active"
@@ -127,7 +127,7 @@ function Menu() {
                   className={
                     !isArrorToggle00 ? "toggle__arrow" : "toggle__arrow--actve"
                   }
-                  src="./images/svg/arrow-down__icon.svg"
+                  src="https://i.imgur.com/xFS7ol0.png"
                   alt="toggle icon"
                 />
               </div>
@@ -164,7 +164,7 @@ function Menu() {
                   className={
                     !isArrorToggle01 ? "toggle__arrow" : "toggle__arrow--actve"
                   }
-                  src="./images/svg/arrow-down__icon.svg"
+                  src="https://i.imgur.com/xFS7ol0.png"
                   alt="toggle icon"
                 />
               </div>

@@ -15,10 +15,6 @@ function MenuMobile() {
           <SvgEl />
           <h3>Главная</h3>
         </NavLink>
-        <NavLink to="shorts">
-          <SvgTreler />
-          <h3>Трейлер</h3>
-        </NavLink>
         <NavLink to="dramas">
           <SvgDorama />
           <h3>Дорамы</h3>
@@ -26,6 +22,10 @@ function MenuMobile() {
         <NavLink to="filems">
           <SvgMoveis />
           <h3>Фильмы</h3>
+        </NavLink>
+        <NavLink to="shorts">
+          <SvgTreler />
+          <h3>Трейлер</h3>
         </NavLink>
         <NavLink to="*">
           <SvgAnd />

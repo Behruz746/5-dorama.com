@@ -47,12 +47,12 @@ export const dropData = [
 export const famousData = [
   {
     text: "Правовая информация",
-    icon: "./images/svg/document__icon.svg",
+    icon: "../public/images/svg/document__icon.svg",
     link: "*",
   },
   {
     text: "О нашем проекте",
-    icon: "./images/svg/users__icon.svg",
+    icon: "../public/images/svg/users__icon.svg",
     link: "*",
   },
   {
@@ -64,7 +64,7 @@ export const famousData = [
   },
   {
     text: "Связаться с нами",
-    icon: "./images/svg/message__icon.svg",
+    icon: "../public/images/svg/message__icon.svg",
     link: "*",
   },
 ];
