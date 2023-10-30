@@ -7,6 +7,7 @@ function VideoPlayer() {
     <div className="VideoPlayer w-full">
       <div className="container">
         <iframe
+          id="videoPage"
           className="videoPlayer"
           src={localStorage.getItem("dataLink")} // video link form locakStorage.getItem('data');
           width="846px"

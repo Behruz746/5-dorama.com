@@ -42,6 +42,7 @@ function Cards(data) {
     useContext(AppContext);
 
   const [isItemBo, setIsItemBo] = useState(false);
+  const [dataId, setDataId] = useState(data.id);
 
   const Svg = () => (
     <svg
@@ -75,10 +76,18 @@ function Cards(data) {
       {isLoad ? (
         <>
           {isItemBo ? (
-            <div className="Card">
+            <div
+              className="Card"
+              onClick={() => {
+                setDataId(data.id);
+                console.log(dataId);
+              }}
+            >
               <NavLink
-                to="video"
-                onClick={() => localStorage.setItem("dataLink", data.link)}
+                to={`video/${dataId}`}
+                onClick={() => {
+                  localStorage.setItem("dataLink", data.link);
+                }}
               >
                 <div className="card__img">
                   <img

@@ -15,6 +15,7 @@ function Sliders({ url, title }) {
 
   const [dataAnime, setDataAnime] = useState([]);
   // const [isLoad, setIsLoad] = useState(false);
+  const [isId, setIsId] = useState('');
 
   useEffect(() => {
     const fetctAnime = async () => {
@@ -22,6 +23,8 @@ function Sliders({ url, title }) {
         setIsLoad(false);
         const data = await axios.get(url);
         setDataAnime(data.data.results);
+        // setIsId(data.data.results[0].id);
+        console.log(data);
         setIsLoad(true);
       } catch (error) {
         console.log(error);
@@ -30,6 +33,8 @@ function Sliders({ url, title }) {
 
     fetctAnime();
   }, []);
+
+  // console.log(isId);
 
   const settings = {
     className: "slider variable-width",

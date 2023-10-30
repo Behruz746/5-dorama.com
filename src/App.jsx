@@ -141,7 +141,7 @@ function App() {
         <Route path="dramas" element={<Dramas />} />
         <Route path="filems" element={<Filems />} />
         <Route path="actor" element={<Actor />} />
-        <Route path="video" element={<VideoPlayer />} />
+        <Route path="video/:id" element={<VideoPlayer />} />
 
         {/* Error page: 404 :(+ */}
         <Route path="*" element={<PageNotFound />} />
