@@ -15,6 +15,7 @@ import {
   SvgDocument,
   SvgPeople,
   SvgMessage,
+  SvgPlay,
 } from "../SvgEl/SvgEl";
 
 // AppContext
@@ -36,7 +37,7 @@ function Menu() {
       {dropData.map((data) => (
         <div key={uuidv4()}>
           <NavLink to="*" className="d-flex drop__item">
-            <img src="../public//images/svg/play__icon.svg" alt="Icon" />
+            <SvgPlay />
             <h1>{data.name}</h1>
           </NavLink>
         </div>
@@ -52,7 +53,7 @@ function Menu() {
     >
       <div>
         <NavLink to="*" className="d-flex drop__item">
-          <img src="../public//images/svg/play__icon.svg" alt="Icon" />
+          <SvgPlay />
           <h1>Movie is name in API</h1>
         </NavLink>
       </div>
