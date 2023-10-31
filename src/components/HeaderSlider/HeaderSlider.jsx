@@ -22,21 +22,23 @@ function HeaderSlider({ pNone }) {
   };
 
   const [sliderData, setSliderData] = useState([]);
-  const [ApiUrl, setApiUrl] = useState(
-    "https://653d48faf52310ee6a9a12ff.mockapi.io/image01"
-  );
+  const [ApiUrl, setApiUrl] = useState(" ");
+  const [isToggleMobile, setIsToggleMobile] = useState(false);
 
   useEffect(() => {
-    const fetchFun = async () => {
-      try {
-        const data = await axios.get(ApiUrl);
-        setSliderData(data.data);
-      } catch (error) {
-        console.log("Error: 404;", error);
+    function handleResizeH() {
+      if (window.screen.width >= 550) {
+        setIsToggleMobile(!true);
+      } else {
+        setIsToggleMobile(!false);
       }
-    };
+    }
 
-    fetchFun();
+    window.addEventListener("resize", handleResizeH);
+
+    return () => {
+      window.removeEventListener("resize", handleResizeH);
+    };
   }, [ApiUrl]);
 
   // console.log(sliderData);
@@ -45,17 +47,50 @@ function HeaderSlider({ pNone }) {
     <section className="HeaderSlider  w-full">
       <div className="container" style={{ padding: `${pNone}` }}>
         <Slider {...settings}>
-          {sliderData.map((data) => (
-            <div className="slider__card" key={uuidv4()}>
-              <NavLink className="slider__link" to={data.link}>
-                <img
-                  className="slider__card-img"
-                  src={data.image}
-                  alt="background image"
-                />
-              </NavLink>
-            </div>
-          ))}
+          <div className="slider__card" key={uuidv4()}>
+            <NavLink className="slider__link" to="/">
+              <img
+                className="slider__card-bk"
+                src={
+                  !isToggleMobile
+                    ? "https://i.imgur.com/ZwC7BFW.png"
+                    : "https://i.imgur.com/uYX0agI.png"
+                }
+                alt="image"
+              />
+            </NavLink>
+          </div>
+          <div className="slider__card" key={uuidv4()}>
+            <NavLink className="slider__link" to="/">
+              <img
+                className="slider__card-bk"
+                src={
+                  !isToggleMobile
+                    ? "https://i.imgur.com/ae0bfHc.png"
+                    : "https://i.imgur.com/uYX0agI.png"
+                }
+                alt="image"
+              />
+            </NavLink>
+          </div>
+          <div className="slider__card" key={uuidv4()}>
+            <NavLink className="slider__link" to="/">
+              <img
+                className="slider__card-bk"
+                src="https://i.imgur.com/ddqKEH0.png"
+                alt="image"
+              />
+            </NavLink>
+          </div>
+          <div className="slider__card" key={uuidv4()}>
+            <NavLink className="slider__link" to="/">
+              <img
+                className="slider__card-bk"
+                src="https://i.imgur.com/UdwKJgU.png"
+                alt="image"
+              />
+            </NavLink>
+          </div>
         </Slider>
       </div>
     </section>

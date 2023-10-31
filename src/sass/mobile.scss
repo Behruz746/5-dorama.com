@@ -28,6 +28,10 @@
         display: block;
     }
 
+    .Home__Sliders {
+        margin-top: 28px;
+    }
+
     .header__box {
         padding: 0 !important;
     }
@@ -173,6 +177,13 @@
             height: 24px !important;
         }
     }
+
+    .card__content {
+        .card__title {
+            margin-top: 4px;
+            line-height: 100%;
+        }
+    }
 }
 
 @media screen and (max-width: 475px) {
@@ -190,6 +201,10 @@
 
     .modal__container {
         top: 63%;
+    }
+
+    .Home__Sliders {
+        margin-top: 10px;
     }
 }
 

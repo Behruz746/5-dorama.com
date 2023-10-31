@@ -72,7 +72,7 @@ function Header() {
     const inputVa = document.querySelectorAll(".inputEl");
 
     document.querySelector("body").style.overflow = "auto";
-    setToggleSeach(false);
+    // setToggleSeach(false);
 
     setIsUrl(
       "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
@@ -82,6 +82,11 @@ function Header() {
       item.value = "";
     });
   }
+
+  const handleClick = (toggle) => {
+    setToggle(toggle);
+    setToggleSeach(toggle);
+  };
 
   return (
     <>
@@ -118,10 +123,7 @@ function Header() {
                 <button
                   type="submit"
                   className="input__btn"
-                  onClick={() => {
-                    setToggle(true);
-                    setToggleSeach(true);
-                  }}
+                  onClick={() => handleClick(true)}
                 >
                   <Svg01 />
                 </button>
@@ -129,10 +131,7 @@ function Header() {
 
               <button
                 className="remove__btn"
-                onClick={() => {
-                  setToggle(false);
-                  setToggleSeach(false);
-                }}
+                onClick={() => handleClick(false)}
               >
                 <CloseSvg />
               </button>
@@ -152,11 +151,7 @@ function Header() {
 
               <div className="header__logo">
                 <NavLink to="/">
-                  <img
-                    // src="../../../public/images/svg/web__logo.svg"
-                    src="https://i.imgur.com/Dd2VZXB.png"
-                    alt="logo"
-                  />
+                  <img src="https://i.imgur.com/Dd2VZXB.png" alt="logo" />
                 </NavLink>
               </div>
             </div>
@@ -170,7 +165,7 @@ function Header() {
                 <input
                   className="inputEl"
                   type="text"
-                  placeholder="Введите название дорамы или фильмы" 
+                  placeholder="Введите название дорамы или фильмы"
                 />
                 <button type="submit" className="btn__submit">
                   <Svg01 />
