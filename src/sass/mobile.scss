@@ -21,9 +21,17 @@
     .header__container--MAC {
         display: none !important;
     }
+
+    .App__header {
+        height: 88px;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .App__header {
+        height: 50px;
+    }
+
     .MenuMobile {
         display: block;
     }
@@ -105,6 +113,30 @@
 }
 
 @media screen and (max-width: 640px) {
+    .slider__card-bk {
+        display: none !important;
+    }
+
+    .d-none {
+        display: block !important;
+    }
+
+    .HeaderSlider {
+        .slider {
+            .slick-prev {
+                top: 50% !important;
+                left: 25px !important;
+                transform: translateY(-50%) rotate(180deg) scale(1)  !important;   
+            }
+        
+            .slick-next {  
+                top: 50% !important; 
+                right: 25px;
+                transform: translateY(-50%) scale(1) !important;
+            }
+        }   
+    }
+
     .modal__container {
         max-width: 500px;
     }
@@ -124,6 +156,10 @@
 }
 
 @media screen and (max-width: 550px) {
+    .App__header {
+        height: 45px !important; 
+    }
+
     .header__box {
         padding: 10px;
     }
@@ -149,7 +185,7 @@
             height: 180px;
         }
     }
-
+ 
     .modal__container {
         max-width: 400px;
     }

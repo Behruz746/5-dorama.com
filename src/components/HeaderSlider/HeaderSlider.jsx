@@ -23,25 +23,6 @@ function HeaderSlider({ pNone }) {
 
   const [sliderData, setSliderData] = useState([]);
   const [ApiUrl, setApiUrl] = useState(" ");
-  const [isToggleMobile, setIsToggleMobile] = useState(false);
-
-  useEffect(() => {
-    function handleResizeH() {
-      if (window.screen.width >= 550) {
-        setIsToggleMobile(!true);
-      } else {
-        setIsToggleMobile(!false);
-      }
-    }
-
-    window.addEventListener("resize", handleResizeH);
-
-    return () => {
-      window.removeEventListener("resize", handleResizeH);
-    };
-  }, [ApiUrl]);
-
-  // console.log(sliderData);
 
   return (
     <section className="HeaderSlider  w-full">
@@ -51,11 +32,12 @@ function HeaderSlider({ pNone }) {
             <NavLink className="slider__link" to="/">
               <img
                 className="slider__card-bk"
-                src={
-                  !isToggleMobile
-                    ? "https://i.imgur.com/ZwC7BFW.png"
-                    : "https://i.imgur.com/uYX0agI.png"
-                }
+                src="https://i.imgur.com/ZwC7BFW.png"
+                alt="image"
+              />
+              <img
+                className="slider__card-bk d-none"
+                src="https://i.imgur.com/uYX0agI.png"
                 alt="image"
               />
             </NavLink>
@@ -64,11 +46,12 @@ function HeaderSlider({ pNone }) {
             <NavLink className="slider__link" to="/">
               <img
                 className="slider__card-bk"
-                src={
-                  !isToggleMobile
-                    ? "https://i.imgur.com/ae0bfHc.png"
-                    : "https://i.imgur.com/uYX0agI.png"
-                }
+                src="https://i.imgur.com/ae0bfHc.png"
+                alt="image"
+              />
+              <img
+                className="slider__card-bk d-none"
+                src="https://i.imgur.com/uYX0agI.png"
                 alt="image"
               />
             </NavLink>
@@ -80,6 +63,11 @@ function HeaderSlider({ pNone }) {
                 src="https://i.imgur.com/ddqKEH0.png"
                 alt="image"
               />
+              <img
+                className="slider__card-bk d-none"
+                src="https://i.imgur.com/uYX0agI.png"
+                alt="image"
+              />
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
@@ -87,6 +75,11 @@ function HeaderSlider({ pNone }) {
               <img
                 className="slider__card-bk"
                 src="https://i.imgur.com/UdwKJgU.png"
+                alt="image"
+              />
+              <img
+                className="slider__card-bk d-none"
+                src="https://i.imgur.com/uYX0agI.png"
                 alt="image"
               />
             </NavLink>

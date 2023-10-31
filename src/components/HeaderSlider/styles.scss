@@ -64,27 +64,15 @@
     overflow: hidden;
     height: auto;
 
-    .bk-00 {
-        background-image: url('https://i.imgur.com/ZwC7BFW.png');
-    }
-
-    .bk-01 {
-        background-image: url('https://i.imgur.com/ae0bfHc.png');
-    }
-
-    .bk-02 {
-        background-image: url('https://i.imgur.com/ddqKEH0.png');
-    }
- 
-    .bk-03 {
-        background-image: url('https://i.imgur.com/UdwKJgU.png');
-    }
-
     &:hover {
         .slider__card-bk {
             transform: scale(1.009,1.009);
         }
     }   
+
+    .d-none {
+        display: none;
+    }
  }
 
 .slider__card-bk {
