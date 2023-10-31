@@ -8,7 +8,6 @@ function Modal() {
 
   const linkHandel = () => {
     setModalSec(false); 
-    // document.querySelector("body").style.overflow = "auto";
   };
 
   return (
@@ -23,7 +22,7 @@ function Modal() {
         >
           <img
             className="modal__icon"
-            src="./images/svg/x__icon.svg"
+            src="../../../public/images/svg/x__icon.svg"
             alt="x icon" 
           />
         </button>

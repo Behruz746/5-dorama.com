@@ -176,6 +176,7 @@ function Menu() {
                 className="image__box"
                 onClick={() => {
                   setIsArrowToggle00(!isArrorToggle00);
+                  setIsArrowToggle01(false);
                   console.log(isArrorToggle00);
                 }}
               >
@@ -213,6 +214,7 @@ function Menu() {
                 className="image__box"
                 onClick={() => {
                   setIsArrowToggle01(!isArrorToggle01);
+                  setIsArrowToggle00(false);
                   console.log(isArrorToggle01);
                 }}
               >
@@ -228,11 +230,11 @@ function Menu() {
             <ListMovies />
           </div>
         </div>
-
         <div
           className={isToggle ? "nav__line" : "nav__line nav__line--active"}
         ></div>
 
+        {/* this is button menu component */}
         <BottomMenu />
       </nav>
     </div>
