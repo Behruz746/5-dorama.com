@@ -6,8 +6,17 @@ import { v4 as uuidv4 } from "uuid";
 import { dataNav, famousData, dropData } from "../../data/data";
 
 // SvgEl
-import { SvgEl, SvgDorama, SvgTreler, SvgMoveis, SvgThunder, SvgDocument } from "../SvgEl/SvgEl";
- 
+import {
+  SvgEl,
+  SvgDorama,
+  SvgTreler,
+  SvgMoveis,
+  SvgThunder,
+  SvgDocument,
+  SvgPeople,
+  SvgMessage,
+} from "../SvgEl/SvgEl";
+
 // AppContext
 import AppContext from "../../AppContext";
 import "./styles.scss";
@@ -50,6 +59,52 @@ function Menu() {
     </div>
   );
 
+  const BottomMenu = () => (
+    <div
+      className={
+        isToggle ? "famous__filems" : "famous__filems famous__filems--active"
+      }
+    >
+      <NavLink
+        to="/"
+        className={isToggle ? "list__item" : "list__link list__link--active"}
+        key={uuidv4()}
+        onClick={() => setIsToggle(true)}
+      >
+        <SvgDocument />
+        <h3>Правовая информация</h3>
+      </NavLink>
+      <NavLink
+        to="/"
+        className={isToggle ? "list__item" : "list__link list__link--active"}
+        key={uuidv4()}
+        onClick={() => setIsToggle(true)}
+      >
+        <SvgPeople />
+        <h3>О нашем проекте</h3>
+      </NavLink>
+      <NavLink
+        target="_blank"
+        to="https://www.buymeacoffee.com/5dorama"
+        className={isToggle ? "list__item" : "list__link list__link--active"}
+        key={uuidv4()}
+        onClick={() => setIsToggle(true)}
+      >
+        <SvgThunder />
+        <h3 style={{ color: "#FFBA33FF" }}>Поддержать проект</h3>
+      </NavLink>
+      <NavLink
+        to="/"
+        className={isToggle ? "list__item" : "list__link list__link--active"}
+        key={uuidv4()}
+        onClick={() => setIsToggle(true)}
+      >
+        <SvgMessage />
+        <h3>Связаться с нами</h3>
+      </NavLink>
+    </div>
+  );
+
   return (
     <div className={isToggle ? "App__nav" : "App__nav App__nav--active"}>
       <nav className="nav__list">
@@ -84,7 +139,7 @@ function Menu() {
                 to="shorts"
                 className="list__link"
                 onClick={() => setIsToggle(true)}
-              > 
+              >
                 <div
                   className={
                     isToggle ? "list__box" : "list__box list__box--active"
@@ -176,29 +231,8 @@ function Menu() {
         <div
           className={isToggle ? "nav__line" : "nav__line nav__line--active"}
         ></div>
-        <div
-          className={
-            isToggle
-              ? "famous__filems"
-              : "famous__filems famous__filems--active" 
-          }
-        >
-          {famousData.map(({ text, link, icon, target, color }) => (
-            <NavLink
-              target={target ? "_blank" : ""}
-              to={link}
-              className={
-                isToggle ? "list__item" : "list__link list__link--active"
-              }
-              key={uuidv4()}
-              onClick={() => setIsToggle(true)}
-            >
-              {icon ? <img src={icon} alt="item icon" /> : <SvgThunder />}
 
-              <h3 style={{ color: `${color}`}}>{text}</h3>
-            </NavLink>
-          ))}
-        </div>
+        <BottomMenu />
       </nav>
     </div>
   );
