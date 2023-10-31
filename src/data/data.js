@@ -47,16 +47,16 @@ export const dropData = [
 export const famousData = [
   {
     text: "Правовая информация",
-    icon: "../public/images/svg/document__icon.svg",
+    icon: "../../../public/images/svg/document__icon.svg",
     link: "*",
   },
   {
     text: "О нашем проекте",
-    icon: "../public/images/svg/users__icon.svg",
+    icon: "../../../public/images/svg/users__icon.svg",
     link: "*",
   },
   {
-    text: "Поддержать проект",
+    text: "Поддержать проект", 
     icon: "",
     link: "https://www.buymeacoffee.com/5dorama",
     target: "true",
@@ -64,7 +64,7 @@ export const famousData = [
   },
   {
     text: "Связаться с нами",
-    icon: "../public/images/svg/message__icon.svg",
+    icon: "../../../public/images/svg/message__icon.svg",
     link: "*",
   },
 ];

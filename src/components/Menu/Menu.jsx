@@ -180,7 +180,7 @@ function Menu() {
           className={
             isToggle
               ? "famous__filems"
-              : "famous__filems famous__filems--active"
+              : "famous__filems famous__filems--active" 
           }
         >
           {famousData.map(({ text, link, icon, target, color }) => (
