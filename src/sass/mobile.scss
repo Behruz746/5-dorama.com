@@ -28,6 +28,14 @@
 }
 
 @media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    #videoPage {
+        height: 275px;
+    }
+
     .App__header {
         height: 50px;
     }
