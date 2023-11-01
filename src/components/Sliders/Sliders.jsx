@@ -24,7 +24,7 @@ function Sliders({ url, title }) {
         const data = await axios.get(url);
         setDataAnime(data.data.results);
         // setIsId(data.data.results[0].id);
-        console.log(data);
+        // console.log(data);
         setIsLoad(true);
       } catch (error) {
         console.log(error);
