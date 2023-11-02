@@ -44,11 +44,9 @@ function Search() {
                   <div
                     className="card"
                     onClick={() => {
-                      setTimeout(() => {
-                        setDataId(data.id);
-                        setToggleSeach(false);
-                        document.querySelector("body").style.overflow = "auto";
-                      }, [500]);
+                      setDataId(data.id);
+                      setToggleSeach(false);
+                      document.querySelector("body").style.overflow = "auto";
                     }}
                     onMouseOver={() => {
                       setDataId(data.id);

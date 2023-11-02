@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../AppContext";
 import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 function VideoPlayer() {
@@ -40,31 +41,34 @@ function VideoPlayer() {
         ></iframe>
 
         <div className="VideoPlayer__content">
-          <h1 className="VideoPlayer__title">{isDataVideo.title}</h1>
-
-          <div className="VideoPlayer__videos">
-            <button>Смотреть</button>
-            <button>Трейлер</button>
-            <button>Кадры из фильмов</button>
-          </div>
-
-          <div className="VideoPlayer__about">
-            <div className="about__contetn">
-              <h2 className="about__title">О фильме</h2>
-              <p className="about__text">
-                {isDataVideo.material_data &&
-                  isDataVideo.material_data.description}
-              </p>
+          <div className="VideoPlayer__content--row">
+            <h1 className="VideoPlayer__title">{isDataVideo.title}</h1>
+            <div className="VideoPlayer__videos">
+              <button>Смотреть</button>
+              <NavLink to="/">Трейлер</NavLink>
+              <button>Кадры из фильмов</button>
             </div>
           </div>
-          <div className="about__image Card">
-            <img
-              src={
-                isDataVideo.material_data &&
-                isDataVideo.material_data.poster_url
-              }
-              alt="video image"
-            />
+
+          <div className="VideoPlayer__column">
+            <div className="VideoPlayer__about">
+              <div className="about__contetn">
+                <h2 className="about__title">О фильме</h2>
+                <p className="about__text">
+                  {isDataVideo.material_data &&
+                    isDataVideo.material_data.description}
+                </p>
+              </div>
+            </div>
+            <div className="about__image Card">
+              <img
+                src={
+                  isDataVideo.material_data &&
+                  isDataVideo.material_data.poster_url
+                }
+                alt="video image"
+              />
+            </div>
           </div>
         </div>
       </div>

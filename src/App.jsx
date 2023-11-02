@@ -127,7 +127,7 @@ function App() {
     const removeFun = () => {
       setTimeout(() => {
         setModalSec(false);
-      }, 5000);
+      }, 20.000);
     };
 
     setTimeout(() => {
