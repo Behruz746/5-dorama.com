@@ -15,7 +15,6 @@ function Header() {
     inputToggle,
     setToggleSeach,
     toggleSeach,
-    setInputToggle,
     setIsUrl,
   } = useContext(AppContext);
 
@@ -72,7 +71,7 @@ function Header() {
     const inputVa = document.querySelectorAll(".inputEl");
 
     document.querySelector("body").style.overflow = "auto";
-    // setToggleSeach(false);
+    setToggleSeach(false);
 
     setIsUrl(
       "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="

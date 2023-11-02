@@ -31,7 +31,7 @@ import { dataSlider } from "./data/data";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
-  const [isLoad, setIsLoad] = useState(true);
+  const [isLoad, setIsLoad] = useState(false);
   const [isVideoLink, setIsVideoLink] = useState("");
   const [dataList, setDataList] = useState([]);
   const [dataLength, setDataLength] = useState(0);
@@ -39,6 +39,7 @@ function App() {
   const [modalSec, setModalSec] = useState(false);
   const searchvalue = useRef("");
   const [isSearchData, setIsDataSearch] = useState([]);
+  const [isSearchDataId, setIsDataSearchId] = useState([]);
   const [toggleSeach, setToggleSeach] = useState(false);
   const [loadSearch, setLoadShearch] = useState(true);
   const [isUrl, setIsUrl] = useState(
@@ -81,6 +82,7 @@ function App() {
         setLoadShearch(false);
         const data = await axios.get(isUrl);
         setIsDataSearch(data.data.results);
+        setIsDataSearchId(data.data.results);
         setLoadShearch(true);
       } catch (error) {
         console.log("Error: 404;", error);
@@ -88,7 +90,9 @@ function App() {
     };
     featchData();
   }, [isUrl]);
-
+  
+  console.log(isSearchDataId);
+  
   useEffect(() => {
     function handleResize() {
       if (window.screen.width <= 850) {
@@ -174,6 +178,7 @@ function App() {
         loadSearch,
         inputToggle,
         setInputToggle,
+        isSearchDataId,
       }}
     >
       <div className="App">

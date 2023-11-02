@@ -7,7 +7,7 @@ function VideoPlayer() {
   const { isVideoLink } = useContext(AppContext);
   const location = useLocation().pathname.slice(7);
   const [isDataVideo, setIsDataVideo] = useState([]);
-  console.log(location);
+  // console.log(location);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,9 +21,9 @@ function VideoPlayer() {
       }
     };
     fetchData();
-  }, []);
+  }, [location]);
 
-  console.log(isDataVideo);
+  // console.log(location);
 
   return (
     <div className="VideoPlayer w-full">

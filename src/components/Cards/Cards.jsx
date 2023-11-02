@@ -6,8 +6,6 @@ import "./styles.scss";
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../../AppContext";
 
-// import { testCard } from "../../data/data";
-
 import React from "react";
 import ContentLoader from "react-content-loader";
 
@@ -126,7 +124,9 @@ function Cards(data) {
           )}
         </>
       ) : (
-        <MyLoader />
+        <div className="card--load">
+          <MyLoader />
+        </div>
       )}
     </>
   );

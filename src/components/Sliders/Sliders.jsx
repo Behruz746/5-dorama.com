@@ -11,11 +11,9 @@ import AppContext from "../../AppContext";
 import "./styles.scss";
 
 function Sliders({ url, title }) {
-  const { isLoad, setIsLoad } = useContext(AppContext);
+  const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
-  // const [isLoad, setIsLoad] = useState(false);
-  const [isId, setIsId] = useState('');
 
   useEffect(() => {
     const fetctAnime = async () => {
@@ -23,8 +21,6 @@ function Sliders({ url, title }) {
         setIsLoad(false);
         const data = await axios.get(url);
         setDataAnime(data.data.results);
-        // setIsId(data.data.results[0].id);
-        // console.log(data);
         setIsLoad(true);
       } catch (error) {
         console.log(error);
@@ -33,8 +29,6 @@ function Sliders({ url, title }) {
 
     fetctAnime();
   }, []);
-
-  // console.log(isId);
 
   const settings = {
     className: "slider variable-width",
@@ -101,7 +95,7 @@ function Sliders({ url, title }) {
     </svg>
   );
 
-  return (
+  return ( 
     <section className="Home__Sliders w-full">
       <div className="container">
         <div className="Sliders__container">
