@@ -62,7 +62,7 @@
 }
 
 .variable-width {
-    overflow: hidden !important;
+    overflow: hidden !important; 
 
     .slick-arrow {
         border: 0;
@@ -85,7 +85,7 @@
 
     .slick-prev {
         position: absolute;
-        right: 45px;
+        right: 55px;
         transform: rotate(180deg);
         
         &::before {
@@ -95,7 +95,7 @@
 
     .slick-next {
         position: absolute; 
-        right: 0;
+        right: 5px;
 
         &::before {
             content: url('../../../public/images/svg/card-arrow__icon02.svg');

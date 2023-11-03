@@ -276,6 +276,41 @@
 }
 
 @media screen and (max-width: 370px) {
+    .navigation__title {
+        margin-top: 8px;
+
+        h1 {
+            font-size: 18px !important;
+        }
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .card__img {
+        display: flex;
+        align-items: center;
+
+        h4 {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 12px; /* 100% */
+        }
+
+        .card__icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .Card {
+        .card__title {
+            font-size: 14px;
+        }
+    }
+
     .mobile__nav {
         a {
             max-width: 60px;
@@ -330,48 +365,22 @@
     .Slider__navigation {
         height: 100%;
     }
-
-    .navigation__title {
-        margin-top: 8px;
-
-        .title {
-            font-size: 20px;
-        }
-
-        svg {
-            width: 20px;
-            height: 20px;
-        }
-    }
 }
 
 @media screen and (max-width: 290px) {
     .slick-prev {
         right: 35px !important;
     }
-
-   .navigation__title {
-        margin-top: 8px;
-
-        .title {
-            font-size: 18px;
-        }
-
-        svg {
-            width: 18px;
-            height: 18px;
-        }
-    }
 }
 
-@media screen and (max-width: 265px) {
-   .navigation__title {    
-        .title {
-            max-width: 120px;
-            width: 100%;
-            white-space: nowrap;
-            text-overflow: ellipsis !important;
-            overflow: hidden !important;
-        }
-    }
-}
+// @media screen and (max-width: 265px) {
+//    .navigation__title {    
+//         .title {
+//             max-width: 120px;
+//             width: 100%;
+//             white-space: nowrap;
+//             text-overflow: ellipsis !important;
+//             overflow: hidden !important;
+//         }
+//     }
+// }

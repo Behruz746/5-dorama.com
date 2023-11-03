@@ -2,10 +2,13 @@
     display: none;
     width: 100%;
     border-radius: 16px 16px 0px 0px;
-    background-color: #17212B;
+    // background-color: #17212B;
     position: fixed;
+    background: rgba(23, 33, 43, 0.90);
+    backdrop-filter: blur(7.5px);
     left: 0;
     bottom: 0;
+    overflow: hidden;
 }
 
 .mobile__nav {
@@ -26,7 +29,7 @@
         color: #768C9E;
 
         &.active {
-            background-color: #17212B;
+            // background-color: #17212B;
             transition: 0.140s linear;
             
             h3 {
