@@ -2,6 +2,32 @@
     margin-bottom: 80px;
 }
 
+// vaqtinchalik
+.test--block {
+    position: fixed;
+    bottom: 0px;
+    // left: 50%;
+    // transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    // height: 40px;
+    padding: 8px 10px;
+    width: 100%;
+    background-color: red;
+    margin: 0 auto;
+    z-index: 500;
+
+    p {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 22.4px */
+        color: #fff;
+    }
+}
+
 #videoPage {
     // max-width: 846px !important;
     width: 100% !important;

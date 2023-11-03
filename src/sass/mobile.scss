@@ -258,6 +258,14 @@
 }
 
 @media screen and (max-width: 370px) {
+    .Home__Sliders, .HeaderSlider {
+        .container {
+            padding: 0 24px !important;
+        }
+    }
+
+    
+
     .mobile__nav {
         a {
             max-width: 60px;

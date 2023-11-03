@@ -56,7 +56,9 @@ function VideoPlayer() {
                 <h2 className="about__title">О фильме</h2>
                 <p className="about__text">
                   {isDataVideo.material_data &&
-                    isDataVideo.material_data.description}
+                  isDataVideo.material_data.description
+                    ? isDataVideo.material_data.description
+                    : "Не найдено описание о фильме"}
                 </p>
               </div>
             </div>
