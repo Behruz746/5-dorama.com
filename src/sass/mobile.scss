@@ -232,6 +232,12 @@
 }
 
 @media screen and (max-width: 475px) {
+    .Home__Sliders, .HeaderSlider {
+        .container {
+            padding: 0 18px !important;
+        }
+    }
+
     .modal__container {
         max-width: 300px;
     }
@@ -258,14 +264,6 @@
 }
 
 @media screen and (max-width: 370px) {
-    .Home__Sliders, .HeaderSlider {
-        .container {
-            padding: 0 24px !important;
-        }
-    }
-
-    
-
     .mobile__nav {
         a {
             max-width: 60px;
