@@ -55,7 +55,7 @@ function Search() {
                     <img
                       className="card__image"
                       width={42}
-                      height={63}
+                      height={63} 
                       src={
                         data.material_data.poster_url
                           ? data.material_data.poster_url

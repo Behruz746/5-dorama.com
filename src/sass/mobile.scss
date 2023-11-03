@@ -152,7 +152,7 @@
 
     .modal__btn {
         top: 20px;
-    } 
+    }
 
     .modal__image {
         max-width: 500px;
@@ -244,7 +244,15 @@
         }
     }
 
-   
+    .variable-width {
+        .slick-arrow {
+            background-color: transparent;
+        }   
+
+        .slick-prev {
+            right: 41px;    
+        }
+    }
 
     .modal__container {
         max-width: 300px;
@@ -267,6 +275,7 @@
     }
 
     #videoPage {
+        width: 100% !important;
         height: 203px;
     }
 }
@@ -368,15 +377,3 @@
         right: 35px !important;
     }
 }
-
-// @media screen and (max-width: 265px) {
-//    .navigation__title {    
-//         .title {
-//             max-width: 120px;
-//             width: 100%;
-//             white-space: nowrap;
-//             text-overflow: ellipsis !important;
-//             overflow: hidden !important;
-//         }
-//     }
-// }

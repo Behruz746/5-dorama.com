@@ -15,7 +15,7 @@
     // height: 40px;
     padding: 8px 10px;
     width: 100%;
-    background-color: red;
+    background-color: red; 
     margin: 0 auto;
     z-index: 500;
 
@@ -29,13 +29,14 @@
 }
 
 #videoPage {
-    // max-width: 846px !important;
+    // max-width: 1400px !important;
     width: 100% !important;
     height: 475px;
-    object-fit: cover;
-    object-position: center;
+    // object-fit: cover;
+    // object-position: center;
     border-radius: 10px;
     // min-height: 476px !important;
+    border: 1px solid #d00;
 }
 
 .VideoPlayer__content {

@@ -63,7 +63,7 @@ function Sliders({ url, title }) {
       },
       {
         breakpoint: 615,
-        settings: {
+        settings: { 
           speed: 400,
           slidesToShow: 1,
           slidesToScroll: 1,
