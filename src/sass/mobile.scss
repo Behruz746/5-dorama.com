@@ -232,9 +232,21 @@
 }
 
 @media screen and (max-width: 475px) {
-    .Home__Sliders, .HeaderSlider {
+    .HeaderSlider {
         .container {
             padding: 0 18px !important;
+        }
+    }
+
+    .Home__Sliders {
+        .container {
+            padding: 0 0 0 18px !important;
+        }
+    }
+
+    .Home__Sliders {
+        .variable-width {
+            overflow: auto !important;
         }
     }
 
