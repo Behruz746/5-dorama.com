@@ -19,7 +19,6 @@ function RootLeyout() {
         <Modal />
         <Menu />
         <Outlet />
-        <Analytics />
       </main>
       {/* <div className="test--block">
         <p>Запущен в тестовом режиме на нашей платформе!</p>
@@ -27,6 +26,7 @@ function RootLeyout() {
         <p>Запущен в тестовом режиме на нашей платформе!</p>
       </div> */}
       <MenuMobile />
+      <Analytics />
     </>
   );
 }

@@ -275,8 +275,11 @@
     }
 
     #videoPage {
-        width: 100% !important;
+        // width: 100% !important;
         height: 203px;
+        width: 475px !important;
+        margin-right: 10px;
+        // width: 100%;
     }
 }
 

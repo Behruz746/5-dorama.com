@@ -29,14 +29,13 @@
 }
 
 #videoPage {
-    // max-width: 1400px !important;
     width: 100% !important;
     height: 475px;
-    // object-fit: cover;
-    // object-position: center;
+    object-fit: cover;
+    object-position: center;
     border-radius: 10px;
     // min-height: 476px !important;
-    border: 1px solid #d00;
+    // border: 1px solid #d00;
 }
 
 .VideoPlayer__content {
