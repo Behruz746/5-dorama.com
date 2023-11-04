@@ -32,6 +32,19 @@
         padding: 0 10px;
     }
 
+    .test--block {
+        bottom: 72px + 31px;
+    }
+
+    .VideoPlayer__column {
+        flex-direction: column;
+        justify-content: center;
+
+        .about__image {
+            margin: 0 auto;
+        }
+    }
+
     #videoPage {
         margin-top: 15px;
         height: 275px;
@@ -229,6 +242,10 @@
             line-height: 100%;
         }
     }
+
+    .VideoPlayer__videos {
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 475px) {
@@ -275,11 +292,8 @@
     }
 
     #videoPage {
-        // width: 100% !important;
+        width: 100% !important;
         height: 203px;
-        width: 475px !important;
-        margin-right: 10px;
-        // width: 100%;
     }
 }
 

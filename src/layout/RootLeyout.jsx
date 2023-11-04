@@ -12,6 +12,19 @@ import MenuMobile from "../components/MenuMobile/MenuMobile";
 function RootLeyout() {
   const { modalSec } = useContext(AppContext);
 
+  const AnimationBlock = () => {
+    return (
+      <>
+        <div className="test--block">
+          <p>Запущен в тестовом режиме на нашей платформе!</p>
+          <p>Запущен в тестовом режиме на нашей платформе!</p>
+          <p>Запущен в тестовом режиме на нашей платформе!</p>
+          <p>Запущен в тестовом режиме на нашей платформе!</p>
+        </div>
+      </>
+    );
+  };
+
   return (
     <>
       <Header />
@@ -20,11 +33,7 @@ function RootLeyout() {
         <Menu />
         <Outlet />
       </main>
-      {/* <div className="test--block">
-        <p>Запущен в тестовом режиме на нашей платформе!</p>
-        <p>Запущен в тестовом режиме на нашей платформе!</p>
-        <p>Запущен в тестовом режиме на нашей платформе!</p>
-      </div> */}
+      <AnimationBlock />
       <MenuMobile />
       <Analytics />
     </>
