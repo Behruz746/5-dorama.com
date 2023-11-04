@@ -41,6 +41,7 @@
         justify-content: center;
 
         .about__image {
+            width: 186px !important;
             margin: 0 auto;
         }
     }
@@ -48,6 +49,10 @@
     #videoPage {
         margin-top: 15px;
         height: 275px;
+    }
+
+    #main {
+        margin-bottom: 85px;
     }
 
     .App__header {
@@ -294,6 +299,19 @@
     #videoPage {
         width: 100% !important;
         height: 203px;
+    }
+
+    .about__contetn {
+        .about__text {
+            max-height: 130px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: .3s ease-in-out !important;
+        }
+    }
+
+    .text--hidden {
+        display: block !important;
     }
 }
 

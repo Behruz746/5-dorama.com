@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import AppContext from "../AppContext";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
@@ -8,6 +8,8 @@ function VideoPlayer() {
   const { isVideoLink } = useContext(AppContext);
   const location = useLocation().pathname.slice(7);
   const [isDataVideo, setIsDataVideo] = useState([]);
+  const [testToggle, setTextToggle] = useState(false);
+  const paragraphRef = useRef(null);
   // console.log(location);
 
   useEffect(() => {
@@ -23,6 +25,19 @@ function VideoPlayer() {
     };
     fetchData();
   }, [location]);
+
+  useEffect(() => {
+    const textEl = document.querySelector(".about__text");
+    const btnEl = document.querySelector(".text--hidden");
+    const paragraphHeight = paragraphRef.current.offsetHeight;
+
+    if (paragraphRef.current) {
+      // console.log(paragraphRef.current.style.height);
+      paragraphHeight === 26
+        ? (btnEl.style.display = "none")
+        : (btnEl.style.display = "block");
+    }
+  }, []);
 
   // console.log(location);
 
@@ -54,12 +69,27 @@ function VideoPlayer() {
             <div className="VideoPlayer__about">
               <div className="about__contetn">
                 <h2 className="about__title">О фильме</h2>
-                <p className="about__text">
+                <p
+                  ref={paragraphRef}
+                  className={testToggle ? "about__text--active" : "about__text"}
+                >
                   {isDataVideo.material_data &&
                   isDataVideo.material_data.description
                     ? isDataVideo.material_data.description
                     : "Не найдено описание о фильме"}
                 </p>
+
+                <button
+                  className="text--hidden"
+                  onClick={() => setTextToggle(!testToggle)}
+                >
+                  <h2 className={!testToggle ? "text00" : "d-none"}>
+                    Читать далее
+                  </h2>
+                  <h2 className={testToggle ? "text01" : "d-none"}>
+                    Закрыть текст
+                  </h2>
+                </button>
               </div>
             </div>
             <div className="about__image Card">

@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
 
 function Filems() {
   return (
-    <section className='App__filems w-full page'>
+    <section className="App__filems w-full page">
       <div className="container">
-        <h1>Filems</h1>
+        <div className="test--blockPage">
+          <h3>Эта страница скоро будет запущена</h3>
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Filems
+export default Filems;

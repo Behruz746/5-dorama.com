@@ -91,7 +91,7 @@ function App() {
     featchData();
   }, [isUrl]);
   
-  console.log(isSearchDataId);
+  // console.log(isSearchDataId);
   
   useEffect(() => {
     function handleResize() {

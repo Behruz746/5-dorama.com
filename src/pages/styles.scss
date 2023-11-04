@@ -32,11 +32,8 @@
         0% {
           transform: translateX(0);
         }
-        40% {
-          transform: translateX(-50%);
-        }
-        80% {
-            transform: translateX(50%);
+        50% {
+          transform: translateX(-100%);
         }
         100% {
           transform: translateX(0);
@@ -97,10 +94,69 @@
     }
 }
 
-.VideoPlayer__column {
+.VideoPlayer__column { 
     display: flex;
     gap: 45px;
     justify-content: space-between;
+
+  
+
+    .about__image {
+        overflow: hidden;
+    }
+
+    .Card {
+        max-width: 186px;
+        width: 100%;
+    }
+}
+
+.about__contetn {
+    max-width: 805px;
+    width: 100%;
+
+    .about__text {
+        height: 100%;
+    }
+
+    .about__text--active {
+        max-height: 2000px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: .3s ease-in-out !important;
+    }
+
+    .text--hidden {
+        display: none;
+        margin-top: 8px;
+        width: 100%;
+        padding: 7px 5px;
+        border: 0;
+        outline: 0;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+
+        .text00, .text01 {
+            color: #fff;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            user-select: none;
+            text-align: center;
+            transition: .2s linear;
+        }
+
+        .d-none {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -5;
+            user-select: none;
+            color: transparent;
+            font-size: 10px;
+        }
+    }
 }
 
 .VideoPlayer__about {
@@ -109,7 +165,7 @@
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 140%; /* 22.4px */
+        line-height: 140%; 
         color: #768C9E;
     }
 
@@ -117,11 +173,7 @@
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%; /* 25.6px */
+        line-height: 160%; 
         color: #fff;
     }
-}
-
-.about__image {
-    overflow: hidden;
 }

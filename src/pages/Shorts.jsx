@@ -4,7 +4,9 @@ function Shorts() {
   return (
     <section className='App__shorts w-full page'>
       <div className="container">
-        <h1>Shorts</h1>
+        <div className='test--blockPage'>
+          <h3>Эта страница скоро будет запущена</h3>
+        </div>
       </div>
     </section>
   )

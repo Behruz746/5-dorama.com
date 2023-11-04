@@ -78,7 +78,7 @@ function Cards(data) {
               className="Card"
               onClick={() => {
                 setDataId(data.id);
-                console.log(dataId);
+                // console.log(dataId);
               }}
             >
               <NavLink
