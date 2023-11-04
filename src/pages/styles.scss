@@ -25,6 +25,7 @@
         color: #fff;
         white-space: nowrap;
         animation: marquee 20s linear infinite; 
+        user-select: none;
     }
 
     @keyframes marquee {
