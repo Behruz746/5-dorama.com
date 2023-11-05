@@ -56,6 +56,7 @@ function VideoPlayer() {
             <div className="VideoPlayer__about">
               <div className="about__contetn">
                 <h2 className="about__title">О фильме</h2>
+                <h1>test: 2022</h1>
                 <p
                   ref={paragraphRef}
                   className={testToggle ? "about__text--active" : "about__text"}

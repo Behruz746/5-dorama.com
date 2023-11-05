@@ -85,12 +85,12 @@ function Cards(data) {
                 to={`video/${dataId}`}
                 onClick={() => {
                   localStorage.setItem("dataLink", data.link);
-                }}
+                }} 
               >
                 <div className="card__img">
                   <img
                     className="card__logo"
-                    src="./images/svg/web-Logo.svg"
+                    src="./images/svg/star_black2.svg"
                     alt="logo"
                   />
                   <div className="card__reting">

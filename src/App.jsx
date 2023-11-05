@@ -120,7 +120,7 @@ function App() {
 
   useEffect(() => {
     const addSound = document.querySelector("#addSound");
-    const time = 10000 * (6 * 5); // 5 minut
+    const time = 10000 * (6 * 5); // 5 minut 
     // const time = 5000;
     addSound.loop = false;
 
