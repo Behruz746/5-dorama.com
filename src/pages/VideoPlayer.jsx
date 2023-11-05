@@ -26,19 +26,6 @@ function VideoPlayer() {
     fetchData();
   }, [location]);
 
-  useEffect(() => {
-    const textEl = document.querySelector(".about__text");
-    const btnEl = document.querySelector(".text--hidden");
-    const paragraphHeight = paragraphRef.current.offsetHeight;
-
-    if (paragraphRef.current) {
-      // console.log(paragraphRef.current.style.height);
-      paragraphHeight === 26
-        ? (btnEl.style.display = "none")
-        : (btnEl.style.display = "block");
-    }
-  }, []);
-
   // console.log(location);
 
   return (
