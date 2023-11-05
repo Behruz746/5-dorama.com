@@ -45,19 +45,23 @@ function Cards(data) {
   const Svg = () => (
     <svg
       className="card__icon"
-      width="14"
-      height="13"
-      viewBox="0 0 14 13"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="Group">
+      <g clip-path="url(#clip0_361_3353)">
         <path
-          id="Vector"
-          d="M6.99999 10.9524L10.1125 12.8349C10.6825 13.1799 11.38 12.6699 11.23 12.0249L10.405 8.48495L13.1575 6.09995C13.66 5.66495 13.39 4.83995 12.73 4.78745L9.10749 4.47995L7.68999 1.13495C7.43499 0.527446 6.56499 0.527446 6.30999 1.13495L4.89249 4.47245L1.26999 4.77995C0.609994 4.83245 0.339993 5.65745 0.842493 6.09245L3.59499 8.47745L2.76999 12.0174C2.61999 12.6624 3.31749 13.1724 3.88749 12.8274L6.99999 10.9524Z"
+          d="M7.99999 11.5133L10.7667 13.1867C11.2733 13.4933 11.8933 13.04 11.76 12.4667L11.0267 9.31999L13.4733 7.19999C13.92 6.81332 13.68 6.07999 13.0933 6.03332L9.87332 5.75999L8.61332 2.78665C8.38665 2.24665 7.61332 2.24665 7.38665 2.78665L6.12665 5.75332L2.90665 6.02665C2.31999 6.07332 2.07999 6.80665 2.52665 7.19332L4.97332 9.31332L4.23999 12.46C4.10665 13.0333 4.72665 13.4867 5.23332 13.18L7.99999 11.5133Z"
           fill="white"
         />
       </g>
+      <defs>
+        <clipPath id="clip0_361_3353">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
     </svg>
   );
 
@@ -78,19 +82,18 @@ function Cards(data) {
               className="Card"
               onClick={() => {
                 setDataId(data.id);
-                // console.log(dataId);
               }}
             >
               <NavLink
                 to={`video/${dataId}`}
                 onClick={() => {
                   localStorage.setItem("dataLink", data.link);
-                }} 
+                }}
               >
                 <div className="card__img">
                   <img
                     className="card__logo"
-                    src="./images/svg/star_black2.svg"
+                    src="https://i.imgur.com/vDh93pz.png"
                     alt="logo"
                   />
                   <div className="card__reting">

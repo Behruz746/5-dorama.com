@@ -248,6 +248,8 @@
     flex-direction: column;
     align-items: center;
     gap: 2px !important;
+
+ 
     
     .list__item {
         display: flex;
@@ -256,12 +258,36 @@
         padding: 10px;
         transition: 0.140s linear;
 
+        &.active {
+            background-color: #17212B;
+            transition: 0.140s linear;
+            
+            h3 {
+                color: #fff;
+            }
+    
+            path {
+                stroke: #fff;
+            }
+
+            circle {
+                stroke: #fff;
+            }
+    
+            rect {
+                stroke: #fff;
+            }
+    
+            .svg__treler {
+                path {
+                    fill: #fff;
+                    stroke: transparent;
+                }
+            }
+        }
+
         &:hover {
             background-color: #17212B;
-
-            #Union {
-                stroke-width: 3 !important;
-            } 
         }
 
         svg {

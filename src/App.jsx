@@ -26,6 +26,9 @@ import Dramas from "./pages/Dramas";
 import Filems from "./pages/Filems";
 import Actor from "./pages/Actor";
 import VideoPlayer from "./pages/VideoPlayer";
+import Document from "./pages/Document";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import PageNotFound from "./pages/pageErrorFound/PageNotFound";
 import { dataSlider } from "./data/data";
 
@@ -90,9 +93,9 @@ function App() {
     };
     featchData();
   }, [isUrl]);
-  
+
   // console.log(isSearchDataId);
-  
+
   useEffect(() => {
     function handleResize() {
       if (window.screen.width <= 850) {
@@ -120,14 +123,14 @@ function App() {
 
   useEffect(() => {
     const addSound = document.querySelector("#addSound");
-    const time = 10000 * (6 * 5); // 5 minut 
+    const time = 10000 * (6 * 5); // 5 minut
     // const time = 5000;
     addSound.loop = false;
 
     const removeFun = () => {
       setTimeout(() => {
         setModalSec(false);
-      }, 20.000);
+      }, 20.0);
     };
 
     setTimeout(() => {
@@ -142,16 +145,26 @@ function App() {
       <Route path="/" element={<RootLeyout />}>
         <Route index element={<Home />} />
         <Route path="shorts" element={<Shorts />} />
-        <Route path="dramas" element={<Dramas />} />
+        <Route path="dramas" element={<Dramas />}>
+          <Route path="video/:id" element={<VideoPlayer />} />
+        </Route>
         <Route path="filems" element={<Filems />} />
         <Route path="actor" element={<Actor />} />
-        <Route path="video/:id" element={<VideoPlayer />} />
+        <Route path="documentation" element={<Document />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+
 
         {/* Error page: 404 :(+ */}
         <Route path="*" element={<PageNotFound />} />
+
+        {/* Video page: video '_' */}
+        <Route path="video/:id" element={<VideoPlayer />} />
       </Route>
     )
   );
+
+  
 
   return (
     <AppContext.Provider

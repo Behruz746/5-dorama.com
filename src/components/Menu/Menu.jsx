@@ -67,7 +67,7 @@ function Menu() {
       }
     >
       <NavLink
-        to="/"
+        to="documentation"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
         onClick={() => setIsToggle(true)}
@@ -76,7 +76,7 @@ function Menu() {
         <h3>Правовая информация</h3>
       </NavLink>
       <NavLink
-        to="/"
+        to="about"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
         onClick={() => setIsToggle(true)}
@@ -95,7 +95,7 @@ function Menu() {
         <h3 style={{ color: "#FFBA33FF" }}>Поддержать проект</h3>
       </NavLink>
       <NavLink
-        to="/"
+        to="contact"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
         onClick={() => setIsToggle(true)}

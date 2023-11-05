@@ -2,6 +2,14 @@
     margin-bottom: 80px;
 }
 
+.App__dramas {
+    // border: 1px solid #d00;
+
+    .Home__Sliders {
+        margin-top: 0;
+    }
+}
+
 // vaqtinchalik
 .test--block {
     position: fixed;
@@ -99,8 +107,6 @@
     gap: 45px;
     justify-content: space-between;
 
-  
-
     .about__image {
         overflow: hidden;
     }
@@ -114,14 +120,6 @@
 .about__contetn {
     max-width: 805px;
     width: 100%;
-
-    h1 {
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 12px; /* 120% */
-        background-clip: text;
-    }
 
     .about__text {
         height: 100%;
