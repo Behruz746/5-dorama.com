@@ -1,9 +1,4 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  RouterProvider,
-  Route,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./sass/default.scss";
 
@@ -18,6 +13,7 @@ import AppContext from "./AppContext";
 
 // Layout
 import RootLeyout from "./layout/RootLeyout";
+import RootDramaList from "./layout/RootDramaList";
 
 // Pages
 import Home from "./pages/Home";
@@ -123,14 +119,14 @@ function App() {
 
   useEffect(() => {
     const addSound = document.querySelector("#addSound");
-    const time = 10000 * (6 * 5); // 5 minut
-    // const time = 5000;
+    // const time = 10000 * (6 * 5); // 5 minut
+    const time = 5000;
     addSound.loop = false;
 
     const removeFun = () => {
       setTimeout(() => {
         setModalSec(false);
-      }, 20.0);
+      }, 30 * 1000);
     };
 
     setTimeout(() => {
@@ -140,31 +136,67 @@ function App() {
     }, time);
   }, []);
 
-  const routes = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/" element={<RootLeyout />}>
-        <Route index element={<Home />} />
-        <Route path="shorts" element={<Shorts />} />
-        <Route path="dramas" element={<Dramas />}>
-          <Route path="video/:id" element={<VideoPlayer />} />
-        </Route>
-        <Route path="filems" element={<Filems />} />
-        <Route path="actor" element={<Actor />} />
-        <Route path="documentation" element={<Document />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootLeyout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "shorts",
+          element: <Shorts />,
+        },
+        {
+          path: "dramas",
+          element: <RootDramaList />,
 
-
-        {/* Error page: 404 :(+ */}
-        <Route path="*" element={<PageNotFound />} />
-
-        {/* Video page: video '_' */}
-        <Route path="video/:id" element={<VideoPlayer />} />
-      </Route>
-    )
-  );
-
-  
+          children: [
+            {
+              index: true,
+              element: <Dramas />,
+            },
+            {
+              path: "video/:id",
+              element: <VideoPlayer />,
+            },
+          ],
+        },
+        {
+          path: "filems",
+          element: <Filems />,
+        },
+        {
+          path: "actor",
+          element: <Actor />,
+        },
+        {
+          path: "documentation",
+          element: <Document />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        // {/* Error page: 404 :(+ */}
+        {
+          path: "*",
+          element: <PageNotFound />,
+        },
+        // {/* Video page: video '_' ▶ */}
+        {
+          path: "video/:id",
+          element: <VideoPlayer />,
+        },
+      ],
+    },
+  ]);
 
   return (
     <AppContext.Provider

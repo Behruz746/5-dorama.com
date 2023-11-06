@@ -3,10 +3,10 @@
 }
 
 .App__dramas {
-    // border: 1px solid #d00;
-
     .Home__Sliders {
-        margin-top: 0;
+        &:nth-child(1) {
+            margin-top: 0 !important;
+        }
     }
 }
 

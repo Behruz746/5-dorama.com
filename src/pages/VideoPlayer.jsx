@@ -1,22 +1,21 @@
 import { useContext, useEffect, useState, useRef } from "react";
 import AppContext from "../AppContext";
-import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function VideoPlayer() {
   const { isVideoLink } = useContext(AppContext);
-  const location = useLocation().pathname.slice(7);
   const [isDataVideo, setIsDataVideo] = useState([]);
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
-  // console.log(location);
- 
+  const { id } = useParams();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${location}&with_episodes=true&with_material_data=true`
+          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true`
         );
         setIsDataVideo(data.data.results[0]);
       } catch (error) {
@@ -24,7 +23,7 @@ function VideoPlayer() {
       }
     };
     fetchData();
-  }, [location]);
+  }, [id]);
 
   // console.log(location);
 
