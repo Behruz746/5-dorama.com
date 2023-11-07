@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 // Data
-import { dataNav, famousData, dropData } from "../../data/data";
+import { dropData, dropDataMovies } from "../../data/data";
 
 // SvgEl
 import {
@@ -36,12 +36,10 @@ function Menu() {
     >
       {dropData.map((data) => (
         <div key={uuidv4()}>
-          {/* <NavLink to="" className="d-flex drop__item"> */}
-            <a href={data.link} className="d-flex drop__item">
-              <SvgPlay />
-              <h1>{data.name}</h1>
-            </a>
-          {/* </NavLink> */}
+          <a href={data.link} className="d-flex drop__item">
+            <SvgPlay />
+            <h1>{data.name}</h1>
+          </a>
         </div>
       ))}
     </div>
@@ -54,10 +52,14 @@ function Menu() {
       }
     >
       <div>
-        <NavLink to="*" className="d-flex drop__item">
-          <SvgPlay />
-          <h1>Movie is name in API</h1>
-        </NavLink>
+        {dropDataMovies.map((data) => (
+          <div key={uuidv4()}>
+            <a href={data.link} className="d-flex drop__item">
+              <SvgPlay />
+              <h1>{data.name}</h1>
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -170,7 +172,7 @@ function Menu() {
                   }
                 >
                   <SvgDorama />
-                  <h3>Дорамы</h3>
+                  <h3>Сериал</h3>
                 </div>
               </NavLink>
 

@@ -32,23 +32,86 @@ export const dataNav = [
 export const dropData = [
   {
     name: "Триллеры",
-    link: "/dramas#komediya",
+    link: "/dramas#trelerSerial",
   },
   {
-    name: "комедии",
-    link: "/dramas#komediya",
+    name: "Комедии",
+    link: "/dramas#komediyaSerial",
   },
   {
-    name: "драмы",
-    link: "/dramas#drama",
+    name: "Драмы",
+    link: "/dramas#dramaSerial",
   },
   {
-    name: "боавик",
-    link: "/dramas#boavik",
+    name: "Боавик",
+    link: "/dramas#boavikSerial",
   },
   {
-    name: "биография",
-    link: "/dramas#biografiya",
+    name: "Биография",
+    link: "/dramas#biografiyaSerial",
+  },
+  {
+    name: "Военный",
+    link: "/dramas#voyeniySerial",
+  },
+  {
+    name: "Фантастика",
+    link: "/dramas#fantastikaSerial",
+  },
+  {
+    name: "Ужасы",
+    link: "/dramas#ujesSerial",
+  },
+  {
+    name: "Криминал",
+    link: "/dramas#kriminalSerial",
+  },
+  {
+    name: "Аниме Сериал",
+    link: "/dramas#AnimeSerial",
+  },
+];
+
+export const dropDataMovies = [
+  // {
+  //   name: "Триллеры",
+  //   link: "/filems#trelerMovie",
+  // },
+  {
+    name: "Комедии",
+    link: "/filems#komediyaMovie",
+  },
+  {
+    name: "Драмы",
+    link: "/filems#dramaMovie",
+  },
+  {
+    name: "Боавик",
+    link: "/filems#boavikMovie",
+  },
+  {
+    name: "Биография",
+    link: "/filems#biografiyaMovie",
+  },
+  {
+    name: "Военный",
+    link: "/filems#voyeniyMovie",
+  },
+  {
+    name: "Фантастика",
+    link: "/filems#fantastikaMovie",
+  },
+  {
+    name: "Ужасы",
+    link: "/filems#ujesMovie",
+  },
+  {
+    name: "Криминал",
+    link: "/filems#kriminalMovie",
+  },
+  {
+    name: "Аниме Сериал",
+    link: "/filems#AnimeMovie",
   },
 ];
 
@@ -64,7 +127,7 @@ export const famousData = [
     link: "*",
   },
   {
-    text: "Поддержать проект", 
+    text: "Поддержать проект",
     icon: "",
     link: "https://www.buymeacoffee.com/5dorama",
     target: "true",
@@ -94,4 +157,4 @@ export const dataSlider = [
     image: "https://i.imgur.com/UdwKJgU.png",
     link: "/",
   },
-] 
+];

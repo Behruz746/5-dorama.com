@@ -118,6 +118,7 @@ function App() {
     setIsArrowToggle(!isArrorToggle);
   }
 
+  //Removed
   useEffect(() => {
     const addSound = document.querySelector("#addSound");
     const time = 10000 * (6 * 5); // 5 minut
@@ -130,11 +131,11 @@ function App() {
       }, 10 * 1000);
     };
 
-    setTimeout(() => {
-      setModalSec(true);
-      addSound.play();
-      removeFun();
-    }, time);
+    // setTimeout(() => {
+    //   setModalSec(true);
+    //   addSound.play();
+    //   removeFun();
+    // }, time);
   }, []);
 
   const routes = createBrowserRouter([

@@ -40,7 +40,22 @@
     height: 100%;
     transform: scale(1, 1);
     transition: .5s ease-in-out;
+    overflow: auto;
+    max-height: 135px;
     padding: 0px;
+
+    &::-webkit-scrollbar {
+        max-width: 3px !important; 
+    }
+     
+    &::-webkit-scrollbar-track {
+        background-color: transparent;   
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: #768c9ea1;
+    }
 }
 
 .App__nav--active {
