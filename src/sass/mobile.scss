@@ -172,6 +172,10 @@
         top: 20px;
     }
 
+    .modal__container--active {
+        top: 72%;
+    }
+
     .modal__image {
         max-width: 500px;
         background-size: contain;
@@ -222,7 +226,7 @@
     }
 
     .modal__image {
-        max-width: 400px;
+        max-width: 450px;
     }
 
     .navigation__title {
@@ -285,7 +289,7 @@
     }
 
     .modal__image {
-        max-width: 300px;
+        max-width: 400px;
     }
 
     .modal__container {
@@ -299,7 +303,7 @@
     #videoPage {
         width: 100% !important;
         height: 203px;
-    }
+    } 
 
     .about__contetn {
         .about__text {
@@ -385,7 +389,7 @@
     }
 
     .modal__image {
-        max-width: 250px;
+        max-width: 300px;
     }
 
     .modal__container {
