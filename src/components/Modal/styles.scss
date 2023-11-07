@@ -30,7 +30,7 @@
     transform: translate(-50%, -0%) scale(0);
     transition: .2s ease-in-out;
 }
-
+ 
 .modal__container--active {
     max-width: 600px;
     width: 100%;
@@ -78,7 +78,8 @@
     z-index: 101;
     position: absolute;
     top: 25px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     transition: .3s ease-in-out;
     z-index: 45;
 
