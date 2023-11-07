@@ -14,13 +14,17 @@ function Sliders({ url, title }) {
   const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
+  const [dataNextPage, setDataNextPage] = useState([]);
+
+  const [isUrl, setIsUrl] = useState(url);
 
   useEffect(() => {
     const fetctAnime = async () => {
       try {
         setIsLoad(false);
-        const data = await axios.get(url);
+        const data = await axios.get(isUrl);
         setDataAnime(data.data.results);
+        setDataNextPage(data.data.next_page);
         setIsLoad(true);
       } catch (error) {
         console.log(error);
@@ -28,7 +32,9 @@ function Sliders({ url, title }) {
     };
 
     fetctAnime();
-  }, []);
+  }, [isUrl]);
+
+  console.log(dataNextPage);
 
   const settings = {
     className: "slider variable-width",
@@ -50,25 +56,25 @@ function Sliders({ url, title }) {
           speed: 600,
           slidesToShow: 3,
           slidesToScroll: 3,
-        }
+        },
       },
       {
         breakpoint: 1039,
         settings: {
-          speed: 500, 
+          speed: 500,
           slidesToShow: 2,
-          slidesToScroll: 2, 
+          slidesToScroll: 2,
           initialSlide: 2,
-        }
+        },
       },
       {
         breakpoint: 615,
-        settings: { 
+        settings: {
           speed: 400,
           slidesToShow: 1,
           slidesToScroll: 1,
-        }
-      }
+        },
+      },
     ],
   };
 
@@ -95,7 +101,7 @@ function Sliders({ url, title }) {
     </svg>
   );
 
-  return ( 
+  return (
     <section className="Home__Sliders w-full">
       <div className="container">
         <div className="Sliders__container">

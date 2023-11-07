@@ -71,7 +71,7 @@ function Cards(data) {
     } else {
       setIsItemBo(false);
     }
-  }, []);
+  }, [data]);
 
   return (
     <>
@@ -115,8 +115,8 @@ function Cards(data) {
                   />
                 </div>
                 <div className="card__content">
-                  <h1 className="card__title">{data.title}</h1>
-                  <p>{data.sort}</p>
+                  <h1 className="card__title">{data.material_data.title}</h1>
+                  <p>{data.material_data.sort}</p>
                 </div>
               </NavLink>
             </div>
