@@ -32,15 +32,23 @@ export const dataNav = [
 export const dropData = [
   {
     name: "Триллеры",
-    link: "/",
+    link: "/dramas#komediya",
   },
   {
     name: "комедии",
-    link: "/",
+    link: "/dramas#komediya",
   },
   {
     name: "драмы",
-    link: "/",
+    link: "/dramas#drama",
+  },
+  {
+    name: "боавик",
+    link: "/dramas#boavik",
+  },
+  {
+    name: "биография",
+    link: "/dramas#biografiya",
   },
 ];
 

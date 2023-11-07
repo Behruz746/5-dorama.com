@@ -14,6 +14,7 @@ import AppContext from "./AppContext";
 // Layout
 import RootLeyout from "./layout/RootLeyout";
 import RootDramaList from "./layout/RootDramaList";
+import RootFilems from "./layout/RootFilems";
 
 // Pages
 import Home from "./pages/Home";
@@ -119,8 +120,8 @@ function App() {
 
   useEffect(() => {
     const addSound = document.querySelector("#addSound");
-    // const time = 10000 * (6 * 5); // 5 minut
-    const time = 5000;
+    const time = 10000 * (6 * 5); // 5 minut
+    // const time = 5000;
     addSound.loop = false;
 
     const removeFun = () => {
@@ -132,11 +133,12 @@ function App() {
     setTimeout(() => {
       setModalSec(true);
       addSound.play();
-      // removeFun();
+      removeFun();
     }, time);
   }, []);
 
-  const routes = createBrowserRouter([ // router obj
+  const routes = createBrowserRouter([
+    // router obj
     {
       path: "/",
       element: <RootLeyout />,
@@ -166,7 +168,18 @@ function App() {
         },
         {
           path: "filems",
-          element: <Filems />,
+          element: <RootFilems />,
+
+          children: [
+            {
+              index: true,
+              element: <Filems />,
+            },
+            {
+              path: "video/:id",
+              element: <VideoPlayer />,
+            },
+          ],
         },
         {
           path: "actor",

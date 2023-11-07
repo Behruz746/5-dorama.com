@@ -10,7 +10,7 @@ import AppContext from "../../AppContext";
 
 import "./styles.scss";
 
-function Sliders({ url, title }) {
+function Sliders({ url, title , id}) {
   const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
@@ -102,7 +102,7 @@ function Sliders({ url, title }) {
   );
 
   return (
-    <section className="Home__Sliders w-full">
+    <section className="Home__Sliders w-full" id={id}>
       <div className="container">
         <div className="Sliders__container">
           <div className="Slider__cards">

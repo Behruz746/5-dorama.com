@@ -36,10 +36,12 @@ function Menu() {
     >
       {dropData.map((data) => (
         <div key={uuidv4()}>
-          <NavLink to="*" className="d-flex drop__item">
-            <SvgPlay />
-            <h1>{data.name}</h1>
-          </NavLink>
+          {/* <NavLink to="" className="d-flex drop__item"> */}
+            <a href={data.link} className="d-flex drop__item">
+              <SvgPlay />
+              <h1>{data.name}</h1>
+            </a>
+          {/* </NavLink> */}
         </div>
       ))}
     </div>
