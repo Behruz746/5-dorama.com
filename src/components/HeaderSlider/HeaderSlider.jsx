@@ -27,6 +27,7 @@ function HeaderSlider({ pNone }) {
         breakpoint: 450,
         settings: {
           arrows: false,
+          dots: true,
         },
       },
     ],

@@ -26,6 +26,43 @@
           }
         }
 
+        .slick-dots {
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            // border: 1px solid #d00; 
+            position: absolute !important;
+            bottom: 11px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+
+            .slick-active {
+                // display: none !important;
+                opacity: 1;
+                transform: rotate(-30deg);
+                transition: .3s linear !important;
+            }
+            
+            li {
+                display: block !important;
+                width: 4px !important;
+                height: 4px !important;
+                border-radius: 0 !important;
+                background-color: #fff;
+                opacity: 0.45;
+                transition: .3s linear !important;
+                
+                button {
+                    display: block !important;
+                    color: transparent !important; 
+                    font-size: 0;
+                    user-select: none;
+                }
+            }
+        }
+
+       
+
         .slick-prev {
             position: absolute !important;
             top: 50%;
