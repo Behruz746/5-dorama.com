@@ -10,7 +10,7 @@ import AppContext from "../../AppContext";
 
 import "./styles.scss";
 
-function Sliders({ url, title , id}) {
+function Sliders({ url, title, id }) {
   const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
@@ -33,8 +33,6 @@ function Sliders({ url, title , id}) {
 
     fetctAnime();
   }, [isUrl]);
-
-  console.log(dataNextPage);
 
   const settings = {
     className: "slider variable-width",
@@ -102,12 +100,12 @@ function Sliders({ url, title , id}) {
   );
 
   return (
-    <section className="Home__Sliders w-full" id={id}>
+    <section className="Home__Sliders w-full sliderId" id={id}>
       <div className="container">
         <div className="Sliders__container">
           <div className="Slider__cards">
             <div className="Slider__navigation">
-              <NavLink to="*" className="navigation__title">
+              <NavLink to="/" className="navigation__title" >
                 <h1 className="title">{title}</h1>
                 <Svg />
               </NavLink>

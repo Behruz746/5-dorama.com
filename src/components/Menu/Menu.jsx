@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { useLocation } from "react-router-dom"; // location pahtnames
 
 // Data
 import { dropData, dropDataMovies } from "../../data/data";
@@ -28,6 +29,20 @@ function Menu() {
   const [isArrorToggle00, setIsArrowToggle00] = useState(false);
   const [isArrorToggle01, setIsArrowToggle01] = useState(false);
 
+  const scrollFun = (event, index, id) => {
+    const targetId = id.slice(index);
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      event.preventDefault(); 
+      const targetOffsetTop = targetElement.offsetTop;
+      const scrollToPosition = targetOffsetTop - 180; // 180px tepaga kotariladi
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const ListDrop = () => (
     <div
       className={
@@ -36,7 +51,11 @@ function Menu() {
     >
       {dropData.map((data) => (
         <div key={uuidv4()}>
-          <a href={data.link} className="d-flex drop__item">
+          <a
+            href={data.link}
+            className="d-flex drop__item"
+            onClick={(event) => scrollFun(event, 7, data.link)}
+          >
             <SvgPlay />
             <h1>{data.name}</h1>
           </a>
@@ -54,7 +73,11 @@ function Menu() {
       <div>
         {dropDataMovies.map((data) => (
           <div key={uuidv4()}>
-            <a href={data.link} className="d-flex drop__item">
+            <a
+              href={data.link}
+              className="d-flex drop__item"
+              onClick={(event) => scrollFun(event, 7, data.link)}
+            >
               <SvgPlay />
               <h1>{data.name}</h1>
             </a>
@@ -181,7 +204,6 @@ function Menu() {
                 onClick={() => {
                   setIsArrowToggle00(!isArrorToggle00);
                   setIsArrowToggle01(false);
-                  console.log(isArrorToggle00);
                 }}
               >
                 <img

@@ -41,6 +41,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #0E1621;
   color: #768C9E;
+  transition: all .2s linear;
 
   &::-webkit-scrollbar {
     max-width: 10px; 
