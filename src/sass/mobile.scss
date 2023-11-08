@@ -317,6 +317,16 @@
     .text--hidden {
         display: block !important;
     }
+
+    .video__data-text {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    .video__data-textMin {
+        font-size: 10px;
+        line-height: 1px;
+    }
 }
 
 @media screen and (max-width: 370px) {

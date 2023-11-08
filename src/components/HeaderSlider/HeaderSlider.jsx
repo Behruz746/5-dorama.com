@@ -10,24 +10,22 @@ import { useEffect } from "react";
 function HeaderSlider({ pNone }) {
   const settings = {
     className: "slider variable-width",
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 1200,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: true,
     variableWidth: false,
+    autoplay: true,
+    autoplaySpeed: 10000,
     // adaptiveHeight: true,
     arrows: true,
-    // arrows: true,
-    // autoplay: true,
-    // autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 450,
+        breakpoint: 475,
         settings: {
           arrows: false,
-          dots: true,
         },
       },
     ],

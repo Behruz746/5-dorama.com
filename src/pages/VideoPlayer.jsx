@@ -10,12 +10,37 @@ function VideoPlayer() {
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
   const { id } = useParams();
+  const date = String(isDataVideo.updated_at).slice(0, 4);
+  // const dateOld = String(isDataVideo.material_data.minimal_age);
+
+  const Svg = () => (
+    <svg
+      className="card__icon"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_361_3353)">
+        <path
+          d="M7.99999 11.5133L10.7667 13.1867C11.2733 13.4933 11.8933 13.04 11.76 12.4667L11.0267 9.31999L13.4733 7.19999C13.92 6.81332 13.68 6.07999 13.0933 6.03332L9.87332 5.75999L8.61332 2.78665C8.38665 2.24665 7.61332 2.24665 7.38665 2.78665L6.12665 5.75332L2.90665 6.02665C2.31999 6.07332 2.07999 6.80665 2.52665 7.19332L4.97332 9.31332L4.23999 12.46C4.10665 13.0333 4.72665 13.4867 5.23332 13.18L7.99999 11.5133Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_361_3353">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true`
+          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
         );
         setIsDataVideo(data.data.results[0]);
       } catch (error) {
@@ -24,6 +49,15 @@ function VideoPlayer() {
     };
     fetchData();
   }, [id]);
+
+  useEffect(() => {
+    const minAge = document.querySelector("#minAge");
+    if (minAge.textContent === "undefined+") {
+      minAge.textContent = "12+";
+    }
+  }, [isDataVideo]);
+
+  console.log(isDataVideo);
 
   // console.log(location);
 
@@ -34,8 +68,6 @@ function VideoPlayer() {
           id="videoPage"
           className="videoPlayer"
           src={isDataVideo && isDataVideo.link}
-          width="846px"
-          height="476px"
           frameBorder="0"
           allowFullScreen
           allow="autoplay *; fullscreen *"
@@ -44,10 +76,37 @@ function VideoPlayer() {
         <div className="VideoPlayer__content">
           <div className="VideoPlayer__content--row">
             <h1 className="VideoPlayer__title">{isDataVideo.title}</h1>
-            <div className="VideoPlayer__videos">
-              <button>Смотреть</button>
-              <NavLink to="/">Трейлер</NavLink>
-              <button>Кадры из фильмов</button>
+
+            <div className="Video__data">
+              <div className="Video__rating d-flex-data">
+                <Svg />
+                <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+                  {isDataVideo.material_data
+                    ? isDataVideo.material_data.kinopoisk_rating
+                    : "5.8"}
+                </h2>
+              </div>
+              <span>|</span>
+              <div className="Video__date d-flex-data">
+                <h2 className="video__data-text">{isDataVideo.year}</h2>
+                <span>-</span>
+                <h2 className="video__data-text">{date}</h2>
+              </div>
+              <span>|</span>
+              <div className="Video__age">
+                <h2 className="video__data-textMin" id="minAge">
+                  {isDataVideo.material_data
+                    ? `${isDataVideo.material_data.minimal_age}+`
+                    : "14+"}
+                </h2>
+              </div>
+              <span>|</span>
+              <div className="Video__country">
+                <h2 className="video__data-textMin">
+                  {isDataVideo.material_data &&
+                    isDataVideo.material_data.countries}
+                </h2>
+              </div>
             </div>
           </div>
 

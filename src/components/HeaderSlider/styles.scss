@@ -37,7 +37,6 @@
             transform: translateX(-50%) !important;
 
             .slick-active {
-                // display: none !important;
                 opacity: 1;
                 transform: rotate(-30deg);
                 transition: .3s linear !important;

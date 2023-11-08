@@ -63,8 +63,6 @@
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
-    // min-height: 476px !important;
-    // border: 1px solid #d00;
 }
 
 .VideoPlayer__content {
@@ -73,7 +71,7 @@
 }
 
 .VideoPlayer__title {
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 500;
     line-height: 26px; /* 108.333% */
@@ -81,32 +79,79 @@
     margin-top: 12px;
 }
 
-.VideoPlayer__videos {
-    margin-top: 24px;
-    margin-bottom: 32px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
+// .VideoPlayer__videos {
+//     margin-top: 24px;
+//     margin-bottom: 32px;
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 12px;
+//     align-items: center;
 
-    button, a {
-        border: 0;
-        outline: 0;
-        padding: 11px 32px;
-        border-radius: 10px;
-        background-color: transparent;
-        color: #fff;
-        cursor: pointer;
+//     button, a {
+//         border: 0;
+//         outline: 0;
+//         padding: 11px 32px;
+//         border-radius: 10px;
+//         background-color: transparent;
+//         color: #fff;
+//         cursor: pointer;
 
-        &:nth-child(1) {
-            background-color: #fff;
-            color: #000;
-        }
+//         &:nth-child(1) {
+//             background-color: #fff;
+//             color: #000;
+//         }
         
-        &:hover {
-            background-color: #fff;
-            color: #000;
+//         &:hover {
+//             background-color: #fff;
+//             color: #000;
+//         }
+//     }
+// }
+
+.Video__data {
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .card__icon {
+        width: 12px;
+        height: 12px;
+
+        path {
+            fill: #FFBA33;
         }
+    }
+
+    .d-flex-data {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .Video__age, .Video__country {
+        display: flex;
+        padding: 2px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2px;
+        background: #17212B;
+    }
+
+    .video__data-text {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14px;
+        color: #fff;
+    }
+    
+    .video__data-textMin {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px; 
+        color: #fff;
     }
 }
 
