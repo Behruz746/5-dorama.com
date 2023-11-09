@@ -87,9 +87,13 @@ function VideoPlayer() {
 
       if (i === "serial") {
         setIsType("серии");
-      } else if (i === "movie" || "russian-movie") {
+      }
+
+      if (i === "movie" || "russian-movie") {
         setIsType("фильм");
-      } else if (i === "anime" || "anime-serial") {
+      }
+
+      if (i === "anime" || "anime-serial") {
         setIsType("аниме");
         console.log(i);
       }

@@ -1,12 +1,11 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
 
-function RootFilems() { 
+function RootFilems() {
   return (
-    <div className='RootFilems w-full page'>
-        <Outlet />
+    <div className="RootFilems w-full page">
+      <Outlet />
     </div>
-  )
+  );
 }
 
-export default RootFilems
+export default RootFilems;
