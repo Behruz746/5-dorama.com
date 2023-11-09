@@ -57,9 +57,92 @@
       }
 }
 
+.Video__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    .video__serials {
+        max-width: 193px + 10px;
+        width: 100%;
+        height: 476px;
+        border-radius: 6px;
+        border: 2px solid #17212B;
+        background: #0E1621;
+        padding: 18px 19px;
+    }
+
+    .video__serial--grids {
+        margin-top: 18px;
+        display: flex;
+        max-height: 360px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            max-width: 3px !important; 
+        }
+         
+        &::-webkit-scrollbar-track {
+            background-color: transparent;   
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: #768c9ea1;
+        }
+    }
+    
+    .video__searals--content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        h1 {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 22px; /* 122.222% */
+            color: #fff;
+        }
+
+        p {
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 14px; /* 116.667% */
+            color: #768C9E;
+        }
+    }
+
+    .serial {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 15px 0px;
+        border-radius: 4px;
+        background: #17212B;
+
+        h1 {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 14px; /* 100% */
+            color: #fff;
+        }
+    }
+}
+
 #videoPage {
     width: 100% !important;
-    height: 475px;
+    height: 476px;
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
@@ -71,42 +154,23 @@
 }
 
 .VideoPlayer__title {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 26px; /* 108.333% */
-    color: #fff;
+    display: flex;
+    align-items: center;
     margin-top: 12px;
+    gap: 4px;
+
+    h1 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px; /* 108.333% */
+        color: #fff;
+    }
+
+    span {
+        color: #768C9E;
+    }
 }
-
-// .VideoPlayer__videos {
-//     margin-top: 24px;
-//     margin-bottom: 32px;
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 12px;
-//     align-items: center;
-
-//     button, a {
-//         border: 0;
-//         outline: 0;
-//         padding: 11px 32px;
-//         border-radius: 10px;
-//         background-color: transparent;
-//         color: #fff;
-//         cursor: pointer;
-
-//         &:nth-child(1) {
-//             background-color: #fff;
-//             color: #000;
-//         }
-        
-//         &:hover {
-//             background-color: #fff;
-//             color: #000;
-//         }
-//     }
-// }
 
 .Video__data {
     margin-top: 13px;
@@ -115,8 +179,8 @@
     gap: 8px;
 
     .card__icon {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
 
         path {
             fill: #FFBA33;
@@ -156,14 +220,15 @@
 }
 
 .VideoPlayer__column { 
+    // border: 1px solid #d00;
     display: flex;
     gap: 45px;
     justify-content: space-between;
-
+    
     .about__image {
         overflow: hidden;
     }
-
+    
     .Card {
         max-width: 186px;
         width: 100%;
@@ -171,11 +236,14 @@
 }
 
 .about__contetn {
-    max-width: 805px;
+    // border: 1px solid #d00;
+    max-width: 1046px;
     width: 100%;
+    position: relative;
 
     .about__text {
-        height: 100%;
+        max-height: 55px;
+        overflow: hidden;
     }
 
     .about__text--active {
@@ -186,24 +254,35 @@
     }
 
     .text--hidden {
-        display: none;
-        margin-top: 8px;
+        display: flex;
+        max-width: 137px;
         width: 100%;
-        padding: 7px 5px;
+        padding: 6px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
         border: 0;
         outline: 0;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+        background: rgba(14, 22, 33, 0.60);
+        backdrop-filter: blur(2.5px);
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        cursor: pointer;
 
         .text00, .text01 {
-            color: #fff;
-            font-size: 16px;
+            color: #5EB5F7;
+            font-size: 10px;
             font-style: normal;
+            display: block;
             font-weight: 400;
-            line-height: 140%;
+            line-height: 18px;
             user-select: none;
             text-align: center;
             transition: .2s linear;
+            text-overflow: ellipsis;
         }
 
         .d-none {
@@ -219,8 +298,9 @@
 }
 
 .VideoPlayer__about {
+    margin-top: 26px;
+
     h2 {
-        margin-bottom: 4px;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
@@ -236,3 +316,81 @@
         color: #fff;
     }
 }
+
+/// loading animtion style ///
+
+.video--animtion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    height: 475px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    background-color: #000;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  
+    div {
+      position: absolute;
+      top: 33px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #fff;
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  
+      &:nth-child(1) {
+        left: 8px;
+        animation: lds-ellipsis1 0.6s infinite;
+      }
+  
+      &:nth-child(2) {
+        left: 8px;
+        animation: lds-ellipsis2 0.6s infinite;
+      }
+  
+      &:nth-child(3) {
+        left: 32px;
+        animation: lds-ellipsis2 0.6s infinite;
+      }
+  
+      &:nth-child(4) {
+        left: 56px;
+        animation: lds-ellipsis3 0.6s infinite;
+      }
+    }
+  }
+  
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }

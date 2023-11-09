@@ -52,6 +52,10 @@ function App() {
     const btnSubmit = document.querySelector(".btn__submit");
     const inputBtn = document.querySelector(".input__btn");
 
+    function ToggleEve() {
+      setInputToggle(true);
+    }
+
     inputEl.forEach((item) => {
       item.addEventListener("change", (e) => {
         setIsUrl(
@@ -67,13 +71,8 @@ function App() {
       });
     });
 
-    btnSubmit.addEventListener("click", () => {
-      setInputToggle(true);
-    });
-
-    inputBtn.addEventListener("click", () => {
-      setInputToggle(true);
-    });
+    btnSubmit.addEventListener("click", ToggleEve);
+    inputBtn.addEventListener("click", ToggleEve);
   }, []);
 
   useEffect(() => {

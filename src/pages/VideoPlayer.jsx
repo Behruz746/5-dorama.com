@@ -9,9 +9,12 @@ function VideoPlayer() {
   const [isDataVideo, setIsDataVideo] = useState([]);
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
+  const [isType, setIsType] = useState("фильм");
   const { id } = useParams();
   const date = String(isDataVideo.updated_at).slice(0, 4);
-  // const dateOld = String(isDataVideo.material_data.minimal_age);
+  const dataType = isDataVideo.type;
+
+  console.log(dataType);
 
   const Svg = () => (
     <svg
@@ -52,30 +55,105 @@ function VideoPlayer() {
 
   useEffect(() => {
     const minAge = document.querySelector("#minAge");
+    const aboutText = document.querySelector(".about__text");
+
+    // if(isDataVideo.material_data.premiere_world) {
+    //   const date01 = isDataVideo.material_data.premiere_world;
+    //   console.log(date01);
+    // }
+
     if (minAge.textContent === "undefined+") {
       minAge.textContent = "12+";
     }
+
+    if (aboutText.textContent === "Не найдено описание о фильме") {
+      document.querySelector(".text--hidden").style.display = "none";
+    } else {
+      document.querySelector(".text--hidden").style.display = "block";
+    }
+
+    if (dataType) {
+      const i = dataType.slice(8);
+
+      console.log(i);
+
+      if (i === "serial") {
+        setIsType("серии");
+      } else if (i === "movie" || "russian-movie") {
+        setIsType("фильм");
+      } else if (i === "anime" || "anime-serial") {
+        setIsType("аниме");
+        console.log(i);
+      }
+    }
   }, [isDataVideo]);
+
+  console.log(isType);
 
   console.log(isDataVideo);
 
+  // isDataVideo.link = false;
   // console.log(location);
 
   return (
     <div className="VideoPlayer w-full">
       <div className="container">
-        <iframe
-          id="videoPage"
-          className="videoPlayer"
-          src={isDataVideo && isDataVideo.link}
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay *; fullscreen *"
-        ></iframe>
+        <div className="Video__container">
+          {isDataVideo.link ? (
+            <iframe
+              id="videoPage"
+              className="videoPlayer"
+              src={isDataVideo.link}
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay *; fullscreen *"
+            ></iframe>
+          ) : (
+            <div className="video--animtion">
+              <div className="lds-ellipsis">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          )}
+
+          <div className="video__serials">
+            <div className="video__searals--content">
+              <h1 className="video__searals--title">Все серии</h1>
+              <p>40 есть серии. посмотреть все бесплатно</p>
+            </div>
+            <div className="video__serial--grids">
+              <div className="serial">
+                <h1>1</h1>
+              </div>
+              <div className="serial">
+                <h1>1</h1>
+              </div>
+              <div className="serial">
+                <h1>1</h1>
+              </div>
+              <div className="serial">
+                <h1>1</h1>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="VideoPlayer__content">
           <div className="VideoPlayer__content--row">
-            <h1 className="VideoPlayer__title">{isDataVideo.title}</h1>
+            <div className="VideoPlayer__title">
+              <h1> {isDataVideo.title}</h1>
+              <span>|</span>
+              <h1>
+                {isDataVideo.episodes_count ? (
+                  <>{isDataVideo.episodes_count}-серии</>
+                ) : (
+                  <>{isType}</>
+                )}
+              </h1>
+            </div>
 
             <div className="Video__data">
               <div className="Video__rating d-flex-data">
@@ -101,19 +179,25 @@ function VideoPlayer() {
                 </h2>
               </div>
               <span>|</span>
-              <div className="Video__country">
-                <h2 className="video__data-textMin">
-                  {isDataVideo.material_data &&
-                    isDataVideo.material_data.countries}
-                </h2>
-              </div>
+
+              {isDataVideo.material_data && (
+                <>
+                  {isDataVideo.material_data.countries.map((country, index) => (
+                    <div className="Video__country">
+                      <h2 className="video__data-textMin" key={index}>
+                        {country}
+                      </h2>
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
           </div>
 
           <div className="VideoPlayer__column">
             <div className="VideoPlayer__about">
               <div className="about__contetn">
-                <h2 className="about__title">О фильме</h2>
+                {/* <h2 className="about__title">О фильме</h2> */}
                 <p
                   ref={paragraphRef}
                   className={testToggle ? "about__text--active" : "about__text"}
@@ -125,6 +209,7 @@ function VideoPlayer() {
                 </p>
 
                 <button
+                  style={testToggle ? { bottom: "-25px" } : { bottom: "0px" }}
                   className="text--hidden"
                   onClick={() => setTextToggle(!testToggle)}
                 >
@@ -137,7 +222,7 @@ function VideoPlayer() {
                 </button>
               </div>
             </div>
-            <div className="about__image Card">
+            {/* <div className="about__image Card">
               <img
                 src={
                   isDataVideo.material_data &&
@@ -145,7 +230,7 @@ function VideoPlayer() {
                 }
                 alt="video image"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

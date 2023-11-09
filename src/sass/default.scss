@@ -38,9 +38,15 @@ html, body {
 
 body {
   font-family: SF Pro Display, sans-serif !important;
-  background-color: #0E1621;
+  font-family: Arial, Helvetica, sans-serif !important;
+  background-color: #0E1621 !important;
   color: #768C9E;
   transition: all .2s linear;
+
+  #root {
+    background-color: #0E1621;
+    transition: all 0s !important;
+  }
 
   &::-webkit-scrollbar {
     max-width: 10px; 
