@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 // Components
 import Header from "../components/Header/Header";
@@ -33,7 +33,7 @@ function RootLeyout() {
         <Menu />
         <Outlet />
       </main>
-      {/* <AnimationBlock /> */}
+      <AnimationBlock />
       <Analytics />
       <MenuMobile />
     </>

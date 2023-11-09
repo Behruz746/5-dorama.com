@@ -54,6 +54,14 @@ function VideoPlayer() {
   }, [id]);
 
   useEffect(() => {
+    const aboutText = document.querySelector(".about__text");
+
+    aboutText.addEventListener("click", () => {
+      setTextToggle(!testToggle);
+    });
+  }, []);
+
+  useEffect(() => {
     const minAge = document.querySelector("#minAge");
     const aboutText = document.querySelector(".about__text");
 

@@ -132,3 +132,17 @@ body {
     font-size: 17px;
   }
 }
+
+.animtion--block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0E1621;
+  z-index: 1000;
+}
+
+.animtion--none {
+  display: none !important;
+}

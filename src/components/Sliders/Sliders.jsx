@@ -99,7 +99,7 @@ function Sliders({ url, title, id }) {
     </svg>
   );
 
-  return (
+  return ( 
     <section className="Home__Sliders w-full sliderId" id={id}>
       <div className="container">
         <div className="Sliders__container">
