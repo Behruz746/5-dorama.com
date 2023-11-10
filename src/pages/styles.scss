@@ -95,6 +95,31 @@
             border-radius: 8px;
             background-color: #768c9ea1;
         }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            padding: 15px 0px;
+            border-radius: 4px;
+            background: #17212B;
+            cursor: pointer;
+
+            &.active {
+                background-color: #0A83DF;
+            }
+    
+            h1 {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 14px; /* 100% */
+                color: #fff;
+                user-select: none;
+            }
+        }
     }
     
     .video__searals--content {
@@ -117,25 +142,6 @@
             font-weight: 400;
             line-height: 14px; /* 116.667% */
             color: #768C9E;
-        }
-    }
-
-    .serial {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        padding: 15px 0px;
-        border-radius: 4px;
-        background: #17212B;
-
-        h1 {
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 14px; /* 100% */
-            color: #fff;
         }
     }
 }

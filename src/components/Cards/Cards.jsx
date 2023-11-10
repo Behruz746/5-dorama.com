@@ -36,7 +36,7 @@ const MyLoader = (props) => {
 };
 
 function Cards(data) {
-  const { setIsVideoLink, isVideoLink, dataList, isLoad } =
+  const { isLoad } =
     useContext(AppContext);
 
   const [isItemBo, setIsItemBo] = useState(false);

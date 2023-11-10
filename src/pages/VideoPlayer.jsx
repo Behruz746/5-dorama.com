@@ -3,6 +3,7 @@ import AppContext from "../AppContext";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 function VideoPlayer() {
   const { isVideoLink } = useContext(AppContext);
@@ -12,9 +13,10 @@ function VideoPlayer() {
   const [isType, setIsType] = useState("фильм");
   const { id } = useParams();
   const date = String(isDataVideo.updated_at).slice(0, 4);
-  const dataType = isDataVideo.type;
-
-  console.log(dataType);
+  const [isdataType, setIsDataType] = useState();
+  const [isSerial, setIsSerial] = useState([]);
+  const [isSerialLink, setIsSerialLink] = useState();
+  const [isIndex, setIsIndex] = useState();
 
   const Svg = () => (
     <svg
@@ -46,12 +48,16 @@ function VideoPlayer() {
           `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
         );
         setIsDataVideo(data.data.results[0]);
+        setIsDataType(data.data.results[0].type);
+        setIsSerial(data.data.results[0].seasons[1].episodes);
       } catch (error) {
         console.log("Error: 404;", error);
       }
     };
     fetchData();
   }, [id]);
+
+  const serialArrD = Object.values(isSerial);
 
   useEffect(() => {
     const aboutText = document.querySelector(".about__text");
@@ -65,11 +71,6 @@ function VideoPlayer() {
     const minAge = document.querySelector("#minAge");
     const aboutText = document.querySelector(".about__text");
 
-    // if(isDataVideo.material_data.premiere_world) {
-    //   const date01 = isDataVideo.material_data.premiere_world;
-    //   console.log(date01);
-    // }
-
     if (minAge.textContent === "undefined+") {
       minAge.textContent = "12+";
     }
@@ -79,33 +80,27 @@ function VideoPlayer() {
     } else {
       document.querySelector(".text--hidden").style.display = "block";
     }
+  }, [isDataVideo]);
 
-    if (dataType) {
-      const i = dataType.slice(8);
-
-      console.log(i);
-
-      if (i === "serial") {
+  useEffect(() => {
+    if (isdataType) {
+      if (isDataVideo.type === "serial") {
         setIsType("серии");
       }
 
-      if (i === "movie" || "russian-movie") {
+      if (isDataVideo.type === "movie" || "russian-movie") {
         setIsType("фильм");
       }
 
-      if (i === "anime" || "anime-serial") {
+      if (isDataVideo.type === "anime") {
         setIsType("аниме");
-        console.log(i);
       }
     }
-  }, [isDataVideo]);
+  }, [isdataType]);
 
-  console.log(isType);
+  // console.log(isDataVideo);
 
-  console.log(isDataVideo);
-
-  // isDataVideo.link = false;
-  // console.log(location);
+  console.log(isSerial);
 
   return (
     <div className="VideoPlayer w-full">
@@ -115,7 +110,7 @@ function VideoPlayer() {
             <iframe
               id="videoPage"
               className="videoPlayer"
-              src={isDataVideo.link}
+              src={!isSerialLink ? isDataVideo.link : isSerialLink}
               frameBorder="0"
               allowFullScreen
               allow="autoplay *; fullscreen *"
@@ -134,21 +129,31 @@ function VideoPlayer() {
           <div className="video__serials">
             <div className="video__searals--content">
               <h1 className="video__searals--title">Все серии</h1>
-              <p>40 есть серии. посмотреть все бесплатно</p>
+              <p>
+                {isDataVideo.episodes_count} есть серии. посмотреть все
+                бесплатно
+              </p>
             </div>
             <div className="video__serial--grids">
-              <div className="serial">
-                <h1>1</h1>
-              </div>
-              <div className="serial">
-                <h1>1</h1>
-              </div>
-              <div className="serial">
-                <h1>1</h1>
-              </div>
-              <div className="serial">
-                <h1>1</h1>
-              </div>
+              <>
+                {serialArrD.map((link, index) => {
+                  return (
+                    <div
+                      className={
+                        isIndex === index + 1 ? "active serial" : "serial"
+                      }
+                      onClick={() => {
+                        setIsSerialLink(link);
+                        setIsIndex(index + 1);
+                      }}
+                    >
+                      <h1>{index + 1}</h1>
+                    </div>
+                  );
+                })}
+
+                {/* <MalumotlarComponent /> */}
+              </>
             </div>
           </div>
         </div>
@@ -160,7 +165,7 @@ function VideoPlayer() {
               <span>|</span>
               <h1>
                 {isDataVideo.episodes_count ? (
-                  <>{isDataVideo.episodes_count}-серии</>
+                  <>{!isIndex ? isDataVideo.episodes_count : isIndex}-серии</>
                 ) : (
                   <>{isType}</>
                 )}
@@ -194,11 +199,9 @@ function VideoPlayer() {
 
               {isDataVideo.material_data && (
                 <>
-                  {isDataVideo.material_data.countries.map((country, index) => (
-                    <div className="Video__country">
-                      <h2 className="video__data-textMin" key={index}>
-                        {country}
-                      </h2>
+                  {isDataVideo.material_data.countries.map((country) => (
+                    <div className="Video__country" key={uuidv4()}>
+                      <h2 className="video__data-textMin">{country}</h2>
                     </div>
                   ))}
                 </>
