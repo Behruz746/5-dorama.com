@@ -17,6 +17,7 @@ function VideoPlayer() {
   const [isSerial, setIsSerial] = useState([]);
   const [isSerialLink, setIsSerialLink] = useState();
   const [isIndex, setIsIndex] = useState();
+  const [isCountry, setIsCountry] = useState([]);
 
   const Svg = () => (
     <svg
@@ -50,6 +51,7 @@ function VideoPlayer() {
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
         setIsSerial(data.data.results[0].seasons[1].episodes);
+        setIsCountry(data.data.results[0].material_data.countries);
       } catch (error) {
         console.log("Error: 404;", error);
       }
@@ -88,7 +90,7 @@ function VideoPlayer() {
         setIsType("серии");
       }
 
-      if (isDataVideo.type === "movie" || "russian-movie") {
+      if (isDataVideo.type === "movie") {
         setIsType("фильм");
       }
 
@@ -96,11 +98,20 @@ function VideoPlayer() {
         setIsType("аниме");
       }
     }
+
+    // if (isDataVideo.material_data.countries) {
+    //   console.log(isDataVideo.material_data.countries);
+    // }
+
+    // if (isCountry) {
+    //   console.log(isCountry);
+    // }
   }, [isdataType]);
 
+  // console.log(isCountry.length);
   // console.log(isDataVideo);
 
-  console.log(isSerial);
+  // console.log(isSerial);
 
   return (
     <div className="VideoPlayer w-full">
@@ -151,8 +162,6 @@ function VideoPlayer() {
                     </div>
                   );
                 })}
-
-                {/* <MalumotlarComponent /> */}
               </>
             </div>
           </div>
@@ -197,7 +206,7 @@ function VideoPlayer() {
               </div>
               <span>|</span>
 
-              {isDataVideo.material_data && (
+              {/* {isDataVideo.material_data && (
                 <>
                   {isDataVideo.material_data.countries.map((country) => (
                     <div className="Video__country" key={uuidv4()}>
@@ -205,7 +214,7 @@ function VideoPlayer() {
                     </div>
                   ))}
                 </>
-              )}
+              )} */}
             </div>
           </div>
 
