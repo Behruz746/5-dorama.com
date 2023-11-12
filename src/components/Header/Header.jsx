@@ -113,7 +113,7 @@ function Header() {
             </div>
 
             <div className="header__input-box"> 
-              <div className="input">
+              <div className="input"> 
                 <input
                   className="inputEl"
                   type="text"

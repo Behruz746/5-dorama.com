@@ -17,7 +17,8 @@ function VideoPlayer() {
   const [isSerial, setIsSerial] = useState([]);
   const [isSerialLink, setIsSerialLink] = useState();
   const [isIndex, setIsIndex] = useState();
-  const [isCountry, setIsCountry] = useState([]);
+  const [isDataSimilar, setIsSimilar] = useState([]);
+  const [linkGenres, setLinkGenres] = useState("");
 
   const Svg = () => (
     <svg
@@ -50,14 +51,34 @@ function VideoPlayer() {
         );
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
-        setIsSerial(data.data.results[0].seasons[1].episodes);
-        setIsCountry(data.data.results[0].material_data.countries);
+        setIsSerial(
+          data.data.results[0].seasons[1]
+            ? data.data.results[0].seasons[1].episodes
+            : data.data.results[0].seasons[2].episodes
+        );
+        setLinkGenres(data.data.results[0].material_data.genres[0]);
       } catch (error) {
         console.log("Error: 404;", error);
       }
     };
     fetchData();
   }, [id]);
+
+  useEffect(() => {
+    const fetchFun = async () => {
+      try {
+        const data = await axios.get(
+          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=10&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&genres=&countries=Япония,Корея Южная,Китай&type=foreign-movie`
+        );
+        setIsSimilar(data.data.results);
+      } catch (error) {
+        console.log("Error: 404", error);
+      }
+    };
+    fetchFun();
+  }, []);
+
+  console.log(isDataVideo.material_data && isDataVideo.material_data.genres[0]);
 
   const serialArrD = Object.values(isSerial);
 
@@ -98,20 +119,74 @@ function VideoPlayer() {
         setIsType("аниме");
       }
     }
-
-    // if (isDataVideo.material_data.countries) {
-    //   console.log(isDataVideo.material_data.countries);
-    // }
-
-    // if (isCountry) {
-    //   console.log(isCountry);
-    // }
   }, [isdataType]);
 
-  // console.log(isCountry.length);
-  // console.log(isDataVideo);
+  console.log(isDataVideo);
 
-  // console.log(isSerial);
+  ///////////// Components ////////////////
+
+  const SerialBlock = () => (
+    <>
+      <div className="video__searals--content">
+        <h1 className="video__searals--title">Все серии</h1>
+        <p>{isDataVideo.episodes_count} есть серии. посмотреть все бесплатно</p>
+      </div>
+      <div className="video__serial--grids">
+        <>
+          {serialArrD.map((link, index) => {
+            return (
+              <div
+                key={uuidv4()}
+                className={isIndex === index + 1 ? "active serial" : "serial"}
+                onClick={() => {
+                  setIsSerialLink(link);
+                  setIsIndex(index + 1);
+                }}
+              >
+                <h1>{index + 1}</h1>
+              </div>
+            );
+          })}
+        </>
+      </div>
+    </>
+  );
+
+  const RecomentionBlock = () => (
+    <>
+      <div className="video__searals--content">
+        <h1 className="video__searals--title">Похожие фильмы</h1>
+      </div>
+      <div className="over-h">
+        <div className="video__movie--flex">
+          {isDataSimilar.map((data) => {
+            return (
+              <NavLink
+                to={`/player/video/${data.id}`}
+                key={uuidv4()}
+                target="_blank"
+              >
+                <div
+                  className="movie__card"
+                  onClick={() => {
+                    setIdId(data.id);
+                  }}
+                >
+                  <div>
+                    <h1 className="movie__title">{data.title && data.title}</h1>
+                  </div>
+                  <img
+                    src={data.material_data && data.material_data.poster_url}
+                    alt="Movie image"
+                  />
+                </div>
+              </NavLink>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <div className="VideoPlayer w-full">
@@ -138,32 +213,11 @@ function VideoPlayer() {
           )}
 
           <div className="video__serials">
-            <div className="video__searals--content">
-              <h1 className="video__searals--title">Все серии</h1>
-              <p>
-                {isDataVideo.episodes_count} есть серии. посмотреть все
-                бесплатно
-              </p>
-            </div>
-            <div className="video__serial--grids">
-              <>
-                {serialArrD.map((link, index) => {
-                  return (
-                    <div
-                      className={
-                        isIndex === index + 1 ? "active serial" : "serial"
-                      }
-                      onClick={() => {
-                        setIsSerialLink(link);
-                        setIsIndex(index + 1);
-                      }}
-                    >
-                      <h1>{index + 1}</h1>
-                    </div>
-                  );
-                })}
-              </>
-            </div>
+            {isDataVideo.episodes_count ? (
+              <SerialBlock />
+            ) : (
+              <RecomentionBlock />
+            )}
           </div>
         </div>
 
@@ -184,11 +238,17 @@ function VideoPlayer() {
             <div className="Video__data">
               <div className="Video__rating d-flex-data">
                 <Svg />
-                <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-                  {isDataVideo.material_data
-                    ? isDataVideo.material_data.kinopoisk_rating
-                    : "5.8"}
-                </h2>
+                {isDataVideo.material_data ? (
+                  <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+                    {isDataVideo.material_data.kinopoisk_rating
+                      ? isDataVideo.material_data.kinopoisk_rating
+                      : "5.8"}
+                  </h2>
+                ) : (
+                  <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+                    5.8
+                  </h2>
+                )}
               </div>
               <span>|</span>
               <div className="Video__date d-flex-data">
@@ -206,15 +266,29 @@ function VideoPlayer() {
               </div>
               <span>|</span>
 
-              {/* {isDataVideo.material_data && (
+              {isDataVideo.material_data && (
                 <>
-                  {isDataVideo.material_data.countries.map((country) => (
-                    <div className="Video__country" key={uuidv4()}>
-                      <h2 className="video__data-textMin">{country}</h2>
-                    </div>
-                  ))}
+                  {isDataVideo.material_data.countries ? (
+                    <>
+                      {isDataVideo.material_data.countries.map(
+                        (country, index) => (
+                          <div className="Video__country" key={uuidv4()}>
+                            {country ? (
+                              <h2 className="video__data-textMin">{country}</h2>
+                            ) : (
+                              <h2 className="video__data-textMin">
+                                No country
+                              </h2>
+                            )}
+                          </div>
+                        )
+                      )}
+                    </>
+                  ) : (
+                    <h1>Информации о стране нет</h1>
+                  )}
                 </>
-              )} */}
+              )}
             </div>
           </div>
 
@@ -233,7 +307,7 @@ function VideoPlayer() {
                 </p>
 
                 <button
-                  style={testToggle ? { bottom: "-25px" } : { bottom: "0px" }}
+                  style={testToggle ? { bottom: "-10px" } : { bottom: "0px" }}
                   className="text--hidden"
                   onClick={() => setTextToggle(!testToggle)}
                 >

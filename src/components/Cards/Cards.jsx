@@ -85,7 +85,7 @@ function Cards(data) {
               }}
             >
               <NavLink
-                to={`video/${dataId}`}
+                to={`/player/video/${dataId}`}
                 onClick={() => {
                   localStorage.setItem("dataLink", data.link);
                 }}

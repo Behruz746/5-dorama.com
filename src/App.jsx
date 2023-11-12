@@ -13,8 +13,7 @@ import AppContext from "./AppContext";
 
 // Layout
 import RootLeyout from "./layout/RootLeyout";
-import RootDramaList from "./layout/RootDramaList";
-import RootFilems from "./layout/RootFilems";
+import RootPlayer from "./layout/RootPlayer";
 
 // Pages
 import Home from "./pages/Home";
@@ -71,8 +70,8 @@ function App() {
       });
     });
 
-    btnSubmit.addEventListener("click", ToggleEve);
-    inputBtn.addEventListener("click", ToggleEve);
+    // btnSubmit.addEventListener("click", ToggleEve);
+    // inputBtn.addEventListener("click", ToggleEve);
   }, []);
 
   useEffect(() => {
@@ -153,33 +152,11 @@ function App() {
         },
         {
           path: "dramas",
-          element: <RootDramaList />,
-
-          children: [
-            {
-              index: true,
-              element: <Dramas />,
-            },
-            {
-              path: "video/:id",
-              element: <VideoPlayer />,
-            },
-          ],
+          element: <Dramas />,
         },
         {
           path: "filems",
-          element: <RootFilems />,
-
-          children: [
-            {
-              index: true,
-              element: <Filems />,
-            },
-            {
-              path: "video/:id",
-              element: <VideoPlayer />,
-            },
-          ],
+          element: <Filems />,
         },
         {
           path: "actor",
@@ -204,8 +181,15 @@ function App() {
         },
         // {/* Video page: video '_' ▶ */}
         {
-          path: "video/:id",
-          element: <VideoPlayer />,
+          path: "player",
+          element: <RootPlayer />,
+
+          children: [
+            {
+              path: "video/:id",
+              element: <VideoPlayer />,
+            },
+          ],
         },
       ],
     },

@@ -20,7 +20,7 @@ function HeaderSlider({ pNone }) {
     autoplay: true,
     autoplaySpeed: 10000,
     // adaptiveHeight: true,
-    arrows: true,
+    arrows: true, 
     responsive: [
       {
         breakpoint: 475,
