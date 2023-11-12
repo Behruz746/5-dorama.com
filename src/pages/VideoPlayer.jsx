@@ -148,7 +148,7 @@ function VideoPlayer() {
             );
           })}
         </>
-      </div>
+      </div> 
     </>
   );
 
