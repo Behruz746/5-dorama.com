@@ -78,7 +78,7 @@ function VideoPlayer() {
     fetchFun();
   }, []);
 
-  console.log(isDataVideo.material_data && isDataVideo.material_data.genres[0]);
+  // console.log(isDataVideo.material_data && isDataVideo.material_data.genres[0]);
 
   const serialArrD = Object.values(isSerial);
 
