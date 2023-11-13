@@ -6,15 +6,11 @@ import { useContext, Fragment, useState } from "react";
 import AppContext from "../../AppContext";
 
 function Search() {
-  const {
-    isSearchData,
-    isSearchDataId,
-    toggleSeach,
-    loadSearch,
-    setToggleSeach,
-    setInputToggle,
-  } = useContext(AppContext);
+  const { isSearchData, toggleSeach, loadSearch, setToggleSeach } =
+    useContext(AppContext);
   const [dataId, setDataId] = useState();
+
+  /////////////////// component MyLoader //////////////////////////
 
   const MyLoader = (props) => (
     <ContentLoader
@@ -40,43 +36,36 @@ function Search() {
           <Fragment key={uuidv4()}>
             {loadSearch ? (
               <>
-                {data ? ( /// ozgarish shu joyda
-                  <>
-                    {data.material_data && (
-                      <NavLink to={`player/video/${dataId}`}>
-                        <div
-                          className="card"
-                          onClick={() => {
-                            setDataId(data.id);
-                            setToggleSeach(false);
-                            document.querySelector("body").style.overflow =
-                              "auto";
-                          }}
-                          onMouseOver={() => {
-                            setDataId(data.id);
-                          }}
-                        >
-                          <img
-                            className="card__image"
-                            width={42}
-                            height={63}
-                            src={
-                              data.material_data.poster_url
-                                ? data.material_data.poster_url
-                                : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
-                            }
-                            alt="image movies"
-                          />
-                          <div className="card__content">
-                            <h1 className="card__title">{data.title}</h1>
-                            <p>{data.type}</p>
-                          </div>
-                        </div>
-                      </NavLink>
-                    )}
-                  </>
-                ) : ( /// gacha
-                  <h1>no kino</h1>
+                {data.material_data && (
+                  <NavLink to={`player/video/${dataId}`}>
+                    <div
+                      className="card"
+                      onClick={() => {
+                        setDataId(data.id);
+                        setToggleSeach(false);
+                        document.querySelector("body").style.overflow = "auto";
+                      }}
+                      onMouseOver={() => {
+                        setDataId(data.id);
+                      }}
+                    >
+                      <img
+                        className="card__image"
+                        width={42}
+                        height={63}
+                        src={
+                          data.material_data.poster_url
+                            ? data.material_data.poster_url
+                            : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
+                        }
+                        alt="image movies"
+                      />
+                      <div className="card__content">
+                        <h1 className="card__title">{data.title}</h1>
+                        <p>{data.type}</p>
+                      </div>
+                    </div>
+                  </NavLink>
                 )}
               </>
             ) : (

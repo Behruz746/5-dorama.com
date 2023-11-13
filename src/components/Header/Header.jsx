@@ -112,8 +112,8 @@ function Header() {
               </div>
             </div>
 
-            <div className="header__input-box"> 
-              <div className="input"> 
+            <div className="header__input-box">
+              <div className="input">
                 <input
                   className="inputEl"
                   type="text"

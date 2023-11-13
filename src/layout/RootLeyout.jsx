@@ -35,7 +35,7 @@ function RootLeyout() {
       </main>
       {/* <AnimationBlock /> */}
       <Analytics />
-      <MenuMobile />
+      <MenuMobile />  
     </>
   );
 }

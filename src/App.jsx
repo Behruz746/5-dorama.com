@@ -53,7 +53,7 @@ function App() {
 
     function ToggleEve() {
       setInputToggle(true);
-    }
+    } 
 
     inputEl.forEach((item) => {
       item.addEventListener("change", (e) => {
@@ -231,5 +231,4 @@ function App() {
 }
 
 export default App;
-
 import "./sass/mobile.scss";

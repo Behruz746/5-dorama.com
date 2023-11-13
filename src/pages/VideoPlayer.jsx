@@ -45,18 +45,14 @@ function VideoPlayer() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const regex = /ТВ-3/;
       try {
         const data = await axios.get(
           `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
         );
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
-        setIsSerial(
-          data.data.results[0].seasons[1]
-            ? data.data.results[0].seasons[1].episodes
-            : data.data.results[0].seasons[2].episodes
-        );
-        setLinkGenres(data.data.results[0].material_data.genres[0]);
+        setIsSerial(data.data.results[0].seasons[data.data.results[0].last_season].episodes);
       } catch (error) {
         console.log("Error: 404;", error);
       }
@@ -68,7 +64,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=10&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&genres=&countries=Япония,Корея Южная,Китай&type=foreign-movie`
+          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=10&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&countries=Япония,Корея Южная,Китай&type=foreign-movie&with_seasons=true`
         );
         setIsSimilar(data.data.results);
       } catch (error) {
@@ -78,7 +74,11 @@ function VideoPlayer() {
     fetchFun();
   }, []);
 
-  // console.log(isDataVideo.material_data && isDataVideo.material_data.genres[0]);
+  // let i = 0;
+
+  // for(let i = 0; i < 3; i++) {
+  //   console.log(isDataVideo.seasons && isDataVideo.seasons[i]);
+  // }
 
   const serialArrD = Object.values(isSerial);
 
@@ -148,7 +148,7 @@ function VideoPlayer() {
             );
           })}
         </>
-      </div> 
+      </div>
     </>
   );
 
@@ -270,19 +270,15 @@ function VideoPlayer() {
                 <>
                   {isDataVideo.material_data.countries ? (
                     <>
-                      {isDataVideo.material_data.countries.map(
-                        (country, index) => (
-                          <div className="Video__country" key={uuidv4()}>
-                            {country ? (
-                              <h2 className="video__data-textMin">{country}</h2>
-                            ) : (
-                              <h2 className="video__data-textMin">
-                                No country
-                              </h2>
-                            )}
-                          </div>
-                        )
-                      )}
+                      {isDataVideo.material_data.countries.map((country) => (
+                        <div className="Video__country" key={uuidv4()}>
+                          {country ? (
+                            <h2 className="video__data-textMin">{country}</h2>
+                          ) : (
+                            <h2 className="video__data-textMin">No country</h2>
+                          )}
+                        </div>
+                      ))}
                     </>
                   ) : (
                     <h1>Информации о стране нет</h1>
