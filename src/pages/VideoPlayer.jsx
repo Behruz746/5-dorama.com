@@ -18,7 +18,8 @@ function VideoPlayer() {
   const [isSerialLink, setIsSerialLink] = useState();
   const [isIndex, setIsIndex] = useState();
   const [isDataSimilar, setIsSimilar] = useState([]);
-  const [linkGenres, setLinkGenres] = useState("");
+  const [isGenes, setIsGenes] = useState("");
+  const [isDataList, setIsDataList] = useState([]);
 
   const Svg = () => (
     <svg
@@ -44,15 +45,32 @@ function VideoPlayer() {
   );
 
   useEffect(() => {
+    const fetchFun = async () => {
+      try {
+        const data = await axios.get(
+          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-movie&year=2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&kinopoisk_rating=5-10&imdb_rating=5-10&genres=комедия,боевик,&countries=Япония,Корея Южная,Китай"
+        );
+        setIsDataList(data.data.results);
+      } catch (error) {
+        console.log("Error: 404", error);
+      }
+    };
+    fetchFun();
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
-      const regex = /ТВ-3/;
       try {
         const data = await axios.get(
           `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
         );
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
-        setIsSerial(data.data.results[0].seasons[data.data.results[0].last_season].episodes);
+        setIsGenes(data.data.results[0].material_data.genres[0]);
+        setIsSerial(
+          data.data.results[0].seasons[data.data.results[0].last_season]
+            .episodes
+        );
       } catch (error) {
         console.log("Error: 404;", error);
       }
@@ -64,7 +82,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=10&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&countries=Япония,Корея Южная,Китай&type=foreign-movie&with_seasons=true`
+          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=${isdataType}&year=2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
         );
         setIsSimilar(data.data.results);
       } catch (error) {
@@ -72,16 +90,9 @@ function VideoPlayer() {
       }
     };
     fetchFun();
-  }, []);
-
-  // let i = 0;
-
-  // for(let i = 0; i < 3; i++) {
-  //   console.log(isDataVideo.seasons && isDataVideo.seasons[i]);
-  // }
+  }, [isDataVideo.type, isDataVideo.material_data]);
 
   const serialArrD = Object.values(isSerial);
-
   useEffect(() => {
     const aboutText = document.querySelector(".about__text");
 
@@ -152,6 +163,41 @@ function VideoPlayer() {
     </>
   );
 
+  const ResembleBlock = () => (
+    <>
+      <div className="video__searals--content">
+        <h1 className="video__searals--title">Похожие фильмы</h1>
+      </div>
+      <div className="over-h">
+        <div className="video__movie--flex">
+          {isDataSimilar.map((item) => {
+            return (
+              <NavLink
+                to={`/player/video/${item.id}`}
+                key={uuidv4()}
+                target="_blank"
+              >
+                <div
+                  className="movie__card"
+                  onClick={() => {
+                    setIdId(item.id);
+                  }}
+                >
+                  <div>
+                    <h1 className="movie__title">{item.title && item.title}</h1>
+                  </div>
+                  <img
+                    src={item.material_data && item.material_data.poster_url}
+                    alt="Movie image"
+                  />
+                </div>
+              </NavLink>
+            );
+          })}
+        </div>
+      </div>
+    </>
+  );
   const RecomentionBlock = () => (
     <>
       <div className="video__searals--content">
@@ -159,24 +205,24 @@ function VideoPlayer() {
       </div>
       <div className="over-h">
         <div className="video__movie--flex">
-          {isDataSimilar.map((data) => {
+          {isDataList.map((item) => {
             return (
               <NavLink
-                to={`/player/video/${data.id}`}
+                to={`/player/video/${item.id}`}
                 key={uuidv4()}
                 target="_blank"
               >
                 <div
                   className="movie__card"
                   onClick={() => {
-                    setIdId(data.id);
+                    setIdId(item.id);
                   }}
                 >
                   <div>
-                    <h1 className="movie__title">{data.title && data.title}</h1>
+                    <h1 className="movie__title">{item.title && item.title}</h1>
                   </div>
                   <img
-                    src={data.material_data && data.material_data.poster_url}
+                    src={item.material_data && item.material_data.poster_url}
                     alt="Movie image"
                   />
                 </div>
@@ -213,11 +259,7 @@ function VideoPlayer() {
           )}
 
           <div className="video__serials">
-            {isDataVideo.episodes_count ? (
-              <SerialBlock />
-            ) : (
-              <RecomentionBlock />
-            )}
+            {isDataVideo.episodes_count ? <SerialBlock /> : <ResembleBlock />}
           </div>
         </div>
 
@@ -316,15 +358,12 @@ function VideoPlayer() {
                 </button>
               </div>
             </div>
-            {/* <div className="about__image Card">
-              <img
-                src={
-                  isDataVideo.material_data &&
-                  isDataVideo.material_data.poster_url
-                }
-                alt="video image"
-              />
-            </div> */}
+
+            <div className="Video__container">
+              <div className="video__serials">
+                <RecomentionBlock data={isDataList} />
+              </div>
+            </div>
           </div>
         </div>
       </div>

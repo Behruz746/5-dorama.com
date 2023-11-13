@@ -287,10 +287,16 @@
 }
 
 .VideoPlayer__column { 
-    // border: 1px solid #d00;
     display: flex;
-    gap: 45px;
+    gap: 25px;
     justify-content: space-between;
+    // border: 1px solid #d00;
+
+    .video__serials {
+        max-width: 200px + 3px;
+        width: 100%;
+        // border: 1px solid #d00; 
+    }
     
     .about__image {
         overflow: hidden;
@@ -303,15 +309,16 @@
 }
 
 .about__contetn {
-    // border: 1px solid #d00;
-    max-width: 1046px;
+    max-width: 900px;
     width: 100%;
     position: relative;
-
+    // border: 1px solid #d00;
+    
     .about__text {
         max-height: 55px;
         overflow: hidden;
         cursor: pointer;
+        
     }
 
     .about__text--active {
