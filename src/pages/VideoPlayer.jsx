@@ -48,7 +48,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-movie&year=2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&kinopoisk_rating=5-10&imdb_rating=5-10&genres=комедия,боевик,&countries=Япония,Корея Южная,Китай"
+          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-movie&year=2014,2015,2016,2017,2018,2019,2020,&kinopoisk_rating=7-10&imdb_rating=7-10&all_genres=комедия,ужасы,военный,боевик,биография,фантастика,&countries=Япония,Корея Южная,Китай"
         );
         setIsDataList(data.data.results);
       } catch (error) {
@@ -82,7 +82,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=${isdataType}&year=2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
+          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=35&lgbt=false&types=${isdataType}&year=2016,2017,2018,2019,2020,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
         );
         setIsSimilar(data.data.results);
       } catch (error) {
@@ -90,7 +90,7 @@ function VideoPlayer() {
       }
     };
     fetchFun();
-  }, [isDataVideo.type, isDataVideo.material_data]);
+  }, [isdataType, isGenes]);
 
   const serialArrD = Object.values(isSerial);
   useEffect(() => {
@@ -163,10 +163,10 @@ function VideoPlayer() {
     </>
   );
 
-  const ResembleBlock = () => (
+  const ResembleBlock = ({ title }) => (
     <>
       <div className="video__searals--content">
-        <h1 className="video__searals--title">Похожие фильмы</h1>
+        <h1 className="video__searals--title">{title}</h1>
       </div>
       <div className="over-h">
         <div className="video__movie--flex">
@@ -201,7 +201,9 @@ function VideoPlayer() {
   const RecomentionBlock = () => (
     <>
       <div className="video__searals--content">
-        <h1 className="video__searals--title">Похожие фильмы</h1>
+        <h1 className="video__searals--title" style={{ textAlign: "center" }}>
+          для вас
+        </h1>
       </div>
       <div className="over-h">
         <div className="video__movie--flex">
@@ -234,6 +236,142 @@ function VideoPlayer() {
     </>
   );
 
+  const VideoData = () => (
+    <div className="Video__data">
+      <div className="Video__rating d-flex-data">
+        <Svg />
+        {isDataVideo.material_data ? (
+          <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+            {isDataVideo.material_data.kinopoisk_rating
+              ? isDataVideo.material_data.kinopoisk_rating
+              : "5.8"}
+          </h2>
+        ) : (
+          <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+            5.8
+          </h2>
+        )}
+      </div>
+      <span>|</span>
+      <div className="Video__date d-flex-data">
+        <h2 className="video__data-text">{isDataVideo.year}</h2>
+        <span>-</span>
+        <h2 className="video__data-text">{date}</h2>
+      </div>
+      <span>|</span>
+      <div className="Video__age">
+        <h2 className="video__data-textMin" id="minAge">
+          {isDataVideo.material_data
+            ? `${isDataVideo.material_data.minimal_age}+`
+            : "14+"}
+        </h2>
+      </div>
+      <span>|</span>
+
+      {isDataVideo.material_data && (
+        <>
+          {isDataVideo.material_data.countries ? (
+            <>
+              {isDataVideo.material_data.countries.map((country) => (
+                <div className="Video__country" key={uuidv4()}>
+                  {country ? (
+                    <h2 className="video__data-textMin">{country}</h2>
+                  ) : (
+                    <h2 className="video__data-textMin">No country</h2>
+                  )}
+                </div>
+              ))}
+            </>
+          ) : (
+            <h1>Информации о стране нет</h1>
+          )}
+        </>
+      )}
+    </div>
+  );
+
+  const VideoActiors = () => (
+    <div className="Video__actiors">
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+      <div className="actior__card">
+        <div>
+          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+        </div>
+        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
+        <p>Актриса</p>
+      </div>
+    </div>
+  );
+
   return (
     <div className="VideoPlayer w-full">
       <div className="container">
@@ -259,7 +397,11 @@ function VideoPlayer() {
           )}
 
           <div className="video__serials">
-            {isDataVideo.episodes_count ? <SerialBlock /> : <ResembleBlock />}
+            {isDataVideo.episodes_count ? (
+              <SerialBlock />
+            ) : (
+              <ResembleBlock title={"Похожие фильмы"} />
+            )}
           </div>
         </div>
 
@@ -277,57 +419,7 @@ function VideoPlayer() {
               </h1>
             </div>
 
-            <div className="Video__data">
-              <div className="Video__rating d-flex-data">
-                <Svg />
-                {isDataVideo.material_data ? (
-                  <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-                    {isDataVideo.material_data.kinopoisk_rating
-                      ? isDataVideo.material_data.kinopoisk_rating
-                      : "5.8"}
-                  </h2>
-                ) : (
-                  <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-                    5.8
-                  </h2>
-                )}
-              </div>
-              <span>|</span>
-              <div className="Video__date d-flex-data">
-                <h2 className="video__data-text">{isDataVideo.year}</h2>
-                <span>-</span>
-                <h2 className="video__data-text">{date}</h2>
-              </div>
-              <span>|</span>
-              <div className="Video__age">
-                <h2 className="video__data-textMin" id="minAge">
-                  {isDataVideo.material_data
-                    ? `${isDataVideo.material_data.minimal_age}+`
-                    : "14+"}
-                </h2>
-              </div>
-              <span>|</span>
-
-              {isDataVideo.material_data && (
-                <>
-                  {isDataVideo.material_data.countries ? (
-                    <>
-                      {isDataVideo.material_data.countries.map((country) => (
-                        <div className="Video__country" key={uuidv4()}>
-                          {country ? (
-                            <h2 className="video__data-textMin">{country}</h2>
-                          ) : (
-                            <h2 className="video__data-textMin">No country</h2>
-                          )}
-                        </div>
-                      ))}
-                    </>
-                  ) : (
-                    <h1>Информации о стране нет</h1>
-                  )}
-                </>
-              )}
-            </div>
+            <VideoData />
           </div>
 
           <div className="VideoPlayer__column">
@@ -357,11 +449,17 @@ function VideoPlayer() {
                   </h2>
                 </button>
               </div>
+
+              <VideoActiors />
             </div>
 
             <div className="Video__container">
               <div className="video__serials">
-                <RecomentionBlock data={isDataList} />
+                {isDataVideo.episodes_count ? (
+                  <ResembleBlock title={"Похожие сериалы"} />
+                ) : (
+                  <RecomentionBlock />
+                )}
               </div>
             </div>
           </div>

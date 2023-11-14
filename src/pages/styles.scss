@@ -290,12 +290,12 @@
     display: flex;
     gap: 25px;
     justify-content: space-between;
-    // border: 1px solid #d00;
+    border: 1px solid #d00;
 
     .video__serials {
         max-width: 200px + 3px;
         width: 100%;
-        // border: 1px solid #d00; 
+        border: 1px solid #d00; 
     }
     
     .about__image {
@@ -312,7 +312,7 @@
     max-width: 900px;
     width: 100%;
     position: relative;
-    // border: 1px solid #d00;
+    border: 1px solid #d00;
     
     .about__text {
         max-height: 55px;
@@ -373,7 +373,85 @@
 }
 
 .VideoPlayer__about {
+    max-width: 845px;
+    width: 100%;
     margin-top: 26px;
+    border: 1px solid #d00;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .Video__actiors {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        max-width: 846px;
+        overflow: auto;
+      
+        &::-webkit-scrollbar {
+          height: 5px !important; 
+          width: 150px !important;
+        }
+      
+        &::-webkit-scrollbar-track {
+          background-color: transparent;   
+        }
+        
+        &::-webkit-scrollbar-thumb {
+          width: 10px !important;
+          border-radius: 8px;
+          background-color: #768c9ea1;
+        }
+      }
+
+    .actior__card {
+        width: 85px;
+        cursor: pointer;
+        // border: 1px solid #d00;
+        border-radius: 5px;
+        
+        &:hover {
+            background-color: #17212B;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 85px;
+            height: 85px;
+        }
+
+       img {
+            width: 85px;
+            height: 85px;
+       }
+
+        h2 {
+            margin-top: 4px;
+            text-align: center;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 10px; /* 100% */
+            color: #fff;
+        }
+
+        p {
+            margin-top: 4px;
+            margin-bottom: 5px;
+            text-align: center;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 12px; 
+            color: #768C9E;
+        }
+    }
 
     h2 {
         font-size: 16px;
