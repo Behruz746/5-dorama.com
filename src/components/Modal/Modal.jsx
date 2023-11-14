@@ -36,10 +36,16 @@ function Modal() {
 
   return (
     <div className={modalSec ? "Modal" : "Modal--over"}>
-      <audio id="addSound" src="./audio/notifications-sound-127856.mp3"></audio>
+      <audio
+        id="addSound"
+        src="#"
+        // src="./audio/notifications-sound-127856.mp3"
+      ></audio>
+
       <audio
         id="addSound01"
-        src="./audio/notifications-sound-127856-01.mp3"
+        // src="./audio/notifications-sound-127856-01.mp3"
+        src="#"
       ></audio>
       <div
         className={modalSec ? "modal__container--active" : "modal__container"}

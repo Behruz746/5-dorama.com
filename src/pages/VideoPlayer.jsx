@@ -132,7 +132,7 @@ function VideoPlayer() {
     }
   }, [isdataType]);
 
-  console.log(isDataVideo);
+  // console.log(isDataVideo);
 
   ///////////// Components ////////////////
 
