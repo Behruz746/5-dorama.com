@@ -48,9 +48,9 @@ function Home() {
         title="Аниме"
       />
 
-      <div className="container" style={{ marginTop: "80px" }}>
+      {/* <div className="container" style={{ marginTop: "80px" }}>
         <div id="yandex_rtb_R-A-3835914-6"></div>
-      </div>
+      </div> */}
 
       <div className="container" style={{ marginTop: "80px" }}>
         <div id="yandex_rtb_R-A-3835914-1"></div>
