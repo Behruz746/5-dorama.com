@@ -12,6 +12,23 @@ import MenuMobile from "../components/MenuMobile/MenuMobile";
 function RootLeyout() {
   const { modalSec } = useContext(AppContext);
 
+  useEffect(() => {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-6",
+        renderTo: "yandex_rtb_R-A-3835914-6",
+        type: "feed",
+      });
+    });
+
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-1",
+        renderTo: "yandex_rtb_R-A-3835914-1",
+      });
+    });
+  }, []);
+
   const AnimationBlock = () => {
     return (
       <>
@@ -37,6 +54,9 @@ function RootLeyout() {
       <AnimationBlock />
       <Analytics />
       <MenuMobile />
+      <div className="container" style={{ marginTop: "80px" }}>
+        <div id="yandex_rtb_R-A-3835914-1"></div>
+      </div>
     </>
   );
 }

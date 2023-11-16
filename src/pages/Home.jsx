@@ -7,22 +7,22 @@ import { useEffect } from "react";
 import "./styles.scss";
 
 function Home() {
-  useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-6",
-        renderTo: "yandex_rtb_R-A-3835914-6",
-        type: "feed",
-      });
-    });
+  // useEffect(() => {
+  //   window.yaContextCb.push(() => {
+  //     Ya.Context.AdvManager.render({
+  //       blockId: "R-A-3835914-6",
+  //       renderTo: "yandex_rtb_R-A-3835914-6",
+  //       type: "feed",
+  //     });
+  //   });
 
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-1",
-        renderTo: "yandex_rtb_R-A-3835914-1",
-      });
-    });
-  }, []);
+  //   window.yaContextCb.push(() => {
+  //     Ya.Context.AdvManager.render({
+  //       blockId: "R-A-3835914-1",
+  //       renderTo: "yandex_rtb_R-A-3835914-1",
+  //     });
+  //   });
+  // }, []);
 
   return (
     <div className="App__home w-full page">
@@ -52,9 +52,7 @@ function Home() {
         <div id="yandex_rtb_R-A-3835914-6"></div>
       </div> */}
 
-      <div className="container" style={{ marginTop: "80px" }}>
-        <div id="yandex_rtb_R-A-3835914-1"></div>
-      </div>
+    
     </div>
   );
 }
