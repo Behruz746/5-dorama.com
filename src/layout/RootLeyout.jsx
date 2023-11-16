@@ -27,20 +27,6 @@ function RootLeyout() {
         renderTo: "yandex_rtb_R-A-3835914-1",
       });
     });
-
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-7",
-        renderTo: "yandex_rtb_R-A-3835914-7",
-      });
-    });
-
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.renderWidget({
-        renderTo: "yandex_rtb_C-A-3835914-10",
-        blockId: "C-A-3835914-10",
-      });
-    });
   }, []);
 
   const AnimationBlock = () => {
@@ -70,12 +56,6 @@ function RootLeyout() {
       <MenuMobile />
       <div className="container container--reklama">
         <div id="yandex_rtb_R-A-3835914-1"></div>
-      </div>
-      <div className="container container--reklama">
-        <div id="yandex_rtb_R-A-3835914-7"></div>
-      </div>
-      <div className="container container--reklama">
-        <div id="yandex_rtb_C-A-3835914-10"></div>
       </div>
     </>
   );
