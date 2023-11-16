@@ -54,7 +54,10 @@ function RootLeyout() {
       <AnimationBlock />
       <Analytics />
       <MenuMobile />
-      <div className="container" style={{ marginTop: "80px" }}>
+      <div
+        className="container"
+        style={({ marginTop: "80px" }, { padding: "0px" })}
+      >
         <div id="yandex_rtb_R-A-3835914-1"></div>
       </div>
     </>
