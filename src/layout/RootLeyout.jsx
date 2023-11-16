@@ -27,7 +27,6 @@ function RootLeyout() {
 
   return (
     <>
-      <div id="yandex_rtb_R-A-3835914-1"></div>
       <Header />
       <main id="main">
         <Modal />
