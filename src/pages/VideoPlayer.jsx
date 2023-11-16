@@ -307,7 +307,7 @@ function VideoPlayer() {
             <div className="actior__card" key={uuidv4()}>
               <div>
                 <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
-              </div>  
+              </div>
               <h2 className="actior__name">{item}</h2>
               <p>Актриса</p>
             </div>
