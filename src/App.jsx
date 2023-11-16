@@ -53,7 +53,7 @@ function App() {
 
     function ToggleEve() {
       setInputToggle(true);
-    } 
+    }
 
     inputEl.forEach((item) => {
       item.addEventListener("change", (e) => {
