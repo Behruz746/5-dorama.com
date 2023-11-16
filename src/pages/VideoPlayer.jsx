@@ -20,6 +20,7 @@ function VideoPlayer() {
   const [isDataSimilar, setIsSimilar] = useState([]);
   const [isGenes, setIsGenes] = useState("");
   const [isDataList, setIsDataList] = useState([]);
+  const [isDataActior, setIsDataActior] = useState([]);
 
   const Svg = () => (
     <svg
@@ -66,6 +67,7 @@ function VideoPlayer() {
         );
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
+        setIsDataActior(data.data.results[0].material_data.actors);
         setIsGenes(data.data.results[0].material_data.genres[0]);
         setIsSerial(
           data.data.results[0].seasons[data.data.results[0].last_season]
@@ -93,6 +95,8 @@ function VideoPlayer() {
   }, [isdataType, isGenes]);
 
   const serialArrD = Object.values(isSerial);
+  const actiorArrD = Object.values(isDataActior);
+
   useEffect(() => {
     const aboutText = document.querySelector(".about__text");
 
@@ -261,9 +265,12 @@ function VideoPlayer() {
       <span>|</span>
       <div className="Video__age">
         <h2 className="video__data-textMin" id="minAge">
-          {isDataVideo.material_data
-            ? `${isDataVideo.material_data.minimal_age}+`
-            : "14+"}
+          {isDataVideo.material_data &&
+            `${
+              isDataVideo.material_data.minimal_age
+                ? isDataVideo.material_data.minimal_age
+                : "14"
+            }+`}
         </h2>
       </div>
       <span>|</span>
@@ -290,15 +297,23 @@ function VideoPlayer() {
     </div>
   );
 
+  console.log(isDataVideo.material_data);
+
   const VideoActiors = () => (
     <div className="Video__actiors">
-      <div className="actior__card">
-        <div>
-          <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
-        </div>
-        <h2 className="actior__name">Он Сон У (Ong Seong Wu)</h2>
-        <p>Актриса</p>
-      </div>
+      {isDataVideo.material_data && (
+        <>
+          {isDataVideo.material_data.actors.map((item) => (
+            <div className="actior__card" key={uuidv4()}>
+              <div>
+                <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+              </div>  
+              <h2 className="actior__name">{item}</h2>
+              <p>Актриса</p>
+            </div>
+          ))}
+        </>
+      )}
     </div>
   );
 
