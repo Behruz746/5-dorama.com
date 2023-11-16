@@ -33,8 +33,6 @@ function RootLeyout() {
         <Menu />
         <Outlet />
       </main>
-      <div id="yandex_rtb_R-A-3835914-1"></div>
-
       <AnimationBlock />
       <Analytics />
       <MenuMobile />
