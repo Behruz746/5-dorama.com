@@ -46,7 +46,7 @@
         window.attachEvent("onmessage", kodikMessageListener);
       }
     </script>
-  
+
     <!-- Yandex.RTB R-A-3835914-1 -->
     <div id="yandex_rtb_R-A-3835914-1"></div>
     <script>
@@ -54,6 +54,17 @@
         Ya.Context.AdvManager.render({
           blockId: "R-A-3835914-1",
           renderTo: "yandex_rtb_R-A-3835914-1",
+        });
+      });
+    </script>
+
+    <!-- Yandex.RTB R-A-3835914-2 -->
+    <script>
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+          blockId: "R-A-3835914-2",
+          type: "fullscreen",
+          platform: "touch",
         });
       });
     </script>
