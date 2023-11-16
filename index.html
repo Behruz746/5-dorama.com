@@ -30,8 +30,8 @@
     <script src="https://yandex.ru/ads/system/context.js" async></script>
   </head>
   <body>
-    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <div id="root"></div>
 
     <script type="text/javascript">
       function kodikMessageListener(message) {
@@ -86,6 +86,40 @@
         Ya.Context.AdvManager.render({
           blockId: "R-A-3835914-5",
           type: "topAd",
+        });
+      });
+    </script>
+
+    <!-- Yandex.RTB R-A-3835914-6 -->
+    <div id="yandex_rtb_R-A-3835914-6"></div>
+    <script>
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+          blockId: "R-A-3835914-6",
+          renderTo: "yandex_rtb_R-A-3835914-6",
+          type: "feed",
+        });
+      });
+    </script>
+
+    <!-- Yandex.RTB R-A-3835914-7 -->
+    <div id="yandex_rtb_R-A-3835914-7"></div>
+    <script>
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+          blockId: "R-A-3835914-7",
+          renderTo: "yandex_rtb_R-A-3835914-7",
+        });
+      });
+    </script>
+
+    <!-- Yandex Native Ads C-A-3835914-8 -->
+    <div id="yandex_rtb_C-A-3835914-8"></div>
+    <script>
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.renderWidget({
+          renderTo: "yandex_rtb_C-A-3835914-8",
+          blockId: "C-A-3835914-8",
         });
       });
     </script>

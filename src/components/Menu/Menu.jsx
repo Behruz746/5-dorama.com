@@ -263,6 +263,8 @@ function Menu() {
         {/* this is button menu component */}
         <BottomMenu />
       </nav>
+
+      <div id="boxShadow00"></div>
     </div>
   );
 }
