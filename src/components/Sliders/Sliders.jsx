@@ -10,7 +10,7 @@ import AppContext from "../../AppContext";
 
 import "./styles.scss";
 
-function Sliders({ url, title, id }) {
+function Sliders({ url, title, id, linkPage }) {
   const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
@@ -105,7 +105,7 @@ function Sliders({ url, title, id }) {
         <div className="Sliders__container">
           <div className="Slider__cards">
             <div className="Slider__navigation">
-              <NavLink to="/" className="navigation__title" >
+              <NavLink to={linkPage} className="navigation__title" onClick={()=> console.log(linkPage)} >
                 <h1 className="title">{title}</h1>
                 <Svg />
               </NavLink>

@@ -144,11 +144,9 @@ body {
 }
 
 .container--reklama {
-  overflow: hidden !important;
+  // overflow: hidden !important;
   // padding: 0 !important;
-  margin-top: 50px;
-  // border: 1px solid #d00;
-  // height: 150px;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -181,7 +179,6 @@ body {
 
 .page {
   padding-top: 12px;
-  // border: 1px solid #d00;
   overflow: hidden !important;
 }
 
@@ -211,4 +208,32 @@ body {
 
 .animtion--none {
   display: none !important;
+}
+
+.random--color0 {
+  background: linear-gradient(158deg, #85DE78 14.59%, #309E20 95%) !important;
+}
+
+.random--color1 {
+  background: linear-gradient(148deg, #FF5694 19.04%, #C31656 99.86%) !important;
+}
+
+.random--color2 {
+  background: linear-gradient(217deg, #5EB5F7 12.08%, #2B77B0 91.75%) !important;
+}
+
+.random--color3 {
+  background: linear-gradient(134deg, #B48BF2 18.19%, #5F29B0 81.73%) !important;
+}
+
+.random--color4 {
+  background: linear-gradient(163deg, #FE736B 4.55%, #BB3B33 88.29%) !important;
+}
+
+.random--color5 {
+  background: linear-gradient(155deg, #FFB972 15.88%, #D4802A 93.53%) !important;
+}
+
+.random--color6 {
+  background: linear-gradient(127deg, #62D4E3 14.2%, #008395 85.63%)  !important;
 }

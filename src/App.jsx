@@ -14,6 +14,7 @@ import AppContext from "./AppContext";
 // Layout
 import RootLeyout from "./layout/RootLeyout";
 import RootPlayer from "./layout/RootPlayer";
+import RootCategorys from "./layout/RootCategorys";
 
 // Pages
 import Home from "./pages/Home";
@@ -26,7 +27,9 @@ import Document from "./pages/Document";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PageNotFound from "./pages/pageErrorFound/PageNotFound";
-import { dataSlider } from "./data/data";
+import PopularNow from "./pages/pageCategorys/PopularNow";
+import NewMovies from "./pages/pageCategorys/NewMovies";
+import AnimeMovie from "./pages/pageCategorys/AnimeMovie";
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
@@ -191,9 +194,34 @@ function App() {
             },
           ],
         },
+        // {/* Categorys movie page */}
+        {
+          path: "category-movies",
+          element: <RootCategorys />,
+
+          children: [
+            {
+              path: "popular-now",
+              element: <PopularNow />,
+            },
+
+            {
+              path: "new-movies",
+              element: <NewMovies />,
+            },
+
+            {
+              path: "anime",
+              element: <AnimeMovie />,
+            },
+          ],
+        },
       ],
     },
   ]);
+
+  // categoryMovies
+  // PopularNow
 
   return (
     <AppContext.Provider
