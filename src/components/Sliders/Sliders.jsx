@@ -99,13 +99,17 @@ function Sliders({ url, title, id, linkPage }) {
     </svg>
   );
 
-  return ( 
+  return (
     <section className="Home__Sliders w-full sliderId" id={id}>
       <div className="container">
         <div className="Sliders__container">
           <div className="Slider__cards">
             <div className="Slider__navigation">
-              <NavLink to={linkPage} className="navigation__title" onClick={()=> console.log(linkPage)} >
+              <NavLink
+                to={linkPage}
+                className="navigation__title"
+                onClick={() => console.log(linkPage)}
+              >
                 <h1 className="title">{title}</h1>
                 <Svg />
               </NavLink>
@@ -114,6 +118,14 @@ function Sliders({ url, title, id, linkPage }) {
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
+              <NavLink
+                to={linkPage}
+                className="navigation__title slider__link__box"
+                onClick={() => console.log(linkPage)}
+              >
+                <h1 className="title">{title}</h1>
+                <Svg />
+              </NavLink>
             </Slider>
           </div>
         </div>

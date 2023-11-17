@@ -7,43 +7,43 @@ import { useEffect } from "react";
 import "./styles.scss";
 
 function Home() {
-  // useEffect(() => {
-  //   window.yaContextCb.push(() => {
-  //     Ya.Context.AdvManager.render({
-  //       blockId: "R-A-3835914-6",
-  //       renderTo: "yandex_rtb_R-A-3835914-6",
-  //       type: "feed",
-  //     });
-  //   });
+  useEffect(() => {
+    //   window.yaContextCb.push(() => {
+    //     Ya.Context.AdvManager.render({
+    //       blockId: "R-A-3835914-6",
+    //       renderTo: "yandex_rtb_R-A-3835914-6",
+    //       type: "feed",
+    //     });
+    //   });
 
-  window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-      blockId: "R-A-3835914-1",
-      renderTo: "yandex_rtb_R-A-3835914-1",
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-1",
+        renderTo: "yandex_rtb_R-A-3835914-1",
+      });
     });
-  });
 
-  window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-      blockId: "R-A-3835914-1",
-      renderTo: "yandex_rtb_R-A-3835914-1",
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-1",
+        renderTo: "yandex_rtb_R-A-3835914-1",
+      });
     });
-  });
 
-  window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-      blockId: "R-A-3835914-7",
-      renderTo: "yandex_rtb_R-A-3835914-7",
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-7",
+        renderTo: "yandex_rtb_R-A-3835914-7",
+      });
     });
-  });
 
-  //   window.yaContextCb.push(() => {
-  //     Ya.Context.AdvManager.render({
-  //       blockId: "R-A-3835914-1",
-  //       renderTo: "yandex_rtb_R-A-3835914-1",
-  //     });
-  //   });
-  // }, []);
+    //   window.yaContextCb.push(() => {
+    //     Ya.Context.AdvManager.render({
+    //       blockId: "R-A-3835914-1",
+    //       renderTo: "yandex_rtb_R-A-3835914-1",
+    //     });
+    //   });
+  }, []);
 
   return (
     <div className="App__home w-full page">
@@ -53,7 +53,6 @@ function Home() {
         title="Популярные сейчас"
         linkPage="/category-movies/popular-now"
       />
-
       <div className="container container--reklama">
         <div id="yandex_rtb_R-A-3835914-1"></div>
       </div>
@@ -66,13 +65,13 @@ function Home() {
       <Sliders
         url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=18&lgbt=false&types=foreign-movie&year=2000,2016,2017,2018,2019,2020,2021,2022,2023&kinopoisk_rating=6-10&countries=Япония, Корея Южная, Китай&with_episodes_data=true"
         title="Фильмы"
-        linkPage="/category-movies/"
+        linkPage="/filems"
       />
 
       <Sliders
         url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=18&lgbt=false&types=foreign-serial&year=2015,2014,2018&kinopoisk_rating=5-10&countries=Япония, Корея Южная, Китай&with_episodes_data=true"
         title="Дорамы"
-        linkPage="/category-movies/"
+        linkPage="/dramas"
       />
 
       <div className="container container--reklama">
@@ -81,7 +80,7 @@ function Home() {
       <Sliders
         url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=28&lgbt=false&types=anime&year=2015,2014,2016,2017,2018, 2020,2021,2022,2023&kinopoisk_rating=7-10&countries=Япония&with_episodes_data=true"
         title="Аниме"
-        linkPage="/category-movies/anime" 
+        linkPage="/category-movies/anime"
       />
     </div>
   );

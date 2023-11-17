@@ -112,3 +112,18 @@
         }
     }
 }
+
+.slider__link__box {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center;
+    width: 490px !important;
+    // width: 100% !important;
+    height: 291px;
+    // border: 1px solid #d00;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #17212B;
+    }
+}
