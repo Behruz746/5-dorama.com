@@ -383,13 +383,19 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow: hidden;
+    
+    .hidden--block {
+        max-width: 845px;
+        width: 100%;
+        overflow: auto;
+    }
 
     .Video__actiors {
         display: flex;
         align-items: flex-start;
         gap: 15px;
-        max-width: 846px;
-        overflow: auto;
+        // max-width: 846px;
+        overflow-x: auto;
       
         &::-webkit-scrollbar {
           height: 5px !important; 
@@ -403,7 +409,7 @@
         &::-webkit-scrollbar-thumb {
           width: 10px !important;
           border-radius: 8px;
-          background-color: #768c9e00;
+          background-color: #768c9e;
         }
       }
 

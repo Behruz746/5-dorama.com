@@ -305,28 +305,30 @@ function VideoPlayer() {
     setRandomColor(Math.floor(Math.random() * 7) + 1);
 
     return (
-      <div className="Video__actiors">
-        {isDataVideo.material_data && (
-          <>
-            {isDataVideo.material_data.actors.map((item, index) => (
-              <div className={`actior__card`} key={uuidv4()}>
-                <div
-                  className={`actior__box random--color${
-                    index > 6 ? index - 6 : index
-                  }`}
-                >
-                  {/* <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" /> */}
-                  <h1>
-                    {item.split(" ")[0].charAt(0)}
-                    {item.split(" ")[1] && item.split(" ")[1].charAt(0)}
-                  </h1>
+      <div className="hidden--block">
+        <div className="Video__actiors">
+          {isDataVideo.material_data && (
+            <>
+              {isDataVideo.material_data.actors.map((item, index) => (
+                <div className={`actior__card`} key={uuidv4()}>
+                  <div
+                    className={`actior__box random--color${
+                      index > 6 ? index - 6 : index
+                    }`}
+                  >
+                    {/* <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" /> */}
+                    <h1>
+                      {item.split(" ")[0].charAt(0)}
+                      {item.split(" ")[1] && item.split(" ")[1].charAt(0)}
+                    </h1>
+                  </div>
+                  <h2 className="actior__name">{item}</h2>
+                  <p>Актриса</p>
                 </div>
-                <h2 className="actior__name">{item}</h2>
-                <p>Актриса</p>
-              </div>
-            ))}
-          </>
-        )}
+              ))}
+            </>
+          )}
+        </div>
       </div>
     );
   };
