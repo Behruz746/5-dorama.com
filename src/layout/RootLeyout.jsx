@@ -21,12 +21,7 @@ function RootLeyout() {
       });
     });
 
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-1",
-        renderTo: "yandex_rtb_R-A-3835914-1",
-      });
-    });
+  
   }, []);
 
   const AnimationBlock = () => {
@@ -54,9 +49,6 @@ function RootLeyout() {
       <AnimationBlock />
       <Analytics />
       <MenuMobile />
-      <div className="container container--reklama">
-        <div id="yandex_rtb_R-A-3835914-1"></div>
-      </div>
     </>
   );
 }
