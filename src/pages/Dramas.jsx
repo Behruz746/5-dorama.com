@@ -1,6 +1,17 @@
 import Sliders from "../components/Sliders/Sliders";
 
+import { useEffect } from "react";
+
 function Dramas() {
+  useEffect(() => {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-13",
+        renderTo: "yandex_rtb_R-A-3835914-13",
+      });
+    });
+  }, []);
+
   return (
     <>
       <section className="App__dramas  App__home w-full page">
@@ -49,6 +60,10 @@ function Dramas() {
           title="Аниме Сериал"
           id="AnimeSerial"
         />
+
+        <div className="container container--reklama">
+          <div id="yandex_rtb_R-A-3835914-13"></div>
+        </div>
       </section>
     </>
   );
