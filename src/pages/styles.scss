@@ -385,12 +385,11 @@
     overflow: hidden;
 
     .Video__actiors {
-        // display: none;
         display: flex;
-        align-items: center;
-        gap: 20px;
+        align-items: flex-start;
+        gap: 15px;
         max-width: 846px;
-        overflow-x: auto;
+        overflow: auto;
       
         &::-webkit-scrollbar {
           height: 5px !important; 
@@ -404,23 +403,54 @@
         &::-webkit-scrollbar-thumb {
           width: 10px !important;
           border-radius: 8px;
-          background-color: #768c9ea1;
+          background-color: #768c9e00;
         }
       }
+
+      
 
     .actior__card {
         width: 85px;
         cursor: pointer;
         // border: 1px solid #d00;
         border-radius: 5px;
+        // height: auto;
         // pointer-events:all;
         user-select: none;
         
-        &:hover {
-            background-color: #17212B;
+        // &:hover {
+        //     background-color: #1a7ee1;
+        // }
+
+        .random--color0 {
+            background: linear-gradient(158deg, #85DE78 14.59%, #309E20 95%) !important;
         }
 
-        div {
+        .random--color1 {
+            background: linear-gradient(148deg, #FF5694 19.04%, #C31656 99.86%) !important;
+        }
+
+        .random--color2 {
+            background: linear-gradient(217deg, #5EB5F7 12.08%, #2B77B0 91.75%) !important;
+        }
+
+        .random--color3 {
+            background: linear-gradient(134deg, #B48BF2 18.19%, #5F29B0 81.73%) !important;
+        }
+
+        .random--color4 {
+            background: linear-gradient(163deg, #FE736B 4.55%, #BB3B33 88.29%) !important;
+        }
+
+        .random--color5 {
+            background: linear-gradient(155deg, #FFB972 15.88%, #D4802A 93.53%) !important;
+        }
+
+        .random--color6 {
+            background: linear-gradient(127deg, #62D4E3 14.2%, #008395 85.63%)  !important;
+        }
+
+        .actior__box {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -428,6 +458,16 @@
             overflow: hidden;
             width: 85px;
             height: 85px;
+            // background-color: red;
+
+            h1 {
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 32px;
+                letter-spacing: -0.48px;
+                color: #fff;
+            }
         }
 
        img {

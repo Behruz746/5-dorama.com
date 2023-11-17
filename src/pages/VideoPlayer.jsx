@@ -297,25 +297,39 @@ function VideoPlayer() {
     </div>
   );
 
-  console.log(isDataVideo.material_data);
+  // console.log(isDataVideo.material_data);
 
-  const VideoActiors = () => (
-    <div className="Video__actiors">
-      {isDataVideo.material_data && (
-        <>
-          {isDataVideo.material_data.actors.map((item) => (
-            <div className="actior__card" key={uuidv4()}>
-              <div>
-                <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" />
+  const [randomColor, setRandomColor] = useState(0);
+
+  const VideoActiors = () => {
+    setRandomColor(Math.floor(Math.random() * 7) + 1);
+
+    return (
+      <div className="Video__actiors">
+        {isDataVideo.material_data && (
+          <>
+            {isDataVideo.material_data.actors.map((item, index) => (
+              <div className={`actior__card`} key={uuidv4()}>
+                <div
+                  className={`actior__box random--color${
+                    index > 6 ? index - 6 : index
+                  }`}
+                >
+                  {/* <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" /> */}
+                  <h1>
+                    {item.split(" ")[0].charAt(0)}
+                    {item.split(" ")[1] && item.split(" ")[1].charAt(0)}
+                  </h1>
+                </div>
+                <h2 className="actior__name">{item}</h2>
+                <p>Актриса</p>
               </div>
-              <h2 className="actior__name">{item}</h2>
-              <p>Актриса</p>
-            </div>
-          ))}
-        </>
-      )}
-    </div>
-  );
+            ))}
+          </>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="VideoPlayer w-full">
