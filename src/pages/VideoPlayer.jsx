@@ -46,6 +46,16 @@ function VideoPlayer() {
   );
 
   useEffect(() => {
+    // <!-- Yandex Native Ads C-A-3835914-8 -->
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.renderWidget({
+        renderTo: "yandex_rtb_C-A-3835914-8",
+        blockId: "C-A-3835914-8",
+      });
+    });
+  }, []);
+
+  useEffect(() => {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
@@ -423,6 +433,7 @@ function VideoPlayer() {
                 )}
               </div>
             </div>
+            <div id="yandex_rtb_C-A-3835914-8"></div>
           </div>
         </div>
       </div>

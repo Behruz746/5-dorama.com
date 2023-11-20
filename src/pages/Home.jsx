@@ -8,27 +8,12 @@ import "./styles.scss";
 
 function Home() {
   useEffect(() => {
-    //   window.yaContextCb.push(() => {
-    //     Ya.Context.AdvManager.render({
-    //       blockId: "R-A-3835914-6",
-    //       renderTo: "yandex_rtb_R-A-3835914-6",
-    //       type: "feed",
-    //     });
-    //   });
-
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
         blockId: "R-A-3835914-7",
         renderTo: "yandex_rtb_R-A-3835914-7",
       });
     });
-
-    //   window.yaContextCb.push(() => {
-    //     Ya.Context.AdvManager.render({
-    //       blockId: "R-A-3835914-1",
-    //       renderTo: "yandex_rtb_R-A-3835914-1",
-    //     });
-    //   });
   }, []);
 
   return (

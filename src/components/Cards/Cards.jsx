@@ -36,8 +36,7 @@ const MyLoader = (props) => {
 };
 
 function Cards(data) {
-  const { isLoad } =
-    useContext(AppContext);
+  const { isLoad } = useContext(AppContext);
 
   const [isItemBo, setIsItemBo] = useState(false);
   const [dataId, setDataId] = useState(data.id);
@@ -75,60 +74,52 @@ function Cards(data) {
 
   return (
     <>
-      {isLoad ? (
-        <>
-          {isItemBo ? (
-            <div
-              className="Card"
-              onClick={() => {
-                setDataId(data.id);
-              }}
-            >
-              <NavLink
-                to={`/player/video/${dataId}`}
-                onClick={() => {
-                  localStorage.setItem("dataLink", data.link);
-                }}
-              >
-                <div className="card__img">
-                  <img
-                    className="card__logo"
-                    src="https://i.imgur.com/vDh93pz.png"
-                    alt="logo"
-                  />
-                  <div className="card__reting">
-                    <Svg />
-                    <h4>
-                      {data.material_data.mydramalist_rating
-                        ? data.material_data.mydramalist_rating
-                        : 5.6}
-                    </h4>
-                  </div> 
-                  <img
-                    className="card__image"
-                    src={
-                      data.material_data.poster_url
-                        ? data.material_data.poster_url
-                        : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
-                    }
-                    alt="card image"
-                  />
-                </div>
-                <div className="card__content">
-                  <h1 className="card__title">{data.material_data.title}</h1>
-                  <p>{data.material_data.sort}</p>
-                </div>
-              </NavLink>
+      {isItemBo ? (
+        <div
+          className="Card"
+          onClick={() => {
+            setDataId(data.id);
+          }}
+        >
+          <NavLink
+            to={`/player/video/${dataId}`}
+            onClick={() => {
+              localStorage.setItem("dataLink", data.link);
+            }}
+          >
+            <div className="card__img">
+              <img
+                className="card__logo"
+                src="https://i.imgur.com/vDh93pz.png"
+                alt="logo"
+              />
+              <div className="card__reting">
+                <Svg />
+                <h4>
+                  {data.material_data.mydramalist_rating
+                    ? data.material_data.mydramalist_rating
+                    : 5.6}
+                </h4>
+              </div>
+              <img
+                className="card__image"
+                src={
+                  data.material_data.poster_url
+                    ? data.material_data.poster_url
+                    : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
+                }
+                alt="card image"
+              />
             </div>
-          ) : (
-            <div className="Card" style={{ display: "none" }}>
-              null
+            <div className="card__content">
+              <h1 className="card__title">{data.material_data.title}</h1>
+              <p>{data.material_data.sort}</p>
             </div>
-          )}
-        </>
+          </NavLink>
+        </div>
       ) : (
-        <div className="card--load">
-          <MyLoader />
+        <div className="Card" style={{ display: "none" }}>
+          null
         </div>
       )}
     </>
