@@ -39,7 +39,7 @@ function HeaderSlider({ pNone }) {
       <div className="container" style={{ padding: `${pNone}` }}>
         <Slider {...settings}>
           <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/">
+            <NavLink className="slider__link" to="/player/video/serial-34080">
               <img
                 className="slider__card-bk"
                 src="https://i.imgur.com/ZwC7BFW.png"
@@ -53,7 +53,7 @@ function HeaderSlider({ pNone }) {
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/">
+            <NavLink className="slider__link" to="/player/video/serial-2986">
               <img
                 className="slider__card-bk"
                 src="https://i.imgur.com/ae0bfHc.png"
@@ -67,7 +67,7 @@ function HeaderSlider({ pNone }) {
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/">
+            <NavLink className="slider__link" to="/player/video/serial-38722">
               <img
                 className="slider__card-bk"
                 src="https://i.imgur.com/ddqKEH0.png"
@@ -81,7 +81,7 @@ function HeaderSlider({ pNone }) {
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/">
+            <NavLink className="slider__link" to="/player/video/serial-53497">
               <img
                 className="slider__card-bk"
                 src="https://i.imgur.com/UdwKJgU.png"
