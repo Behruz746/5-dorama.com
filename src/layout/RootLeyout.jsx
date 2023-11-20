@@ -43,7 +43,6 @@ function RootLeyout() {
       <main id="main">
         <Modal />
         <Menu />
-        <div id="boxShadow00"></div>
         <Outlet />
       </main>
       <AnimationBlock />

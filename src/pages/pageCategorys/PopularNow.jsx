@@ -2,13 +2,25 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import './style.scss'
+import "./style.scss";
 
 // component
 import Cards from "../../components/Cards/Cards";
 
 function PopularNow() {
   const [isMovieData, setIsMovieData] = useState([]);
+
+  useEffect(() => {
+    // <!-- Yandex.RTB R-A-3835914-21 -->
+
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-21",
+        renderTo: "yandex_rtb_R-A-3835914-21",
+        type: "feed",
+      });
+    });
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +43,8 @@ function PopularNow() {
             <Cards {...data} key={uuidv4()} />
           ))}
         </div>
+
+        <div id="yandex_rtb_R-A-3835914-21"></div>
       </div>
     </div>
   );
