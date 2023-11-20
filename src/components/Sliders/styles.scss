@@ -105,31 +105,10 @@
     
     .slick-list {
         .slick-track {
-            width: 100%;
+            // width: 100% !important;
             overflow: hidden !important;
             display: flex !important;
             gap: 16px;
         }
-    }
-}
-
-.slider__link__box {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center;
-    width: 485px !important;
-    height: 291px;
-    // border: 1px solid #d00;
-    border-radius: 10px;
-
-    h1 {
-        font-size: 18px !important;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 22px; /* 122.222% */
-    }
-
-    &:hover {
-        background-color: #17212B;
     }
 }

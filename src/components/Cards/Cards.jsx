@@ -103,7 +103,7 @@ function Cards(data) {
                         ? data.material_data.mydramalist_rating
                         : 5.6}
                     </h4>
-                  </div>
+                  </div> 
                   <img
                     className="card__image"
                     src={
