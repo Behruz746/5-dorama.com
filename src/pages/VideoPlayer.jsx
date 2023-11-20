@@ -422,6 +422,8 @@ function VideoPlayer() {
               </div>
 
               <VideoActiors />
+
+              <div id="yandex_rtb_C-A-3835914-8"></div>
             </div>
 
             <div className="Video__container">
@@ -433,7 +435,6 @@ function VideoPlayer() {
                 )}
               </div>
             </div>
-            <div id="yandex_rtb_C-A-3835914-8"></div>
           </div>
         </div>
       </div>
