@@ -1,14 +1,27 @@
-.PopularNow__inner {
+.popularNow__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container__cards {
     width: 100%;
     display: flex;
     align-items: center;
-    // justify-content: center;
     flex-wrap: wrap;
     gap: 24px 16px;
 }
 
+.container__cards--load {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
 @media screen and (max-width: 750px) {
-    .PopularNow__inner {
+    .container__cards {
         justify-content: center;
     }
 }

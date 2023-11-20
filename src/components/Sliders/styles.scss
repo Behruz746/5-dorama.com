@@ -10,17 +10,17 @@
     // border: 1px solid #d00;
 }
 
+.title {
+    font-family: SF Pro Display, sans-serif !important;
+    color: #fff;
+    transition: .2s linear;
+    font-size: 24px; 
+}
+
 .navigation__title {
     display: flex; 
     align-items: center; 
     width: auto;
-
-    .title {
-        font-family: SF Pro Display, sans-serif !important;
-        color: #fff;
-        transition: .2s linear;
-        font-size: 24px; 
-    }
 
     svg {
         width: 24px;
