@@ -10,7 +10,7 @@ function NewMovies() {
   const { data, isLoad, error } = useFetch(url);
 
   return (
-    <div className="NewMovies w-full page">
+    <div className="NewMovies w-full page catigoriyPage">
       <div className="container">
         <div className="popularNow__body">
           <h1 className="popularNow__title title">Новинки</h1>

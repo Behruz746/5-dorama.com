@@ -1,12 +1,18 @@
-@media screen and (min-width: 1280px) {}
 @media screen and (min-width: 1536px) {}
+@media screen and (max-width: 1290px) {
+    .container__cards {
+        justify-content: center;
 
-// @media screen and (max-width: 1497px) {
-//     .hidden--block {
-//         max-width: 700px !important;
-//     }
-// }
-
+        .Card {
+            max-width: 150px;
+    
+            .card__image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .nav__list {
@@ -351,6 +357,27 @@
     .video__data-textMin {
         font-size: 10px;
         line-height: 1px;
+    }
+
+    .popularNow__body {
+        gap: 5px;
+
+        .popularNow__title {
+            font-size: 16px;
+        }
+    }
+
+    .container__cards {
+        gap: 16px 7px;
+
+        .Card {
+            max-width: 90px;
+    
+            .card__image {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 }
 

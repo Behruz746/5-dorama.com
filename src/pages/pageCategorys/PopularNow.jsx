@@ -13,7 +13,7 @@ function PopularNow() {
   const { data, isLoad, error } = useFetch(url);
 
   return (
-    <div className="PopularNow w-full page">
+    <div className="PopularNow w-full page catigoriyPage">
       <div className="container">
         <div className="popularNow__body">
           <h1 className="popularNow__title title">Популярные сейчас</h1>

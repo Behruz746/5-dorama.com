@@ -12,7 +12,7 @@ function AnimeMovie() {
   const { data, isLoad, error } = useFetch(url);
 
   return (
-    <div className="AnimeMovie w-full page">
+    <div className="AnimeMovie w-full page catigoriyPage">
       <div className="container">
         <div className="popularNow__body">
           <h1 className="popularNow__title title">Аниме</h1>

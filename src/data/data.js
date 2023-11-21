@@ -110,7 +110,7 @@ export const dropDataMovies = [
     link: "/filems#kriminalMovie",
   },
   {
-    name: "Аниме Сериал",
+    name: "Аниме",
     link: "/filems#AnimeMovie",
   },
 ];

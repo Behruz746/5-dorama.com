@@ -1,6 +1,13 @@
+.catigoriyPage {
+    .container {
+        padding: 0 10px;
+    }
+}
+
 .popularNow__body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -10,6 +17,15 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 24px 16px;
+
+    .Card {
+        max-width: 180px;
+
+        .card__image {
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
 .container__cards--load {
