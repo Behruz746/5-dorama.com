@@ -363,12 +363,13 @@
         gap: 5px;
 
         .popularNow__title {
-            font-size: 16px;
+            font-size: 20px;
         }
     }
 
     .container__cards {
         gap: 16px 7px;
+        justify-content: space-between;
 
         .Card {
             max-width: 90px;
@@ -381,7 +382,7 @@
     }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 380px) {
     .navigation__title {
         margin-top: 8px;
 
@@ -456,6 +457,20 @@
 
     .modal__container {
         top: 67%;
+    }
+
+    .container__cards {
+        gap: 16px 7px;
+        justify-content: space-between;
+
+        .Card {
+            max-width: 80px;
+    
+            .card__image {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 }
 
