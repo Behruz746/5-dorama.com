@@ -72,7 +72,7 @@ function Menu() {
     >
       <div>
         {dropDataMovies.map((data) => (
-          <div key={uuidv4()}>
+          <div key={uuidv4()}> 
             <a
               href={data.link}
               className="d-flex drop__item"
@@ -222,7 +222,7 @@ function Menu() {
               }
             >
               <NavLink
-                to="filems"
+                to="movies"
                 className="list__link"
                 id="borderActive"
                 onClick={() => setIsToggle(true)}

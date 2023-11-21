@@ -1,26 +1,23 @@
 import { v4 as uuidv4 } from "uuid";
 
-import useFetch from "../../hooks/useFetch";
+// Components
+import useFetch from "../../../hooks/useFetch";
+import Cards from "../../../components/Cards/Cards";
 
-import "./style.scss";
- 
-// component
-import Cards from "../../components/Cards/Cards";
-
-function PopularNow() {
-  const url =
-    "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2015,2016,2017,2018,2019,2021&kinopoisk_rating=8-10&imdb_rating=8-10&countries=Япония,Корея Южная,Китай,тайлант&with_episodes_data=true&with_page_links=true&has_field=kinopoisk_id&translation_type=voice&with_seasons=true";
+function MilitaryMPage() {
+    const url =
+    "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=военный&year=2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&countries=Япония,Корея Южная,Китай,&types=foreign-movie";
   const { data, isLoad, error } = useFetch(url);
 
   return (
-    <div className="PopularNow w-full page catigoriyPage">
+    <div className="MilitaryMPage w-full page catigoriyPage">
       <div className="container">
         <div className="popularNow__body">
-          <h1 className="popularNow__title title">Популярные сейчас</h1>
+          <h1 className="popularNow__title title">Военный</h1>
           <div
             className={`${
               !isLoad ? "container__cards" : "container__cards--load"
-            } ${!error ? "container__cards" : "container__cards--load"} `}
+            } ${!error ? "container__cards" : "container__cards--load"}`}
           >
             {!error ? (
               <>
@@ -49,4 +46,4 @@ function PopularNow() {
   );
 }
 
-export default PopularNow;
+export default MilitaryMPage;

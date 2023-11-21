@@ -22,7 +22,7 @@ export const dataNav = [
   {
     id: 1,
     text: "Фильмы",
-    link: "filems",
+    link: "movies",
     icon: "./images/svg/filems__icon.svg",
     toggle: true,
     toggleIcon: "./images/svg/arrow-down__icon.svg",
