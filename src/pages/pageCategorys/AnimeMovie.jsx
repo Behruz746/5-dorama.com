@@ -15,7 +15,7 @@ function AnimeMovie() {
     const useFetch = async () => {
       try {
         const dataT = await axios.get(
-          "https://kodikapi.com/translations/v2?token=7e04e50106ab3a654bef8c638ea36fa8&types=foreign-serial,soviet-cartoon,oreign-movie"
+          "https://kodikapi.com/translations/v2?token=7e04e50106ab3a654bef8c638ea36fa8&types=foreign-movie"
         );
         setIsDataT(dataT.data.results);
       } catch (error) {

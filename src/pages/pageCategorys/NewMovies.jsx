@@ -6,7 +6,8 @@ import useFetch from "../../hooks/useFetch";
 
 function NewMovies() {
   const url =
-    "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-serial,oreign-movie&year=2022,2023&kinopoisk_rating=5-10&imdb_rating=5-10&countries=Япония, Корея Южная, Китай&with_episodes_data=true";
+    "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-serial,oreign-movie&year=2022,2023&kinopoisk_rating=5-10&imdb_rating=5-10&countries=Япония, Корея Южная, Китай&with_episodes_data=true&translation_id=639";
+
   const { data, isLoad, error } = useFetch(url);
 
   return (

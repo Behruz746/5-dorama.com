@@ -14,7 +14,6 @@
 .container__cards {
     width: 100%;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     gap: 24px 16px;
 
@@ -23,7 +22,16 @@
 
         .card__image {
             width: 100%;
-            height: auto;
+            height: 291px;
+            border-radius: 10px;
+            transition: .2s linear;
+            transform: scale(1.03, 1.03);
+        }
+
+        &:hover {
+            .card__image {
+                transform: scale(1.05, 1.05); 
+            }
         }
     }
 }
