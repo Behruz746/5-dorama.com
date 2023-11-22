@@ -120,7 +120,7 @@ function App() {
 
   useEffect(() => {
     function handleResize() {
-      if (window.screen.width <= 850) {
+      if (window.screen.width <= 950) {
         setIsToggle(false);
       } else {
         setIsToggle(true);
@@ -138,7 +138,6 @@ function App() {
   // console.log(loadSearch);
   // console.log(isSearchData);
   // console.log(isUrl);
-
   function ToggleHandel() {
     setIsArrowToggle(!isArrorToggle);
   }

@@ -34,6 +34,8 @@ function useFetch(url) {
     fetchDataFun(url);
   }, [url]);
 
+  console.log(url);
+
   const { data, isLoad, error } = fetchData;
   return { data, isLoad, error };
 }

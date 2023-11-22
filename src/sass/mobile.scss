@@ -2,10 +2,10 @@
 @media screen and (max-width: 1290px) {
     .container__cards {
         justify-content: center;
-
+        
         .Card {
             max-width: 150px;
-    
+            
             .card__image {
                 width: 100%;
                 height: auto;
@@ -14,9 +14,27 @@
     }
 }
 
+@media screen and (max-width: 1120px) {
+    #main {
+        gap: 10px;
+    }
+
+    .VideoPlayer {
+        .container {
+            padding: 0 10px;
+        }
+    }
+
+    .video__serials {
+        padding: 10px !important;
+        max-width: 130px !important;
+        border: 1px solid #d00;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .nav__list {
-        max-width: 200px;
+        max-width: 200px; 
     }
 
     main {
@@ -173,7 +191,6 @@
     .variable-width {
         .slick-list {
             .slick-track {
-                // width: 100% !important;
                 overflow: visible !important;
                 display: flex !important;
                 gap: 16px;
