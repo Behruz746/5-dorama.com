@@ -1,10 +1,7 @@
 // Compoenents
 import Sliders from "../components/Sliders/Sliders";
 import HeaderSlider from "../components/HeaderSlider/HeaderSlider";
-
 import { useEffect } from "react";
-
-import "./styles.scss";
 
 function Home() {
   useEffect(() => {

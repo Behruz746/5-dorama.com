@@ -1,62 +1,4 @@
-.App__home {
-    margin-bottom: 80px;
-}
-
-.App__dramas {
-    .Home__Sliders {
-        &:nth-child(1) {
-            margin-top: 0 !important;
-        }
-    }
-}
-
-.App__filems {
-    .Home__Sliders {
-        &:nth-child(1) {
-            margin-top: 0 !important;
-        }
-    }
-}
-
-// vaqtinchalik
-.test--block {
-    position: fixed;
-    bottom: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    padding: 8px 10px;
-    width: 100%;
-    background-color: red; 
-    margin: 0 auto;
-    z-index: 500;
-    overflow: hidden;
-
-    p {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%; /* 22.4px */
-        color: #fff;
-        white-space: nowrap;
-        animation: marquee 20s linear infinite; 
-        user-select: none;
-    }
-
-    @keyframes marquee {
-        0% {
-          transform: translateX(0);
-        }
-        50% {
-          transform: translateX(-100%);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-}
-
+/// Video page //
 .Video__container {
     display: flex;
     align-items: center;
@@ -312,13 +254,11 @@
     max-width: 900px;
     width: 100%;
     position: relative;
-    // border: 1px solid #d00;
     
     .about__text {
         max-height: 55px;
         overflow: hidden;
         cursor: pointer;
-        
     }
 
     .about__text--active {
@@ -482,81 +422,3 @@
         color: #fff;
     }
 }
-
-/// loading animtion style ///
-
-.video--animtion {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100% !important;
-    height: 475px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
-    background-color: #000;
-}
-
-.lds-ellipsis {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-  
-    div {
-      position: absolute;
-      top: 33px;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: #fff;
-      animation-timing-function: cubic-bezier(0, 1, 1, 0);
-  
-      &:nth-child(1) {
-        left: 8px;
-        animation: lds-ellipsis1 0.6s infinite;
-      }
-  
-      &:nth-child(2) {
-        left: 8px;
-        animation: lds-ellipsis2 0.6s infinite;
-      }
-  
-      &:nth-child(3) {
-        left: 32px;
-        animation: lds-ellipsis2 0.6s infinite;
-      }
-  
-      &:nth-child(4) {
-        left: 56px;
-        animation: lds-ellipsis3 0.6s infinite;
-      }
-    }
-  }
-  
-  @keyframes lds-ellipsis1 {
-    0% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes lds-ellipsis3 {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
-  
-  @keyframes lds-ellipsis2 {
-    0% {
-      transform: translate(0, 0);
-    }
-    100% {
-      transform: translate(24px, 0);
-    }
-  }

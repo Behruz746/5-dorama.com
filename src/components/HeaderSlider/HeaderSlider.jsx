@@ -1,11 +1,7 @@
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
-import { dataSlider } from "../../data/data";
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
 import { useState } from "react";
-import "./styles.scss";
-import { useEffect } from "react";
 
 function HeaderSlider({ pNone }) {
   const settings = {
@@ -30,9 +26,6 @@ function HeaderSlider({ pNone }) {
       },
     ],
   };
-
-  const [sliderData, setSliderData] = useState([]);
-  const [ApiUrl, setApiUrl] = useState(" ");
 
   return (
     <section className="HeaderSlider  w-full">

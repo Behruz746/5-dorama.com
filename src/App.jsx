@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import "./sass/default.scss";
+import "./sass/main.scss";
 
 // Hooks
 import { useState, useEffect, useRef } from "react";
@@ -374,4 +374,4 @@ function App() {
 }
 
 export default App;
-import "./sass/mobile.scss";
+import './mobile.scss'

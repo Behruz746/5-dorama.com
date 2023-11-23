@@ -1,0 +1,91 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;  
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  font-weight: inherit;
+  font-size: inherit;
+  transition: all .1s linear;
+}
+
+html, body {
+  scroll-behavior: smooth; 
+} 
+
+body {
+  font-family: SF Pro Display, sans-serif !important;
+  background-color: #0E1621 !important;
+  color: #768C9E;
+  transition: all .2s linear;
+
+  #root {
+    background-color: #0E1621;
+    transition: all 0s !important;
+  }
+
+  &::-webkit-scrollbar {
+    max-width: 10px; 
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #17212B;  
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: #273242;
+    transition: background-color 5s ease-in-out !important;
+
+    &:hover {
+      background-color: #444a51;
+    }
+  }
+}
+
+::selection {
+  background-color: #303134d4;
+}
+
+::-moz-selection {
+  background: #303134d4;
+}
+
+
+.body--over {
+  overflow: hidden !important;
+}
+
+#main {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 25px + 16px;
+}
+
+.index {
+  position: relative !important;
+  z-index: 20 !important;
+}

@@ -21,7 +21,7 @@ import {
 
 // AppContext
 import AppContext from "../../AppContext";
-import "./styles.scss";
+// import "./styles.scss";
 
 function Menu() {
   const { isToggle, setIsToggle } = useContext(AppContext);
@@ -33,7 +33,7 @@ function Menu() {
     const targetId = id.slice(index);
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      event.preventDefault(); 
+      event.preventDefault();
       const targetOffsetTop = targetElement.offsetTop;
       const scrollToPosition = targetOffsetTop - 180; // 180px tepaga kotariladi
       window.scrollTo({
@@ -72,7 +72,7 @@ function Menu() {
     >
       <div>
         {dropDataMovies.map((data) => (
-          <div key={uuidv4()}> 
+          <div key={uuidv4()}>
             <a
               href={data.link}
               className="d-flex drop__item"
@@ -102,7 +102,9 @@ function Menu() {
         <SvgDocument />
         <h3>Правовая информация</h3>
       </NavLink>
-      <NavLink
+      {/* О нашем проекте will add 1.2 v */}
+      <>
+        {/* <NavLink
         to="about"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
@@ -110,7 +112,8 @@ function Menu() {
       >
         <SvgPeople />
         <h3>О нашем проекте</h3>
-      </NavLink>
+      </NavLink> */}
+      </>
       <NavLink
         target="_blank"
         to="https://www.buymeacoffee.com/5dorama"
@@ -158,7 +161,10 @@ function Menu() {
                 </div>
               </NavLink>
             </div>
-            <div
+
+            {/* Трейлер will add update 1.2 v */}
+            <>
+              {/* <div 
               className={
                 isToggle ? "list__item" : "list__item list__item--active"
               }
@@ -177,7 +183,8 @@ function Menu() {
                   <h3>Трейлер</h3>
                 </div>
               </NavLink>
-            </div>
+            </div> */}
+            </>
             <div
               className={
                 isToggle ? "list__item" : "list__item list__item--active"

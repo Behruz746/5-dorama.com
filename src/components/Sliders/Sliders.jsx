@@ -8,7 +8,7 @@ import axios from "axios";
 import Cards from "../Cards/Cards";
 import AppContext from "../../AppContext";
 
-import "./styles.scss";
+// import "./styles.scss";
 
 function Sliders({ url, title, id, linkPage }) {
   const { setIsLoad } = useContext(AppContext);

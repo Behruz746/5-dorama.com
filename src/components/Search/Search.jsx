@@ -1,7 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import ContentLoader from "react-content-loader";
 import { NavLink } from "react-router-dom";
-import "./styles.scss";
 import { useContext, Fragment, useState } from "react";
 import AppContext from "../../AppContext";
 

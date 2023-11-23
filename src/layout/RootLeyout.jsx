@@ -20,8 +20,6 @@ function RootLeyout() {
         type: "feed",
       });
     });
-
-  
   }, []);
 
   const AnimationBlock = () => {

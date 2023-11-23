@@ -5,12 +5,12 @@ export const dataNav = [
     icon: "./images/svg/home__icon02.svg",
     toggle: false,
   },
-  {
-    text: "Трейлер",
-    link: "shorts",
-    icon: "./images/svg/shortes__icon.svg",
-    toggle: false,
-  },
+  // { update 1.2 v
+  //   text: "Трейлер",
+  //   link: "shorts",
+  //   icon: "./images/svg/shortes__icon.svg",
+  //   toggle: false,
+  // },
   {
     id: 0,
     text: "Дорамы",
@@ -30,10 +30,10 @@ export const dataNav = [
 ];
 
 export const dropData = [
-  {
-    name: "Триллеры",
-    link: "/dramas#trelerSerial",
-  },
+  // {
+  //   name: "Триллеры",
+  //   link: "/dramas#trelerSerial",
+  // },
   {
     name: "Комедии",
     link: "/dramas#komediyaSerial",

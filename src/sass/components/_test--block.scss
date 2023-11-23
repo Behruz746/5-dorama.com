@@ -1,0 +1,39 @@
+
+// vaqtinchalik
+.test--block {
+    position: fixed;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 8px 10px;
+    width: 100%;
+    background-color: red; 
+    margin: 0 auto;
+    z-index: 500;
+    overflow: hidden;
+
+    p {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 22.4px */
+        color: #fff;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite; 
+        user-select: none;
+    }
+
+    @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+    }
+}

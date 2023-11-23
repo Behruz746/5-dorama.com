@@ -1,0 +1,46 @@
+//// Document page    
+.document {
+    &__body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px; /* 100% */
+        letter-spacing: -0.48px;
+        color: #fff;
+    }
+
+    &__text--container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__title--min {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px; 
+        color: #768C9E;
+    }
+
+    &__description {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 22.4px */
+        color: #fff;
+    }
+
+    &__link {
+        color: #5EB5F7;
+        margin: 0 3px;
+    }
+}
+

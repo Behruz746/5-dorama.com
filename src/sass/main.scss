@@ -1,0 +1,35 @@
+// Abstracts
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+// Base
+@import './base/base';
+@import './base/fonts';
+@import './base/helper';
+
+// Components
+@import './components/animtion';
+@import './components/sliders';
+@import './components/cards';
+@import './components/search';
+@import './components/button';
+@import './components/test--block';
+
+// Layout
+@import './layout/form';
+@import './layout/header';
+@import './layout/nav';
+
+// Page 
+@import './page/about';
+@import './page/actor';
+@import './page/contact';
+@import './page/dociment';
+@import './page/dramas';
+@import './page/home';
+@import './page/movies';
+@import './page/shorts';
+@import './page/videoPlayer';
+
+// Mobile 
+// @import './mobile';

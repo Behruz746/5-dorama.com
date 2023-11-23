@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../../AppContext";
-import "./styles.scss";
+// import "./styles.scss";
 
 import { SvgEl, SvgDorama, SvgTreler, SvgMoveis, SvgAnd } from "../SvgEl/SvgEl";
 
@@ -23,10 +23,11 @@ function MenuMobile() {
           <SvgMoveis />
           <h3>Фильмы</h3>
         </NavLink>
-        <NavLink to="shorts">
+        {/* Трейлер will add 1.2 v */}
+        {/* <NavLink to="shorts">
           <SvgTreler />
           <h3>Трейлер</h3>
-        </NavLink>
+        </NavLink> */}
         <NavLink to="*">
           <SvgAnd />
           <h3>Ещё</h3>

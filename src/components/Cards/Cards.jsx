@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
-import "./styles.scss";
+// import "./styles.scss";
 
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../../AppContext";
