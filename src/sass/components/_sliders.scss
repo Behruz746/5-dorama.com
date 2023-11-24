@@ -189,8 +189,7 @@
             z-index: 5;
             
             &::before {
-                // content: url('../../../public/images/svg/card-arrow__icon02.svg');
-                content: url('images/svg/card-arrow__icon02.svg');
+                content: url('../../public/images/svg/card-arrow__icon02.svg');
             }       
         }
     
