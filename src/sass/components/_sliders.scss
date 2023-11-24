@@ -189,7 +189,8 @@
             z-index: 5;
             
             &::before {
-                content: url('../../../public/images/svg/card-arrow__icon02.svg');
+                // content: url('../../../public/images/svg/card-arrow__icon02.svg');
+                content: url('images/svg/card-arrow__icon02.svg');
             }       
         }
     
@@ -200,7 +201,8 @@
             transform: translateY(-50%) scale(0, 0);
             
             &::before {
-                content: url('../../../public/images/svg/card-arrow__icon02.svg');
+                // content: url('../../../public/images/svg/card-arrow__icon02.svg');
+                content: url('images/svg/card-arrow__icon02.svg');
             }
         }
 
