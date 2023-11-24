@@ -45,11 +45,12 @@ function VideoPlayer() {
   );
 
   useEffect(() => {
-    // <!-- Yandex Native Ads C-A-3835914-8 -->
+    //  <!-- Yandex.RTB R-A-3835914-6 -->
     window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.renderWidget({
-        renderTo: "yandex_rtb_C-A-3835914-8",
-        blockId: "C-A-3835914-8",
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-6",
+        renderTo: "yandex_rtb_R-A-3835914-6",
+        type: "feed",
       });
     });
   }, []);
@@ -421,7 +422,8 @@ function VideoPlayer() {
 
               <VideoActiors />
 
-              <div id="yandex_rtb_C-A-3835914-8"></div>
+              {/* <!-- Yandex.RTB R-A-3835914-6 --> */}
+              <div id="yandex_rtb_R-A-3835914-6"></div>
             </div>
 
             <div className="Video__container">
