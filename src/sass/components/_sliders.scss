@@ -90,7 +90,7 @@
         transform: rotate(180deg);
         
         &::before {
-            content: url('../../../public/images/svg/card-arrow__icon02.svg');
+            content: url('../../public/images/svg/card-arrow__icon02.svg');
         }       
     }
 
@@ -99,7 +99,7 @@
         right: 5px;
 
         &::before {
-            content: url('../../../public/images/svg/card-arrow__icon02.svg');
+            content: url('../../public/images/svg/card-arrow__icon02.svg');
         }
     }
     
@@ -147,7 +147,6 @@
             display: flex !important;
             align-items: center;
             gap: 10px;
-            // border: 1px solid #d00; 
             position: absolute !important;
             bottom: 11px !important;
             left: 50% !important;
@@ -200,8 +199,7 @@
             transform: translateY(-50%) scale(0, 0);
             
             &::before {
-                // content: url('../../../public/images/svg/card-arrow__icon02.svg');
-                content: url('images/svg/card-arrow__icon02.svg');
+                content: url('../../public/images/svg/card-arrow__icon02.svg');
             }
         }
 
