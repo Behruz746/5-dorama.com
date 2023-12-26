@@ -2,7 +2,7 @@ import { useContext, useEffect, useState, useRef } from "react";
 import AppContext from "../AppContext";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function VideoPlayer() {
@@ -21,10 +21,13 @@ function VideoPlayer() {
   const [isGenes, setIsGenes] = useState("");
   const [isDataList, setIsDataList] = useState([]);
 
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   const Svg = () => (
     <svg
       className="card__icon"
-      width="16"
+      width="16" 
       height="16"
       viewBox="0 0 16 16"
       fill="none"
