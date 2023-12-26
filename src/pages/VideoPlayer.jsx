@@ -21,13 +21,24 @@ function VideoPlayer() {
   const [isGenes, setIsGenes] = useState("");
   const [isDataList, setIsDataList] = useState([]);
 
+  useEffect(() => {
+    // <!-- Yandex.RTB R-A-3835914-11 -->
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-11",
+        type: "rewarded",
+        platform: "desktop",
+      });
+    });
+  }, []);
+
   const { pathname } = useLocation();
   console.log(pathname);
 
   const Svg = () => (
     <svg
       className="card__icon"
-      width="16" 
+      width="16"
       height="16"
       viewBox="0 0 16 16"
       fill="none"
