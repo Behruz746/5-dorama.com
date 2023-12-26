@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useContext, useEffect } from "react";
 
 // Components
@@ -44,6 +45,7 @@ function RootLeyout() {
         <Outlet />
       </main>
       <AnimationBlock />
+      <SpeedInsights url="https://www.5dorama.online/" />
       <Analytics />
       <MenuMobile />
     </>
