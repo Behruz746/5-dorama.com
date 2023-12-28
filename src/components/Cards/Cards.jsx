@@ -77,8 +77,6 @@ function Cards(data) {
               <LazyLoadImage
                 loading="lazy"
                 className="card__image"
-                width="194px"
-                height="291px"
                 effect="blur"
                 src={
                   data.material_data.poster_url
