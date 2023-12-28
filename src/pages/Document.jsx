@@ -26,7 +26,11 @@ function Document() {
               законодательством в области авторского, смежного и/или иного
               интеллектуального права, мы просим вас оповестить нас об этом,
               отправив соответствующее уведомление на адрес
-              <a className="document__link" href="/">
+              <a
+                className="document__link"
+                href="5doramaapi@gmail.com"
+                target="_blank"
+              >
                 bizning-droma.gmail.com
               </a>
               , составив данное уведомление в форме, установленной действующим
@@ -69,7 +73,11 @@ function Document() {
               авторских прав, пользователь Ресурса, считающий себя обладателем
               права собственности на контент, имеет право направить встречное
               уведомление с просьбой восстановить доступ к контенту на адрес
-              <a className="document__link" href="/">
+              <a
+                className="document__link"
+                href="https://mail.google.com/mail/u/0/#inbox"
+                target="_blank"
+              >
                 bizning-droma.gmail.com
               </a>
               , предоставив убедительные доказательства обладания правами на

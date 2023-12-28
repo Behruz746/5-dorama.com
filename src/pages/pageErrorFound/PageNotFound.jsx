@@ -1,7 +1,6 @@
 import "./styles.scss";
 
-
-import HeaderSlider from '../../components/HeaderSlider/HeaderSlider';
+import HeaderSlider from "../../components/HeaderSlider/HeaderSlider";
 
 function PageNotFound() {
   return (
@@ -16,7 +15,7 @@ function PageNotFound() {
                 <p>Скорое всего страница была удалена или перемещена.</p>
               </div>
               <div className="App__pageNotFound__video">
-                <img src="./images/png/error-page__img.png" alt="erro image" />
+                <img src="./images/png/error-page__img.webp" alt="erro image" />
               </div>
             </div>
           </div>
