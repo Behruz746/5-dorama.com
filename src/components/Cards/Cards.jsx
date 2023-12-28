@@ -1,43 +1,14 @@
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-
-// import "./styles.scss";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../../AppContext";
 
 import React from "react";
-import ContentLoader from "react-content-loader";
-
-const MyLoader = (props) => {
-  const arr = [1, 2];
-  return (
-    <>
-      {arr.map(() => {
-        return (
-          <ContentLoader
-            key={uuidv4()}
-            speed={2}
-            width={162}
-            height={347}
-            viewBox="0 0 162 347"
-            backgroundColor="#17212BFF"
-            foregroundColor="#768B9EFF"
-            {...props}
-          >
-            <rect x="0" y="0" rx="10" ry="10" width="162" height="300" />
-            <rect x="0" y="310" rx="3" ry="3" width="128" height="8" />
-            <rect x="0" y="323" rx="3" ry="3" width="93" height="8" />
-          </ContentLoader>
-        );
-      })}
-    </>
-  );
-};
 
 function Cards(data) {
-  const { isLoad } = useContext(AppContext);
-
   const [isItemBo, setIsItemBo] = useState(false);
   const [dataId, setDataId] = useState(data.id);
 
@@ -103,16 +74,18 @@ function Cards(data) {
                 </h4>
               </div>
 
-              <img
+              <LazyLoadImage
                 loading="lazy"
                 className="card__image"
-                width={194}
-                height={291}
+                width="194px"
+                height="291px"
+                effect="blur"
                 src={
                   data.material_data.poster_url
                     ? data.material_data.poster_url
                     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
                 }
+                placeholderSrc="non-blurred"
                 alt={
                   data.material_data.title
                     ? `${data.material_data.title} image`
