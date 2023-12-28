@@ -16,7 +16,7 @@ function HeaderSlider({ pNone }) {
     autoplay: true,
     autoplaySpeed: 10000,
     // adaptiveHeight: true,
-    arrows: true, 
+    arrows: true,
     responsive: [
       {
         breakpoint: 475,
@@ -33,9 +33,10 @@ function HeaderSlider({ pNone }) {
         <Slider {...settings}>
           <div className="slider__card" key={uuidv4()}>
             <NavLink className="slider__link" to="/player/video/serial-34080">
+              {/* image: "../../../public/images/png/backound__img01.webp", */}
               <img
                 className="slider__card-bk"
-                src="https://i.imgur.com/ZwC7BFW.png"
+                src="../../../public/images/png/backound__img02.webp"
                 alt="image"
               />
               <img
@@ -49,7 +50,7 @@ function HeaderSlider({ pNone }) {
             <NavLink className="slider__link" to="/player/video/serial-2986">
               <img
                 className="slider__card-bk"
-                src="https://i.imgur.com/ae0bfHc.png"
+                src="../../../public/images/png/backound__img03.webp"
                 alt="image"
               />
               <img
@@ -63,7 +64,7 @@ function HeaderSlider({ pNone }) {
             <NavLink className="slider__link" to="/player/video/serial-38722">
               <img
                 className="slider__card-bk"
-                src="https://i.imgur.com/ddqKEH0.png"
+                src="../../../public/images/png/backound__img04.webp"
                 alt="image"
               />
               <img
@@ -77,7 +78,7 @@ function HeaderSlider({ pNone }) {
             <NavLink className="slider__link" to="/player/video/serial-53497">
               <img
                 className="slider__card-bk"
-                src="https://i.imgur.com/UdwKJgU.png"
+                src="./images/png/backound__img05.webp"
                 alt="image"
               />
               <img

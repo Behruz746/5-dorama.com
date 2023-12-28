@@ -103,6 +103,8 @@ function Cards(data) {
               </div>
               <img
                 className="card__image"
+                width={194}
+                height={291}
                 src={
                   data.material_data.poster_url
                     ? data.material_data.poster_url
