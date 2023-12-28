@@ -28,7 +28,7 @@ function Document() {
               отправив соответствующее уведомление на адрес
               <a
                 className="document__link"
-                href="5doramaapi@gmail.com"
+                href="mailto:5doramaapi@gmail.com"
                 target="_blank"
               >
                 bizning-droma.gmail.com
@@ -75,7 +75,7 @@ function Document() {
               уведомление с просьбой восстановить доступ к контенту на адрес
               <a
                 className="document__link"
-                href="https://mail.google.com/mail/u/0/#advanced-search/to=5doramaapi%40gmail.com&query=in%3Asent&isrefinement=true&todisplay=5doramaapi%40gmail.com"
+                href="mailto:5doramaapi@gmail.com"
                 target="_blank"
               >
                 bizning-droma.gmail.com
