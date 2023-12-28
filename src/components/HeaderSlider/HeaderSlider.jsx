@@ -36,7 +36,7 @@ function HeaderSlider({ pNone }) {
               {/* image: "../../../public/images/png/backound__img01.webp", */}
               <img
                 className="slider__card-bk"
-                src="./png/backound__img02.webp"
+                src="./images/png/backound__img02.webp"
                 alt="image"
               />
               <img
@@ -50,7 +50,7 @@ function HeaderSlider({ pNone }) {
             <NavLink className="slider__link" to="/player/video/serial-2986">
               <img
                 className="slider__card-bk"
-                src="./public/images/png/backound__img03.webp"
+                src="./images/png/backound__img03.webp"
                 alt="image"
               />
               <img
