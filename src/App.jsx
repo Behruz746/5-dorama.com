@@ -5,7 +5,7 @@ import "./sass/main.scss";
 // Hooks
 import { useState, useEffect, useRef } from "react";
 
-// Axios 
+// Axios
 import axios from "axios";
 
 // Context
@@ -75,8 +75,6 @@ function App() {
 
   useEffect(() => {
     const inputEl = document.querySelectorAll(".inputEl");
-    const btnSubmit = document.querySelector(".btn__submit");
-    const inputBtn = document.querySelector(".input__btn");
 
     function ToggleEve() {
       setInputToggle(true);
@@ -96,9 +94,6 @@ function App() {
         e.target.value ? setInputToggle(true) : setInputToggle(false);
       });
     });
-
-    // btnSubmit.addEventListener("click", ToggleEve);
-    // inputBtn.addEventListener("click", ToggleEve);
   }, []);
 
   useEffect(() => {
@@ -116,8 +111,6 @@ function App() {
     featchData();
   }, [isUrl]);
 
-  // console.log(isSearchDataId);
-
   useEffect(() => {
     function handleResize() {
       if (window.screen.width <= 950) {
@@ -126,217 +119,77 @@ function App() {
         setIsToggle(true);
       }
     }
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // these are datas in API
-  // console.log(loadSearch);
-  // console.log(isSearchData);
-  // console.log(isUrl);
   function ToggleHandel() {
     setIsArrowToggle(!isArrorToggle);
   }
 
-  //Removed
-  useEffect(() => {
-    const addSound = document.querySelector("#addSound");
-    const time = 10000 * (6 * 5); // 5 minut
-    // const time = 5000;
-    addSound.loop = false;
-
-    const removeFun = () => {
-      setTimeout(() => {
-        setModalSec(false);
-      }, 10 * 1000);
-    };
-
-    // setTimeout(() => {
-    //   setModalSec(true);
-    //   addSound.play();
-    //   removeFun();
-    // }, time);
-  }, []);
-
   const routes = createBrowserRouter([
-    // router obj
     {
       path: "/",
       element: <RootLeyout />,
       children: [
-        {
-          index: true,
-          element: <Home />,
-        },
-        {
-          path: "shorts",
-          element: <Shorts />,
-        },
-        {
-          path: "actor",
-          element: <Actor />,
-        },
-        {
-          path: "documentation",
-          element: <Document />,
-        },
-        {
-          path: "about",
-          element: <About />,
-        },
-        {
-          path: "contact",
-          element: <Contact />,
-        },
-        // {/* Error page: 404 :(+ */}
-        {
-          path: "*",
-          element: <PageNotFound />,
-        },
-        // {/* Video page: video '_' ▶ */}
+        { index: true, element: <Home /> },
+        { path: "shorts", element: <Shorts /> },
+        { path: "actor", element: <Actor /> },
+        { path: "documentation", element: <Document /> },
+        { path: "about", element: <About /> },
+        { path: "contact", element: <Contact /> },
+        { path: "*", element: <PageNotFound /> },
         {
           path: "player",
           element: <RootPlayer />,
-
-          children: [
-            {
-              path: "video/:id",
-              element: <VideoPlayer />,
-            },
-          ],
+          children: [{ path: "video/:id", element: <VideoPlayer /> }],
         },
-
-        // {/* Serials categorys page */}
-
         {
           path: "dramas",
           element: <RootSerail />,
-
           children: [
-            {
-              index: true,
-              element: <Dramas />,
-            },
-            {
-              path: "comedy",
-              element: <ComedySPage />,
-            },
-            {
-              path: "drama",
-              element: <DramaSPage />,
-            },
-            {
-              path: "action",
-              element: <ActionSPage />,
-            },
-            {
-              path: "biography",
-              element: <BiographySPage />,
-            },
-            {
-              path: "military",
-              element: <MilitarySPage />,
-            },
-            {
-              path: "fantastic",
-              element: <FantasticSPage />,
-            },
-            {
-              path: "horror",
-              element: <HorrorSPage />,
-            },
-            {
-              path: "crime",
-              element: <CrimeSPage />,
-            },
-            {
-              path: "anime",
-              element: <AnimeSPage />,
-            },
+            { index: true, element: <Dramas /> },
+            { path: "comedy", element: <ComedySPage /> },
+            { path: "drama", element: <DramaSPage /> },
+            { path: "action", element: <ActionSPage /> },
+            { path: "biography", element: <BiographySPage /> },
+            { path: "military", element: <MilitarySPage /> },
+            { path: "fantastic", element: <FantasticSPage /> },
+            { path: "horror", element: <HorrorSPage /> },
+            { path: "crime", element: <CrimeSPage /> },
+            { path: "anime", element: <AnimeSPage /> },
           ],
         },
-        // {/* movies categorys page */}
         {
           path: "movies",
           element: <RootMovies />,
-
           children: [
-            {
-              index: true,
-              element: <Movies />,
-            },
-
-            {
-              path: "comedy",
-              element: <ComedyMPage />,
-            },
-            {
-              path: "drama",
-              element: <DramaMPage />,
-            },
-            {
-              path: "action",
-              element: <ActionMPage />,
-            },
-            {
-              path: "biography",
-              element: <BiographyMPage />,
-            },
-            {
-              path: "military",
-              element: <MilitaryMPage />,
-            },
-            {
-              path: "fantastic",
-              element: <FantasticMPage />,
-            },
-            {
-              path: "horror",
-              element: <HorrorMPage />,
-            },
-            {
-              path: "crime",
-              element: <CrimeMPage />,
-            },
-            {
-              path: "anime",
-              element: <AnimeMPage />,
-            },
+            { index: true, element: <Movies /> },
+            { path: "comedy", element: <ComedyMPage /> },
+            { path: "drama", element: <DramaMPage /> },
+            { path: "action", element: <ActionMPage /> },
+            { path: "biography", element: <BiographyMPage /> },
+            { path: "military", element: <MilitaryMPage /> },
+            { path: "fantastic", element: <FantasticMPage /> },
+            { path: "horror", element: <HorrorMPage /> },
+            { path: "crime", element: <CrimeMPage /> },
+            { path: "anime", element: <AnimeMPage /> },
           ],
         },
-
-        // {/* home page Categorys */}
         {
           path: "category-movies",
           element: <RootCategorys />,
-
           children: [
-            {
-              path: "popular-now",
-              element: <PopularNow />,
-            },
-
-            {
-              path: "new-movies",
-              element: <NewMovies />,
-            },
-
-            {
-              path: "anime",
-              element: <AnimeMovie />,
-            },
+            { path: "popular-now", element: <PopularNow /> },
+            { path: "new-movies", element: <NewMovies /> },
+            { path: "anime", element: <AnimeMovie /> },
           ],
         },
       ],
     },
   ]);
-
-  // categoryMovies
-  // PopularNow
 
   return (
     <AppContext.Provider
@@ -374,4 +227,4 @@ function App() {
 }
 
 export default App;
-import './mobile.scss'
+import "./mobile.scss";
