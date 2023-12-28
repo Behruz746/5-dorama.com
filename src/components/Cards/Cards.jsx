@@ -89,6 +89,7 @@ function Cards(data) {
           >
             <div className="card__img">
               <img
+                loading="lazy"
                 className="card__logo"
                 src="https://i.imgur.com/vDh93pz.png"
                 alt="logo"
@@ -101,7 +102,9 @@ function Cards(data) {
                     : 5.6}
                 </h4>
               </div>
+
               <img
+                loading="lazy"
                 className="card__image"
                 width={194}
                 height={291}
