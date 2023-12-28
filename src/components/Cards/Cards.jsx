@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-import { useContext, useEffect, useState } from "react";
-import AppContext from "../../AppContext";
+import { useEffect, useState } from "react";
 
 import React from "react";
 
@@ -77,13 +75,14 @@ function Cards(data) {
               <LazyLoadImage
                 loading="lazy"
                 className="card__image"
+                width={180}
                 effect="blur"
                 src={
                   data.material_data.poster_url
                     ? data.material_data.poster_url
                     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
                 }
-                placeholderSrc="non-blurred"
+                // placeholderSrc="non-blurred"
                 alt={
                   data.material_data.title
                     ? `${data.material_data.title} image`
