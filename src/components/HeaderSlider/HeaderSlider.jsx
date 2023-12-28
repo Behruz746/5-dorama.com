@@ -36,7 +36,7 @@ function HeaderSlider({ pNone }) {
               {/* image: "../../../public/images/png/backound__img01.webp", */}
               <img
                 className="slider__card-bk"
-                src="./public/images/png/backound__img02.webp"
+                src="./png/backound__img02.webp"
                 alt="image"
               />
               <img
