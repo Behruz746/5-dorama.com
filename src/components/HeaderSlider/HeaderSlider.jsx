@@ -87,7 +87,7 @@ function HeaderSlider({ pNone }) {
             </NavLink>
           </div>
           <div className="slider__category__row">
-            <NavLink to="/movies/horror">
+            <NavLink to="/dramas/drama">
               <img
                 src="./images/png/category_img01.webp"
                 alt="category image"
