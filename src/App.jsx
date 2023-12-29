@@ -11,7 +11,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 // Context
-import AppContext from "./AppContext";
+const AppContext = lazy(() => import("./AppContext"));
 
 // Layouts
 const RootLeyout = lazy(() => import("./layout/RootLeyout"));
