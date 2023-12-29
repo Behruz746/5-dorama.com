@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function HeaderSlider({ pNone }) {
   const settings = {
@@ -33,57 +33,80 @@ function HeaderSlider({ pNone }) {
         <Slider {...settings}>
           <div className="slider__card" key={uuidv4()}>
             <NavLink className="slider__link" to="/player/video/serial-34080">
-              {/* image: "../../../public/images/png/backound__img01.webp", */}
-              <img
-                className="slider__card-bk"
+              <LazyLoadImage
                 src="./images/png/backound__img02.webp"
+                className="slider__card-bk"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
-              <img
-                className="slider__card-bk d-none"
+              <LazyLoadImage
                 src="https://i.imgur.com/uYX0agI.png"
+                className="slider__card-bk d-none"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
             <NavLink className="slider__link" to="/player/video/serial-2986">
-              <img
-                className="slider__card-bk"
+              <LazyLoadImage
                 src="./images/png/backound__img03.webp"
+                className="slider__card-bk"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
-              <img
-                className="slider__card-bk d-none"
+              <LazyLoadImage
                 src="https://i.imgur.com/uYX0agI.png"
+                className="slider__card-bk d-none"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
             <NavLink className="slider__link" to="/player/video/serial-38722">
-              <img
-                className="slider__card-bk"
+              <LazyLoadImage
                 src="./images/png/backound__img04.webp"
+                className="slider__card-bk"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
-              <img
-                className="slider__card-bk d-none"
+              <LazyLoadImage
                 src="https://i.imgur.com/uYX0agI.png"
+                className="slider__card-bk d-none"
+                effect="blur"
+                loading="lazy"
+                width="100%"
                 alt="image"
               />
             </NavLink>
           </div>
           <div className="slider__card" key={uuidv4()}>
             <NavLink className="slider__link" to="/player/video/serial-53497">
-              <img
-                className="slider__card-bk"
+              <LazyLoadImage
                 src="./images/png/backound__img05.webp"
+                className="slider__card-bk"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
-              <img
-                className="slider__card-bk d-none"
+              <LazyLoadImage
                 src="https://i.imgur.com/uYX0agI.png"
+                className="slider__card-bk d-none"
+                loading="lazy"
+                effect="blur"
+                width="100%"
                 alt="image"
               />
             </NavLink>

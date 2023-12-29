@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./sass/main.scss";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 // Hooks
 import { useState, useEffect, useRef } from "react";
@@ -83,7 +84,7 @@ function App() {
     inputEl.forEach((item) => {
       item.addEventListener("change", (e) => {
         setIsUrl(
-          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
+          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15&countries=Япония,Корея Южная,Китай,тайлант`
         );
         setLoadShearch(false);
 

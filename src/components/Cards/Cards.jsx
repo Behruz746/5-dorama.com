@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 
 import { useEffect, useState } from "react";
 
@@ -8,7 +7,7 @@ import React from "react";
 
 function Cards(data) {
   const [isItemBo, setIsItemBo] = useState(false);
-  const [dataId, setDataId] = useState(data.id);
+  const [dataId, setDataId] = useState(data.id); 
 
   const Svg = () => (
     <svg
