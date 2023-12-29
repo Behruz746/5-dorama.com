@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import "./sass/main.scss";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 // Hooks
 import { useState, useEffect, useRef } from "react";
