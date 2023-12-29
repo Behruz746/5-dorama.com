@@ -159,7 +159,7 @@
         transform: translateX(-300%) scale(0);
 
         &::before {
-            content: url('../../../public/images/svg/arrow__icon.svg');
+            content: url('./images/svg/arrow__icon.svg');
             transform: rotate(180deg);
         }
     }
