@@ -168,7 +168,7 @@
         transform: translateX(300%) scale(0);
 
         &::before {
-            content: url('../../../public/images/svg/arrow__icon.svg');
+            content: url('../../../public/images/svg/arrow__icon.svg') !important;
         }
     }
 
@@ -183,7 +183,7 @@
 
         button {
             &::before {
-                content: url('../../../public/images/svg/arrow__icon.svg');
+                content: url('../../../public/images/svg/arrow__icon.svg') !important;
             }     
         }
     }
