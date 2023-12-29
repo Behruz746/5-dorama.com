@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy } from "react";
 
 import "./sass/main.scss";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -12,49 +13,49 @@ import axios from "axios";
 // Context
 import AppContext from "./AppContext";
 
-// Layout
-import RootLeyout from "./layout/RootLeyout";
-import RootPlayer from "./layout/RootPlayer";
-import RootCategorys from "./layout/RootCategorys";
-import RootMovies from "./layout/RootMovies";
-import RootSerail from "./layout/RootSerail";
+// Layouts
+const RootLeyout = lazy(() => import("./layout/RootLeyout"));
+const RootPlayer = lazy(() => import("./layout/RootPlayer"));
+const RootCategorys = lazy(() => import("./layout/RootCategorys"));
+const RootMovies = lazy(() => import("./layout/RootMovies"));
+const RootSerail = lazy(() => import("./layout/RootSerail"));
 
 // Pages
-import Home from "./pages/Home";
-import Shorts from "./pages/Shorts";
-import Dramas from "./pages/Dramas";
-import Movies from "./pages/Movies";
-import Actor from "./pages/Actor";
-import VideoPlayer from "./pages/VideoPlayer";
-import Document from "./pages/Document";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import PageNotFound from "./pages/pageErrorFound/PageNotFound";
-import PopularNow from "./pages/pageCategorys/PopularNow";
-import NewMovies from "./pages/pageCategorys/NewMovies";
-import AnimeMovie from "./pages/pageCategorys/AnimeMovie";
+const Home = lazy(() => import("./pages/Home"));
+const Shorts = lazy(() => import("./pages/Shorts"));
+const Dramas = lazy(() => import("./pages/Dramas"));
+const Movies = lazy(() => import("./pages/Movies"));
+const Actor = lazy(() => import("./pages/Actor"));
+const VideoPlayer = lazy(() => import("./pages/VideoPlayer"));
+const Document = lazy(() => import("./pages/Document"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const PageNotFound = lazy(() => import("./pages/pageErrorFound/PageNotFound"));
+const PopularNow = lazy(() => import("./pages/pageCategorys/PopularNow"));
+const NewMovies = lazy(() => import("./pages/pageCategorys/NewMovies"));
+const AnimeMovie = lazy(() => import("./pages/pageCategorys/AnimeMovie"));
 
-// Movies catigoriy pages
-import ComedyMPage from "./pages/pageCategorys/moviePages/ComedyMPage";
-import DramaMPage from "./pages/pageCategorys/moviePages/DramaMPage";
-import ActionMPage from "./pages/pageCategorys/moviePages/ActionMPage";
-import BiographyMPage from "./pages/pageCategorys/moviePages/BiographyMPage";
-import MilitaryMPage from "./pages/pageCategorys/moviePages/MilitaryMPage";
-import FantasticMPage from "./pages/pageCategorys/moviePages/FantasticMPage";
-import HorrorMPage from "./pages/pageCategorys/moviePages/HorrorMPage";
-import CrimeMPage from "./pages/pageCategorys/moviePages/CrimeMPage";
-import AnimeMPage from "./pages/pageCategorys/moviePages/AnimeMPage";
+// Movies category pages
+const ComedyMPage = lazy(() => import("./pages/pageCategorys/moviePages/ComedyMPage"));
+const DramaMPage = lazy(() => import("./pages/pageCategorys/moviePages/DramaMPage"));
+const ActionMPage = lazy(() => import("./pages/pageCategorys/moviePages/ActionMPage"));
+const BiographyMPage = lazy(() => import("./pages/pageCategorys/moviePages/BiographyMPage"));
+const MilitaryMPage = lazy(() => import("./pages/pageCategorys/moviePages/MilitaryMPage"));
+const FantasticMPage = lazy(() => import("./pages/pageCategorys/moviePages/FantasticMPage"));
+const HorrorMPage = lazy(() => import("./pages/pageCategorys/moviePages/HorrorMPage"));
+const CrimeMPage = lazy(() => import("./pages/pageCategorys/moviePages/CrimeMPage"));
+const AnimeMPage = lazy(() => import("./pages/pageCategorys/moviePages/AnimeMPage"));
 
-// Serial catigoriy pages
-import ComedySPage from "./pages/pageCategorys/serialPages/ComedySPage";
-import DramaSPage from "./pages/pageCategorys/serialPages/DramaSPage";
-import ActionSPage from "./pages/pageCategorys/serialPages/ActionSPage";
-import BiographySPage from "./pages/pageCategorys/serialPages/BiographySPage";
-import MilitarySPage from "./pages/pageCategorys/serialPages/MilitarySPage";
-import FantasticSPage from "./pages/pageCategorys/serialPages/FantasticSPage";
-import HorrorSPage from "./pages/pageCategorys/serialPages/HorrorSPage";
-import CrimeSPage from "./pages/pageCategorys/serialPages/CrimeSPage";
-import AnimeSPage from "./pages/pageCategorys/serialPages/AnimeSPage";
+// Serial category pages
+const ComedySPage = lazy(() => import("./pages/pageCategorys/serialPages/ComedySPage"));
+const DramaSPage = lazy(() => import("./pages/pageCategorys/serialPages/DramaSPage"));
+const ActionSPage = lazy(() => import("./pages/pageCategorys/serialPages/ActionSPage"));
+const BiographySPage = lazy(() => import("./pages/pageCategorys/serialPages/BiographySPage"));
+const MilitarySPage = lazy(() => import("./pages/pageCategorys/serialPages/MilitarySPage"));
+const FantasticSPage = lazy(() => import("./pages/pageCategorys/serialPages/FantasticSPage"));
+const HorrorSPage = lazy(() => import("./pages/pageCategorys/serialPages/HorrorSPage"));
+const CrimeSPage = lazy(() => import("./pages/pageCategorys/serialPages/CrimeSPage"));
+const AnimeSPage = lazy(() => import("./pages/pageCategorys/serialPages/AnimeSPage"));
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
