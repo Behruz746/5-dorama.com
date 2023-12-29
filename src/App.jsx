@@ -1,29 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Suspense } from "react";
-
-const loadingMarkup = (
-  <div
-    style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      width: "100%",
-      height: "100vh",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      backgroundColor: "#0e1621",
-      zIndex: -1,
-    }}
-  >
-    <img
-      src="./images/png/header__logo.webp"
-      width="150px"
-      height="50px"
-      alt="loading..."
-    />
-  </div>
-);
 
 import "./sass/main.scss";
 
@@ -217,39 +192,37 @@ function App() {
   ]);
 
   return (
-    <Suspense fallback={loadingMarkup}>
-      <AppContext.Provider
-        value={{
-          dataList,
-          isLoad,
-          setIsLoad,
-          isToggle,
-          setIsToggle,
-          isVideoLink,
-          setIsVideoLink,
-          dataLength,
-          setDataLength,
-          isArrorToggle,
-          setIsArrowToggle,
-          ToggleHandel,
-          modalSec,
-          setModalSec,
-          searchvalue,
-          setIsUrl,
-          isSearchData,
-          setToggleSeach,
-          toggleSeach,
-          loadSearch,
-          inputToggle,
-          setInputToggle,
-          isSearchDataId,
-        }}
-      >
-        <div className="App">
-          <RouterProvider router={routes} />
-        </div>
-      </AppContext.Provider>
-    </Suspense>
+    <AppContext.Provider
+      value={{
+        dataList,
+        isLoad,
+        setIsLoad,
+        isToggle,
+        setIsToggle,
+        isVideoLink,
+        setIsVideoLink,
+        dataLength,
+        setDataLength,
+        isArrorToggle,
+        setIsArrowToggle,
+        ToggleHandel,
+        modalSec,
+        setModalSec,
+        searchvalue,
+        setIsUrl,
+        isSearchData,
+        setToggleSeach,
+        toggleSeach,
+        loadSearch,
+        inputToggle,
+        setInputToggle,
+        isSearchDataId,
+      }}
+    >
+      <div className="App">
+        <RouterProvider router={routes} />
+      </div>
+    </AppContext.Provider>
   );
 }
 
