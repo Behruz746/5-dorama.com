@@ -44,7 +44,7 @@ function HeaderSlider({ pNone }) {
           containerClass="Header__slider__container"
           dotListClass="custom__list"
           itemClass="carousel__dot-list"
-          autoPlay={!true}
+          autoPlay={true}
           autoPlaySpeed={5000}
         >
           {headerSliderList.map((item) => (
