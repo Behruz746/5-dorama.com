@@ -1,4 +1,16 @@
-@media screen and (min-width: 1536px) {}
+@media screen and (min-width: 1560px) {
+    .Header__slider__container {
+        .slider__card {
+            img {
+                height: 260px;
+            }
+        }
+    }
+
+    .slider__category {
+        display: flex !important;
+    } 
+}
 @media screen and (max-width: 1290px) {
     .container__cards {
         justify-content: center;
@@ -10,6 +22,13 @@
                 width: 100%;
                 height: auto;
             }
+        }
+    }
+
+    .slider__card {
+        img {
+            width: 100%;
+            height: auto;
         }
     }
 }

@@ -158,3 +158,26 @@ export const dataSlider = [
     link: "/",
   },
 ];
+
+export const headerSliderList = [
+  {
+    pageLink: "/player/video/serial-34080",
+    desktopImg: "./images/png/backound__img02.webp",
+    mobileImg: "https://i.imgur.com/uYX0agI.png",
+  },
+  {
+    pageLink: "/player/video/serial-2986",
+    desktopImg: "./images/png/backound__img03.webp",
+    mobileImg: "https://i.imgur.com/uYX0agI.png",
+  },
+  {
+    pageLink: "/player/video/serial-38722",
+    desktopImg: "./images/png/backound__img04.webp",
+    mobileImg: "https://i.imgur.com/uYX0agI.png",
+  },
+  {
+    pageLink: "/player/video/serial-53497",
+    desktopImg: "./images/png/backound__img02.webp",
+    mobileImg: "https://i.imgur.com/uYX0agI.png",
+  },
+];

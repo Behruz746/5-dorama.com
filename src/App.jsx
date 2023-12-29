@@ -12,7 +12,7 @@ import axios from "axios";
 // Context
 import AppContext from "./AppContext";
 
-// Layout
+// Layout 
 import RootLeyout from "./layout/RootLeyout";
 import RootPlayer from "./layout/RootPlayer";
 import RootCategorys from "./layout/RootCategorys";

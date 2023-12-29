@@ -1,117 +1,100 @@
-import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import AppContext from "../../AppContext";
+import { headerSliderList } from "../../data/data";
 
 function HeaderSlider({ pNone }) {
-  const settings = {
-    className: "slider variable-width",
-    dots: true,
-    infinite: true,
-    speed: 1200,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    pauseOnHover: true,
-    variableWidth: false,
-    autoplay: true,
-    autoplaySpeed: 10000,
-    // adaptiveHeight: true,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 475,
-        settings: {
-          arrows: false,
-        },
-      },
-    ],
+  const { isToggle } = useContext(AppContext);
+
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
 
   return (
     <section className="HeaderSlider  w-full">
-      <div className="container" style={{ padding: `${pNone}` }}>
-        <Slider {...settings}>
-          <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/player/video/serial-34080">
-              <LazyLoadImage
-                src="./images/png/backound__img02.webp"
-                className="slider__card-bk"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
+      <div
+        className="container Header__slider__container"
+        style={{ padding: `${pNone}` }}
+      >
+        <Carousel
+          swipeable={true}
+          showDots={true}
+          arrows={isToggle ? true : false}
+          renderButtonGroupOutside={["tablet", "mobile"]}
+          responsive={responsive}
+          containerClass="Header__slider__container"
+          dotListClass="custom__list"
+          itemClass="carousel__dot-list"
+          autoPlay={!true}
+          autoPlaySpeed={5000}
+        >
+          {headerSliderList.map((item) => (
+            <div className="slider__card" key={uuidv4()}>
+              <NavLink className="slider__link" to={item.pageLink}>
+                <LazyLoadImage
+                  src={item.desktopImg}
+                  className="slider__card-bk"
+                  loading="lazy"
+                  effect="blur"
+                  width="100%"
+                  alt="image"
+                />
+                <LazyLoadImage
+                  src={item.mobileImg}
+                  className="slider__card-bk d-none"
+                  loading="lazy"
+                  effect="blur"
+                  width="100%"
+                  alt="image"
+                />
+              </NavLink>
+            </div>
+          ))}
+        </Carousel>
+
+        <div className="slider__category">
+          <div className="slider__category__column">
+            <NavLink to="/dramas/comedy">
+              <img
+                src="./images/png/category_img02.webp"
+                alt="category image"
               />
-              <LazyLoadImage
-                src="https://i.imgur.com/uYX0agI.png"
-                className="slider__card-bk d-none"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
+            </NavLink>
+            <NavLink to="/movies/horror">
+              <img
+                src="./images/png/category_img00.webp"
+                alt="category image"
               />
             </NavLink>
           </div>
-          <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/player/video/serial-2986">
-              <LazyLoadImage
-                src="./images/png/backound__img03.webp"
-                className="slider__card-bk"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
-              />
-              <LazyLoadImage
-                src="https://i.imgur.com/uYX0agI.png"
-                className="slider__card-bk d-none"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
+          <div className="slider__category__row">
+            <NavLink to="/movies/horror">
+              <img
+                src="./images/png/category_img01.webp"
+                alt="category image"
               />
             </NavLink>
           </div>
-          <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/player/video/serial-38722">
-              <LazyLoadImage
-                src="./images/png/backound__img04.webp"
-                className="slider__card-bk"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
-              />
-              <LazyLoadImage
-                src="https://i.imgur.com/uYX0agI.png"
-                className="slider__card-bk d-none"
-                effect="blur"
-                loading="lazy"
-                width="100%"
-                alt="image"
-              />
-            </NavLink>
-          </div>
-          <div className="slider__card" key={uuidv4()}>
-            <NavLink className="slider__link" to="/player/video/serial-53497">
-              <LazyLoadImage
-                src="./images/png/backound__img05.webp"
-                className="slider__card-bk"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
-              />
-              <LazyLoadImage
-                src="https://i.imgur.com/uYX0agI.png"
-                className="slider__card-bk d-none"
-                loading="lazy"
-                effect="blur"
-                width="100%"
-                alt="image"
-              />
-            </NavLink>
-          </div>
-        </Slider>
+        </div>
       </div>
     </section>
   );

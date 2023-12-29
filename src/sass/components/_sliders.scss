@@ -7,7 +7,6 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    // border: 1px solid #d00;
 }
 
 .title {
@@ -113,127 +112,140 @@
     }
 }
 
-/// Header slider 
-
-.HeaderSlider {
+// /// Header slider 
+.Header__slider__container {
     width: 100%;
+    display: flex;
+    gap: 10px;
+    position: relative;   
+    
+    &:hover {
+        .react-multiple-carousel__arrow--left {
+            transform: translate(0%) scale(1);
+        }
 
-    .slider {
-        position: relative !important;
-        overflow: hidden;
+        .react-multiple-carousel__arrow--right {
+            transform: translateX(0%) scale(1);
+        }
+    }
+   
+    .slider__card {
+        width: 100%;
+        border-radius: 10px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+
+   .react-multiple-carousel__arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        background-color: #4845458d;
+        padding: 0;
 
         &:hover {
-            .slick-next {
-                transform: translateY(-50%) scale(1, 1) !important;
-                right: 16px;
-            }
+            background-color: #242323ae;
+        }
+    }
 
-            .slick-prev {
-                transform: translateY(-50%) rotate(180deg) !important;
-                left: 16px !important;
-            }
-        } 
+    .react-multiple-carousel__arrow--left {
+        transform: translateX(-300%) scale(0);
 
-        .slick-arrow {
-          background-color: #7d7b7b87;
-          transition: .2s ease-in-out;
+        &::before {
+            content: url('../../../public/images/svg/arrow__icon.svg');
+            transform: rotate(180deg);
+        }
+    }
 
-          &:hover {
-            background-color: #2b2a2a63;
-          }
+    .react-multiple-carousel__arrow--right {
+        transform: translateX(300%) scale(0);
+
+        &::before {
+            content: url('../../../public/images/svg/arrow__icon.svg');
+        }
+    }
+
+    .react-multiple-carousel__arrow {
+        .react-multiple-carousel__arrow--right {
+            display: none !important;
         }
 
-        .slick-dots {
-            display: flex !important;
-            align-items: center;
-            gap: 10px;
-            position: absolute !important;
-            bottom: 11px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-
-            .slick-active {
-                opacity: 1;
-                transform: rotate(-30deg);
-                transition: .3s linear !important;
-            }
-            
-            li {
-                display: block !important;
-                width: 4px !important;
-                height: 4px !important;
-                border-radius: 0 !important; 
-                background-color: #fff;
-                opacity: 0.45;
-                transition: .3s linear !important;
-                
-                button {
-                    display: block !important;
-                    color: transparent !important; 
-                    font-size: 0;
-                    user-select: none;
-                    border: 0;
-                    outline: 0;
-                    background-color: #fff;
-                    opacity: 0.45;
-                }
-            }
+        .react-multiple-carousel__arrow--left {
+            display: none !important;
         }
 
-        .slick-prev {
-            position: absolute !important;
-            top: 50%;
-            left: -50px !important;
-            transform: translateY(-50%) rotate(180deg) scale(0, 0)  !important;
-            z-index: 5;
-            
+        button {
             &::before {
-                content: url('../../public/images/svg/card-arrow__icon02.svg');
-            }       
+                content: url('../../../public/images/svg/arrow__icon.svg') !important;
+            }     
         }
-    
-        .slick-next {
-            position: absolute;  
-            top: 50%;
-            right: -25px;
-            transform: translateY(-50%) scale(0, 0);
-            
-            &::before {
-                content: url('../../public/images/svg/card-arrow__icon02.svg');
-            }
-        }
+    }
 
-        .slick-list {
-            .slick-track {
-                gap: 2px;
-            }
+    .custom__list {
+        margin-bottom: 25px;
+
+        button {
+            width: 5px;
+            height: 5px;
+            border-radius: 0;
+            background-color: #554c4c;
+            opacity: .45;
+            border: 0;
+            padding: 0;
+        }
+    }
+
+    .react-multi-carousel-dot--active {
+        button {
+            width: 5px;
+            height: 5px;
+            border-radius: 0;
+            background-color: #fff;
+            border: 0;
+            transform: rotate(-30deg);
+            padding: 0;
         }
     }
 }
 
-.slider__card {
-    max-width: 1440px;
+.slider__category {
+    max-width: 401px;
     width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-    height: auto;
+    display: none;
+    gap: 10px;
+}
 
-    &:hover {
-        .slider__card-bk {
-            transform: scale(1.009,1.009);
-        }
-    }   
+.slider__category__column {
+    max-width: 264px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
-    .d-none {
-        display: none;
+    img {
+        width: 100%;
+        height: auto;
     }
- }
+}
 
-.slider__card-bk {
-    max-width: 1440px;
+.slider__category__row {
+    max-width: 127px;
     width: 100%;
-    border-radius: 10px;
-    transition: .2s linear;
-    object-fit: cover;
-    object-position: center;
- }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.d-none {
+    display: none;
+}
