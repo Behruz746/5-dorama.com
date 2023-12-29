@@ -75,43 +75,43 @@ export const dropData = [
 export const dropDataMovies = [
   // {
   //   name: "Триллеры",
-  //   link: "/filems#trelerMovie",
+  //   link: "/movies#trelerMovie",
   // },
   {
     name: "Комедии",
-    link: "/filems#komediyaMovie",
+    link: "/movies#komediyaMovie",
   },
   {
     name: "Драмы",
-    link: "/filems#dramaMovie",
+    link: "/movies#dramaMovie",
   },
   {
     name: "Боавик",
-    link: "/filems#boavikMovie",
+    link: "/movies#boavikMovie",
   },
   {
     name: "Биография",
-    link: "/filems#biografiyaMovie",
+    link: "/movies#biografiyaMovie",
   },
   {
     name: "Военный",
-    link: "/filems#voyeniyMovie",
+    link: "/movies#voyeniyMovie",
   },
   {
     name: "Фантастика",
-    link: "/filems#fantastikaMovie",
+    link: "/movies#fantastikaMovie",
   },
   {
     name: "Ужасы",
-    link: "/filems#ujesMovie",
+    link: "/movies#ujesMovie",
   },
   {
     name: "Криминал",
-    link: "/filems#kriminalMovie",
+    link: "/movies#kriminalMovie",
   },
   {
     name: "Аниме",
-    link: "/filems#AnimeMovie",
+    link: "/movies#AnimeMovie",
   },
 ];
 

@@ -21,7 +21,6 @@ import {
 
 // AppContext
 import AppContext from "../../AppContext";
-// import "./styles.scss";
 
 function Menu() {
   const { isToggle, setIsToggle } = useContext(AppContext);

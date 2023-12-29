@@ -32,21 +32,18 @@
   <body>
     <script type="module" src="/src/main.jsx"></script>
     <div id="root"></div>
-
     <script type="text/javascript">
       function kodikMessageListener(message) {
         if (message.data.key == "kodik_player_time_update") {
           console.log(message.data.value, "video time secount"); // vidoe time
         }
       }
-
       if (window.addEventListener) {
         window.addEventListener("message", kodikMessageListener);
       } else {
         window.attachEvent("onmessage", kodikMessageListener);
       }
     </script>
-
     <!-- Yandex Native Ads C-A-3835914-8 -->
     <div id="yandex_rtb_C-A-3835914-8"></div>
     <script>
@@ -57,7 +54,6 @@
         });
       });
     </script>
-
     <!-- Yandex Native Ads C-A-3835914-10 -->
     <div id="yandex_rtb_C-A-3835914-10"></div>
     <script>
