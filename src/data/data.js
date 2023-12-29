@@ -177,7 +177,7 @@ export const headerSliderList = [
   },
   {
     pageLink: "/player/video/serial-53497",
-    desktopImg: "./images/png/backound__img02.webp",
+    desktopImg: "./images/png/backound__img05.webp",
     mobileImg: "https://i.imgur.com/uYX0agI.png",
   },
 ];
