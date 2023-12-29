@@ -36,26 +36,62 @@ const NewMovies = lazy(() => import("./pages/pageCategorys/NewMovies"));
 const AnimeMovie = lazy(() => import("./pages/pageCategorys/AnimeMovie"));
 
 // Movies category pages
-const ComedyMPage = lazy(() => import("./pages/pageCategorys/moviePages/ComedyMPage"));
-const DramaMPage = lazy(() => import("./pages/pageCategorys/moviePages/DramaMPage"));
-const ActionMPage = lazy(() => import("./pages/pageCategorys/moviePages/ActionMPage"));
-const BiographyMPage = lazy(() => import("./pages/pageCategorys/moviePages/BiographyMPage"));
-const MilitaryMPage = lazy(() => import("./pages/pageCategorys/moviePages/MilitaryMPage"));
-const FantasticMPage = lazy(() => import("./pages/pageCategorys/moviePages/FantasticMPage"));
-const HorrorMPage = lazy(() => import("./pages/pageCategorys/moviePages/HorrorMPage"));
-const CrimeMPage = lazy(() => import("./pages/pageCategorys/moviePages/CrimeMPage"));
-const AnimeMPage = lazy(() => import("./pages/pageCategorys/moviePages/AnimeMPage"));
+const ComedyMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/ComedyMPage")
+);
+const DramaMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/DramaMPage")
+);
+const ActionMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/ActionMPage")
+);
+const BiographyMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/BiographyMPage")
+);
+const MilitaryMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/MilitaryMPage")
+);
+const FantasticMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/FantasticMPage")
+);
+const HorrorMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/HorrorMPage")
+);
+const CrimeMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/CrimeMPage")
+);
+const AnimeMPage = lazy(() =>
+  import("./pages/pageCategorys/moviePages/AnimeMPage")
+);
 
 // Serial category pages
-const ComedySPage = lazy(() => import("./pages/pageCategorys/serialPages/ComedySPage"));
-const DramaSPage = lazy(() => import("./pages/pageCategorys/serialPages/DramaSPage"));
-const ActionSPage = lazy(() => import("./pages/pageCategorys/serialPages/ActionSPage"));
-const BiographySPage = lazy(() => import("./pages/pageCategorys/serialPages/BiographySPage"));
-const MilitarySPage = lazy(() => import("./pages/pageCategorys/serialPages/MilitarySPage"));
-const FantasticSPage = lazy(() => import("./pages/pageCategorys/serialPages/FantasticSPage"));
-const HorrorSPage = lazy(() => import("./pages/pageCategorys/serialPages/HorrorSPage"));
-const CrimeSPage = lazy(() => import("./pages/pageCategorys/serialPages/CrimeSPage"));
-const AnimeSPage = lazy(() => import("./pages/pageCategorys/serialPages/AnimeSPage"));
+const ComedySPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/ComedySPage")
+);
+const DramaSPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/DramaSPage")
+);
+const ActionSPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/ActionSPage")
+);
+const BiographySPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/BiographySPage")
+);
+const MilitarySPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/MilitarySPage")
+);
+const FantasticSPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/FantasticSPage")
+);
+const HorrorSPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/HorrorSPage")
+);
+const CrimeSPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/CrimeSPage")
+);
+const AnimeSPage = lazy(() =>
+  import("./pages/pageCategorys/serialPages/AnimeSPage")
+);
 
 function App() {
   const [isToggle, setIsToggle] = useState(true);
@@ -118,7 +154,7 @@ function App() {
       if (window.screen.width <= 950) {
         setIsToggle(false);
       } else {
-        setIsToggle(true);
+        setIsToggle(false);
       }
     }
     window.addEventListener("resize", handleResize);
