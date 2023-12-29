@@ -27,11 +27,13 @@ function Home() {
         title="Новинки"
         linkPage="category-movies/new-movies"
       />
-
+      <div className="container container--reklama">
+        <div id="yandex_rtb_R-A-3835914-7"></div>
+      </div>
       <Sliders
         url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=18&lgbt=false&types=foreign-movie&year=2000,2016,2017,2018,2019,2020,2021,2022,2023&kinopoisk_rating=6-10&countries=Япония, Корея Южная, Китай&with_episodes_data=true"
         title="Фильмы"
-        linkPage="/filems"
+        linkPage="/movies"
       />
 
       <Sliders
@@ -39,10 +41,6 @@ function Home() {
         title="Дорамы"
         linkPage="/dramas"
       />
-
-      <div className="container container--reklama">
-        <div id="yandex_rtb_R-A-3835914-7"></div>
-      </div>
       <Sliders
         url="https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=28&lgbt=false&types=anime&year=2015,2014,2016,2017,2018, 2020,2021,2022,2023&kinopoisk_rating=7-10&countries=Япония&with_episodes_data=true"
         title="Аниме"
