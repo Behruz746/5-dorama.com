@@ -169,16 +169,23 @@
         transform: translateX(-300%) scale(0);
 
         &::before {
-            content: url('../../../public/images/svg/arrow__icon.svg') !important;
-            transform: rotate(180deg);
+            content: url('../../public/images/svg/card-arrow__icon02.svg');
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            transform: translate(-50%, -50%) rotate(180deg);
         }
     }
 
     .react-multiple-carousel__arrow--right {
         transform: translateX(300%) scale(0);
-
+        
         &::before {
-            content: url('../../../public/images/svg/arrow__icon.svg') !important;
+            position: absolute;
+            top: 60%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            content: url('../../public/images/svg/card-arrow__icon02.svg');
         }
     }
 
