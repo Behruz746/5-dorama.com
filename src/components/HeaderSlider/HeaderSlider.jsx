@@ -43,7 +43,7 @@ function HeaderSlider({ pNone }) {
           renderButtonGroupOutside={["tablet", "mobile"]}
           responsive={responsive}
           containerClass="Header__slider__container"
-          dotListClass="custom__list"
+          dotListClass="custom__list" 
           itemClass="carousel__dot-list"
           autoPlay={true}
           autoPlaySpeed={8000}

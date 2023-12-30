@@ -315,7 +315,6 @@ function VideoPlayer() {
 
   const VideoActiors = () => {
     setRandomColor(Math.floor(Math.random() * 7) + 1);
-
     return (
       <div className="hidden--block">
         <div className="Video__actiors">
@@ -336,7 +335,7 @@ function VideoPlayer() {
                       </h1>
                     </div>
                     <h2 className="actior__name">{item}</h2>
-                    <p>Актриса</p>
+                    <p>Актер</p>
                   </div>
                 ))}
             </>

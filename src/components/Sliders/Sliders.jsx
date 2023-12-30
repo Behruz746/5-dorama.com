@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 // Compoenets
 import Cards from "../Cards/Cards";
@@ -34,6 +36,29 @@ function Sliders({ url, title, id, linkPage }) {
     fetctAnime();
   }, [isUrl]);
 
+  const responsiveCard = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1360 },
+      items: 6.6,
+      slidesToSlide: 6,
+    },
+    desktop: {
+      breakpoint: { max: 1360, min: 1250 },
+      items: 5.5,
+      slidesToSlide: 5,
+    },
+    tablet: {
+      breakpoint: { max: 1250, min: 1039 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 2.8,
+    },
+  };
+
   const settings = {
     className: "slider variable-width",
     dots: false,
@@ -62,7 +87,6 @@ function Sliders({ url, title, id, linkPage }) {
           variableWidth: true,
         },
       },
-    
     ],
   };
 
@@ -92,18 +116,33 @@ function Sliders({ url, title, id, linkPage }) {
   return (
     <section className="Home__Sliders w-full sliderId" id={id}>
       <div className="container">
-        <div className="Sliders__container slider__card">
+        <div className="sliders__container slider__card">
           <div className="Slider__cards">
             <div className="Slider__navigation">
               <NavLink
                 to={linkPage}
                 className="navigation__title"
                 onClick={() => console.log(linkPage)}
-              > 
+              >
                 <h1 className="title">{title}</h1>
                 <Svg />
               </NavLink>
             </div>
+            {/* <Carousel
+              swipeable={true}
+              showDots={false}
+              arrows={true}
+              renderButtonGroupOutside={["tablet", "mobile"]}
+              responsive={responsiveCard}
+              containerClass="Header__slider__container"
+              dotListClass="custom__list"
+              itemClass="carousel__dot-list"
+            >
+              {dataAnime.map((data) => (
+                <Cards {...data} key={uuidv4()} />
+              ))}
+            </Carousel> */}
+
             <Slider {...settings}>
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />

@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import "./styles.scss";
 import AppContext from "../../AppContext";
 import Search from "../Search/Search";
+import SnowAnimtion from "../SnowAnimtion/SnowAnimtion";
 import { CloseSvg } from "../SvgEl/SvgEl";
 
 function Header() {
@@ -95,6 +96,7 @@ function Header() {
       ></div>
       <header className="App__header">
         <div className="header__box">
+          <SnowAnimtion />
           <div
             className={
               toggle ? "header__container--mobile" : "header__container--MAC"

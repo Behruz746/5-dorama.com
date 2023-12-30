@@ -75,11 +75,17 @@
     .App__header {
         height: 88px;
     }
+
+  
 }
 
 @media screen and (max-width: 768px) {
     .container {
         padding: 0 10px;
+    }
+
+    .snowflakes {
+        height: 250px !important;
     }
 
     .test--block {

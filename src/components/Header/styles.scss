@@ -58,6 +58,8 @@
         width: 100%;
         padding: 0 8px 0 18px;
         gap: 6px;
+        position: relative;
+        z-index: 50;
     }
 
     .input {
@@ -122,6 +124,8 @@
         width: 100%;
         padding: 0;
         gap: 6px;
+        position: relative;
+        z-index: 50 !important;
     }
 
     button {
@@ -171,6 +175,8 @@
 .header__logo {
     max-width: 120px;
     width: 100%;
+    position: relative;
+    z-index: 150;
 
     img {
         width: 92px;
