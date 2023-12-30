@@ -1,12 +1,10 @@
 import { useContext, useEffect, useState, useRef } from "react";
-import AppContext from "../AppContext";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function VideoPlayer() {
-  const { isVideoLink } = useContext(AppContext);
   const [isDataVideo, setIsDataVideo] = useState([]);
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
@@ -33,7 +31,6 @@ function VideoPlayer() {
   }, []);
 
   const { pathname } = useLocation();
-  console.log(pathname);
 
   const Svg = () => (
     <svg
@@ -156,10 +153,7 @@ function VideoPlayer() {
     }
   }, [isdataType]);
 
-  // console.log(isDataVideo);
-
   ///////////// Components ////////////////
-
   const SerialBlock = () => (
     <>
       <div className="video__searals--content">
@@ -316,8 +310,6 @@ function VideoPlayer() {
       )}
     </div>
   );
-
-  // console.log(isDataVideo.material_data);
 
   const [randomColor, setRandomColor] = useState(0);
 

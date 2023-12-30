@@ -36,6 +36,7 @@ function HeaderSlider({ pNone }) {
         style={{ padding: `${pNone}` }}
       >
         <Carousel
+          infinite
           swipeable={true}
           showDots={true}
           arrows={isToggle ? true : false}
@@ -45,7 +46,7 @@ function HeaderSlider({ pNone }) {
           dotListClass="custom__list"
           itemClass="carousel__dot-list"
           autoPlay={true}
-          autoPlaySpeed={5000}
+          autoPlaySpeed={8000}
         >
           {headerSliderList.map((item) => (
             <div className="slider__card" key={uuidv4()}>

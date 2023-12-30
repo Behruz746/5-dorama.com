@@ -99,7 +99,7 @@ function Sliders({ url, title, id, linkPage }) {
                 to={linkPage}
                 className="navigation__title"
                 onClick={() => console.log(linkPage)}
-              >
+              > 
                 <h1 className="title">{title}</h1>
                 <Svg />
               </NavLink>

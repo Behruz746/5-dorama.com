@@ -13,7 +13,7 @@
     font-family: SF Pro Display, sans-serif !important;
     color: #fff;
     transition: .2s linear;
-    font-size: 24px; 
+    font-size: 24px;
 }
 
 .navigation__title {
@@ -112,6 +112,8 @@
     }
 }
 
+
+
 // /// Header slider 
 .Header__slider__container {
     width: 100%;
@@ -135,7 +137,7 @@
 
         img {
             width: 100%;
-            height: auto;
+            margin-left: .5px;
             border-radius: 10px;
         }
     }
@@ -150,6 +152,14 @@
         background-color: #4845458d;
         padding: 0;
 
+        &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+        }
+
         &:hover {
             background-color: #242323ae;
         }
@@ -159,7 +169,7 @@
         transform: translateX(-300%) scale(0);
 
         &::before {
-            content: url('./images/svg/arrow__icon.svg');
+            content: url('../../../public/images/svg/arrow__icon.svg') !important;
             transform: rotate(180deg);
         }
     }
@@ -168,7 +178,7 @@
         transform: translateX(300%) scale(0);
 
         &::before {
-            content: url('./images/svg/arrow__icon.svg') !important;
+            content: url('../../../public/images/svg/arrow__icon.svg') !important;
         }
     }
 
