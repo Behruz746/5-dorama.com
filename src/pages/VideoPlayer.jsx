@@ -163,13 +163,15 @@ function VideoPlayer() {
       <div className="video__serial--grids">
         <>
           {serialArrD.map((link, index) => {
+            console.log(index + 1);
+
             return (
               <div
                 key={uuidv4()}
                 className={isIndex === index + 1 ? "active serial" : "serial"}
                 onClick={() => {
                   setIsSerialLink(link);
-                  setIsIndex(index + 1);
+                  // setIsIndex(index + 1);
                 }}
               >
                 <h1>{index + 1}</h1>

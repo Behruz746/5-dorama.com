@@ -44,7 +44,7 @@ function RootLeyout() {
         <Menu />
         <Outlet />
       </main>
-      <AnimationBlock />
+      {/* <AnimationBlock /> */}
       <SpeedInsights url="https://www.5dorama.online/" />
       <Analytics />
       <MenuMobile />

@@ -12,7 +12,7 @@ function SnowAnimtion() {
     <div className="snowflakes">
       {arr.map((item, index) => (
         <i key={index}></i>
-      ))}
+      ))} 
     </div>
   );
 }
