@@ -5,7 +5,8 @@
     z-index: 5;
     position: absolute;
     top: -190px;
-    left: 0;
+    display: flex;
+    justify-content: center;
     overflow: hidden;
 }
     

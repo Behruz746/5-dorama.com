@@ -77,7 +77,7 @@ function HeaderSlider({ pNone }) {
             <NavLink to="/dramas/comedy">
               <img
                 src="./images/png/category_img02.webp"
-                alt="category image"
+                alt="category image" 
               />
             </NavLink>
             <NavLink to="/movies/horror">

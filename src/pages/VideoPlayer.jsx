@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState, useRef } from "react";
+import AppContext from "../AppContext";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useParams, useLocation } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function VideoPlayer() {
+  const { isVideoLink } = useContext(AppContext);
   const [isDataVideo, setIsDataVideo] = useState([]);
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
@@ -31,6 +33,7 @@ function VideoPlayer() {
   }, []);
 
   const { pathname } = useLocation();
+  console.log(pathname);
 
   const Svg = () => (
     <svg
@@ -68,7 +71,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-movie&year=2014,2015,2016,2017,2018,2019,2020,&kinopoisk_rating=7-10&imdb_rating=7-10&all_genres=комедия,ужасы,военный,боевик,биография,фантастика,&countries=Япония,Корея Южная,Китай"
+          "https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-movie&year=2014,2015,2016,2017,2018,2019,2020,&kinopoisk_rating=7-10&imdb_rating=7-10&all_genres=комедия,ужасы,военный,боевик,биография,фантастика,&countries=Япония,Корея Южная,Китай"
         );
         setIsDataList(data.data.results);
       } catch (error) {
@@ -82,7 +85,7 @@ function VideoPlayer() {
     const fetchData = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
+          `https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
         );
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
@@ -102,7 +105,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=35&lgbt=false&types=${isdataType}&year=2016,2017,2018,2019,2020,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
+          `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=35&lgbt=false&types=${isdataType}&year=2016,2017,2018,2019,2020,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
         );
         setIsSimilar(data.data.results);
       } catch (error) {
@@ -153,7 +156,10 @@ function VideoPlayer() {
     }
   }, [isdataType]);
 
+  // console.log(isDataVideo);
+
   ///////////// Components ////////////////
+
   const SerialBlock = () => (
     <>
       <div className="video__searals--content">
@@ -163,15 +169,13 @@ function VideoPlayer() {
       <div className="video__serial--grids">
         <>
           {serialArrD.map((link, index) => {
-            console.log(index + 1);
-
             return (
               <div
                 key={uuidv4()}
                 className={isIndex === index + 1 ? "active serial" : "serial"}
                 onClick={() => {
                   setIsSerialLink(link);
-                  // setIsIndex(index + 1);
+                  setIsIndex(index + 1);
                 }}
               >
                 <h1>{index + 1}</h1>
@@ -313,10 +317,13 @@ function VideoPlayer() {
     </div>
   );
 
+  // console.log(isDataVideo.material_data);
+
   const [randomColor, setRandomColor] = useState(0);
 
   const VideoActiors = () => {
     setRandomColor(Math.floor(Math.random() * 7) + 1);
+
     return (
       <div className="hidden--block">
         <div className="Video__actiors">
@@ -337,7 +344,7 @@ function VideoPlayer() {
                       </h1>
                     </div>
                     <h2 className="actior__name">{item}</h2>
-                    <p>Актер</p>
+                    <p>Актриса</p>
                   </div>
                 ))}
             </>

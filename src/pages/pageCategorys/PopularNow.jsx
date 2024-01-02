@@ -9,7 +9,7 @@ import Cards from "../../components/Cards/Cards";
 
 function PopularNow() {
   const url =
-    "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2015,2016,2017,2018,2019,2020,2021,2022,2023&kinopoisk_rating=8-10&imdb_rating=8-10&countries=Япония,Корея Южная,Китай,тайлант&with_episodes_data=true&with_page_links=true&has_field=kinopoisk_id&translation_type=voice&with_seasons=true&translation_id=639"; // 639 // 2608
+    "https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-serial,soviet-cartoon,oreign-movie&year=2015,2016,2017,2018,2019,2020,2021,2022,2023&kinopoisk_rating=8-10&imdb_rating=8-10&countries=Япония,Корея Южная,Китай,тайлант&with_episodes_data=true&with_page_links=true&has_field=kinopoisk_id&translation_type=voice&with_seasons=true&translation_id=639"; // 639 // 2608
   const { data, isLoad, error } = useFetch(url);
 
   return (

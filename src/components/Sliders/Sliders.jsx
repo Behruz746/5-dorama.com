@@ -38,24 +38,20 @@ function Sliders({ url, title, id, linkPage }) {
 
   const responsiveCard = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 1360 },
-      items: 6.6,
-      slidesToSlide: 6,
+      breakpoint: { max: 4000, min: 1800 },
+      items: 7,
     },
     desktop: {
-      breakpoint: { max: 1360, min: 1250 },
+      breakpoint: { max: 1800, min: 1550 },
       items: 5.5,
-      slidesToSlide: 5,
     },
     tablet: {
-      breakpoint: { max: 1250, min: 1039 },
-      items: 3,
-      slidesToSlide: 3,
+      breakpoint: { max: 1024, min: 464 },
+      items: 4,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 2.8,
+      items: 1,
     },
   };
 
@@ -128,7 +124,7 @@ function Sliders({ url, title, id, linkPage }) {
                 <Svg />
               </NavLink>
             </div>
-            {/* <Carousel
+            <Carousel
               swipeable={true}
               showDots={false}
               arrows={true}
@@ -141,13 +137,13 @@ function Sliders({ url, title, id, linkPage }) {
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
-            </Carousel> */}
+            </Carousel>
 
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
-            </Slider>
+            </Slider> */}
           </div>
         </div>
       </div>

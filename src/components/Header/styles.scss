@@ -108,13 +108,15 @@
 }
 
 .header__container--MAC {
-    display: flex;
+    display: flex; 
     align-items: center;
     padding: 12px;
 
     .header__menu-toggle {
         display: block;
         transform: scale(1);
+        position: relative;
+        z-index: 50;
     }
 
     .header__input-box {
