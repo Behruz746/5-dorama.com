@@ -45,7 +45,7 @@ function Sliders({ url, title, id, linkPage }) {
     },
     desktop: {
       breakpoint: { max: 1560, min: 1300 },
-      items: 6, 
+      items: 6,
       slidesToSlide: 1,
     },
     tablet: {
@@ -152,9 +152,6 @@ function Sliders({ url, title, id, linkPage }) {
             <div className="carousel__card-container">
               <Carousel
                 responsive={responsive}
-                // containerClass="carousel__card-container"
-                // dotListClass="custom__list"
-                // itemClass="carousel__dot-list"
                 swipeable={true}
                 showDots={!true}
                 renderButtonGroupOutside={["tablet", "mobile"]}
@@ -163,7 +160,7 @@ function Sliders({ url, title, id, linkPage }) {
                 itemClass="carousel__dot-list"
               >
                 {dataAnime.map((data) => (
-                  <Cards {...data} key={uuidv4()} />
+                  <Cards {...data} key={uuidv4()} dataClass="sliderCard" />
                 ))}
               </Carousel>
 

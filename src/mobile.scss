@@ -420,12 +420,6 @@
             }
         }
     }
-
-    .carousel__card-container {
-        .carousel__dot-list {
-            margin: 0 0px;
-        }
-    }
 }
 
 @media screen and (max-width: 380px) {
@@ -539,11 +533,5 @@
 @media screen and (max-width: 290px) {
     .slick-prev {
         right: 35px !important;
-    }
-
-    .carousel__card-container {
-        .carousel__dot-list {
-            margin: 0 5px;
-        }
     }
 }

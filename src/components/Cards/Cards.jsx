@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 
 import React from "react";
 
-function Cards(data) {
+function Cards(data, {dataClass}) {
   const [isItemBo, setIsItemBo] = useState(false);
-  const [dataId, setDataId] = useState(data.id); 
+  const [dataId, setDataId] = useState(data.id);
 
   const Svg = () => (
     <svg
@@ -44,7 +44,7 @@ function Cards(data) {
     <>
       {isItemBo ? (
         <div
-          className="Card"
+          className={`${dataClass} Card`}
           onClick={() => {
             setDataId(data.id);
           }}
