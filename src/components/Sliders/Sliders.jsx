@@ -160,7 +160,7 @@ function Sliders({ url, title, id, linkPage }) {
                 itemClass="carousel__dot-list"
               >
                 {dataAnime.map((data) => (
-                  <Cards {...data} key={uuidv4()} dataClass="sliderCard" />
+                  <Cards data={data} key={uuidv4()} dataClass="sliderCard" />
                 ))}
               </Carousel>
 

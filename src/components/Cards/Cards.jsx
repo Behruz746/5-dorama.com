@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import React from "react";
 
-function Cards(data, {dataClass}) {
+function Cards({ data, dataClass}) {
   const [isItemBo, setIsItemBo] = useState(false);
   const [dataId, setDataId] = useState(data.id);
 

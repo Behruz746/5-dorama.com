@@ -339,7 +339,7 @@
 
     .Home__Sliders {
         .container {
-            padding: 0 0 0 10px !important;
+            padding: 0 0 0 5px !important;
         }
     }
 
@@ -434,6 +434,10 @@
             width: 18px;
             height: 18px;
         }
+    }
+
+    .sliderCard {
+        padding: 0 6px !important;
     }
 
     .card__img {
