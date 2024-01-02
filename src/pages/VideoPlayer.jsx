@@ -129,7 +129,7 @@ function VideoPlayer() {
     const minAge = document.querySelector("#minAge");
     const aboutText = document.querySelector(".about__text");
 
-    if (minAge.textContent === "undefined+") {
+    if (minAge.textContent !== null) {
       minAge.textContent = "12+";
     }
 

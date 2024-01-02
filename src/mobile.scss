@@ -79,8 +79,6 @@
     .App__header {
         height: 88px;
     }
-
-  
 }
 
 @media screen and (max-width: 768px) {
@@ -114,10 +112,6 @@
     .video--animtion {
         margin-top: 15px;
         height: 275px;
-    }
-
-    #main {
-        margin-bottom: 85px;
     }
 
     .App__header {
@@ -339,13 +333,13 @@
 @media screen and (max-width: 475px) {
     .HeaderSlider {
         .container {
-            padding: 0 18px !important;
+            padding: 0 10px !important;
         }
     }
 
     .Home__Sliders {
         .container {
-            padding: 0 0 0 18px !important;
+            padding: 0 0 0 10px !important;
         }
     }
 
@@ -424,6 +418,12 @@
                 width: 100%;
                 height: auto;
             }
+        }
+    }
+
+    .carousel__card-container {
+        .carousel__dot-list {
+            margin: 0 10px;
         }
     }
 }
@@ -539,5 +539,11 @@
 @media screen and (max-width: 290px) {
     .slick-prev {
         right: 35px !important;
+    }
+
+    .carousel__card-container {
+        .carousel__dot-list {
+            margin: 0 20px;
+        }
     }
 }

@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+// import "react-multi-carousel/lib/styles.css";
 
 // Compoenets
 import Cards from "../Cards/Cards";
@@ -16,7 +16,7 @@ function Sliders({ url, title, id, linkPage }) {
   const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
-  // const [dataNextPage, setDataNextPage] = useState([]);
+  const [dataNextPage, setDataNextPage] = useState([]);
 
   const [isUrl, setIsUrl] = useState(url);
 
@@ -36,24 +36,49 @@ function Sliders({ url, title, id, linkPage }) {
     fetctAnime();
   }, [isUrl]);
 
-  const responsiveCard = {
+  const responsive = {
     superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1800 },
-      items: 7,
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 1560 },
+      items: 8.5,
+      slidesToSlide: 1,
     },
     desktop: {
-      breakpoint: { max: 1800, min: 1550 },
-      items: 5.5,
+      breakpoint: { max: 1560, min: 1300 },
+      items: 6, 
+      slidesToSlide: 1,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1300, min: 500 },
       items: 4,
+      slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
+      breakpoint: { max: 500, min: 0 },
+      items: 3,
+      slidesToSlide: 1,
     },
   };
+
+  // const responsive = {
+  //   superLargeDesktop: {
+  //     // the naming can be any, depends on you.
+  //     breakpoint: { max: 4000, min: 3000 },
+  //     items: 5,
+  //   },
+  //   desktop: {
+  //     breakpoint: { max: 3000, min: 1024 },
+  //     items: 3,
+  //   },
+  //   tablet: {
+  //     breakpoint: { max: 1024, min: 464 },
+  //     items: 2,
+  //   },
+  //   mobile: {
+  //     breakpoint: { max: 464, min: 0 },
+  //     items: 1,
+  //   },
+  // };
 
   const settings = {
     className: "slider variable-width",
@@ -124,26 +149,30 @@ function Sliders({ url, title, id, linkPage }) {
                 <Svg />
               </NavLink>
             </div>
-            {/* <Carousel
-              swipeable={true}
-              showDots={false}
-              arrows={true}
-              renderButtonGroupOutside={["tablet", "mobile"]}
-              responsive={responsiveCard}
-              containerClass="Header__slider__container"
-              dotListClass="custom__list"
-              itemClass="carousel__dot-list"
-            >
-              {dataAnime.map((data) => (
-                <Cards {...data} key={uuidv4()} />
-              ))}
-            </Carousel> */}
+            <div className="carousel__card-container">
+              <Carousel
+                responsive={responsive}
+                // containerClass="carousel__card-container"
+                // dotListClass="custom__list"
+                // itemClass="carousel__dot-list"
+                swipeable={true}
+                showDots={!true}
+                renderButtonGroupOutside={["tablet", "mobile"]}
+                containerClass="Header__slider__container"
+                dotListClass="custom__list"
+                itemClass="carousel__dot-list"
+              >
+                {dataAnime.map((data) => (
+                  <Cards {...data} key={uuidv4()} />
+                ))}
+              </Carousel>
 
-            <Slider {...settings}>
-              {dataAnime.map((data) => (
-                <Cards {...data} key={uuidv4()} />
-              ))}
-            </Slider>
+              {/* <Slider {...settings}>
+                {dataAnime.map((data) => (
+                  <Cards {...data} key={uuidv4()} />
+                ))}
+              </Slider> */}
+            </div>
           </div>
         </div>
       </div>

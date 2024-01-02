@@ -1,6 +1,5 @@
 .Home__Sliders {
     margin-top: 48px;
-  
 }
 
 .sliders__container {
@@ -8,7 +7,20 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
-  
+}
+
+.carousel__card-container{
+    height: auto;
+    display: flex;
+    align-items: center;
+    
+    .carousel__dot-list {
+        margin: 0 8px;
+
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+    }
 }
 
 .title {
@@ -16,7 +28,6 @@
     color: #fff;
     transition: .2s linear;
     font-size: 24px;
-  
 }
 
 .navigation__title {
@@ -24,7 +35,6 @@
     align-items: center; 
     width: auto;
   
-
     svg {
         width: 24px;
         height: 24px;
@@ -64,12 +74,10 @@
     align-items: center;
     width: 100%;
     min-height: 44px;
-  
 }
 
 .variable-width {
     overflow: hidden !important; 
-  
 
     .slick-arrow {
         border: 0;
