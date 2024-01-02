@@ -6,7 +6,7 @@ import useFetch from "../../../hooks/useFetch";
 
 function AnimeSPage() {
   const url =
-    "https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=Аниме&year=2000,2001,2002,2020,2021,2022,2023,&countries=Япония,Корея Южная,&types=anime-serial";
+    "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=Аниме&year=2000,2001,2002,2020,2021,2022,2023,&countries=Япония,Корея Южная,&types=anime-serial";
   const { data, isLoad, error } = useFetch(url);
 
   return (

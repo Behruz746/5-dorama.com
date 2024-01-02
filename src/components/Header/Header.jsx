@@ -75,7 +75,7 @@ function Header() {
     setToggleSeach(false);
 
     setIsUrl(
-      "https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title="
+      "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
     );
 
     inputVa.forEach((item) => {
@@ -109,7 +109,7 @@ function Header() {
                     // src="../../../public/images/svg/web__logo.svg"
                     src="https://i.imgur.com/Dd2VZXB.png"
                     alt="logo"
-                  /> 
+                  />
                 </NavLink>
               </div>
             </div>
