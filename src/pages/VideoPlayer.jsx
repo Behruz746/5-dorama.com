@@ -32,9 +32,6 @@ function VideoPlayer() {
     });
   }, []);
 
-  const { pathname } = useLocation();
-  console.log(pathname);
-
   const Svg = () => (
     <svg
       className="card__icon"
@@ -101,6 +98,13 @@ function VideoPlayer() {
     fetchData();
   }, [id]);
 
+  useEffect(() => {
+    document.title = `5dorama: ${
+      isDataVideo.material_data && isDataVideo.material_data.title
+    }`;
+  }, [id, isDataVideo.material_data]);
+
+  console.log(isDataVideo);
   useEffect(() => {
     const fetchFun = async () => {
       try {

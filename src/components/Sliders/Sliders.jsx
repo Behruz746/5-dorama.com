@@ -10,8 +10,6 @@ import Carousel from "react-multi-carousel";
 import Cards from "../Cards/Cards";
 import AppContext from "../../AppContext";
 
-// import "./styles.scss";
-
 function Sliders({ url, title, id, linkPage }) {
   const { setIsLoad } = useContext(AppContext);
 
@@ -37,10 +35,14 @@ function Sliders({ url, title, id, linkPage }) {
   }, [isUrl]);
 
   const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 1560 },
+    superBigLargeDesktop: {
+      breakpoint: { max: 3000, min: 1900 },
       items: 8.5,
+      slidesToSlide: 1,
+    },
+    bigLargeDesktop: {
+      breakpoint: { max: 1900, min: 1560 },
+      items: 7,
       slidesToSlide: 1,
     },
     desktop: {
@@ -54,61 +56,20 @@ function Sliders({ url, title, id, linkPage }) {
       slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 500, min: 0 },
+      breakpoint: { max: 500, min: 350 },
       items: 3,
       slidesToSlide: 3,
     },
-  };
-
-  // const responsive = {
-  //   superLargeDesktop: {
-  //     // the naming can be any, depends on you.
-  //     breakpoint: { max: 4000, min: 3000 },
-  //     items: 5,
-  //   },
-  //   desktop: {
-  //     breakpoint: { max: 3000, min: 1024 },
-  //     items: 3,
-  //   },
-  //   tablet: {
-  //     breakpoint: { max: 1024, min: 464 },
-  //     items: 2,
-  //   },
-  //   mobile: {
-  //     breakpoint: { max: 464, min: 0 },
-  //     items: 1,
-  //   },
-  // };
-
-  const settings = {
-    className: "slider variable-width",
-    dots: false,
-    infinite: false,
-    centerMode: false,
-    speed: 700,
-    slidesToShow: 5,
-    slidesToScroll: 4,
-    pauseOnHover: false,
-    variableWidth: true,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1250,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-        },
-      },
-
-      {
-        breakpoint: 1039,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          variableWidth: true,
-        },
-      },
-    ],
+    minMobile: {
+      breakpoint: { max: 350, min: 265 },
+      items: 2.3,
+      slidesToSlide: 2,
+    },
+    superMinMobile: {
+      breakpoint: { max: 265, min: 0 },
+      items: 1.8,
+      slidesToSlide: 1,
+    },
   };
 
   const Svg = () => (
@@ -134,25 +95,66 @@ function Sliders({ url, title, id, linkPage }) {
     </svg>
   );
 
+  const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
+    const {
+      carouselState: { currentSlide, totalItems, slidesToShow },
+    } = rest;
+
+    const [count, setCount] = useState(0);
+
+    return (
+      <div className="carousel-button-group">
+        {/* {title && <h1 className="slider__title title">{title}</h1>} */}
+
+        <div className="btns">
+          <div className="Slider__navigation">
+            <NavLink
+              to={linkPage}
+              className="navigation__title"
+              onClick={() => console.log(linkPage)}
+            >
+              <h1 className="title">{title}</h1>
+              <Svg />
+            </NavLink>
+          </div>
+          <div className="slider__showbtn">
+            <div className="slider__btn">
+              <button
+                className={`${
+                  currentSlide > 0 ? "active--btn" : "notActive--btn"
+                } arrows slick-arrow slick-prev`}
+                onClick={() => {
+                  setCount(totalItems + currentSlide);
+                  previous();
+                }}
+              ></button>
+              <button
+                className={`${
+                  currentSlide <= count ? "active--btn" : "notActive--btn"
+                } arrows slick-arrow slick-next`}
+                onClick={() => {
+                  setCount(totalItems - slidesToShow - 1);
+                  next();
+                }}
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section className="Home__Sliders w-full sliderId" id={id}>
       <div className="container">
         <div className="sliders__container slider__card">
           <div className="Slider__cards">
-            <div className="Slider__navigation">
-              <NavLink
-                to={linkPage}
-                className="navigation__title"
-                onClick={() => console.log(linkPage)}
-              >
-                <h1 className="title">{title}</h1>
-                <Svg />
-              </NavLink>
-            </div>
             <div className="carousel__card-container">
               <Carousel
                 responsive={responsive}
+                customButtonGroup={<ButtonGroup />}
                 swipeable={true}
+                arrows={!true}
                 showDots={!true}
                 renderButtonGroupOutside={["tablet", "mobile"]}
                 containerClass="Header__slider__container"
@@ -163,12 +165,6 @@ function Sliders({ url, title, id, linkPage }) {
                   <Cards data={data} key={uuidv4()} dataClass="sliderCard" />
                 ))}
               </Carousel>
-
-              {/* <Slider {...settings}>
-                {dataAnime.map((data) => (
-                  <Cards {...data} key={uuidv4()} />
-                ))}
-              </Slider> */}
             </div>
           </div>
         </div>

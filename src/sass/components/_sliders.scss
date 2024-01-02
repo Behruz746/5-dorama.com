@@ -11,7 +11,7 @@
 
 .sliderCard {
     padding: 0 5px !important;
-
+   
     &:nth-child(1) {
         padding-left: 0;
     }
@@ -24,7 +24,63 @@
 .carousel__card-container{
     height: auto;
     display: flex;
-    align-items: center;
+    flex-direction: column-reverse;
+
+    .btns {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .slider__btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .slick-arrow {
+        border: 0;
+        outline: 0;
+        background-color: #17212B;
+        color: transparent;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        top: 0;
+        overflow: hidden;
+        padding: 8px;
+        user-select: none;   
+        cursor: pointer;
+      
+
+        &::before {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    .slick-prev {
+        position: absolute;
+        right: 55px;
+        transform: rotate(180deg);
+      
+        
+        &::before {
+            content: url('../../public/images/svg/card-arrow__icon02.svg');
+        }       
+    }
+
+    .slick-next {
+        position: absolute; 
+        right: 5px;
+      
+
+        &::before {
+            content: url('../../public/images/svg/card-arrow__icon02.svg');
+        }
+    }
 }
 
 .title {
@@ -83,47 +139,9 @@
 .variable-width {
     overflow: hidden !important; 
 
-    .slick-arrow {
-        border: 0;
-        outline: 0;
-        background-color: #17212B;
-        color: transparent;
-        width: 42px;
-        height: 42px;
-        border-radius: 10px;
-        top: 0;
-        overflow: hidden;
-        padding: 8px;
-        user-select: none;   
-        cursor: pointer;
-      
+   
 
-        &::before {
-            width: 32px;
-            height: 32px;
-        }
-    }
-
-    .slick-prev {
-        position: absolute;
-        right: 55px;
-        transform: rotate(180deg);
-      
-        
-        &::before {
-            content: url('../../public/images/svg/card-arrow__icon02.svg');
-        }       
-    }
-
-    .slick-next {
-        position: absolute; 
-        right: 5px;
-      
-
-        &::before {
-            content: url('../../public/images/svg/card-arrow__icon02.svg');
-        }
-    }
+   
     
     .slick-list {
       
