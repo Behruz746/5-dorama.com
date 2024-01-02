@@ -56,7 +56,7 @@ function Sliders({ url, title, id, linkPage }) {
     mobile: {
       breakpoint: { max: 500, min: 0 },
       items: 3,
-      slidesToSlide: 1,
+      slidesToSlide: 3,
     },
   };
 
