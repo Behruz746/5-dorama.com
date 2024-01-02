@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState, useRef } from "react";
-import AppContext from "../AppContext";
+import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 function VideoPlayer() {
-  const { isVideoLink } = useContext(AppContext);
   const [isDataVideo, setIsDataVideo] = useState([]);
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
@@ -31,9 +29,6 @@ function VideoPlayer() {
       });
     });
   }, []);
-
-  const { pathname } = useLocation();
-  console.log(pathname);
 
   const Svg = () => (
     <svg
@@ -102,12 +97,11 @@ function VideoPlayer() {
   }, [id]);
 
   useEffect(() => {
-    document.title = `5dorama: ${
+    document.title = `${
       isDataVideo.material_data && isDataVideo.material_data.title
     }`;
   }, [id, isDataVideo.material_data]);
 
-  console.log(isDataVideo);
   useEffect(() => {
     const fetchFun = async () => {
       try {
@@ -162,8 +156,6 @@ function VideoPlayer() {
       }
     }
   }, [isdataType]);
-
-  // console.log(isDataVideo);
 
   ///////////// Components ////////////////
 

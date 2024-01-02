@@ -247,7 +247,6 @@ function Menu() {
                 onClick={() => {
                   setIsArrowToggle01(!isArrorToggle01);
                   setIsArrowToggle00(false);
-                  console.log(isArrorToggle01);
                 }}
               >
                 <img

@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-
 import { useEffect, useState } from "react";
-
 import React from "react";
 
 function Cards(data, {dataClass}) {
@@ -44,7 +42,7 @@ function Cards(data, {dataClass}) {
     <>
       {isItemBo ? (
         <div
-          className={`${dataClass} Card`}
+          className={`${String(dataClass)} Card`}
           onClick={() => {
             setDataId(data.id);
           }}

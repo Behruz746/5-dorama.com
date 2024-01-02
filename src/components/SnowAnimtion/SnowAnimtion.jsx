@@ -3,7 +3,6 @@ import "./style.scss";
 
 function SnowAnimtion() {
   let arr = [];
-
   for (let i = 0; i <= 84; i++) {
     arr.push(i);
   }

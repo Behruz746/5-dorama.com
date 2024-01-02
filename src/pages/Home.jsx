@@ -11,6 +11,8 @@ function Home() {
         renderTo: "yandex_rtb_R-A-3835914-7",
       });
     });
+
+    document.title = "5dorama - Смотрите дорамы онлайн бесплатно";
   }, []);
 
   return (

@@ -95,8 +95,6 @@ function Sliders({ url, title, id, linkPage }) {
     </svg>
   );
 
-  console.log(linkPage);
-
   const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
     const {
       carouselState: { currentSlide, totalItems, slidesToShow },
