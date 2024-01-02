@@ -32,6 +32,9 @@ function VideoPlayer() {
     });
   }, []);
 
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   const Svg = () => (
     <svg
       className="card__icon"
@@ -321,13 +324,7 @@ function VideoPlayer() {
     </div>
   );
 
-  // console.log(isDataVideo.material_data);
-
-  const [randomColor, setRandomColor] = useState(0);
-
   const VideoActiors = () => {
-    setRandomColor(Math.floor(Math.random() * 7) + 1);
-
     return (
       <div className="hidden--block">
         <div className="Video__actiors">

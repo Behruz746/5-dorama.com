@@ -36,7 +36,7 @@ function Sliders({ url, title, id, linkPage }) {
 
   const responsive = {
     superBigLargeDesktop: {
-      breakpoint: { max: 3000, min: 1900 },
+      breakpoint: { max: 5000, min: 1900 },
       items: 8.5,
       slidesToSlide: 1,
     },
@@ -95,6 +95,8 @@ function Sliders({ url, title, id, linkPage }) {
     </svg>
   );
 
+  console.log(linkPage);
+
   const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
     const {
       carouselState: { currentSlide, totalItems, slidesToShow },
@@ -108,11 +110,7 @@ function Sliders({ url, title, id, linkPage }) {
 
         <div className="btns">
           <div className="Slider__navigation">
-            <NavLink
-              to={linkPage}
-              className="navigation__title"
-              onClick={() => console.log(linkPage)}
-            >
+            <NavLink to={linkPage} className="navigation__title">
               <h1 className="title">{title}</h1>
               <Svg />
             </NavLink>
@@ -162,7 +160,7 @@ function Sliders({ url, title, id, linkPage }) {
                 itemClass="carousel__dot-list"
               >
                 {dataAnime.map((data) => (
-                  <Cards data={data} key={uuidv4()} dataClass="sliderCard" />
+                  <Cards {...data} key={uuidv4()} dataClass="sliderCard" />
                 ))}
               </Carousel>
             </div>
