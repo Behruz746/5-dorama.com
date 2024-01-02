@@ -16,7 +16,7 @@ function Sliders({ url, title, id, linkPage }) {
   const { setIsLoad } = useContext(AppContext);
 
   const [dataAnime, setDataAnime] = useState([]);
-  const [dataNextPage, setDataNextPage] = useState([]);
+  // const [dataNextPage, setDataNextPage] = useState([]);
 
   const [isUrl, setIsUrl] = useState(url);
 
@@ -124,7 +124,7 @@ function Sliders({ url, title, id, linkPage }) {
                 <Svg />
               </NavLink>
             </div>
-            <Carousel
+            {/* <Carousel
               swipeable={true}
               showDots={false}
               arrows={true}
@@ -137,13 +137,13 @@ function Sliders({ url, title, id, linkPage }) {
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
-            </Carousel>
+            </Carousel> */}
 
-            {/* <Slider {...settings}>
+            <Slider {...settings}>
               {dataAnime.map((data) => (
                 <Cards {...data} key={uuidv4()} />
               ))}
-            </Slider> */}
+            </Slider>
           </div>
         </div>
       </div>
