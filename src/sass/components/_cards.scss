@@ -8,9 +8,6 @@
     position: relative; 
     cursor: pointer;
     transition: all .2s linear;
-    @include tablet-550px {
-        width: 120px;
-    }
     
     &:hover {
         svg {
@@ -33,10 +30,6 @@
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    @include tablet-550px {
-        width: 120px;
-        height: 180px;
-    }
     @include mobile-380px {
         display: flex;
         align-items: center;
@@ -151,4 +144,16 @@
     background-size: cover;
     background-position: center;
     border: 1px solod #d00;
+}
+
+
+@media screen and (max-width: 550px) {
+    .Card {
+        width: 120px;
+        
+        .card__image {
+            width: 120px;
+            height: 180px;
+        }
+    }
 }
