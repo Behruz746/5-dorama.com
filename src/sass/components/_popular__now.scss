@@ -55,22 +55,20 @@
 
         .card__logo {
             @include mobile {
+                margin: 7px 0 0 0;
                 width: 20px;
                 height: auto;
                 right: -5px;
-                top: 5px;
             }
         }
 
         .card__reting {
-            padding: 0px;
-            left: 5px;
-            top: 5px;
-
             @include mobile {
-              h4 {
-                font-size: 12px;
-              }
+                padding: 2px;
+                margin: 7px 0 0 2px;
+                h4 {
+                    font-size: 12px;
+                }
             }
         }
 
