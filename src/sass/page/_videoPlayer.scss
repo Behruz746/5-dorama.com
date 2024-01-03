@@ -1,4 +1,12 @@
 /// Video page //
+.VideoPlayer {
+    .container {
+        @include labtop-1120px {
+            padding: 0 10px;
+        }
+    }
+}
+
 .Video__container {
     display: flex;
     align-items: center;
@@ -6,13 +14,20 @@
     gap: 24px;
 
     .video__serials {
-        max-width: 193px + 10px;
+        max-width: 203px;
         width: 100%;
         height: 476px;
         border-radius: 6px;
         border: 2px solid #17212B;
         background: #0E1621;
         padding: 18px 19px;
+        @include labtop-1120px {
+            padding: 10px !important;
+            max-width: 130px !important;
+        }
+        @include tablet-max {
+            display: none;
+        }
     }
 
     .video__serial--grids {
@@ -154,6 +169,15 @@
     object-fit: cover;
     object-position: center;
     border-radius: 10px;
+    background-color: #000;
+    @include tablet-max {
+        margin-top: 15px;
+        height: 275px;
+    }
+    @include mobile {
+        width: 100%;
+        height: 203px;
+    }
 }
 
 .VideoPlayer__content {
@@ -171,8 +195,11 @@
         font-size: 24px;
         font-style: normal;
         font-weight: 500;
-        line-height: 26px; /* 108.333% */
+        line-height: 26px;
         color: #fff;
+        @include mobile {
+            font-size: 16px;
+        }
     }
 
     span {
@@ -216,14 +243,22 @@
         font-weight: 400;
         line-height: 14px;
         color: #fff;
+        @include mobile {
+            font-size: 12px;
+            line-height: 12px;
+        }
     }
     
-    .video__data-textMin {
+    .video__data__text--min {
         font-size: 12px;
         font-style: normal;
         font-weight: 400;
         line-height: 12px; 
         color: #fff;
+        @include mobile {
+            font-size: 10px;
+            line-height: 1;
+        }
     }
 }
 
@@ -231,16 +266,22 @@
     display: flex;
     gap: 25px;
     justify-content: space-between;
-    // border: 1px solid #d00;
+    @include tablet-max {
+        flex-direction: column;
+        justify-content: center;
+    }
 
     .video__serials {
-        max-width: 200px + 3px;
+        max-width: 203px;
         width: 100%;
-        // border: 1px solid #d00; 
     }
     
     .about__image {
         overflow: hidden;
+        @include tablet-max {
+            width: 186px !important;
+            margin: 0 auto;
+        }
     }
     
     .Card {

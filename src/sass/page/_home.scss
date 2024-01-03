@@ -1,3 +1,21 @@
 .App__home {
     margin-bottom: 80px;
+    
+    .container {
+        @include labtop-1020px {
+            padding: 0 10px 0 0px;
+        }
+        @include tablet-max {
+            padding: 0 10px;
+        }
+    }
+}
+
+.Home__Sliders {
+    @include tablet-550px {
+        margin-top: 23px;
+    }
+    @include mobile {
+        margin-top: 10px;
+    }
 }

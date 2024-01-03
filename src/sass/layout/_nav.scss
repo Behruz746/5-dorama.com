@@ -6,6 +6,9 @@
     padding-left: 8px;
     transition: all .5s ease-in-out !important;
     z-index: 5;
+    @include tablet-max {
+        display: none;
+    }
 }
 
 .menu__container {
@@ -112,6 +115,9 @@
     position: fixed; 
     transition: all .5s ease-in-out !important;
     background-color: #0E1621;
+    @include labtop-1020px {
+        max-width: 200px; 
+    }
     
     .nav__line {
         max-width: 200px;
@@ -350,18 +356,20 @@
   }
   
 // Mobile navgation 
-
-.MenuMobile {
+.mine__menu {
     display: none;
     width: 100%;
     border-radius: 16px 16px 0px 0px;
-    // background-color: #17212B;
     position: fixed;
     background: rgba(23, 33, 43, 0.86);
     backdrop-filter: blur(5.5px);
     left: 0;
     bottom: 0;
     overflow: hidden;
+    @include tablet-max {
+        display: block;
+        z-index: 200;
+    }
 }
 
 .mobile__nav {
@@ -380,9 +388,26 @@
         justify-content: center;
         padding: 12px;
         color: #768C9E;
+        @include mobile-380px {
+            max-width: 60px;
+            height: 60px;
+            padding: 5px;
+        }
+
+        svg {
+            @include mobile-380px {
+                width: 20px;
+                height: auto;
+            }
+        }
+
+        h3 {
+            @include mobile-380px {
+                font-size: 10px;
+            }
+        }
 
         &.active {
-            // background-color: #17212B;
             transition: 0.140s linear;
             
             h3 {

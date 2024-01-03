@@ -56,20 +56,25 @@ function Sliders({ url, title, id, linkPage }) {
       slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 500, min: 350 },
+      breakpoint: { max: 500, min: 380 },
       items: 3,
       slidesToSlide: 3,
     },
     minMobile: {
-      breakpoint: { max: 350, min: 265 },
+      breakpoint: { max: 380, min: 300 },
       items: 2.3,
       slidesToSlide: 2,
     },
     superMinMobile: {
-      breakpoint: { max: 265, min: 0 },
+      breakpoint: { max: 300, min: 240 },
       items: 1.8,
       slidesToSlide: 1,
     },
+    proMinMobile: {
+      breakpoint: { max: 240, min: 0 },
+      items: 1.5,
+      slidesToSlide: 1,
+    }
   };
 
   const Svg = () => (
@@ -111,7 +116,7 @@ function Sliders({ url, title, id, linkPage }) {
             <NavLink to={linkPage} className="navigation__title">
               <h1 className="title">{title}</h1>
               <Svg />
-            </NavLink>
+            </NavLink> 
           </div>
           <div className="slider__showbtn">
             <div className="slider__btn">

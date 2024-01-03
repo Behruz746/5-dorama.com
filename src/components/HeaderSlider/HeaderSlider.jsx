@@ -28,9 +28,9 @@ function HeaderSlider({ pNone }) {
       items: 1,
     },
   };
-
+ 
   return (
-    <section className="HeaderSlider  w-full">
+    <section className="header__slider__section  w-full">
       <div
         className="container Header__slider__container"
         style={{ padding: `${pNone}` }}

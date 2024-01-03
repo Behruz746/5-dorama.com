@@ -2,8 +2,6 @@ import { v4 as uuidv4 } from "uuid";
 
 import useFetch from "../../hooks/useFetch";
 
-import "./style.scss";
- 
 // component
 import Cards from "../../components/Cards/Cards";
 

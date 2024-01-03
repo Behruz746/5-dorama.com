@@ -54,17 +54,6 @@ const HorrorSPage = lazy(() => import("./pages/pageCategorys/serialPages/HorrorS
 const CrimeSPage = lazy(() => import("./pages/pageCategorys/serialPages/CrimeSPage"));
 const AnimeSPage = lazy(() => import("./pages/pageCategorys/serialPages/AnimeSPage"));
 
-// // Serial catigoriy pages
-// import ComedySPage from "./pages/pageCategorys/serialPages/ComedySPage";
-// import DramaSPage from "./pages/pageCategorys/serialPages/DramaSPage";
-// import ActionSPage from "./pages/pageCategorys/serialPages/ActionSPage";
-// import BiographySPage from "./pages/pageCategorys/serialPages/BiographySPage";
-// import MilitarySPage from "./pages/pageCategorys/serialPages/MilitarySPage";
-// import FantasticSPage from "./pages/pageCategorys/serialPages/FantasticSPage";
-// import HorrorSPage from "./pages/pageCategorys/serialPages/HorrorSPage";
-// import CrimeSPage from "./pages/pageCategorys/serialPages/CrimeSPage";
-// import AnimeSPage from "./pages/pageCategorys/serialPages/AnimeSPage";
-
 function App() {
   const [isToggle, setIsToggle] = useState(true);
   const [isLoad, setIsLoad] = useState(false);
@@ -237,4 +226,3 @@ function App() {
 }
 
 export default App;
-import "./mobile.scss";

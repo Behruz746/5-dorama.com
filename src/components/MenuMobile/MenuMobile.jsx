@@ -9,7 +9,7 @@ function MenuMobile() {
   const { isToggle } = useContext(AppContext);
 
   return (
-    <div className="MenuMobile">
+    <div className="mine__menu">
       <nav className="mobile__nav">
         <NavLink to="/">
           <SvgEl />

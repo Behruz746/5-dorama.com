@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
-import "./styles.scss";
+// import "./styles.scss";
 import AppContext from "../../AppContext";
 import Search from "../Search/Search";
 import SnowAnimtion from "../SnowAnimtion/SnowAnimtion";

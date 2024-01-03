@@ -10,7 +10,6 @@ function Search() {
   const [dataId, setDataId] = useState();
 
   /////////////////// component MyLoader //////////////////////////
-
   const MyLoader = (props) => (
     <ContentLoader
       speed={2}

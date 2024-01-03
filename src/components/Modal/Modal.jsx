@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import AppContext from "../../AppContext";
-import "./styles.scss";
 
 function Modal() {
   const { setModalSec, modalSec } = useContext(AppContext);

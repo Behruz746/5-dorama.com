@@ -16,6 +16,12 @@
     transition: all .3s ease; 
     overflow: auto;
     z-index: 2001;
+    @include tablet-max {
+        margin-top: 15px;
+        height: 100vh;
+        background-color: #0E1621 !important;
+        z-index: -50;
+    }
 
     &::-webkit-scrollbar {
         max-width: 3px !important; 
@@ -42,7 +48,10 @@
         font-size: 18px !important;
         font-style: normal !important;
         font-weight: 500 !important;
-        line-height: 22px !important; /* 122.222% */
+        line-height: 22px !important; 
+        @include tablet-max {
+            font-size: 12px !important; 
+        }
     }
 
     .card__image {

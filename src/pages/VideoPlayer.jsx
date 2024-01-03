@@ -283,7 +283,7 @@ function VideoPlayer() {
       </div>
       <span>|</span>
       <div className="Video__age">
-        <h2 className="video__data-textMin" id="minAge">
+        <h2 className="video__data__text--min" id="minAge">
           {isDataVideo.material_data &&
             `${
               isDataVideo.material_data.minimal_age

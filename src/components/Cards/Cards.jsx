@@ -79,7 +79,6 @@ function Cards(data, {dataClass}) {
                     ? data.material_data.poster_url
                     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLxrenfHPaNrSMVtKYmvb19BOBDi2a5Wi3TeTWajnfcf2l_Je8SVUAsUZoU9VEWFVrsg&usqp=CAU"
                 }
-                // placeholderSrc="non-blurred"
                 alt={
                   data.material_data.title
                     ? `${data.material_data.title} image`

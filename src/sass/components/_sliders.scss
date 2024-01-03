@@ -1,5 +1,17 @@
 .Home__Sliders {
     margin-top: 48px;
+    @include tablet-max {
+        margin-top: 28px;
+    }
+    @include mobile-330px {
+        margin-top: 15px;
+    }
+
+    .container {
+        @include mobile {
+            padding: 0 0 0 10px !important;
+        }
+    }
 }
 
 .sliders__container {
@@ -11,7 +23,14 @@
 
 .undefined {
     padding: 0 5px !important;
-   
+    @include mobile-380px {
+        padding: 0 6px !important;
+
+        &:nth-child(1) {
+            padding-left: 0 !important;
+        }
+    }
+    
     &:nth-child(1) {
         padding-left: 0;
     }
@@ -26,12 +45,20 @@
     display: flex;
     flex-direction: column-reverse;
 
+    .notActive--btn {
+        opacity: .6;
+    }
+
+    .active--btn {
+        opacity: 1;
+    }
+
     .btns {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .slider__btn {
@@ -53,11 +80,23 @@
         padding: 8px;
         user-select: none;   
         cursor: pointer;
+        @include tablet-640px {
+            background-color: transparent !important;
+        }
+        @include tablet-550px  {
+            top: 10px !important;
+            padding: 4px !important;
+            width: 32px !important;
+            height: 32px !important;
+        }
       
-
         &::before {
             width: 32px;
             height: 32px;
+            @include tablet-550px {
+                width: 24px !important;
+                height: 24px !important;
+            }
         }
     }
 
@@ -65,6 +104,9 @@
         position: absolute;
         right: 55px;
         transform: rotate(180deg);
+        @include mobile {
+            right: 40px;
+        }
       
         
         &::before {
@@ -76,7 +118,6 @@
         position: absolute; 
         right: 5px;
       
-
         &::before {
             content: url('../../public/images/svg/card-arrow__icon02.svg');
         }
@@ -88,17 +129,30 @@
     color: #fff;
     transition: .2s linear;
     font-size: 24px;
+    @include mobile-380px {
+        font-size: 18px;
+    }
 }
 
 .navigation__title {
     display: flex; 
     align-items: center; 
     width: auto;
+    @include tablet-550px {
+        margin-top: 8px;   
+    }
+    @include mobile-380px {
+        margin-top: 8px;
+    }
   
     svg {
         width: 24px;
         height: 24px;
         transition: .2s ease-in-out;
+        @include mobile-380px {
+            width: 18px;
+            height: 18px;
+        }
 
         path {
             transition: .2s linear;
@@ -126,42 +180,28 @@
     flex-direction: column;
     gap: 14px;
     position: relative;
-  
+    @include  mobile-330px {
+        gap: 12px;
+    }
 }
 
 .Slider__navigation {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 44px;
-}
-
-.variable-width {
-    overflow: hidden !important; 
-
-   
-
-   
-    
-    .slick-list {
-      
-        .slick-track {
-            // width: 100% !important;
-            overflow: hidden !important;
-            display: flex !important;
-            gap: 16px;
-        }
+    height: auto;
+    @include mobile-330px {
+        height: 100%;
     }
 }
 
 
-
-// /// Header slider 
+// Header slider 
 .Header__slider__container {
     width: 100%;
     display: flex;
     gap: 10px;
-    position: relative;   
+    position: relative;    
     
     &:hover {
         .react-multiple-carousel__arrow--left {
@@ -181,7 +221,14 @@
             width: 100%;
             margin-left: .5px;
             border-radius: 10px;
-        }
+            @include superBigDesktop {
+                height: 260px;
+            }
+            @include desktop {
+                width: 100%;
+                height: auto;
+            }
+        }       
     }
 
    .react-multiple-carousel__arrow {
@@ -250,7 +297,6 @@
 
     .custom__list {
         margin-bottom: 25px;
-
         button {
             width: 5px;
             height: 5px;
@@ -280,6 +326,9 @@
     width: 100%;
     display: none;
     gap: 10px;
+    @include superBigDesktop {
+        display: flex;
+    }
 }
 
 .slider__category__column {
@@ -305,7 +354,16 @@
     }
 }
 
+.slider__card-bk {
+    @include tablet-640px {
+        display: none;
+    }
+}
 
 .d-none {
     display: none;
+    @include tablet-640px {
+        display: block;
+        padding: 0 3px;
+    }
 }

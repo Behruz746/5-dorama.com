@@ -10,7 +10,6 @@
     transform: translate(-50%, -50%) scale(1);
     padding: 0 15px;
     transition: .2s linear;
-    // overflow: hidden;
 }
 
 .Modal--over {
@@ -29,6 +28,23 @@
     left: 50%;
     transform: translate(-50%, -0%) scale(0);
     transition: .2s ease-in-out;
+    @include tablet-max {
+       top: 55%;
+    }
+    @include tablet-640px {
+        max-width: 500px;
+        top: 60%;
+    }
+    @include tablet-550px {
+        max-width: 400px;
+    }
+    @include mobile {
+        max-width: 300px;
+        top: 60%;
+    }
+    @include mobile-380px {
+       max-width: 250px;
+    }
 }
  
 .modal__container--active {
@@ -40,6 +56,9 @@
     left: 50%;
     transform: translate(-50%, -0%) scale(1);
     transition: .2s ease-in-out;
+    @include tablet-640px {
+        top: 60%;
+    }
 }
 
 .modal__btn {
@@ -55,6 +74,28 @@
     cursor: pointer;
     background-color: #fff;
     z-index: 55;
+    @include tablet-640px {
+        top: 20px;
+    }
+    @include tablet-550px {
+        top: 30px;
+    }
+    @include mobile {
+        top: 40px;
+    }
+    @include mobile-380px {
+        width: 18px;
+        height: 18px;
+        top: 60px;
+        overflow: hidden;
+    }
+
+    img {
+        @include mobile-380px {
+            width: 18px;
+            height: 18px;
+        }
+    }
 }
 
 .modal__icon {
@@ -82,6 +123,19 @@
     transform: translateX(-50%);
     transition: .3s ease-in-out;
     z-index: 45;
+    @include tablet-640px {
+        max-width: 500px;
+        background-size: contain;
+    }
+    @include tablet-550px {
+        max-width: 450px;
+    }
+    @include mobile {
+        max-width: 400px;
+    }
+    @include mobile-380px {
+        max-width: 300px;
+    }
 
     &:hover {
         background-image: url('https://i.imgur.com/uPQ4pTo.png');

@@ -1,0 +1,110 @@
+.catigoriyPage {
+    .container {
+        padding: 0 10px;
+    }
+}
+
+.popularNow__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    @include mobile {
+        gap: 5px;
+    }
+}
+
+.popularNow__title {
+    @include mobile {
+        font-size: 20px;
+    }
+}
+
+.container__cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 16px;
+    @include desktop {
+        justify-content: center;
+    }
+    @include tablet-max {
+        justify-content: center;
+    }
+    @include mobile {
+        gap: 16px 5px;
+        justify-content: space-between;
+    }
+    @include mobile-380px {
+        gap: 16px 20px;
+        justify-content: center;
+    }
+
+    .Card {
+        max-width: 180px;;
+        @include desktop {
+            max-width: 150px;
+        }
+        @include mobile {
+            max-width: 90px;
+        }
+        @include mobile-380px {
+            max-width: 80px;
+        }
+
+        .card__logo {
+            @include mobile {
+                width: 20px;
+                height: auto;
+                right: -5px;
+            }
+        }
+
+        .card__reting {
+            padding: 2px;
+
+            @include mobile {
+              h4 {
+                font-size: 12px;
+              }
+            }
+        }
+
+        .card__img {
+            @include mobile {
+                max-width: 100px;
+                height: 150px;
+            }
+        }
+
+        .card__image {
+            width: 100%;
+            height: 291px;
+            border-radius: 10px;
+            transition: .2s linear;
+            transform: scale(1.03, 1.03);
+            @include desktop {
+                width: 100%;
+                height: auto;
+            }
+            @include mobile {
+                max-width: 90px;
+                height: auto;
+            }
+        }
+
+        &:hover {
+            .card__image {
+                transform: scale(1.05, 1.05); 
+            }
+        }
+    }
+}
+
+.container__cards--load {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}

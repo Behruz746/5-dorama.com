@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from "uuid";
 import Cards from "../../components/Cards/Cards";
 import useFetch from "../../hooks/useFetch";
 
-import "./style.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
