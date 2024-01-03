@@ -372,6 +372,17 @@
     }
 }
 
+.menu__mobile--clone {
+    display: none;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    @include tablet-max {
+        display: block;
+        z-index: 200;
+    }
+}
+
 .mobile__nav {
     display: flex;
     align-items: center;

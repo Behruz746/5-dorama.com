@@ -1,7 +1,6 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { useLocation } from "react-router-dom"; // location pahtnames
 
 // Data
 import { dropData, dropDataMovies } from "../../data/data";

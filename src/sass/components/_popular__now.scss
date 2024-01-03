@@ -51,6 +51,7 @@
         }
         @include mobile-380px {
             max-width: 80px;
+            gap: 0;
         }
 
         .card__logo {
@@ -82,7 +83,7 @@
         .card__img {
             @include mobile {
                 max-width: 100px;
-                height: 150px;
+                height: 135px;
             }
         }
 

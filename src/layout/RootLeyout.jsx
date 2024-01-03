@@ -32,6 +32,7 @@ function RootLeyout() {
       <SpeedInsights url="https://www.5dorama.online/" />
       <Analytics />
       <MenuMobile />
+      <div className="menu__mobile--clone"></div>
     </>
   );
 }
