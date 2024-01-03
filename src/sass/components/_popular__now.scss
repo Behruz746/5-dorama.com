@@ -57,11 +57,14 @@
                 width: 20px;
                 height: auto;
                 right: -5px;
+                top: 5px;
             }
         }
 
         .card__reting {
-            padding: 2px;
+            padding: 0px;
+            left: 5px;
+            top: 5px;
 
             @include mobile {
               h4 {
