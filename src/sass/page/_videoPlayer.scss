@@ -306,6 +306,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         transition: .3s ease-in-out !important;
+        // transform: translateY(5px);
     }
 
     .text--hidden {

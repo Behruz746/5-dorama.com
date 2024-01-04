@@ -428,7 +428,7 @@ function VideoPlayer() {
               >
                 <h1>
                   {isDataVideo.episodes_count ? (
-                    <>{!isIndex ? isDataVideo.last_episode : isIndex}-серии</>
+                    <>{!isIndex ? isDataVideo.episodes_count : isIndex}-серии</>
                   ) : (
                     <>{isType}</>
                   )}
@@ -461,7 +461,7 @@ function VideoPlayer() {
                 </TooltipComponent>
 
                 <button
-                  style={testToggle ? { bottom: "-10px" } : { bottom: "0px" }}
+                  style={testToggle ? { bottom: "-25px" } : { bottom: "0px" }}
                   className="text--hidden"
                   onClick={() => setTextToggle(!testToggle)}
                 >
