@@ -133,7 +133,7 @@ function VideoPlayer() {
       minAge.textContent = "12+";
     }
 
-    if (aboutText.textContent === String("Не найдено описание о фильме")) {
+    if (aboutText.textContent == String("Не найдено описание о фильме")) {
       document.querySelector(".text--hidden").style.display = "none";
     } else {
       document.querySelector(".text--hidden").style.display = "block";
@@ -230,11 +230,7 @@ function VideoPlayer() {
         <div className="video__movie--flex">
           {isDataList.map((item) => {
             return (
-              <NavLink
-                to={`/player/video/${item.id}`}
-                key={uuidv4()}
-                target="_blank"
-              >
+              <NavLink to={`/player/video/${item.id}`} key={uuidv4()}>
                 <div
                   className="movie__card"
                   onClick={() => {
