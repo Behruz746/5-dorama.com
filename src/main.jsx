@@ -1,6 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 const App = lazy(() => import("./App"));
+import { registerLicense } from "@syncfusion/ej2-base";
+
+registerLicense(
+  "Ngo9BigBOggjHTQxAR8/V1NAaF5cWWJCf0x0R3xbf1x0ZFZMY1pbRnFPMyBoS35RdURhW3xedHVUR2hcUUd0"
+);
 
 const loadingMarkup = (
   <div

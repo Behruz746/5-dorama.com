@@ -93,9 +93,7 @@ function Cards(data, {dataClass}) {
           </NavLink>
         </div>
       ) : (
-        <div className="Card" style={{ display: "none" }}>
-          null
-        </div>
+        <div className="Card" style={{ display: "none" }}>null</div>
       )}
     </>
   );

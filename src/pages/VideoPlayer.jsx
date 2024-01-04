@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 function VideoPlayer() {
   const [isDataVideo, setIsDataVideo] = useState([]);
@@ -95,6 +96,8 @@ function VideoPlayer() {
     };
     fetchData();
   }, [id]);
+
+  console.log(isDataVideo);
 
   useEffect(() => {
     document.title = `${
@@ -261,37 +264,57 @@ function VideoPlayer() {
 
   const VideoData = () => (
     <div className="Video__data">
-      <div className="Video__rating d-flex-data">
-        <Svg />
-        {isDataVideo.material_data ? (
-          <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-            {isDataVideo.material_data.kinopoisk_rating
-              ? isDataVideo.material_data.kinopoisk_rating
-              : "5.8"}
-          </h2>
-        ) : (
-          <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-            5.8
-          </h2>
-        )}
-      </div>
+      <TooltipComponent
+        content={`Оценки и рейтинг`}
+        position="BottomCenter"
+        style={{ display: "block" }}
+      >
+        <div className="Video__rating d-flex-data">
+          <Svg />
+          {isDataVideo.material_data ? (
+            <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+              {isDataVideo.material_data.kinopoisk_rating
+                ? isDataVideo.material_data.kinopoisk_rating
+                : "5.8"}
+            </h2>
+          ) : (
+            <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+              5.8
+            </h2>
+          )}
+        </div>
+      </TooltipComponent>
+
       <span>|</span>
-      <div className="Video__date d-flex-data">
-        <h2 className="video__data-text">{isDataVideo.year}</h2>
-        <span>-</span>
-        <h2 className="video__data-text">{date}</h2>
-      </div>
+      <TooltipComponent
+        content={`год выхода ${isDataVideo.episodes_count ? "сериал" : isType}`}
+        position="BottomCenter"
+        style={{ display: "block" }}
+      >
+        <div className="Video__date d-flex-data">
+          <h2 className="video__data-text">{isDataVideo.year}</h2>
+          <span>-</span>
+          <h2 className="video__data-text">{date}</h2>
+        </div>
+      </TooltipComponent>
+
       <span>|</span>
-      <div className="Video__age">
-        <h2 className="video__data__text--min" id="minAge">
-          {isDataVideo.material_data &&
-            `${
-              isDataVideo.material_data.minimal_age
-                ? isDataVideo.material_data.minimal_age
-                : "14"
-            }+`}
-        </h2>
-      </div>
+      <TooltipComponent
+        content={`Возрастное ограничение`}
+        position="BottomCenter"
+        style={{ display: "block" }}
+      >
+        <div className="Video__age">
+          <h2 className="video__data__text--min" id="minAge">
+            {isDataVideo.material_data &&
+              `${
+                isDataVideo.material_data.minimal_age
+                  ? isDataVideo.material_data.minimal_age
+                  : "14"
+              }+`}
+          </h2>
+        </div>
+      </TooltipComponent>
       <span>|</span>
 
       {isDataVideo.material_data && (
@@ -300,11 +323,17 @@ function VideoPlayer() {
             <>
               {isDataVideo.material_data.countries.map((country) => (
                 <div className="Video__country" key={uuidv4()}>
-                  {country ? (
-                    <h2 className="video__data-textMin">{country}</h2>
-                  ) : (
-                    <h2 className="video__data-textMin">No country</h2>
-                  )}
+                  <TooltipComponent
+                    content={`Страна`}
+                    position="BottomCenter"
+                    style={{ display: "block" }}
+                  >
+                    {country ? (
+                      <h2 className="video__data-textMin">{country}</h2>
+                    ) : (
+                      <h2 className="video__data-textMin">No country</h2>
+                    )}
+                  </TooltipComponent>
                 </div>
               ))}
             </>
@@ -330,7 +359,6 @@ function VideoPlayer() {
                         index > 6 ? index - 6 : index
                       }`}
                     >
-                      {/* <img src="https://i.imgur.com/vDh93pz.png" alt="image actior" /> */}
                       <h1>
                         {item.split(" ")[0].charAt(0)}
                         {item.split(" ")[1] && item.split(" ")[1].charAt(0)}
@@ -383,15 +411,29 @@ function VideoPlayer() {
         <div className="VideoPlayer__content">
           <div className="VideoPlayer__content--row">
             <div className="VideoPlayer__title">
-              <h1> {isDataVideo.title}</h1>
+              <TooltipComponent
+                content={`название ${
+                  isDataVideo.episodes_count ? "сериала" : isType
+                }`}
+                position="TopCenter"
+                style={{ display: "block" }}
+              >
+                <h1> {isDataVideo.title}</h1>
+              </TooltipComponent>
               <span>|</span>
-              <h1>
-                {isDataVideo.episodes_count ? (
-                  <>{!isIndex ? isDataVideo.episodes_count : isIndex}-серии</>
-                ) : (
-                  <>{isType}</>
-                )}
-              </h1>
+              <TooltipComponent
+                content={`${isDataVideo.episodes_count ? "серии" : isType}`}
+                position="TopCenter"
+                style={{ display: "block" }}
+              >
+                <h1>
+                  {isDataVideo.episodes_count ? (
+                    <>{!isIndex ? isDataVideo.last_episode : isIndex}-серии</>
+                  ) : (
+                    <>{isType}</>
+                  )}
+                </h1>
+              </TooltipComponent>
             </div>
 
             <VideoData />
@@ -400,16 +442,23 @@ function VideoPlayer() {
           <div className="VideoPlayer__column">
             <div className="VideoPlayer__about">
               <div className="about__contetn">
-                {/* <h2 className="about__title">О фильме</h2> */}
-                <p
-                  ref={paragraphRef}
-                  className={testToggle ? "about__text--active" : "about__text"}
+                <TooltipComponent
+                  content={`О фильме`}
+                  position="TopCenter"
+                  style={{ display: "block" }}
                 >
-                  {isDataVideo.material_data &&
-                  isDataVideo.material_data.description
-                    ? isDataVideo.material_data.description
-                    : "Не найдено описание о фильме"}
-                </p>
+                  <p
+                    ref={paragraphRef}
+                    className={
+                      testToggle ? "about__text--active" : "about__text"
+                    }
+                  >
+                    {isDataVideo.material_data &&
+                    isDataVideo.material_data.description
+                      ? isDataVideo.material_data.description
+                      : "Не найдено описание о фильме"}
+                  </p>
+                </TooltipComponent>
 
                 <button
                   style={testToggle ? { bottom: "-10px" } : { bottom: "0px" }}

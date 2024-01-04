@@ -37,27 +37,27 @@ function Sliders({ url, title, id, linkPage }) {
   const responsive = {
     superBigLargeDesktop: {
       breakpoint: { max: 5000, min: 1900 },
-      items: 8.5,
+      items: 8.2,
       slidesToSlide: 1,
     },
     bigLargeDesktop: {
       breakpoint: { max: 1900, min: 1560 },
-      items: 7,
+      items: 7.2,
       slidesToSlide: 1,
     },
     desktop: {
       breakpoint: { max: 1560, min: 1300 },
-      items: 6,
+      items: 6.2,
       slidesToSlide: 1,
     },
     tablet: {
       breakpoint: { max: 1300, min: 500 },
-      items: 4,
+      items: 4.2,
       slidesToSlide: 1,
     },
     mobile: {
       breakpoint: { max: 500, min: 380 },
-      items: 3,
+      items: 3.2,
       slidesToSlide: 3,
     },
     minMobile: {
