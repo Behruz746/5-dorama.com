@@ -92,6 +92,11 @@
   position: absolute;
   top: -190px;
   overflow: hidden;
+  @include superBigDesktop {
+    width: 2200px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   @include  tablet-max {
     height: 250px !important;
   }

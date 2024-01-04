@@ -1,6 +1,6 @@
 @mixin superBigDesktop {
     @media screen and (min-width: 1560px) {
-        @content;
+        @content; 
     }
 }
 
