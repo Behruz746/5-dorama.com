@@ -19,6 +19,7 @@ function VideoPlayer() {
   const [isDataSimilar, setIsSimilar] = useState([]);
   const [isGenes, setIsGenes] = useState("");
   const [isDataList, setIsDataList] = useState([]);
+  const [indexBol, setIndexBoll] = useState(0);
 
   useEffect(() => {
     // <!-- Yandex.RTB R-A-3835914-11 -->
@@ -171,16 +172,22 @@ function VideoPlayer() {
       <div className="video__serial--grids">
         <>
           {serialArrD.map((link, index) => {
+          
+
             return (
               <div
                 key={uuidv4()}
-                className={isIndex === index + 1 ? "active serial" : "serial"}
+                className={`${
+                  isIndex === index + 1 ? "active serial" : "serial"
+                } ${index === indexBol ? "active" : "serial"}`}
                 onClick={() => {
                   setIsSerialLink(link);
                   setIsIndex(index + 1);
+                  setIndexBoll(null);
+                  console.log(indexBol);
                 }}
               >
-                <h1>{index + 1}</h1>
+                <h1 className="serila__epi">{index + 1}</h1>
               </div>
             );
           })}
@@ -424,7 +431,7 @@ function VideoPlayer() {
               >
                 <h1>
                   {isDataVideo.last_episode ? (
-                    <>{!isIndex ? isDataVideo.last_episode : isIndex}-серии</>
+                    <>{!isIndex ? 1 : isIndex}-серии</>
                   ) : (
                     <>{isType}</>
                   )}
