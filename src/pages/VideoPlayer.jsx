@@ -99,8 +99,6 @@ function VideoPlayer() {
     fetchData();
   }, [id]);
 
-  console.log(isDataVideo);
-
   useEffect(() => {
     document.title = `${
       isDataVideo.material_data && isDataVideo.material_data.title
@@ -349,7 +347,12 @@ function VideoPlayer() {
 
   const VideoActiors = () => {
     return (
-      <div className="hidden--block">
+      <div
+        className="hidden--block"
+        style={{
+          transform: `translateY(${testToggle && testToggle ? "15px" : "0px"})`,
+        }}
+      >
         <div className="Video__actiors">
           {isDataVideo.material_data && (
             <>
