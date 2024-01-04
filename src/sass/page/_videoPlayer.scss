@@ -367,6 +367,10 @@
     justify-content: flex-start;
     align-items: flex-start;
     overflow: hidden;
+    @include mobile {
+        gap: 16px;
+        margin-top: 13px;
+    }
     
     .hidden--block {
         max-width: 1845px;
@@ -398,7 +402,6 @@
     }
 
     .actior__card {
-        width: 85px;
         cursor: pointer;
         border-radius: 5px;
         user-select: none;
@@ -411,7 +414,10 @@
             overflow: hidden;
             width: 85px;
             height: 85px;
-            // background-color: red;
+            @include mobile {
+                width: 46px;
+                height: 46px;
+            }
 
             h1 {
                 font-size: 32px;
@@ -420,6 +426,9 @@
                 line-height: 32px;
                 letter-spacing: -0.48px;
                 color: #fff;
+                @include mobile {
+                    font-size: 17px;
+                }
             }
         }
 
@@ -436,6 +445,9 @@
             font-weight: 400;
             line-height: 10px;
             color: #fff;
+            @include mobile {
+                font-size: 10px;
+            }
         }
 
         p {
@@ -447,6 +459,9 @@
             font-weight: 400;
             line-height: 12px; 
             color: #768C9E;
+            @include mobile {
+                font-size: 8px;
+            }
         }
     }
 

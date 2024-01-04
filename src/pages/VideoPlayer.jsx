@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import Sliders from "../components/Sliders/Sliders";
 
 function VideoPlayer() {
   const [isDataVideo, setIsDataVideo] = useState([]);
@@ -172,8 +173,6 @@ function VideoPlayer() {
       <div className="video__serial--grids">
         <>
           {serialArrD.map((link, index) => {
-          
-
             return (
               <div
                 key={uuidv4()}
