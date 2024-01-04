@@ -166,7 +166,7 @@ function VideoPlayer() {
     <>
       <div className="video__searals--content">
         <h1 className="video__searals--title">Все серии</h1>
-        <p>{isDataVideo.episodes_count} есть серии. посмотреть все бесплатно</p>
+        <p>{isDataVideo.last_episode} есть серии. посмотреть все бесплатно</p>
       </div>
       <div className="video__serial--grids">
         <>
@@ -198,11 +198,7 @@ function VideoPlayer() {
         <div className="video__movie--flex">
           {isDataSimilar.map((item) => {
             return (
-              <NavLink
-                to={`/player/video/${item.id}`}
-                key={uuidv4()}
-                target="_blank"
-              >
+              <NavLink to={`/player/video/${item.id}`} key={uuidv4()}>
                 <div
                   className="movie__card"
                   onClick={() => {
@@ -287,7 +283,7 @@ function VideoPlayer() {
 
       <span>|</span>
       <TooltipComponent
-        content={`год выхода ${isDataVideo.episodes_count ? "сериал" : isType}`}
+        content={`год выхода ${isDataVideo.last_episode ? "сериал" : isType}`}
         position="BottomCenter"
         style={{ display: "block" }}
       >
@@ -400,7 +396,7 @@ function VideoPlayer() {
           )}
 
           <div className="video__serials">
-            {isDataVideo.episodes_count ? (
+            {isDataVideo.last_episode ? (
               <SerialBlock />
             ) : (
               <ResembleBlock title={"Похожие фильмы"} />
@@ -413,7 +409,7 @@ function VideoPlayer() {
             <div className="VideoPlayer__title">
               <TooltipComponent
                 content={`название ${
-                  isDataVideo.episodes_count ? "сериала" : isType
+                  isDataVideo.last_episode ? "сериала" : isType
                 }`}
                 position="TopCenter"
                 style={{ display: "block" }}
@@ -422,13 +418,13 @@ function VideoPlayer() {
               </TooltipComponent>
               <span>|</span>
               <TooltipComponent
-                content={`${isDataVideo.episodes_count ? "серии" : isType}`}
+                content={`${isDataVideo.last_episode ? "серии" : isType}`}
                 position="TopCenter"
                 style={{ display: "block" }}
               >
                 <h1>
-                  {isDataVideo.episodes_count ? (
-                    <>{!isIndex ? isDataVideo.episodes_count : isIndex}-серии</>
+                  {isDataVideo.last_episode ? (
+                    <>{!isIndex ? isDataVideo.last_episode : isIndex}-серии</>
                   ) : (
                     <>{isType}</>
                   )}
@@ -480,7 +476,7 @@ function VideoPlayer() {
 
             <div className="Video__container">
               <div className="video__serials">
-                {isDataVideo.episodes_count ? (
+                {isDataVideo.last_episode ? (
                   <ResembleBlock title={"Похожие сериалы"} />
                 ) : (
                   <RecomentionBlock />
