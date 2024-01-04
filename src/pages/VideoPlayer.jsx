@@ -68,7 +68,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          "https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-movie&year=2014,2015,2016,2017,2018,2019,2020,&kinopoisk_rating=7-10&imdb_rating=7-10&all_genres=комедия,ужасы,военный,боевик,биография,фантастика,&countries=Япония,Корея Южная,Китай"
+          "https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-movie&year=2014,2015,2016,2017,2018,2019,2020,&kinopoisk_rating=7-10&imdb_rating=7-10&all_genres=комедия,ужасы,военный,боевик,биография,фантастика,&countries=Япония,Корея Южная,Китай"
         );
         setIsDataList(data.data.results);
       } catch (error) {
@@ -82,7 +82,7 @@ function VideoPlayer() {
     const fetchData = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
+          `https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
         );
         setIsDataVideo(data.data.results[0]);
         setIsDataType(data.data.results[0].type);
@@ -110,7 +110,7 @@ function VideoPlayer() {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=35&lgbt=false&types=${isdataType}&year=2016,2017,2018,2019,2020,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
+          `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=35&lgbt=false&types=${isdataType}&year=2016,2017,2018,2019,2020,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
         );
         setIsSimilar(data.data.results);
       } catch (error) {

@@ -14,7 +14,7 @@ function AnimeMovie() {
     const useFetch = async () => {
       try {
         const dataT = await axios.get(
-          "https://kodikapi.com/translations/v2?token=7e04e50106ab3a654bef8c638ea36fa8&types=foreign-movie"
+          "https://kodikapi.com/translations/v2?token=465c15438e7799bee14ea8965dc6e845&types=foreign-movie"
         );
         setIsDataT(dataT.data.results);
       } catch (error) {
@@ -25,7 +25,7 @@ function AnimeMovie() {
     useFetch();
   }, []);
 
-  const url = `https://kodikapi.com/list?token=7e04e50106ab3a654bef8c638ea36fa8&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=anime&year=2015,2014,2016,2017,2018, 2020,2021,2022,2023&kinopoisk_rating=7-10&countries=Япония&with_episodes_data=true&translation_id=609`;
+  const url = `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=anime&year=2015,2014,2016,2017,2018, 2020,2021,2022,2023&kinopoisk_rating=7-10&countries=Япония&with_episodes_data=true&translation_id=609`;
   const { data, isLoad, error } = useFetch(url);
 
   return (

@@ -70,7 +70,7 @@ function App() {
   const [toggleSeach, setToggleSeach] = useState(false);
   const [loadSearch, setLoadShearch] = useState(true);
   const [isUrl, setIsUrl] = useState(
-    "https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title="
+    "https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title="
   );
   const [inputToggle, setInputToggle] = useState(false);
 
@@ -84,7 +84,7 @@ function App() {
     inputEl.forEach((item) => {
       item.addEventListener("change", (e) => {
         setIsUrl(
-          `https://kodikapi.com/search?token=7e04e50106ab3a654bef8c638ea36fa8&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
+          `https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
         );
         setLoadShearch(false);
 
@@ -228,4 +228,3 @@ function App() {
 }
 
 export default App;
-import './mobile.scss';
