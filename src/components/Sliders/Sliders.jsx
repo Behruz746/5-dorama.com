@@ -56,23 +56,48 @@ function Sliders({ url, title, id, linkPage }) {
       slidesToSlide: 1,
     },
     mobile: {
-      breakpoint: { max: 500, min: 380 },
-      items: 3.2,
+      breakpoint: { max: 500, min: 450 },
+      items: 3.8,
       slidesToSlide: 3,
     },
     minMobile: {
-      breakpoint: { max: 380, min: 300 },
-      items: 2.3,
+      breakpoint: { max: 450, min: 420 },
+      items: 3.5,
       slidesToSlide: 2,
     },
     superMinMobile: {
-      breakpoint: { max: 300, min: 240 },
-      items: 1.8,
+      breakpoint: { max: 420, min: 370 },
+      items: 3,
       slidesToSlide: 1,
     },
     proMinMobile: {
+      breakpoint: { max: 370, min: 310 },
+      items: 2.5,
+      slidesToSlide: 1,
+    },
+    proMinMobile: {
+      breakpoint: { max: 370, min: 310 },
+      items: 2.5,
+      slidesToSlide: 1,
+    },
+    mobile_310px: {
+      breakpoint: { max: 310, min: 280 },
+      items: 2.3,
+      slidesToSlide: 1,
+    },
+    mobile_280px: {
+      breakpoint: { max: 280, min: 260 },
+      items: 2.1,
+      slidesToSlide: 1,
+    },
+    mobile_260px: {
+      breakpoint: { max: 260, min: 240 },
+      items: 1.9,
+      slidesToSlide: 1,
+    },
+    mobile_240px: {
       breakpoint: { max: 240, min: 0 },
-      items: 1.5,
+      items: 1.7,
       slidesToSlide: 1,
     },
   };
