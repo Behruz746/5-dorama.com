@@ -1,4 +1,4 @@
-import Sliders from "../components/Sliders/Sliders";
+import Sliders from "../components/Sliders";
 
 import { useEffect } from "react";
 

@@ -1,6 +1,4 @@
-import "./styles.scss";
-
-import HeaderSlider from "../../components/HeaderSlider/HeaderSlider";
+import HeaderSlider from "../../components/HeaderSlider";
 
 function PageNotFound() {
   return (

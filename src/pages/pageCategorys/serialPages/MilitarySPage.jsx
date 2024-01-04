@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 // Compoents
-import Cards from "../../../components/Cards/Cards";
+import Cards from "../../../components/Cards";
 import useFetch from "../../../hooks/useFetch";
 
 function MilitarySPage() {

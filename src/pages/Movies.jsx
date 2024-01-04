@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Sliders from "../components/Sliders/Sliders";
+import Sliders from "../components/Sliders";
 
 function Movies() {
   useEffect(() => {

@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
-import Slider from "react-slick";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import Carousel from "react-multi-carousel";
-// import "react-multi-carousel/lib/styles.css";
 
 // Compoenets
-import Cards from "../Cards/Cards";
-import AppContext from "../../AppContext";
+import Cards from "./Cards";
+import AppContext from "../AppContext";
 
 function Sliders({ url, title, id, linkPage }) {
   const { setIsLoad } = useContext(AppContext);

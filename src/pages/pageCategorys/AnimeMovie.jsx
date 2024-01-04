@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 
 // component
-import Cards from "../../components/Cards/Cards";
+import Cards from "../../components/Cards";
 import useFetch from "../../hooks/useFetch";
 
 import { useEffect, useState } from "react";

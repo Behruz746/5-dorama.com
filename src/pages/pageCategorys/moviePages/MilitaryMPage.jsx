@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 
 // Components
 import useFetch from "../../../hooks/useFetch";
-import Cards from "../../../components/Cards/Cards";
+import Cards from "../../../components/Cards";
 
 function MilitaryMPage() {
   const url =

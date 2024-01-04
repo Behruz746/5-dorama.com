@@ -1,16 +1,15 @@
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
-import { useEffect } from "react";
 
 // Components
-import Header from "../components/Header/Header";
-import Menu from "../components/Menu/Menu";
-import Modal from "../components/Modal/Modal";
-import MenuMobile from "../components/MenuMobile/MenuMobile";
+import Header from "../components/Header";
+import Menu from "../components/Menu";
+import Modal from "../components/Modal";
+import MenuMobile from "../components/MenuMobile";
 
 function RootLeyout() {
-
   useEffect(() => {
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({

@@ -1,0 +1,20 @@
+.contact {
+    width: 100%;
+
+    &__container {
+        width: 250px;
+        padding: 20px 10px;
+        margin: 150px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border-radius: 10px;
+        background-color: #17212BFF;
+
+        img {
+            width: 70px;
+            height: auto;
+        }
+    }
+}

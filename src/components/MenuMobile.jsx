@@ -1,13 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import AppContext from "../../AppContext";
-// import "./styles.scss";
-
-import { SvgEl, SvgDorama, SvgTreler, SvgMoveis, SvgAnd } from "../SvgEl/SvgEl";
+import { SvgEl, SvgDorama, SvgTreler, SvgMoveis, SvgAnd } from "./SvgEl/SvgEl";
 
 function MenuMobile() {
-  const { isToggle } = useContext(AppContext);
-
   return (
     <div className="mine__menu">
       <nav className="mobile__nav">

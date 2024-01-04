@@ -1,6 +1,6 @@
 // Compoenents
-import Sliders from "../components/Sliders/Sliders";
-import HeaderSlider from "../components/HeaderSlider/HeaderSlider";
+import Sliders from "../components/Sliders";
+import HeaderSlider from "../components/HeaderSlider";
 import { useEffect } from "react";
 
 function Home() {
@@ -37,7 +37,6 @@ function Home() {
         title="Фильмы"
         linkPage="/movies"
       />
-
       <Sliders
         url="https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=18&lgbt=false&types=foreign-serial&year=2015,2014,2018&kinopoisk_rating=5-10&countries=Япония, Корея Южная, Китай&with_episodes_data=true"
         title="Дорамы"

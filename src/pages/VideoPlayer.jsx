@@ -1,18 +1,15 @@
 import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import axios from "axios";
-import { useParams } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import Sliders from "../components/Sliders/Sliders";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 function VideoPlayer() {
   const [isDataVideo, setIsDataVideo] = useState([]);
   const [testToggle, setTextToggle] = useState(false);
   const paragraphRef = useRef(null);
   const [isType, setIsType] = useState("фильм");
-  const { id } = useParams();
-  const date = String(isDataVideo.updated_at).slice(0, 4);
   const [isdataType, setIsDataType] = useState();
   const [isSerial, setIsSerial] = useState([]);
   const [isSerialLink, setIsSerialLink] = useState();
@@ -21,9 +18,11 @@ function VideoPlayer() {
   const [isGenes, setIsGenes] = useState("");
   const [isDataList, setIsDataList] = useState([]);
   const [indexBol, setIndexBoll] = useState(0);
+  const date = String(isDataVideo.updated_at).slice(0, 4);
+  const serialArrD = Object.values(isSerial);
+  const { id } = useParams();
 
   useEffect(() => {
-    // <!-- Yandex.RTB R-A-3835914-11 -->
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
         blockId: "R-A-3835914-11",
@@ -119,11 +118,8 @@ function VideoPlayer() {
     fetchFun();
   }, [isdataType, isGenes]);
 
-  const serialArrD = Object.values(isSerial);
-
   useEffect(() => {
     const aboutText = document.querySelector(".about__text");
-
     aboutText.addEventListener("click", () => {
       setTextToggle(!testToggle);
     });
@@ -137,7 +133,7 @@ function VideoPlayer() {
       minAge.textContent = "12+";
     }
 
-    if (aboutText.textContent === "Не найдено описание о фильме") {
+    if (aboutText.textContent === String("Не найдено описание о фильме")) {
       document.querySelector(".text--hidden").style.display = "none";
     } else {
       document.querySelector(".text--hidden").style.display = "block";
@@ -161,7 +157,6 @@ function VideoPlayer() {
   }, [isdataType]);
 
   ///////////// Components ////////////////
-
   const SerialBlock = () => (
     <>
       <div className="video__searals--content">

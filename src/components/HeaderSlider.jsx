@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import AppContext from "../../AppContext";
-import { headerSliderList } from "../../data/data";
+import AppContext from "../AppContext";
+import { headerSliderList } from "../data/data";
 
 function HeaderSlider({ pNone }) {
   const { isToggle } = useContext(AppContext);

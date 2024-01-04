@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 // Data
-import { dropData, dropDataMovies } from "../../data/data";
+import { dropData, dropDataMovies } from "../data/data";
 
 // SvgEl
 import {
@@ -16,10 +16,10 @@ import {
   SvgPeople,
   SvgMessage,
   SvgPlay,
-} from "../SvgEl/SvgEl";
+} from "./SvgEl/SvgEl";
 
 // AppContext
-import AppContext from "../../AppContext";
+import AppContext from "../AppContext";
 
 function Menu() {
   const { isToggle, setIsToggle } = useContext(AppContext);

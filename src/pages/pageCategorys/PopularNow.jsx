@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 
-import useFetch from "../../hooks/useFetch";
-
 // component
-import Cards from "../../components/Cards/Cards";
+import useFetch from "../../hooks/useFetch";
+import Cards from "../../components/Cards";
 
 function PopularNow() {
   const url =
