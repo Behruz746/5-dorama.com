@@ -22,16 +22,6 @@ function VideoPlayer() {
   const serialArrD = Object.values(isSerial);
   const { id } = useParams();
 
-  useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-11",
-        type: "rewarded",
-        platform: "desktop",
-      });
-    });
-  }, []);
-
   const Svg = () => (
     <svg
       className="card__icon"
@@ -54,15 +44,6 @@ function VideoPlayer() {
       </defs>
     </svg>
   );
-
-  useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-7",
-        renderTo: "yandex_rtb_R-A-3835914-7",
-      });
-    });
-  }, []);
 
   useEffect(() => {
     const fetchFun = async () => {
@@ -127,16 +108,9 @@ function VideoPlayer() {
 
   useEffect(() => {
     const minAge = document.querySelector("#minAge");
-    const aboutText = document.querySelector(".about__text");
 
     if (minAge.textContent !== null) {
       minAge.textContent = "12+";
-    }
-
-    if (aboutText.textContent == String("Не найдено описание о фильме")) {
-      document.querySelector(".text--hidden").style.display = "none";
-    } else {
-      document.querySelector(".text--hidden").style.display = "block";
     }
   }, [isDataVideo]);
 
@@ -155,6 +129,25 @@ function VideoPlayer() {
       }
     }
   }, [isdataType]);
+
+  useEffect(() => {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-11",
+        type: "rewarded",
+        platform: "desktop",
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-3835914-7",
+        renderTo: "yandex_rtb_R-A-3835914-7",
+      });
+    });
+  }, []);
 
   ///////////// Components ////////////////
   const SerialBlock = () => (

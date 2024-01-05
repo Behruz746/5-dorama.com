@@ -1,19 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
+import React, { useEffect, useState } from "react";
+import { useStateContext } from "../context/ContextProvider";
+import Carousel from "react-multi-carousel";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import Carousel from "react-multi-carousel";
-
-// Compoenets
 import Cards from "./Cards";
-import AppContext from "../AppContext";
+import { v4 as uuidv4 } from "uuid";
 
 function Sliders({ url, title, id, linkPage }) {
-  const { setIsLoad } = useContext(AppContext);
-
+  const { setIsLoad } = useStateContext();
   const [dataAnime, setDataAnime] = useState([]);
   const [dataNextPage, setDataNextPage] = useState([]);
-
   const [isUrl, setIsUrl] = useState(url);
 
   useEffect(() => {
@@ -66,11 +62,6 @@ function Sliders({ url, title, id, linkPage }) {
     superMinMobile: {
       breakpoint: { max: 420, min: 370 },
       items: 3,
-      slidesToSlide: 1,
-    },
-    proMinMobile: {
-      breakpoint: { max: 370, min: 310 },
-      items: 2.5,
       slidesToSlide: 1,
     },
     proMinMobile: {
@@ -177,6 +168,7 @@ function Sliders({ url, title, id, linkPage }) {
               <Carousel
                 responsive={responsive}
                 customButtonGroup={<ButtonGroup />}
+                customTransition="all 0.2s ease-in-out"
                 swipeable={true}
                 arrows={!true}
                 showDots={!true}

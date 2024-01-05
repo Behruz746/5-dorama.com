@@ -1,11 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-
-// Data
 import { dropData, dropDataMovies } from "../data/data";
-
-// SvgEl
 import {
   SvgEl,
   SvgDorama,
@@ -17,12 +13,10 @@ import {
   SvgMessage,
   SvgPlay,
 } from "./SvgEl/SvgEl";
-
-// AppContext
-import AppContext from "../AppContext";
+import { useStateContext } from "../context/ContextProvider";
 
 function Menu() {
-  const { isToggle, setIsToggle } = useContext(AppContext);
+  const { isToggle, setIsToggle } = useStateContext();
 
   const [isArrorToggle00, setIsArrowToggle00] = useState(false);
   const [isArrorToggle01, setIsArrowToggle01] = useState(false);

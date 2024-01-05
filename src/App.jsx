@@ -3,16 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./sass/main.scss";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
-// Hooks
-import { useState, useEffect, useRef } from "react";
-
-// Axios
-import axios from "axios";
-
-// Context
-import AppContext from "./AppContext";
-
-// Layout 
+// Layout
 import RootLeyout from "./layout/RootLeyout";
 import RootPlayer from "./layout/RootPlayer";
 import RootCategorys from "./layout/RootCategorys";
@@ -56,79 +47,6 @@ import CrimeSPage from "./pages/pageCategorys/serialPages/CrimeSPage";
 import AnimeSPage from "./pages/pageCategorys/serialPages/AnimeSPage";
 
 function App() {
-  const [isToggle, setIsToggle] = useState(true);
-  const [isLoad, setIsLoad] = useState(false);
-  const [isVideoLink, setIsVideoLink] = useState("");
-  const [dataList, setDataList] = useState([]);
-  const [dataLength, setDataLength] = useState(0);
-  const [isArrorToggle, setIsArrowToggle] = useState(false);
-  const [modalSec, setModalSec] = useState(false);
-  const searchvalue = useRef("");
-  const [isSearchData, setIsDataSearch] = useState([]);
-  const [isSearchDataId, setIsDataSearchId] = useState([]);
-  const [toggleSeach, setToggleSeach] = useState(false);
-  const [loadSearch, setLoadShearch] = useState(true);
-  const [isUrl, setIsUrl] = useState(
-    "https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title="
-  );
-  const [inputToggle, setInputToggle] = useState(false);
-
-  useEffect(() => {
-    const inputEl = document.querySelectorAll(".inputEl");
-
-    function ToggleEve() {
-      setInputToggle(true);
-    }
-
-    inputEl.forEach((item) => {
-      item.addEventListener("change", (e) => {
-        setIsUrl(
-          `https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
-        );
-        setLoadShearch(false);
-
-        e.target.value ? setToggleSeach(true) : setToggleSeach(false);
-        !e.target.value
-          ? (document.querySelector("body").style.overflow = "auto")
-          : (document.querySelector("body").style.overflow = "hidden");
-        e.target.value ? setInputToggle(true) : setInputToggle(false);
-      });
-    });
-  }, []);
-
-  useEffect(() => {
-    const featchData = async () => {
-      try {
-        setLoadShearch(false);
-        const data = await axios.get(isUrl);
-        setIsDataSearch(data.data.results);
-        setIsDataSearchId(data.data.results);
-        setLoadShearch(true);
-      } catch (error) {
-        console.log("Error: 404;", error);
-      }
-    };
-    featchData();
-  }, [isUrl]);
-
-  useEffect(() => {
-    function handleResize() {
-      if (window.screen.width <= 950) {
-        setIsToggle(false);
-      } else {
-        setIsToggle(true);
-      }
-    }
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  function ToggleHandel() {
-    setIsArrowToggle(!isArrorToggle);
-  }
-
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -192,37 +110,9 @@ function App() {
   ]);
 
   return (
-    <AppContext.Provider
-      value={{
-        dataList,
-        isLoad,
-        setIsLoad,
-        isToggle,
-        setIsToggle,
-        isVideoLink,
-        setIsVideoLink,
-        dataLength,
-        setDataLength,
-        isArrorToggle,
-        setIsArrowToggle,
-        ToggleHandel,
-        modalSec,
-        setModalSec,
-        searchvalue,
-        setIsUrl,
-        isSearchData,
-        setToggleSeach,
-        toggleSeach,
-        loadSearch,
-        inputToggle,
-        setInputToggle,
-        isSearchDataId,
-      }}
-    >
-      <div className="App">
-        <RouterProvider router={routes} />
-      </div>
-    </AppContext.Provider>
+    <div className="App">
+      <RouterProvider router={routes} />
+    </div>
   );
 }
 

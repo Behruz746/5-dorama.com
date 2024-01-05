@@ -1,15 +1,14 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import AppContext from "../AppContext";
+import { useStateContext } from "../context/ContextProvider";
 import { headerSliderList } from "../data/data";
+import { v4 as uuidv4 } from "uuid";
 
 function HeaderSlider({ pNone }) {
-  const { isToggle } = useContext(AppContext);
-
+  const { isToggle } = useStateContext();
+ 
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -28,7 +27,7 @@ function HeaderSlider({ pNone }) {
       items: 1,
     },
   };
- 
+
   return (
     <section className="header__slider__section  w-full">
       <div
@@ -43,7 +42,7 @@ function HeaderSlider({ pNone }) {
           renderButtonGroupOutside={["tablet", "mobile"]}
           responsive={responsive}
           containerClass="Header__slider__container"
-          dotListClass="custom__list" 
+          dotListClass="custom__list"
           itemClass="carousel__dot-list"
           autoPlay={true}
           autoPlaySpeed={8000}
@@ -77,7 +76,7 @@ function HeaderSlider({ pNone }) {
             <NavLink to="/dramas/comedy">
               <img
                 src="./images/png/category_img02.webp"
-                alt="category image" 
+                alt="category image"
               />
             </NavLink>
             <NavLink to="/movies/horror">

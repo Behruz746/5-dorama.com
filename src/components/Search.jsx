@@ -1,13 +1,53 @@
 import { v4 as uuidv4 } from "uuid";
+import { Fragment, useState, useEffect } from "react";
 import ContentLoader from "react-content-loader";
 import { NavLink } from "react-router-dom";
-import { useContext, Fragment, useState } from "react";
-import AppContext from "../AppContext";
+import { useStateContext } from "../context/ContextProvider";
+import axios from "axios";
 
 function Search() {
-  const { isSearchData, toggleSeach, loadSearch, setToggleSeach } =
-    useContext(AppContext);
+  const { toggleSeach, setToggleSeach } = useStateContext();
   const [dataId, setDataId] = useState();
+  const [loadSearch, setLoadSearch] = useState(false);
+  const [isUrl, setIsUrl] = useState(
+    "https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title="
+  );
+  const [isSearchData, setIsDataSearch] = useState([]);
+  const [isSearchDataId, setIsDataSearchId] = useState([]);
+
+  useEffect(() => {
+    const inputEl = document.querySelectorAll(".inputEl");
+
+    inputEl.forEach((item) => {
+      item.addEventListener("change", (e) => {
+        setIsUrl(
+          `https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title=${e.target.value}&with_material_data=true&lgbt=false&limit=15`
+        );
+        setLoadSearch(false);
+
+        e.target.value ? setToggleSeach(true) : setToggleSeach(false);
+        !e.target.value
+          ? (document.querySelector("body").style.overflow = "auto")
+          : (document.querySelector("body").style.overflow = "hidden");
+        // e.target.value ? setInputToggle(true) : setInputToggle(false);
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoadSearch(false);
+        const data = await axios.get(isUrl);
+        setIsDataSearch(data.data.results);
+        setIsDataSearchId(data.data.results);
+        setLoadSearch(true);
+      } catch (error) {
+        console.log("Error: 404;", error);
+      }
+    };
+    fetchData();
+  }, [isUrl]);
 
   /////////////////// component MyLoader //////////////////////////
   const MyLoader = (props) => (
@@ -35,7 +75,12 @@ function Search() {
             {loadSearch ? (
               <>
                 {data.material_data && (
-                  <NavLink to={`player/video/${dataId}`}>
+                  <NavLink
+                    to={`player/video/${dataId}`}
+                    onClick={() => {
+                      document.querySelector(".inputEl").value = "";
+                    }}
+                  >
                     <div
                       className="card"
                       onClick={() => {

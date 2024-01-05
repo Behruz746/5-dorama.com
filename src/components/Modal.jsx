@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import AppContext from "../AppContext";
+import { useStateContext } from "../context/ContextProvider";
 
 function Modal() {
-  const { setModalSec, modalSec } = useContext(AppContext);
+  const { setModalSec, modalSec } = useStateContext();
 
   const linkHandel = () => {
     setModalSec(false);

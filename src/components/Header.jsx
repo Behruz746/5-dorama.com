@@ -1,11 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { useContext, useState } from "react";
-
-// import "./styles.scss";
-import AppContext from "../AppContext";
+import { useState } from "react";
 import Search from "./Search";
 import SnowAnimtion from "./SnowAnimtion";
 import { CloseSvg } from "./SvgEl/SvgEl";
+import { useStateContext } from "../context/ContextProvider";
 
 function Header() {
   const [toggle, setToggle] = useState(false);
@@ -15,9 +13,9 @@ function Header() {
     setIsToggle,
     inputToggle,
     setToggleSeach,
-    toggleSeach,
+    toggleSeach, 
     setIsUrl,
-  } = useContext(AppContext);
+  } = useStateContext();
 
   const Svg = () => (
     <svg
