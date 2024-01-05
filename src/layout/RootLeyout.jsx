@@ -6,7 +6,6 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 // Components
 import Header from "../components/Header";
 import Menu from "../components/Menu";
-import Modal from "../components/Modal";
 import MenuMobile from "../components/MenuMobile";
 
 function RootLeyout() {
@@ -24,7 +23,6 @@ function RootLeyout() {
     <>
       <Header />
       <main id="main">
-        <Modal />
         <Menu />
         <Outlet />
       </main>

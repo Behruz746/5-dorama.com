@@ -29,7 +29,6 @@ function Search() {
         !e.target.value
           ? (document.querySelector("body").style.overflow = "auto")
           : (document.querySelector("body").style.overflow = "hidden");
-        // e.target.value ? setInputToggle(true) : setInputToggle(false);
       });
     });
   }, []);

@@ -332,3 +332,20 @@ export const SvgPlay = () => (
     />
   </svg>
 );
+
+export const SvgFilter = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="8"
+    viewBox="0 0 16 8"
+    fill="none"
+  >
+    <path
+      d="M15 7L8.78095 1.66939C8.33156 1.2842 7.66844 1.2842 7.21905 1.66939L1 7"
+      stroke="white"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);

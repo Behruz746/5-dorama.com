@@ -1,23 +1,125 @@
 import React, { useEffect, useState } from "react";
-import { useStateContext } from "../context/ContextProvider";
 import Carousel from "react-multi-carousel";
 import { NavLink } from "react-router-dom";
+import ContentLoader from "react-content-loader";
+import { useMediaQuery } from "react-responsive";
 import axios from "axios";
 import Cards from "./Cards";
 import { v4 as uuidv4 } from "uuid";
 
 function Sliders({ url, title, id, linkPage }) {
-  const { setIsLoad } = useStateContext();
-  const [dataAnime, setDataAnime] = useState([]);
+  const [dataCard, setDataCard] = useState([]);
   const [dataNextPage, setDataNextPage] = useState([]);
   const [isUrl, setIsUrl] = useState(url);
+  const [isLoad, setIsLoad] = useState(true);
+
+  const LoadAimetion = (props) => {
+    const isMobile = useMediaQuery({ maxWidth: 550 });
+
+    const titleY = isMobile ? 30 : 20;
+    const titleWidth = isMobile ? 150 : 250;
+    const titleHeight = isMobile ? 10 : 20;
+    const width = isMobile ? 550 : 2000;
+    const height = isMobile ? 274 : 325;
+    const cardWidth = isMobile ? 123 : 164;
+    const cardHeight = isMobile ? 204 : 266;
+    const cardGap = isMobile ? 10 : 20;
+
+    return (
+      <ContentLoader
+        speed={2}
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        backgroundColor="#17212B"
+        foregroundColor="#768C9E"
+        {...props}
+      >
+        <rect x="104" y="277" rx="0" ry="0" width="0" height="2" />
+        <rect
+          x="0"
+          y={titleY}
+          rx="4"
+          ry="4"
+          width={titleWidth}
+          height={titleHeight}
+        />
+        <rect
+          x={cardWidth * 0 + 0}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 1 + cardGap}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 2.1 + cardGap}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 3.2 + cardGap}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 4.3 + cardGap}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 5.4 + cardGap}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 6.5 + cardGap}
+          y="57"
+          rx="4"
+          ry="4"
+          width={cardWidth}
+          height={cardHeight}
+        />
+        <rect
+          x={cardWidth * 7.6 + cardGap}
+          y="57"
+          rx="4"
+          l="0"
+          width="70"
+          height={cardHeight}
+        />
+        <rect x="1060" y="0" rx="4" ry="4" width="42" height="42" />
+        <rect x="1115" y="0" rx="4" ry="4" width="42" height="42" />
+      </ContentLoader>
+    );
+  };
 
   useEffect(() => {
     const fetctAnime = async () => {
       try {
         setIsLoad(false);
         const data = await axios.get(isUrl);
-        setDataAnime(data.data.results);
+        setDataCard(data.data.results);
         setDataNextPage(data.data.next_page);
         setIsLoad(true);
       } catch (error) {
@@ -165,22 +267,26 @@ function Sliders({ url, title, id, linkPage }) {
         <div className="sliders__container slider__card">
           <div className="Slider__cards">
             <div className="carousel__card-container">
-              <Carousel
-                responsive={responsive}
-                customButtonGroup={<ButtonGroup />}
-                customTransition="all 0.2s ease-in-out"
-                swipeable={true}
-                arrows={!true}
-                showDots={!true}
-                renderButtonGroupOutside={["tablet", "mobile"]}
-                containerClass="Header__slider__container"
-                dotListClass="custom__list"
-                itemClass="carousel__dot-list"
-              >
-                {dataAnime.map((data) => (
-                  <Cards {...data} key={uuidv4()} dataClass="sliderCard" />
-                ))}
-              </Carousel>
+              {isLoad ? (
+                <Carousel
+                  responsive={responsive}
+                  customButtonGroup={<ButtonGroup />}
+                  customTransition="all 0.2s ease-in-out"
+                  swipeable={true}
+                  arrows={!true}
+                  showDots={!true}
+                  renderButtonGroupOutside={["tablet", "mobile"]}
+                  containerClass="Header__slider__container"
+                  dotListClass="custom__list"
+                  itemClass="carousel__dot-list"
+                >
+                  {dataCard.map((data) => (
+                    <Cards {...data} key={uuidv4()} dataClass="sliderCard" />
+                  ))}
+                </Carousel>
+              ) : (
+                <LoadAimetion />
+              )}
             </div>
           </div>
         </div>
