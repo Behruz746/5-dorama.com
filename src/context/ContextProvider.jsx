@@ -6,7 +6,6 @@ import React, {
   useRef,
 } from "react";
 
-
 export const StateContext = createContext();
 export const ContextProvider = ({ children }) => {
   const [isToggle, setIsToggle] = useState(true);
@@ -19,7 +18,7 @@ export const ContextProvider = ({ children }) => {
   const searchvalue = useRef("");
   const [toggleSeach, setToggleSeach] = useState(false);
   const [loadSearch, setLoadSearch] = useState(true);
-
+  
   useEffect(() => {
     function handleResize() {
       if (window.screen.width <= 950) {

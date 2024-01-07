@@ -225,8 +225,6 @@ function Sliders({ url, title, id, linkPage }) {
 
     return (
       <div className="carousel-button-group">
-        {/* {title && <h1 className="slider__title title">{title}</h1>} */}
-
         <div className="btns">
           <div className="Slider__navigation">
             <NavLink to={linkPage} className="navigation__title">

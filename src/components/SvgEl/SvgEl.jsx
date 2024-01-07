@@ -17,6 +17,55 @@ export const SvgEl = () => (
   </svg>
 );
 
+export const SvgSearch = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="21"
+    height="21"
+    viewBox="0 0 21 21"
+    fill="none"
+  >
+    <circle
+      cx="8.99998"
+      cy="9"
+      r="8"
+      stroke="#768C9E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.5 14.958L19.5 19.958"
+      stroke="#768C9E"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const SvgMenu = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_87_32)">
+      <path
+        d="M4 18H20C20.55 18 21 17.55 21 17C21 16.45 20.55 16 20 16H4C3.45 16 3 16.45 3 17C3 17.55 3.45 18 4 18ZM4 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H4C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM3 7C3 7.55 3.45 8 4 8H20C20.55 8 21 7.55 21 7C21 6.45 20.55 6 20 6H4C3.45 6 3 6.45 3 7Z"
+        fill="#768C9E"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_87_32">
+        <rect width="24" height="24" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 export const SvgDorama = () => (
   <svg
     width="24"
@@ -215,6 +264,38 @@ export const CloseSvg = () => (
   </svg>
 );
 
+export const SvgClose = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+  >
+    <g clipPath="url(#clip0_1059_3036)">
+      <path
+        d="M15 5L5 15"
+        stroke="#768C9E"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5 5L15 15"
+        stroke="#768C9E"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1059_3036">
+        <rect width="20" height="20" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 export const SvgPeople = () => (
   <svg
     width="22"
@@ -333,8 +414,9 @@ export const SvgPlay = () => (
   </svg>
 );
 
-export const SvgFilter = () => (
+export const SvgFilter = ({ transform }) => (
   <svg
+    style={{ transform: transform }}
     xmlns="http://www.w3.org/2000/svg"
     width="16"
     height="8"
@@ -347,5 +429,30 @@ export const SvgFilter = () => (
       strokeWidth="1.5"
       strokeLinecap="round"
     />
+  </svg>
+);
+
+export const SvgFilterCheck = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+  >
+    <g clipPath="url(#clip0_1059_2990)">
+      <path
+        d="M4.16675 10L8.33341 14.1667L16.6667 5.83337"
+        stroke="white"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1059_2990">
+        <rect width="20" height="20" fill="white" />
+      </clipPath>
+    </defs>
   </svg>
 );

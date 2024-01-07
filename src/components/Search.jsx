@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 import { NavLink } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
 import axios from "axios";
-
+ 
 function Search() {
   const { toggleSeach, setToggleSeach } = useStateContext();
   const [dataId, setDataId] = useState();

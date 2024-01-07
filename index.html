@@ -46,14 +46,7 @@
     </script>
     <!-- Yandex Native Ads C-A-3835914-8 -->
     <div id="yandex_rtb_C-A-3835914-8"></div>
-    <script>
-      window.yaContextCb.push(() => {
-        Ya.Context.AdvManager.renderWidget({
-          renderTo: "yandex_rtb_C-A-3835914-8",
-          blockId: "C-A-3835914-8",
-        });
-      });
-    </script>
+    <script></script>
     <!-- Yandex Native Ads C-A-3835914-10 -->
     <div id="yandex_rtb_C-A-3835914-10"></div>
     <script>
@@ -61,6 +54,18 @@
         Ya.Context.AdvManager.renderWidget({
           renderTo: "yandex_rtb_C-A-3835914-10",
           blockId: "C-A-3835914-10",
+        });
+      });
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+          blockId: "R-A-3835914-15",
+          type: "topAd",
+        });
+      });
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.renderWidget({
+          renderTo: "yandex_rtb_C-A-3835914-8",
+          blockId: "C-A-3835914-8",
         });
       });
     </script>

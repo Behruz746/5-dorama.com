@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 
 function HeaderSlider({ pNone }) {
   const { isToggle } = useStateContext();
- 
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -50,22 +50,16 @@ function HeaderSlider({ pNone }) {
           {headerSliderList.map((item) => (
             <div className="slider__card" key={uuidv4()}>
               <NavLink className="slider__link" to={item.pageLink}>
-                <LazyLoadImage
-                  src={item.desktopImg}
-                  className="slider__card-bk"
-                  loading="lazy"
-                  effect="blur"
-                  width="100%"
-                  alt="image"
-                />
-                <LazyLoadImage
-                  src={item.mobileImg}
-                  className="slider__card-bk d-none"
-                  loading="lazy"
-                  effect="blur"
-                  width="100%"
-                  alt="image"
-                />
+                <picture>
+                  <source srcSet={item.desktopImg} media="(min-width: 550px)" />
+                  <img
+                    src={item.mobileImg}
+                    className="slider__card-bk"
+                    loading="lazy"
+                    width="100%"
+                    alt="image"
+                  />
+                </picture>
               </NavLink>
             </div>
           ))}

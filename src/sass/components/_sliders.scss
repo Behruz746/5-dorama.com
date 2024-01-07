@@ -352,17 +352,3 @@
         height: auto;
     }
 }
-
-.slider__card-bk {
-    @include tablet-640px {
-        display: none;
-    }
-}
-
-.d-none {
-    display: none;
-    @include tablet-640px {
-        display: block;
-        padding: 0 3px;
-    }
-}

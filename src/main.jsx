@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom';
 const App = lazy(() => import("./App"));
 import { registerLicense } from "@syncfusion/ej2-base";
 import { ContextProvider } from "./context/ContextProvider";
@@ -31,13 +31,12 @@ const loadingMarkup = (
   </div>
 );
 
-ReactDOM.render(
-  <React.StrictMode>
-    <ContextProvider>
+createRoot(document.getElementById('root')).render(
+  <ContextProvider>
+    <React.StrictMode>
       <Suspense fallback={loadingMarkup}>
         <App />
       </Suspense>
-    </ContextProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+    </React.StrictMode>
+  </ContextProvider>
 );

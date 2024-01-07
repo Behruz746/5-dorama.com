@@ -181,3 +181,37 @@ export const headerSliderList = [
     mobileImg: "https://i.imgur.com/uYX0agI.png",
   },
 ];
+
+export const dropCotryList = [
+  {
+    text: "Все",
+    active: true,
+  },
+  {
+    text: "Комедия",
+  },
+  {
+    text: "Драма",
+  },
+  {
+    text: "Боевики",
+  },
+  {
+    text: "Биография",
+  },
+  {
+    text: "Военный",
+  },
+  {
+    text: "Фантастика",
+  },
+  {
+    text: "Ужасы",
+  },
+  {
+    text: "Криминал",
+  },
+  {
+    text: "Аниме",
+  },
+];
