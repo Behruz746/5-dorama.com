@@ -22,7 +22,7 @@ function MenuMobile() {
           <SvgTreler />
           <h3>Трейлер</h3>
         </NavLink> */}
-        <NavLink to="*">
+        <NavLink to="documentation">
           <SvgAnd />
           <h3>Ещё</h3>
         </NavLink>

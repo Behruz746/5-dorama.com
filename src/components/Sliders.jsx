@@ -271,7 +271,7 @@ function Sliders({ url, title, id, linkPage }) {
                   customButtonGroup={<ButtonGroup />}
                   customTransition="all 0.2s ease-in-out"
                   swipeable={true}
-                  arrows={!true}
+                  arrows={!true} 
                   showDots={!true}
                   renderButtonGroupOutside={["tablet", "mobile"]}
                   containerClass="Header__slider__container"

@@ -260,6 +260,9 @@ function Menu() {
 
         {/* this is button menu component */}
         <BottomMenu />
+        <h1 className="menu__footer__text">
+          Version 1.2.9 <span>(Beta)</span>
+        </h1>
       </nav>
     </div>
   );

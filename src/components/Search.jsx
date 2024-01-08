@@ -4,7 +4,7 @@ import ContentLoader from "react-content-loader";
 import { NavLink } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
 import axios from "axios";
- 
+
 function Search() {
   const { toggleSeach, setToggleSeach } = useStateContext();
   const [dataId, setDataId] = useState();
@@ -13,7 +13,6 @@ function Search() {
     "https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title="
   );
   const [isSearchData, setIsDataSearch] = useState([]);
-  const [isSearchDataId, setIsDataSearchId] = useState([]);
 
   useEffect(() => {
     const inputEl = document.querySelectorAll(".inputEl");
@@ -39,7 +38,6 @@ function Search() {
         setLoadSearch(false);
         const data = await axios.get(isUrl);
         setIsDataSearch(data.data.results);
-        setIsDataSearchId(data.data.results);
         setLoadSearch(true);
       } catch (error) {
         console.log("Error: 404;", error);

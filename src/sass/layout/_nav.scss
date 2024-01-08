@@ -109,6 +109,7 @@
 .nav__list {
     max-width: 249px;
     width: 100%;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -447,5 +448,20 @@
         font-style: normal;
         font-weight: 400;
         line-height: 22px; /* 183.333% */
+    }
+}
+
+.menu__footer__text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; 
+    color: #768C9E;
+
+    span {
+        color: #5EB5F7;
     }
 }
