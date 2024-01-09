@@ -149,11 +149,7 @@ function Movies() {
                       </>
                     ) : (
                       <div className="error__container">
-                        <img
-                          className="error__image"
-                          src="./images/png/sticker.webp"
-                          alt="image error"
-                        />
+                        <h1>Не найдено</h1>
                       </div>
                     )}
                   </div>

@@ -87,7 +87,6 @@
 
         @include tablet-640px {
             width: 170px;
-            // width: 100%;
         }
 
         .filter__input__title {
@@ -192,7 +191,7 @@
             justify-content: space-between;
             border: 5px solid #17212B;
             background-color: #0E1621;
-            border-radius: 12px;
+            border-radius: 18px;
             padding: 10px 20px;
             gap: 5px;
             cursor: text;
@@ -306,8 +305,15 @@
     align-items: center;
     justify-content: center;
 
-    &__image {
-        width: 80px;
-        height: auto;
+    @include tablet-640px {
+       height: 150px;
+    }
+
+    h1 {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px; 
+        color: #fff;
     }
 }
