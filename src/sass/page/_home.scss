@@ -1,4 +1,6 @@
 .App__home { 
+    margin-top: 30px;
+
     .container {
         @include labtop-1020px {
             padding: 0 10px 0 0px;

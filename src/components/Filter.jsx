@@ -1,9 +1,35 @@
 import React, { useState, useEffect, useRef } from "react";
-import { SvgFilter, SvgFilterCheck, SvgSearch, SvgClose } from "./SvgEl/SvgEl";
+import {
+  SvgFilter,
+  SvgFilterCheck,
+  SvgSearch,
+  SvgClose,
+  CloseSvg,
+} from "./SvgEl/SvgEl";
 import { useStateContext } from "../context/ContextProvider";
 import { dropCotryList } from "../data/data";
 
-function Filter({ setIsCheckCountry, isCheckCountry }) {
+function Filter({ isFilterData }) {
+  const {
+    setIsCheckYaer,
+    isCheckYear,
+    setIsCheckCatigory,
+    isCheckCatigory,
+    setIsCheckCountry,
+    isCheckCountry,
+    toggleData,
+  } = useStateContext();
+
+  const [isClearToggle, setIsClearToggle] = useState(false);
+
+  useEffect(() => {
+    if (isCheckYear || isCheckCatigory || isCheckCountry) {
+      setIsClearToggle(true);
+    } else {
+      setIsClearToggle(false);
+    }
+  }, [isCheckYear, isCheckCatigory, isCheckCountry]);
+
   const inputVal = useRef("");
   const yearVal = useRef("");
   const [isInputVal, setIsInputVal] = useState("");
@@ -56,35 +82,52 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
       }
     }
 
-    function setFilterCatigory(index) {
-      for (let i = 0; i < dropCatigoryEl.length; i++) {
+    function setFilterCatigory(index, element) {
+      for (let i = 0; i < element.length; i++) {
         if (index === i) {
-          dropCatigoryEl[i].classList.add("drop__item--active");
+          element[i].classList.add("drop__item--active");
+
+          setIsCheckCatigory((prev) => {
+            if (element[i].textContent.trim() === "Все") {
+              return "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,аниме";
+            } else {
+              return element[i].textContent.trim();
+            }
+          });
+
+          console.log(
+            `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=18&lgbt=false&types=foreign-movie&year=2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&kinopoisk_rating=5-10&imdb_rating=5-10&drama_genres=${isCheckCatigory}&countries=${isCheckCountry}&translation_id=647,605,674,670,871,794,639,879`
+          );
+
           console.log(dropCatigoryEl[i].textContent);
         } else {
-          dropCatigoryEl[i].classList.remove("drop__item--active");
+          element[i].classList.remove("drop__item--active");
         }
       }
     }
 
-    function setFilterCountry(index) {
-      for (let i = 0; i < dropCountryEl.length; i++) {
+    function setFilterCountry(index, element) {
+      for (let i = 0; i < element.length; i++) {
         if (index === i) {
-          dropCountryEl[i].classList.add("drop__item--active");
-          setIsCheckCountry(dropCountryEl[i].textContent);
+          element[i].classList.add("drop__item--active");
+          setIsCheckCountry((prev) =>
+            element[i].textContent === "Все"
+              ? "Япония,Корея Южная,Китай"
+              : element[i].textContent
+          );
         } else {
-          dropCountryEl[i].classList.remove("drop__item--active");
+          element[i].classList.remove("drop__item--active");
         }
       }
     }
 
-    function setFilterYear(index) {
-      for (let i = 0; i < dropYearEl.length; i++) {
+    function setFilterYear(index, element) {
+      for (let i = 0; i < element.length; i++) {
         if (index === i) {
-          dropYearEl[i].classList.add("drop__item--active");
-          console.log(dropYearEl[i].textContent);
+          element[i].classList.add("drop__item--active");
+          setIsCheckYaer(element[i].textContent);
         } else {
-          dropYearEl[i].classList.remove("drop__item--active");
+          element[i].classList.remove("drop__item--active");
         }
       }
     }
@@ -104,13 +147,17 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
       item.addEventListener("click", () => setFilterVoice(index))
     );
     dropCatigoryEl.forEach((item, index) =>
-      item.addEventListener("click", () => setFilterCatigory(index))
+      item.addEventListener("click", () =>
+        setFilterCatigory(index, dropCatigoryEl)
+      )
     );
     dropCountryEl.forEach((item, index) =>
-      item.addEventListener("click", () => setFilterCountry(index))
+      item.addEventListener("click", () =>
+        setFilterCountry(index, dropCountryEl)
+      )
     );
     dropYearEl.forEach((item, index) =>
-      item.addEventListener("click", () => setFilterYear(index))
+      item.addEventListener("click", () => setFilterYear(index, dropYearEl))
     );
     dropFilterEl.forEach((item, index) =>
       item.addEventListener("click", () => setFilter(index))
@@ -121,8 +168,14 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
     years.push(2024 - i);
   }
 
+  function clearHandel() {
+    setIsCheckCountry("");
+    setIsCheckCatigory("");
+    setIsCheckYaer("");
+  }
+
   return (
-    <div className="filter w-full">
+    <div className={`filter w-full`}>
       <div className="container">
         <div className="filter__container">
           <h1 className="filter__title">Фильтровать фильм</h1>
@@ -152,7 +205,17 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
               >
                 <div className="filter__input__title">
                   <h1>Жанр</h1>
-                  <span className="filter__catigory"></span>
+
+                  {isCheckCatigory && (
+                    <span className="filter__text">
+                      (
+                      {isCheckCatigory ===
+                      "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,аниме"
+                        ? "Все"
+                        : isCheckCatigory}
+                      )
+                    </span>
+                  )}
                 </div>
 
                 <SvgFilter
@@ -211,10 +274,15 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
               <div className="filter__input" onClick={() => filterToggle(2)}>
                 <div className="filter__input__title">
                   <h1>Страна</h1>
-                  {/* {!isCheckCountry ===
-                  "Япония,Корея Южная,Китай,Тайвань" ? null : (
-                    <span className="filter__catigory">{isCheckCountry}</span>
-                  )} */}
+                  {isCheckCountry && (
+                    <span className="filter__text">
+                      (
+                      {isCheckCountry === "Япония,Корея Южная,Китай"
+                        ? "Все"
+                        : isCheckCountry}
+                      )
+                    </span>
+                  )}
                 </div>
                 <SvgFilter
                   transform={countryToggle ? "rotate(0deg)" : "rotate(180deg)"}
@@ -250,7 +318,12 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
 
             <div className="filter__droper">
               <div className="filter__input" onClick={() => filterToggle(3)}>
-                <h1>Год</h1>
+                <div className="filter__input__title">
+                  <h1>Год</h1>
+                  {isCheckYear && (
+                    <span className="filter__text">({isCheckYear})</span>
+                  )}
+                </div>
                 <SvgFilter
                   transform={yearToggle ? "rotate(0deg)" : "rotate(180deg)"}
                 />
@@ -322,6 +395,14 @@ function Filter({ setIsCheckCountry, isCheckCountry }) {
                 </li>
               </ul>
             </div>
+
+            {isClearToggle && (
+              <div className="filter__clearer">
+                <button type="button" onClick={() => clearHandel()}>
+                  Отменить фильтр <CloseSvg />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

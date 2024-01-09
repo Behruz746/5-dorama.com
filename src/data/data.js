@@ -194,7 +194,7 @@ export const dropCotryList = [
     text: "Драма",
   },
   {
-    text: "Боевики",
+    text: "Боевик",
   },
   {
     text: "Биография",

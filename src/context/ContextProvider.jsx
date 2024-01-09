@@ -18,7 +18,10 @@ export const ContextProvider = ({ children }) => {
   const searchvalue = useRef("");
   const [toggleSeach, setToggleSeach] = useState(false);
   const [loadSearch, setLoadSearch] = useState(true);
-  
+  const [isCheckCountry, setIsCheckCountry] = useState("");
+  const [isCheckCatigory, setIsCheckCatigory] = useState("");
+  const [isCheckYear, setIsCheckYaer] = useState("");
+
   useEffect(() => {
     function handleResize() {
       if (window.screen.width <= 950) {
@@ -58,6 +61,12 @@ export const ContextProvider = ({ children }) => {
         setToggleSeach,
         toggleSeach,
         loadSearch,
+        isCheckCountry,
+        setIsCheckCountry,
+        isCheckCatigory,
+        setIsCheckCatigory,
+        isCheckYear,
+        setIsCheckYaer,
       }}
     >
       {children}

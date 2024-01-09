@@ -6,7 +6,7 @@ function Contact() {
     <div className="contact w-full page">
       <div className="container">
         <div className="contact__container">
-          <TooltipComponent
+          {/* <TooltipComponent
             content="Телеграм"
             position="TopCenter"
             style={{ display: "block" }}
@@ -17,7 +17,7 @@ function Contact() {
                 alt="telegram image"
               />
             </a>
-          </TooltipComponent>
+          </TooltipComponent> */}
           <TooltipComponent
             content="Инстаграм"
             position="TopCenter"

@@ -131,32 +131,33 @@ function Menu() {
   return (
     <div className={isToggle ? "App__nav" : "App__nav App__nav--active"}>
       <nav className="nav__list">
-        <div className="list__items">
-          <div className="menu__container">
-            <div
-              className={
-                isToggle ? "list__item" : "list__item list__item--active"
-              }
-            >
-              <NavLink
-                to="/"
-                className="list__link"
-                onClick={() => setIsToggle(true)}
+        <div>
+          <div className="list__items">
+            <div className="menu__container">
+              <div
+                className={
+                  isToggle ? "list__item" : "list__item list__item--active"
+                }
               >
-                <div
-                  className={
-                    isToggle ? "list__box" : "list__box list__box--active"
-                  }
+                <NavLink
+                  to="/"
+                  className="list__link"
+                  onClick={() => setIsToggle(true)}
                 >
-                  <SvgEl />
-                  <h3>Главная</h3>
-                </div>
-              </NavLink>
-            </div>
+                  <div
+                    className={
+                      isToggle ? "list__box" : "list__box list__box--active"
+                    }
+                  >
+                    <SvgEl />
+                    <h3>Главная</h3>
+                  </div>
+                </NavLink>
+              </div>
 
-            {/* Трейлер will add update 1.2 v */}
-            <>
-              {/* <div 
+              {/* Трейлер will add update 1.2 v */}
+              <>
+                {/* <div 
               className={
                 isToggle ? "list__item" : "list__item list__item--active"
               }
@@ -176,90 +177,96 @@ function Menu() {
                 </div>
               </NavLink>
             </div> */}
-            </>
-            <div
-              className={
-                isToggle ? "list__item" : "list__item list__item--active"
-              }
-            >
-              <NavLink
-                to="dramas"
-                className="list__link"
-                id="borderActive"
-                onClick={() => setIsToggle(true)}
+              </>
+              <div
+                className={
+                  isToggle ? "list__item" : "list__item list__item--active"
+                }
               >
-                <div
-                  className={
-                    isToggle ? "list__box" : "list__box list__box--active"
-                  }
+                <NavLink
+                  to="dramas"
+                  className="list__link"
+                  id="borderActive"
+                  onClick={() => setIsToggle(true)}
                 >
-                  <SvgDorama />
-                  <h3>Сериал</h3>
-                </div>
-              </NavLink>
+                  <div
+                    className={
+                      isToggle ? "list__box" : "list__box list__box--active"
+                    }
+                  >
+                    <SvgDorama />
+                    <h3>Сериал</h3>
+                  </div>
+                </NavLink>
 
-              <div
-                className="image__box"
-                onClick={() => {
-                  setIsArrowToggle00(!isArrorToggle00);
-                  setIsArrowToggle01(false);
-                }}
-              >
-                <img
-                  className={
-                    !isArrorToggle00 ? "toggle__arrow" : "toggle__arrow--actve"
-                  }
-                  src="https://i.imgur.com/xFS7ol0.png"
-                  alt="toggle icon"
-                />
-              </div>
-            </div>
-            <ListDrop />
-            <div
-              className={
-                isToggle ? "list__item" : "list__item list__item--active"
-              }
-            >
-              <NavLink
-                to="movies"
-                className="list__link"
-                id="borderActive"
-                onClick={() => setIsToggle(true)}
-              >
                 <div
-                  className={
-                    isToggle ? "list__box" : "list__box list__box--active"
-                  }
+                  className="image__box"
+                  onClick={() => {
+                    setIsArrowToggle00(!isArrorToggle00);
+                    setIsArrowToggle01(false);
+                  }}
                 >
-                  <SvgMoveis />
-                  <h3>Фильмы</h3>
+                  <img
+                    className={
+                      !isArrorToggle00
+                        ? "toggle__arrow"
+                        : "toggle__arrow--actve"
+                    }
+                    src="https://i.imgur.com/xFS7ol0.png"
+                    alt="toggle icon"
+                  />
                 </div>
-              </NavLink>
-              <div
-                className="image__box"
-                onClick={() => {
-                  setIsArrowToggle01(!isArrorToggle01);
-                  setIsArrowToggle00(false);
-                }}
-              >
-                <img
-                  className={
-                    !isArrorToggle01 ? "toggle__arrow" : "toggle__arrow--actve"
-                  }
-                  src="https://i.imgur.com/xFS7ol0.png"
-                  alt="toggle icon"
-                />
               </div>
+              <ListDrop />
+              <div
+                className={
+                  isToggle ? "list__item" : "list__item list__item--active"
+                }
+              >
+                <NavLink
+                  to="movies"
+                  className="list__link"
+                  id="borderActive"
+                  onClick={() => setIsToggle(true)}
+                >
+                  <div
+                    className={
+                      isToggle ? "list__box" : "list__box list__box--active"
+                    }
+                  >
+                    <SvgMoveis />
+                    <h3>Фильмы</h3>
+                  </div>
+                </NavLink>
+                <div
+                  className="image__box"
+                  onClick={() => {
+                    setIsArrowToggle01(!isArrorToggle01);
+                    setIsArrowToggle00(false);
+                  }}
+                >
+                  <img
+                    className={
+                      !isArrorToggle01
+                        ? "toggle__arrow"
+                        : "toggle__arrow--actve"
+                    }
+                    src="https://i.imgur.com/xFS7ol0.png"
+                    alt="toggle icon"
+                  />
+                </div>
+              </div>
+              <ListMovies />
             </div>
-            <ListMovies />
           </div>
-        </div>
-        <div
-          className={isToggle ? "nav__line" : "nav__line nav__line--active"}
-        ></div>
+          <div
+            className={isToggle ? "nav__line" : "nav__line nav__line--active"}
+          ></div>
 
-        {/* this is button menu component */}
-        <BottomMenu />
+          {/* this is button menu component */}
+          <BottomMenu />
+        </div>
+
         <h1 className="menu__footer__text">
           Version 1.2.9 <span>(Beta)</span>
         </h1>

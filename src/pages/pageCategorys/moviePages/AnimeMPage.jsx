@@ -13,7 +13,7 @@ function AnimeMPage() {
     <div className="AnimeMPage w-full page catigoriyPage">
       <div className="container">
         <div className="popularNow__body">
-          <h1 className="popularNow__title title">Аниме</h1>
+          <h1 className="popularNow__title title">Аниме</h1> 
           <div
             className={`${
               !isLoad ? "container__cards" : "container__cards--load"

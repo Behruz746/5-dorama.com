@@ -2,11 +2,48 @@
 .filter {
     width: 100%;
 
+    .container {
+        margin: 0 auto;
+    }
+    
     &__container {
         width: 100%;
+        margin: 0 auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
         gap: 30px;
+    }
+
+    &__clearer {
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            padding: 10px 20px;
+            width: 225px;
+            display: flex;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; 
+            color: #768C9E;
+            border: 0;
+            outline: 0;
+            border-radius: 12px;
+            gap: 24px;
+            background-color: #232E3C;
+            cursor: pointer;
+
+            svg {
+                width: 20px;
+                height: 20px;
+
+                path {
+                    fill: #768C9E;
+                }
+            }
+        }
     }
 
     &__title {
@@ -47,7 +84,7 @@
             gap: 3px;
         }
 
-        span {
+        .filter__text {
             width: 79px;
             font-size: 16px;
             font-style: normal;
@@ -55,6 +92,7 @@
             line-height: 140%;
             color: #768C9E;
             overflow: hidden;
+            white-space: nowrap;
             text-overflow: ellipsis;
         }
         
@@ -221,5 +259,43 @@
             border-radius: 8px;
             background-color: #768c9ea1;
         }
+    }
+}
+
+.filter__body {
+    margin-top: 30px;
+    
+    .container {
+        margin: 0 auto;
+        padding: 0 10px 0 40px;
+
+        @include mobile {
+            padding: 0;
+        }
+    }
+}
+
+.filter__cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 0px;
+
+    @include mobile {
+        justify-content: center;
+    }
+}
+
+.error__container {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__image {
+        width: 80px;
+        height: auto;
     }
 }
