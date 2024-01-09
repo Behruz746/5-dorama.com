@@ -9,7 +9,7 @@ import {
 import { useStateContext } from "../context/ContextProvider";
 import { dropCotryList } from "../data/data";
 
-function Filter({ isFilterData }) {
+function Filter() {
   const {
     setIsCheckYaer,
     isCheckYear,
@@ -17,7 +17,6 @@ function Filter({ isFilterData }) {
     isCheckCatigory,
     setIsCheckCountry,
     isCheckCountry,
-    toggleData,
   } = useStateContext();
 
   const [isClearToggle, setIsClearToggle] = useState(false);

@@ -6,24 +6,24 @@ function Contact() {
     <div className="contact w-full page">
       <div className="container">
         <div className="contact__container">
-          {/* <TooltipComponent
+          <TooltipComponent
             content="Телеграм"
             position="TopCenter"
             style={{ display: "block" }}
           >
-            <a href="https://t.me/suxrobxurramov">
+            <a href="https://t.me/dorama5bot">
               <img
                 src="https://cdn-icons-png.flaticon.com/128/2111/2111646.png"
                 alt="telegram image"
               />
             </a>
-          </TooltipComponent> */}
+          </TooltipComponent>
           <TooltipComponent
             content="Инстаграм"
             position="TopCenter"
             style={{ display: "block" }}
           >
-            <a href="https://www.instagram.com/darkuser005/">
+            <a href="https://www.instagram.com/5dorama.online/">
               <img
                 src="https://cdn-icons-png.flaticon.com/128/3955/3955024.png"
                 alt="instagram image"
