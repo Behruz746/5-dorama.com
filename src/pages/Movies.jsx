@@ -65,7 +65,7 @@ function Movies() {
   return (
     <>
       <div className="App__filems App__home w-full page">
-        {/* <Filter
+        <Filter
           setIsCheckCountry={setIsCheckCountry}
           setIsCheckCatigory={setIsCheckCatigory}
           setIsCheckYaer={setIsCheckYaer}
@@ -73,7 +73,7 @@ function Movies() {
           isCheckCatigory={isCheckCatigory}
           isCheckYear={isCheckYear}
           toggleData={toggleData}
-        /> */}
+        />
 
         {!toggleData ? (
           <>
