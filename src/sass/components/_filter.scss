@@ -1,6 +1,9 @@
 // filter
 .filter {
     width: 100%;
+    @include tablet-640px {
+        margin-top: 10px;
+    }
 
     .container {
         margin: 0 auto;
@@ -12,9 +15,14 @@
         display: flex;
         flex-direction: column; 
         gap: 30px;
+       
     }
 
     &__clearer {
+        @include tablet-640px {
+            width: 100%;
+        }
+
         button {
             display: flex;
             align-items: center; 
@@ -34,6 +42,9 @@
             gap: 24px;
             background-color: #232E3C;
             cursor: pointer;
+            @include tablet-640px {
+                width: 100%;
+            }
 
             svg {
                 width: 20px;
@@ -52,6 +63,9 @@
         font-weight: 500;
         line-height: 24px; 
         color: #fff;
+        @include tablet-640px {
+            text-align: center;
+        }
     }
 
     &__form {
@@ -60,18 +74,23 @@
         gap: 20px;
         width: 100%;
         flex-wrap: wrap;
-
+       
         @include tablet-640px {
-            justify-content: center;
+            gap: 12px;
+            align-items: flex-start;
+            flex-direction: column;
         }
     }
     
-
     &__droper {
         display: flex;
         flex-direction: column;
         gap: 8px;
         position: relative;
+       
+        @include tablet-640px {
+            width: 100%;
+        }
     }
     
     &__input {
@@ -84,15 +103,16 @@
         background: #17212B;
         border-radius: 12px;
         gap: 0px;
-
+       
         @include tablet-640px {
-            width: 170px;
+            width: 100%;
         }
 
         .filter__input__title {
             display: flex;
             align-items: center;
             gap: 3px;
+           
         }
 
         .filter__text {
@@ -125,7 +145,6 @@
     }
     
     &__dropDown {
-        max-width: 195px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -136,6 +155,10 @@
         background: #17212B;
         cursor: pointer;
         overflow: hidden;
+       
+        @include tablet-640px {
+            width: 100% !important;
+        }
         
         .drop__item {
             display: flex;
