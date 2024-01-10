@@ -28,6 +28,7 @@ function Menu() {
       navListEl.style.height = `${window.innerHeight - 100}px`;
     };
     window.addEventListener("resize", handleResize);
+    handleResize();
     return () => {
       window.removeEventListener("resize", handleResize);
       navListEl.style.height = `${window.innerHeight - 100}px`;
