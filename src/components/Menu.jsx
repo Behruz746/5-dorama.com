@@ -19,10 +19,12 @@ function Menu() {
   const { isToggle, setIsToggle } = useStateContext();
   const [isArrorToggle00, setIsArrowToggle00] = useState(false);
   const [isArrorToggle01, setIsArrowToggle01] = useState(false);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const navListEl = document.querySelector(".nav__list");
     const handleResize = () => {
+      setWindowHeight(window.innerHeight);
       navListEl.style.height = `${window.innerHeight - 100}px`;
     };
     window.addEventListener("resize", handleResize);
@@ -30,7 +32,7 @@ function Menu() {
       window.removeEventListener("resize", handleResize);
       navListEl.style.height = `${window.innerHeight - 100}px`;
     };
-  }, []);
+  }, [windowHeight]);
 
   const scrollFun = (event, index, id) => {
     const targetId = id.slice(index);
