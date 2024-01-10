@@ -28,6 +28,44 @@
       href="https://v1.fontapi.ir/css/SFProDisplay:100;200;300;400;500;600;700;800;900"
       rel="stylesheet"
     />
+    <!-- Carrot quest BEGIN -->
+    <script type="text/javascript">
+      !(function () {
+        function t(t, e) {
+          return function () {
+            window.carrotquestasync.push(t, arguments);
+          };
+        }
+        if ("undefined" == typeof carrotquest) {
+          var e = document.createElement("script");
+          (e.type = "text/javascript"),
+            (e.async = !0),
+            (e.src = "https://cdn.carrotquest.app/api.min.js"),
+            document.getElementsByTagName("head")[0].appendChild(e),
+            (window.carrotquest = {}),
+            (window.carrotquestasync = []),
+            (carrotquest.settings = {});
+          for (
+            var n = [
+                "connect",
+                "track",
+                "identify",
+                "auth",
+                "onReady",
+                "addCallback",
+                "removeCallback",
+                "trackMessageInteraction",
+              ],
+              a = 0;
+            a < n.length;
+            a++
+          )
+            carrotquest[n[a]] = t(n[a]);
+        }
+      })(),
+        carrotquest.connect("60052-f66ad404a0158d9bea4a9ad334");
+    </script>
+    <!-- Carrot quest END -->
     <title>5dorama - Смотрите дорамы онлайн бесплатно</title>
     <script>
       window.yaContextCb = window.yaContextCb || [];

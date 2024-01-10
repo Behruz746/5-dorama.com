@@ -21,6 +21,7 @@ export const ContextProvider = ({ children }) => {
   const [isCheckCountry, setIsCheckCountry] = useState("");
   const [isCheckCatigory, setIsCheckCatigory] = useState("");
   const [isCheckYear, setIsCheckYaer] = useState("");
+  const [isCheckTypem, setIsCheckType] = useState("");
 
   useEffect(() => {
     function handleResize() {
@@ -67,6 +68,8 @@ export const ContextProvider = ({ children }) => {
         setIsCheckCatigory,
         isCheckYear,
         setIsCheckYaer,
+        isCheckTypem,
+        setIsCheckType,
       }}
     >
       {children}

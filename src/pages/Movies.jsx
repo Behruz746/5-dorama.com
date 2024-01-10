@@ -14,6 +14,8 @@ function Movies() {
     isCheckCatigory,
     setIsCheckCountry,
     isCheckCountry,
+    setIsCheckType,
+    isCheckTypem,
   } = useStateContext();
   const [isFilterData, setIsFilterData] = useState([]);
   const [toggleData, setToggleData] = useState(false);
@@ -28,7 +30,9 @@ function Movies() {
     const fetchFilter = async () => {
       try {
         const data = await axios.get(
-          `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=foreign-movie&year=${
+          `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=${
+            isCheckTypem ? isCheckTypem : "foreign-movie"
+          }&year=${
             !isCheckYear
               ? "2024,2023,2022,2021,2020,2019,2018,2017"
               : isCheckYear
@@ -64,7 +68,7 @@ function Movies() {
 
   return (
     <>
-      <div className="App__filems App__home w-full page">
+      <div className="App__filems App__home w-full">
         <Filter
           setIsCheckCountry={setIsCheckCountry}
           setIsCheckCatigory={setIsCheckCatigory}

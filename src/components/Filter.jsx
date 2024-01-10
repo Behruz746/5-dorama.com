@@ -17,6 +17,8 @@ function Filter() {
     isCheckCatigory,
     setIsCheckCountry,
     isCheckCountry,
+    setIsCheckType,
+    isCheckTypem,
   } = useStateContext();
 
   const [isClearToggle, setIsClearToggle] = useState(false);
@@ -89,13 +91,30 @@ function Filter() {
           setIsCheckCatigory((prev) => {
             if (element[i].textContent.trim() === "Все") {
               return "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,аниме";
+            } else if (element[i].textContent.trim() === "Аниме") {
+              setIsCheckType("anime");
+              return "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,";
             } else {
               return element[i].textContent.trim();
             }
           });
 
           console.log(
-            `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=18&lgbt=false&types=foreign-movie&year=2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&kinopoisk_rating=5-10&imdb_rating=5-10&drama_genres=${isCheckCatigory}&countries=${isCheckCountry}&translation_id=647,605,674,670,871,794,639,879`
+            `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=${
+              isCheckCatigory === "Аниме" ? "anime-movie" : "foreign-movie"
+            }&year=${
+              !isCheckYear
+                ? "2024,2023,2022,2021,2020,2019,2018,2017"
+                : isCheckYear
+            },&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${
+              !isCheckCatigory
+                ? "комедия,драма,биография,военный,фантастика,ужасы,криминал,аниме"
+                : isCheckCatigory.toLowerCase()
+            }&countries=${
+              !isCheckCountry
+                ? "Япония,Корея Южная,Китай"
+                : isCheckCountry.toLowerCase()
+            }&translation_id=647,605,674,670,871,794,639,879`
           );
 
           console.log(dropCatigoryEl[i].textContent);

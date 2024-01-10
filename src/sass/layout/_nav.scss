@@ -453,9 +453,6 @@
 }
 
 .menu__footer__text {
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -465,4 +462,8 @@
     span {
         color: #5EB5F7;
     }
+}
+
+.menu__footer__text--active {
+    display: none;
 }

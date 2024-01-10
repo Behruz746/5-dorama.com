@@ -281,7 +281,7 @@ function Menu() {
           <BottomMenu />
         </div>
 
-        <h1 className="menu__footer__text">
+        <h1 className={isToggle ? "menu__footer__text" : "menu__footer__text--active"}>
           Version 1.2.9 <span>(Beta)</span>
         </h1>
       </nav>
