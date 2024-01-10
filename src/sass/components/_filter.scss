@@ -15,7 +15,9 @@
         display: flex;
         flex-direction: column; 
         gap: 30px;
-       
+        @include tablet-640px {
+            gap: 20px;
+        }
     }
 
     &__clearer {
@@ -64,6 +66,7 @@
         line-height: 24px; 
         color: #fff;
         @include tablet-640px {
+            font-size: 22px;
             text-align: center;
         }
     }
@@ -155,7 +158,6 @@
         background: #17212B;
         cursor: pointer;
         overflow: hidden;
-       
         @include tablet-640px {
             width: 100% !important;
         }
