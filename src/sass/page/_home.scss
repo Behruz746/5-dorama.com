@@ -1,5 +1,5 @@
 .App__home { 
-    margin-top: 30px;
+    // margin-top: 30px;
 
     .container {
         @include labtop-1020px {
@@ -13,9 +13,9 @@
 
 .Home__Sliders {
     @include tablet-550px {
-        margin-top: 23px;
+        // margin-top: 23px;
     }
     @include mobile {
-        margin-top: 10px;
+        // margin-top: 10px;
     }  
 }

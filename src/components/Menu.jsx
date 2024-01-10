@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { dropData, dropDataMovies } from "../data/data";
@@ -17,9 +17,20 @@ import { useStateContext } from "../context/ContextProvider";
 
 function Menu() {
   const { isToggle, setIsToggle } = useStateContext();
-
   const [isArrorToggle00, setIsArrowToggle00] = useState(false);
   const [isArrorToggle01, setIsArrowToggle01] = useState(false);
+
+  useEffect(() => {
+    const navListEl = document.querySelector(".nav__list");
+    const handleResize = () => {
+      navListEl.style.height = `${window.innerHeight - 100}px`;
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      navListEl.style.height = `${window.innerHeight - 100}px`;
+    };
+  }, []);
 
   const scrollFun = (event, index, id) => {
     const targetId = id.slice(index);
