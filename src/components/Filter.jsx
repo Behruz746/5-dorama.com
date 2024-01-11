@@ -40,6 +40,7 @@ function Filter() {
   const [countryToggle, setCountryToggle] = useState(false);
   const [yearToggle, setYearToggle] = useState(false);
   const [sortingToggle, setSortingToggle] = useState(false);
+  const [isFilterToggle, setIsFilterToggle] = useState(false);
   const years = [];
 
   useEffect(() => {
@@ -87,7 +88,6 @@ function Filter() {
       for (let i = 0; i < element.length; i++) {
         if (index === i) {
           element[i].classList.add("drop__item--active");
-
           setIsCheckCatigory((prev) => {
             if (element[i].textContent.trim() === "Все") {
               return "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,аниме";
@@ -98,25 +98,6 @@ function Filter() {
               return element[i].textContent.trim();
             }
           });
-
-          console.log(
-            `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=100&lgbt=false&types=${
-              isCheckCatigory === "Аниме" ? "anime-movie" : "foreign-movie"
-            }&year=${
-              !isCheckYear
-                ? "2024,2023,2022,2021,2020,2019,2018,2017"
-                : isCheckYear
-            },&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${
-              !isCheckCatigory
-                ? "комедия,драма,биография,военный,фантастика,ужасы,криминал,аниме"
-                : isCheckCatigory.toLowerCase()
-            }&countries=${
-              !isCheckCountry
-                ? "Япония,Корея Южная,Китай"
-                : isCheckCountry.toLowerCase()
-            }&translation_id=647,605,674,670,871,794,639,879`
-          );
-
           console.log(dropCatigoryEl[i].textContent);
         } else {
           element[i].classList.remove("drop__item--active");
@@ -198,222 +179,244 @@ function Filter() {
         <div className="filter__container">
           <h1 className="filter__title">Фильтровать фильм</h1>
           <div className="filter__form">
-            <div className="filter__droper">
-              <div className="filter__input" onClick={() => filterToggle(0)}>
-                <h1>Яык озвучки</h1>
-                <SvgFilter
-                  transform={voiceToggle ? "rotate(0deg)" : "rotate(180deg)"}
-                />
-              </div>
-              <ul
-                className={`filter__dropDown ${
-                  voiceToggle ? "drop--active" : "drop--none"
-                }`}
-              >
-                <li className="drop__language drop__item drop__item--active">
-                  <p>Русский</p>
-                  <SvgFilterCheck />
-                </li>
-              </ul>
-            </div>
-            <div className="filter__droper">
-              <div
-                className="filter__input input"
-                onClick={() => filterToggle(1)}
-              >
-                <div className="filter__input__title">
-                  <h1>Жанр</h1>
-
-                  {isCheckCatigory && (
-                    <span className="filter__text">
-                      (
-                      {isCheckCatigory ===
-                      "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,аниме"
-                        ? "Все"
-                        : isCheckCatigory}
-                      )
-                    </span>
-                  )}
-                </div>
-
-                <SvgFilter
-                  transform={genreToggle ? "rotate(0deg)" : "rotate(180deg)"}
-                />
-              </div>
-              <div
-                className={`filter__dropDown ${
-                  genreToggle ? "drop--active" : "drop--none"
-                }`}
-              >
-                <div className="drop__search__input">
-                  <input
-                    type="text"
-                    placeholder="Поиск"
-                    onChange={(e) => setIsInputVal(e.target.value)}
-                    value={isInputVal}
-                    ref={inputVal}
+            <div className="filter__droper__container">
+              <div className="filter__droper">
+                <div
+                  className="filter__input"
+                  onClick={(e) => {
+                    filterToggle(0);
+                    console.log(e);
+                  }}
+                >
+                  <h1>Яык озвучки</h1>
+                  <SvgFilter
+                    transform={voiceToggle ? "rotate(0deg)" : "rotate(180deg)"}
                   />
-                  {isInputVal ? (
-                    <button
-                      type="reset"
-                      className="drop__search__btn"
-                      onClick={() => {
-                        setIsInputVal((prev) => (prev = ""));
-                      }}
-                    >
-                      <SvgClose />
-                    </button>
-                  ) : (
-                    <button type="button" className="drop__search__btn">
-                      <SvgSearch />
-                    </button>
-                  )}
                 </div>
-                <ul className="over--scroll">
-                  {dropCotryList
-                    .filter((item) =>
-                      item.text.toLowerCase().includes(isInputVal.toLowerCase())
-                    )
-                    .map((filterItem, index) => (
-                      <li
-                        className={`drop__item drop__catigory ${
-                          filterItem.active ? "drop__item--active" : ""
-                        }`}
-                        key={index}
+                <ul
+                  className={`filter__dropDown ${
+                    voiceToggle ? "drop--active" : "drop--none"
+                  }`}
+                >
+                  <li className="drop__language drop__item drop__item--active">
+                    <p>Русский</p>
+                    <SvgFilterCheck />
+                  </li>
+                </ul>
+              </div>
+              <div className="filter__droper">
+                <div
+                  className="filter__input input"
+                  onClick={() => filterToggle(1)}
+                >
+                  <div className="filter__input__title">
+                    <h1>Жанр</h1>
+
+                    {isCheckCatigory && (
+                      <span className="filter__text">
+                        (
+                        {isCheckCatigory ===
+                        "комедия,драма,боевик,биография,военный,фантастика,ужасы,криминал,аниме"
+                          ? "Все"
+                          : isCheckCatigory}
+                        )
+                      </span>
+                    )}
+                  </div>
+
+                  <SvgFilter
+                    transform={genreToggle ? "rotate(0deg)" : "rotate(180deg)"}
+                  />
+                </div>
+                <div
+                  className={`filter__dropDown ${
+                    genreToggle ? "drop--active" : "drop--none"
+                  }`}
+                >
+                  <div className="drop__search__input">
+                    <input
+                      type="text"
+                      placeholder="Поиск"
+                      onChange={(e) => setIsInputVal(e.target.value)}
+                      value={isInputVal}
+                      ref={inputVal}
+                    />
+                    {isInputVal ? (
+                      <button
+                        type="reset"
+                        className="drop__search__btn"
+                        onClick={() => {
+                          setIsInputVal((prev) => (prev = ""));
+                        }}
                       >
-                        {filterItem.text} <SvgFilterCheck />
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="filter__droper">
-              <div className="filter__input" onClick={() => filterToggle(2)}>
-                <div className="filter__input__title">
-                  <h1>Страна</h1>
-                  {isCheckCountry && (
-                    <span className="filter__text">
-                      (
-                      {isCheckCountry === "Япония,Корея Южная,Китай"
-                        ? "Все"
-                        : isCheckCountry}
+                        <SvgClose />
+                      </button>
+                    ) : (
+                      <button type="button" className="drop__search__btn">
+                        <SvgSearch />
+                      </button>
+                    )}
+                  </div>
+                  <ul className="over--scroll">
+                    {dropCotryList
+                      .filter((item) =>
+                        item.text
+                          .toLowerCase()
+                          .includes(isInputVal.toLowerCase())
                       )
-                    </span>
-                  )}
+                      .map((filterItem, index) => (
+                        <li
+                          className={`drop__item drop__catigory ${
+                            filterItem.active ? "drop__item--active" : ""
+                          }`}
+                          key={index}
+                        >
+                          {filterItem.text} <SvgFilterCheck />
+                        </li>
+                      ))}
+                  </ul>
                 </div>
-                <SvgFilter
-                  transform={countryToggle ? "rotate(0deg)" : "rotate(180deg)"}
-                />
               </div>
-              <ul
-                className={`filter__dropDown  ${
-                  countryToggle ? "drop--active" : "drop--none"
-                }`}
-              >
-                <li className="drop__country drop__item drop__item--active">
-                  <p>Все</p>
-                  <SvgFilterCheck />
-                </li>
-                <li className="drop__country drop__item">
-                  <p>Корея Южная</p>
-                  <SvgFilterCheck />
-                </li>
-                <li className="drop__country drop__item">
-                  <p>Япония</p>
-                  <SvgFilterCheck />
-                </li>
-                <li className="drop__country drop__item">
-                  <p>Китай</p>
-                  <SvgFilterCheck />
-                </li>
-                <li className="drop__country drop__item">
-                  <p>Тайвань</p>
-                  <SvgFilterCheck />
-                </li>
-              </ul>
-            </div>
-
-            <div className="filter__droper">
-              <div className="filter__input" onClick={() => filterToggle(3)}>
-                <div className="filter__input__title">
-                  <h1>Год</h1>
-                  {isCheckYear && (
-                    <span className="filter__text">({isCheckYear})</span>
-                  )}
-                </div>
-                <SvgFilter
-                  transform={yearToggle ? "rotate(0deg)" : "rotate(180deg)"}
-                />
-              </div>
-
-              <div
-                className={`filter__dropDown over--scroll ${
-                  yearToggle ? "drop--active" : "drop--none"
-                }`}
-              >
-                <div className="drop__search__input">
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    placeholder="Поиск"
-                    onChange={(e) => setIsYearVal(e.target.value)}
-                    value={isYearVal}
-                    ref={yearVal}
+              <div className="filter__droper">
+                <div className="filter__input" onClick={() => filterToggle(2)}>
+                  <div className="filter__input__title">
+                    <h1>Страна</h1>
+                    {isCheckCountry && (
+                      <span className="filter__text">
+                        (
+                        {isCheckCountry === "Япония,Корея Южная,Китай"
+                          ? "Все"
+                          : isCheckCountry}
+                        )
+                      </span>
+                    )}
+                  </div>
+                  <SvgFilter
+                    transform={
+                      countryToggle ? "rotate(0deg)" : "rotate(180deg)"
+                    }
                   />
-                  {isYearVal ? (
-                    <button
-                      type="reset"
-                      className="drop__search__btn"
-                      onClick={() => {
-                        setIsYearVal((prev) => (prev = ""));
-                      }}
-                    >
-                      <SvgClose />
-                    </button>
-                  ) : (
-                    <button type="button" className="drop__search__btn">
-                      <SvgSearch />
-                    </button>
-                  )}
+                </div>
+                <ul
+                  className={`filter__dropDown  ${
+                    countryToggle ? "drop--active" : "drop--none"
+                  }`}
+                >
+                  <li className="drop__country drop__item drop__item--active">
+                    <p>Все</p>
+                    <SvgFilterCheck />
+                  </li>
+                  <li className="drop__country drop__item">
+                    <p>Корея Южная</p>
+                    <SvgFilterCheck />
+                  </li>
+                  <li className="drop__country drop__item">
+                    <p>Япония</p>
+                    <SvgFilterCheck />
+                  </li>
+                  <li className="drop__country drop__item">
+                    <p>Китай</p>
+                    <SvgFilterCheck />
+                  </li>
+                  <li className="drop__country drop__item">
+                    <p>Тайвань</p>
+                    <SvgFilterCheck />
+                  </li>
+                </ul>
+              </div>
+              <div className="filter__droper">
+                <div className="filter__input" onClick={() => filterToggle(3)}>
+                  <div className="filter__input__title">
+                    <h1>Год</h1>
+                    {isCheckYear && (
+                      <span className="filter__text">({isCheckYear})</span>
+                    )}
+                  </div>
+                  <SvgFilter
+                    transform={yearToggle ? "rotate(0deg)" : "rotate(180deg)"}
+                  />
                 </div>
 
-                <ul className="over--scroll">
-                  {years
-                    .filter((year) => String(year).includes(String(isYearVal)))
-                    .map((filterYear) => (
-                      <li className="drop__year drop__item" key={filterYear}>
-                        <p>{filterYear}</p>
-                        <SvgFilterCheck />
-                      </li>
-                    ))}
+                <div
+                  className={`filter__dropDown over--scroll ${
+                    yearToggle ? "drop--active" : "drop--none"
+                  }`}
+                >
+                  <div className="drop__search__input">
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      placeholder="Поиск"
+                      onChange={(e) => setIsYearVal(e.target.value)}
+                      value={isYearVal}
+                      ref={yearVal}
+                    />
+                    {isYearVal ? (
+                      <button
+                        type="reset"
+                        className="drop__search__btn"
+                        onClick={() => {
+                          setIsYearVal((prev) => (prev = ""));
+                        }}
+                      >
+                        <SvgClose />
+                      </button>
+                    ) : (
+                      <button type="button" className="drop__search__btn">
+                        <SvgSearch />
+                      </button>
+                    )}
+                  </div>
+
+                  <ul className="over--scroll">
+                    {years
+                      .filter((year) =>
+                        String(year).includes(String(isYearVal))
+                      )
+                      .map((filterYear) => (
+                        <li className="drop__year drop__item" key={filterYear}>
+                          <p>{filterYear}</p>
+                          <SvgFilterCheck />
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="filter__droper">
+                <div className="filter__input" onClick={() => filterToggle(4)}>
+                  <h1>Cортировка</h1>
+                  <SvgFilter
+                    transform={
+                      sortingToggle ? "rotate(0deg)" : "rotate(180deg)"
+                    }
+                  />
+                </div>
+                <ul
+                  className={`filter__dropDown over--scroll ${
+                    sortingToggle ? "drop--active" : "drop--none"
+                  }`}
+                >
+                  <li className="drop__filter drop__item drop__item--active">
+                    <p>По дате загрузки</p>
+                    <SvgFilterCheck />
+                  </li>
+                  <li className="drop__filter drop__item">
+                    <p>по рейтингу</p>
+                    <SvgFilterCheck />
+                  </li>
                 </ul>
               </div>
             </div>
-
-            <div className="filter__droper">
-              <div className="filter__input" onClick={() => filterToggle(4)}>
-                <h1>Cортировка</h1>
-                <SvgFilter
-                  transform={sortingToggle ? "rotate(0deg)" : "rotate(180deg)"}
-                />
+            {isClearToggle && (
+              <div className="filter__clearer d-none--mobile">
+                <button type="button" onClick={() => clearHandel()}>
+                  Отменить фильтр <CloseSvg />
+                </button>
               </div>
-              <ul
-                className={`filter__dropDown over--scroll ${
-                  sortingToggle ? "drop--active" : "drop--none"
-                }`}
-              >
-                <li className="drop__filter drop__item drop__item--active">
-                  <p>По дате загрузки</p>
-                  <SvgFilterCheck />
-                </li>
-                <li className="drop__filter drop__item">
-                  <p>по рейтингу</p>
-                  <SvgFilterCheck />
-                </li>
-              </ul>
-            </div>
-
+            )}
+          </div>
+          <div className="filter__toggle--mobile">
+            <div className="over__shadow"></div>
             {isClearToggle && (
               <div className="filter__clearer">
                 <button type="button" onClick={() => clearHandel()}>
@@ -421,6 +424,12 @@ function Filter() {
                 </button>
               </div>
             )}
+            <button
+              className="filter__toggle__btn"
+              onClick={() => setIsFilterToggle((prev) => !prev)}
+            >
+              Фильтрование
+            </button>
           </div>
         </div>
       </div>

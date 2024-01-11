@@ -98,3 +98,9 @@ body {
   position: relative !important;
   z-index: 20 !important;
 }
+
+@media screen and (offline) {
+  body {
+    font-family: Arial, sans-serif !important;
+  }
+}

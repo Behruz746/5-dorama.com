@@ -131,7 +131,7 @@ function Menu() {
         <h3 style={{ color: "#FFBA33FF" }}>Поддержать проект</h3>
       </NavLink>
       <NavLink
-        to="contact"
+        to="https://t.me/dorama5bot"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
         onClick={() => setIsToggle(true)}

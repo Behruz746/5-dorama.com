@@ -14,7 +14,7 @@ function Dramas() {
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
         blockId: "R-A-3835914-16",
-        renderTo: "yandex_rtb_R-A-3835914-16",
+        renderTo: "yandex_rtb_R-A-3835914-16", 
         type: "feed",
       });
     });

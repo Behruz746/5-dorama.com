@@ -11,7 +11,7 @@ function MenuMobile() {
         </NavLink>
         <NavLink to="dramas">
           <SvgDorama />
-          <h3>Дорамы</h3>
+          <h3>Сериал</h3>
         </NavLink>
         <NavLink to="movies">
           <SvgMoveis />

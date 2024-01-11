@@ -3,6 +3,8 @@
     width: 100%;
     @include tablet-640px {
         margin-top: 10px;
+        // margin-bottom: 150px;
+        background-color: #0E1621;
     }
 
     .container {
@@ -17,12 +19,60 @@
         gap: 30px;
         @include tablet-640px {
             gap: 20px;
+            height: 550px;
+        }
+    }
+
+    .filter__toggle--mobile {
+        display: none;
+        width: 100%;
+        @include tablet-640px {
+            padding: 0 10px;
+            position: fixed;
+            bottom: 90px;
+            display: flex;
+            align-items: center;
+            flex-direction: column-reverse;
+            gap: 12px;
+            justify-content: center;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 60;
+            // .over__shadow {
+            //     width: 100%;
+            //     height: 256px;
+            //     background: linear-gradient(180deg, rgba(14, 22, 33, 0.00) 0%, #0E1621 67%);
+            //     position: absolute;
+            //     border: 1px solid #d00;
+            //     top: -150px;
+            //     z-index: -2;
+            // }
+        }
+
+        .filter__toggle__btn {
+            width: 100%;
+            height: 44px;
+            padding: 10px 20px;
+            border-radius: 12px;
+            background-color: #5EB5F7;
+            border: 0;
+            outline: 0;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            color: #fff;
+            position: relative;
+            z-index: 100 ;
         }
     }
 
     &__clearer {
         @include tablet-640px {
             width: 100%;
+            position: relative;
+            z-index: 5;
         }
 
         button {
@@ -45,6 +95,7 @@
             background-color: #232E3C;
             cursor: pointer;
             @include tablet-640px {
+                position: relative;
                 width: 100%;
             }
 
@@ -77,11 +128,25 @@
         gap: 20px;
         width: 100%;
         flex-wrap: wrap;
-       
         @include tablet-640px {
             gap: 12px;
             align-items: flex-start;
+            height: 100%;
+            justify-content: space-between;
             flex-direction: column;
+        }
+        
+        .filter__droper__container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            @include tablet-640px {
+                gap: 12px;
+                align-items: flex-start;
+                flex-direction: column;
+            }
         }
     }
     
@@ -90,7 +155,6 @@
         flex-direction: column;
         gap: 8px;
         position: relative;
-       
         @include tablet-640px {
             width: 100%;
         }
@@ -106,7 +170,6 @@
         background: #17212B;
         border-radius: 12px;
         gap: 0px;
-       
         @include tablet-640px {
             width: 100%;
         }
@@ -115,7 +178,6 @@
             display: flex;
             align-items: center;
             gap: 3px;
-           
         }
 
         .filter__text {
@@ -161,7 +223,7 @@
         @include tablet-640px {
             width: 100% !important;
         }
-        
+
         .drop__item {
             display: flex;
             align-items: center;
@@ -269,6 +331,11 @@
         top: 50px;
         z-index: 50;
         opacity: 1;
+        @include tablet-640px {
+            position: relative;
+            top: 0 !important;
+            z-index: 55 !important;
+        }
     }
     
     .drop--none {
@@ -282,6 +349,9 @@
         max-height: 300px;
         overflow-y: auto;
         overflow-x: hidden;
+        @include tablet-640px {
+           max-height: 280px;
+        }
 
         &::-webkit-scrollbar {
             max-width: 3px !important; 
@@ -340,5 +410,11 @@
         font-weight: 500;
         line-height: 26px; 
         color: #fff;
+    }
+}
+
+.d-none--mobile {
+    @include tablet-640px {
+        display: none;
     }
 }
