@@ -18,7 +18,7 @@ function Filter() {
     setIsCheckCountry,
     isCheckCountry,
     setIsCheckType,
-    isCheckTypem,
+    setIsFilterToggle,
   } = useStateContext();
 
   const [isClearToggle, setIsClearToggle] = useState(false);
@@ -40,7 +40,7 @@ function Filter() {
   const [countryToggle, setCountryToggle] = useState(false);
   const [yearToggle, setYearToggle] = useState(false);
   const [sortingToggle, setSortingToggle] = useState(false);
-  const [isFilterToggle, setIsFilterToggle] = useState(false);
+
   const years = [];
 
   useEffect(() => {
@@ -419,14 +419,21 @@ function Filter() {
             <div className="over__shadow"></div>
             {isClearToggle && (
               <div className="filter__clearer">
-                <button type="button" onClick={() => clearHandel()}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearHandel();
+                    setIsFilterToggle(false);
+                  }}
+                >
                   Отменить фильтр <CloseSvg />
                 </button>
               </div>
             )}
             <button
+              type="button"
               className="filter__toggle__btn"
-              onClick={() => setIsFilterToggle((prev) => !prev)}
+              onClick={() => setIsFilterToggle(true)}
             >
               Фильтрование
             </button>

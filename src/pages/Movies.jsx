@@ -14,8 +14,8 @@ function Movies() {
     isCheckCatigory,
     setIsCheckCountry,
     isCheckCountry,
-    setIsCheckType,
     isCheckTypem,
+    isFilterToggle,
   } = useStateContext();
   const [isFilterData, setIsFilterData] = useState([]);
   const [toggleData, setToggleData] = useState(false);
@@ -141,25 +141,27 @@ function Movies() {
           </>
         ) : (
           <>
-            <div className="filter__body w-full page">
-              <div className="container">
-                <div className="popularNow__body">
-                  <div className="filter__cards">
-                    {!isFilterData.length == 0 ? (
-                      <>
-                        {isFilterData.map((data) => (
-                          <Cards {...data} key={uuidv4()} />
-                        ))}
-                      </>
-                    ) : (
-                      <div className="error__container">
-                        <h1>Не найдено</h1>
-                      </div>
-                    )}
+            {isFilterToggle && (
+              <div className="filter__body w-full page">
+                <div className="container">
+                  <div className="popularNow__body">
+                    <div className="filter__cards">
+                      {!isFilterData.length == 0 ? (
+                        <>
+                          {isFilterData.map((data) => (
+                            <Cards {...data} key={uuidv4()} />
+                          ))}
+                        </>
+                      ) : (
+                        <div className="error__container">
+                          <h1>Не найдено</h1>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </>
         )}
       </div>

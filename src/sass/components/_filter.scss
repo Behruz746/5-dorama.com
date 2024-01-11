@@ -28,16 +28,16 @@
         width: 100%;
         @include tablet-640px {
             padding: 0 10px;
-            position: fixed;
-            bottom: 90px;
             display: flex;
             align-items: center;
             flex-direction: column-reverse;
-            gap: 12px;
             justify-content: center;
-            width: 100%;
-            left: 50%;
             transform: translateX(-50%);
+            gap: 12px;
+            width: 100%;
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
             z-index: 60;
             .over__shadow {
                 width: 100%;
