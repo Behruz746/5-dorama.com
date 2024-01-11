@@ -22,7 +22,7 @@ export const ContextProvider = ({ children }) => {
   const [isCheckCatigory, setIsCheckCatigory] = useState("");
   const [isCheckYear, setIsCheckYaer] = useState("");
   const [isCheckTypem, setIsCheckType] = useState("");
-  const [isFilterToggle, setIsFilterToggle] = useState(false);
+  const [isFilterToggle, setIsFilterToggle] = useState(true);
 
   useEffect(() => {
     function handleResize() {

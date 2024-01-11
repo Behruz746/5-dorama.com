@@ -3,7 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useEffect, useState } from "react";
 import React from "react";
 
-function Cards(data, {dataClass}) {
+function Cards(data, { dataClass }) {
   const [isItemBo, setIsItemBo] = useState(false);
   const [dataId, setDataId] = useState(data.id);
 
@@ -74,6 +74,7 @@ function Cards(data, {dataClass}) {
                 className="card__image"
                 width={180}
                 effect="blur"
+                // placeholderSrc="../../public/images/svg/card__loading.svg"
                 src={
                   data.material_data.poster_url
                     ? data.material_data.poster_url
@@ -93,7 +94,9 @@ function Cards(data, {dataClass}) {
           </NavLink>
         </div>
       ) : (
-        <div className="Card" style={{ display: "none" }}>null</div>
+        <div className="Card" style={{ display: "none" }}>
+          null
+        </div>
       )}
     </>
   );

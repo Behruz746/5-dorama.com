@@ -1,5 +1,6 @@
 .App__dramas {
-    .Home__Sliders {
+  min-height: 500px; // for rendering filter drop's
+    .Home__Sliders { 
         &:nth-child(1) {
         margin-top: 0 !important;
       }
