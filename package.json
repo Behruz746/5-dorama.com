@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/ej2-base": "^24.1.42",
+    "@syncfusion/ej2-react-popups": "^24.1.44",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2",
     "@vkontakte/icons": "^2.72.0",
