@@ -1,26 +1,25 @@
-import { useEffect, useState, useRef } from "react";
-import { NavLink } from "react-router-dom";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+import { useEffect, useState, useRef } from "react"
+import { NavLink } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import axios from "axios"
+import { v4 as uuidv4 } from "uuid"
 
 function VideoPlayer() {
-  const [isDataVideo, setIsDataVideo] = useState([]);
-  const [testToggle, setTextToggle] = useState(false);
-  const paragraphRef = useRef(null);
-  const [isType, setIsType] = useState("фильм");
-  const [isdataType, setIsDataType] = useState();
-  const [isSerial, setIsSerial] = useState([]);
-  const [isSerialLink, setIsSerialLink] = useState();
-  const [isIndex, setIsIndex] = useState();
-  const [isDataSimilar, setIsSimilar] = useState([]);
-  const [isGenes, setIsGenes] = useState("");
-  const [isDataList, setIsDataList] = useState([]);
-  const [indexBol, setIndexBoll] = useState(0);
-  const date = String(isDataVideo.updated_at).slice(0, 4);
-  const serialArrD = Object.values(isSerial);
-  const { id } = useParams();
+  const [isDataVideo, setIsDataVideo] = useState([])
+  const [testToggle, setTextToggle] = useState(false)
+  const paragraphRef = useRef(null)
+  const [isType, setIsType] = useState("фильм")
+  const [isdataType, setIsDataType] = useState()
+  const [isSerial, setIsSerial] = useState([])
+  const [isSerialLink, setIsSerialLink] = useState()
+  const [isIndex, setIsIndex] = useState()
+  const [isDataSimilar, setIsSimilar] = useState([])
+  const [isGenes, setIsGenes] = useState("")
+  const [isDataList, setIsDataList] = useState([])
+  const [indexBol, setIndexBoll] = useState(0)
+  const date = String(isDataVideo.updated_at).slice(0, 4)
+  const serialArrD = Object.values(isSerial)
+  const { id } = useParams()
 
   const Svg = () => (
     <svg
@@ -43,92 +42,92 @@ function VideoPlayer() {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 
   useEffect(() => {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
           "https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=20&lgbt=false&types=foreign-movie&year=2014,2015,2016,2017,2018,2019,2020,&kinopoisk_rating=7-10&imdb_rating=7-10&all_genres=комедия,ужасы,военный,боевик,биография,фантастика,&countries=Япония,Корея Южная,Китай"
-        );
-        setIsDataList(data.data.results);
+        )
+        setIsDataList(data.data.results)
       } catch (error) {
-        console.log("Error: 404", error);
+        console.log("Error: 404", error)
       }
-    };
-    fetchFun();
-  }, []);
+    }
+    fetchFun()
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await axios.get(
           `https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&id=${id}&with_episodes=true&with_material_data=true&lgbt=false`
-        );
-        setIsDataVideo(data.data.results[0]);
-        setIsDataType(data.data.results[0].type);
-        setIsGenes(data.data.results[0].material_data.genres[0]);
+        )
+        setIsDataVideo(data.data.results[0])
+        setIsDataType(data.data.results[0].type)
+        setIsGenes(data.data.results[0].material_data.genres[0])
         setIsSerial(
           data.data.results[0].seasons[data.data.results[0].last_season]
             .episodes
-        );
+        )
       } catch (error) {
-        console.log("Error: 404;", error);
+        console.log("Error: 404;", error)
       }
-    };
-    fetchData();
-  }, [id]);
+    }
+    fetchData()
+  }, [id])
 
   useEffect(() => {
     document.title = `${
       isDataVideo.material_data && isDataVideo.material_data.title
-    }`;
-  }, [id, isDataVideo.material_data]);
+    }`
+  }, [id, isDataVideo.material_data])
 
   useEffect(() => {
     const fetchFun = async () => {
       try {
         const data = await axios.get(
           `https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=35&lgbt=false&types=${isdataType}&year=2016,2017,2018,2019,2020,&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=${isGenes},&countries=Япония,Корея Южная,Китай`
-        );
-        setIsSimilar(data.data.results);
+        )
+        setIsSimilar(data.data.results)
       } catch (error) {
-        console.log("Error: 404", error);
+        console.log("Error: 404", error)
       }
-    };
-    fetchFun();
-  }, [isdataType, isGenes]);
+    }
+    fetchFun()
+  }, [isdataType, isGenes])
 
   useEffect(() => {
-    const aboutText = document.querySelector(".about__text");
+    const aboutText = document.querySelector(".about__text")
     aboutText.addEventListener("click", () => {
-      setTextToggle(!testToggle);
-    });
-  }, []);
+      setTextToggle(!testToggle)
+    })
+  }, [])
 
   useEffect(() => {
-    const minAge = document.querySelector("#minAge");
+    const minAge = document.querySelector("#minAge")
 
     if (minAge.textContent !== null) {
-      minAge.textContent = "12+";
+      minAge.textContent = "12+"
     }
-  }, [isDataVideo]);
+  }, [isDataVideo])
 
   useEffect(() => {
     if (isdataType) {
       if (isDataVideo.type === "serial") {
-        setIsType("серии");
+        setIsType("серии")
       }
 
       if (isDataVideo.type === "movie") {
-        setIsType("фильм");
+        setIsType("фильм")
       }
 
       if (isDataVideo.type === "anime") {
-        setIsType("аниме");
+        setIsType("аниме")
       }
     }
-  }, [isdataType]);
+  }, [isdataType])
 
   useEffect(() => {
     window.yaContextCb.push(() => {
@@ -136,18 +135,18 @@ function VideoPlayer() {
         blockId: "R-A-3835914-11",
         type: "rewarded",
         platform: "desktop",
-      });
-    });
-  }, []);
+      })
+    })
+  }, [])
 
   useEffect(() => {
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
         blockId: "R-A-3835914-7",
         renderTo: "yandex_rtb_R-A-3835914-7",
-      });
-    });
-  }, []);
+      })
+    })
+  }, [])
 
   ///////////// Components ////////////////
   const SerialBlock = () => (
@@ -166,20 +165,20 @@ function VideoPlayer() {
                   isIndex === index + 1 ? "active serial" : "serial"
                 } ${index === indexBol ? "active" : "serial"}`}
                 onClick={() => {
-                  setIsSerialLink(link);
-                  setIsIndex(index + 1);
-                  setIndexBoll(null);
-                  console.log(indexBol);
+                  setIsSerialLink(link)
+                  setIsIndex(index + 1)
+                  setIndexBoll(null)
+                  console.log(indexBol)
                 }}
               >
                 <h1 className="serila__epi">{index + 1}</h1>
               </div>
-            );
+            )
           })}
         </>
       </div>
     </>
-  );
+  )
 
   const ResembleBlock = ({ title }) => (
     <>
@@ -194,7 +193,7 @@ function VideoPlayer() {
                 <div
                   className="movie__card"
                   onClick={() => {
-                    setIdId(item.id);
+                    setIdId(item.id)
                   }}
                 >
                   <div>
@@ -206,12 +205,12 @@ function VideoPlayer() {
                   />
                 </div>
               </NavLink>
-            );
+            )
           })}
         </div>
       </div>
     </>
-  );
+  )
   const RecomentionBlock = () => (
     <>
       <div className="video__searals--content">
@@ -227,7 +226,7 @@ function VideoPlayer() {
                 <div
                   className="movie__card"
                   onClick={() => {
-                    setIdId(item.id);
+                    setIdId(item.id)
                   }}
                 >
                   <div>
@@ -239,66 +238,51 @@ function VideoPlayer() {
                   />
                 </div>
               </NavLink>
-            );
+            )
           })}
         </div>
       </div>
     </>
-  );
+  )
 
   const VideoData = () => (
     <div className="Video__data">
-      <TooltipComponent
-        content={`Оценки и рейтинг`}
-        position="BottomCenter"
-        style={{ display: "block" }}
-      >
-        <div className="Video__rating d-flex-data">
-          <Svg />
-          {isDataVideo.material_data ? (
-            <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-              {isDataVideo.material_data.kinopoisk_rating
-                ? isDataVideo.material_data.kinopoisk_rating
-                : "5.8"}
-            </h2>
-          ) : (
-            <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
-              5.8
-            </h2>
-          )}
-        </div>
-      </TooltipComponent>
-
-      <span>|</span>
-      <TooltipComponent
-        content={`год выхода ${isDataVideo.last_episode ? "сериал" : isType}`}
-        position="BottomCenter"
-        style={{ display: "block" }}
-      >
-        <div className="Video__date d-flex-data">
-          <h2 className="video__data-text">{isDataVideo.year}</h2>
-          <span>-</span>
-          <h2 className="video__data-text">{date}</h2>
-        </div>
-      </TooltipComponent>
-
-      <span>|</span>
-      <TooltipComponent
-        content={`Возрастное ограничение`}
-        position="BottomCenter"
-        style={{ display: "block" }}
-      >
-        <div className="Video__age">
-          <h2 className="video__data__text--min" id="minAge">
-            {isDataVideo.material_data &&
-              `${
-                isDataVideo.material_data.minimal_age
-                  ? isDataVideo.material_data.minimal_age
-                  : "14"
-              }+`}
+      <div className="Video__rating d-flex-data">
+        <Svg />
+        {isDataVideo.material_data ? (
+          <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+            {isDataVideo.material_data.kinopoisk_rating
+              ? isDataVideo.material_data.kinopoisk_rating
+              : "5.8"}
           </h2>
-        </div>
-      </TooltipComponent>
+        ) : (
+          <h2 className="video__data-text" style={{ color: "#FFBA33" }}>
+            5.8
+          </h2>
+        )}
+      </div>
+
+      <span>|</span>
+
+      <div className="Video__date d-flex-data">
+        <h2 className="video__data-text">{isDataVideo.year}</h2>
+        <span>-</span>
+        <h2 className="video__data-text">{date}</h2>
+      </div>
+
+      <span>|</span>
+
+      <div className="Video__age">
+        <h2 className="video__data__text--min" id="minAge">
+          {isDataVideo.material_data &&
+            `${
+              isDataVideo.material_data.minimal_age
+                ? isDataVideo.material_data.minimal_age
+                : "14"
+            }+`}
+        </h2>
+      </div>
+
       <span>|</span>
 
       {isDataVideo.material_data && (
@@ -307,17 +291,11 @@ function VideoPlayer() {
             <>
               {isDataVideo.material_data.countries.map((country) => (
                 <div className="Video__country" key={uuidv4()}>
-                  <TooltipComponent
-                    content={`Страна`}
-                    position="BottomCenter"
-                    style={{ display: "block" }}
-                  >
-                    {country ? (
-                      <h2 className="video__data-textMin">{country}</h2>
-                    ) : (
-                      <h2 className="video__data-textMin">No country</h2>
-                    )}
-                  </TooltipComponent>
+                  {country ? (
+                    <h2 className="video__data-textMin">{country}</h2>
+                  ) : (
+                    <h2 className="video__data-textMin">No country</h2>
+                  )}
                 </div>
               ))}
             </>
@@ -327,7 +305,7 @@ function VideoPlayer() {
         </>
       )}
     </div>
-  );
+  )
 
   const VideoActiors = () => {
     return (
@@ -361,8 +339,8 @@ function VideoPlayer() {
           )}
         </div>
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className="VideoPlayer w-full">
@@ -400,29 +378,17 @@ function VideoPlayer() {
         <div className="VideoPlayer__content">
           <div className="VideoPlayer__content--row">
             <div className="VideoPlayer__title">
-              <TooltipComponent
-                content={`название ${
-                  isDataVideo.last_episode ? "сериала" : isType
-                }`}
-                position="TopCenter"
-                style={{ display: "block" }}
-              >
-                <h1> {isDataVideo.title}</h1>
-              </TooltipComponent>
+              <h1> {isDataVideo.title}</h1>
+
               <span>|</span>
-              <TooltipComponent
-                content={`${isDataVideo.last_episode ? "серии" : isType}`}
-                position="TopCenter"
-                style={{ display: "block" }}
-              >
-                <h1>
-                  {isDataVideo.last_episode ? (
-                    <>{!isIndex ? 1 : isIndex}-серии</>
-                  ) : (
-                    <>{isType}</>
-                  )}
-                </h1>
-              </TooltipComponent>
+
+              <h1>
+                {isDataVideo.last_episode ? (
+                  <>{!isIndex ? 1 : isIndex}-серии</>
+                ) : (
+                  <>{isType}</>
+                )}
+              </h1>
             </div>
 
             <VideoData />
@@ -431,23 +397,15 @@ function VideoPlayer() {
           <div className="VideoPlayer__column">
             <div className="VideoPlayer__about">
               <div className="about__contetn">
-                <TooltipComponent
-                  content={`О фильме`}
-                  position="TopCenter"
-                  style={{ display: "block" }}
+                <p
+                  ref={paragraphRef}
+                  className={testToggle ? "about__text--active" : "about__text"}
                 >
-                  <p
-                    ref={paragraphRef}
-                    className={
-                      testToggle ? "about__text--active" : "about__text"
-                    }
-                  >
-                    {isDataVideo.material_data &&
-                    isDataVideo.material_data.description
-                      ? isDataVideo.material_data.description
-                      : "Не найдено описание о фильме"}
-                  </p>
-                </TooltipComponent>
+                  {isDataVideo.material_data &&
+                  isDataVideo.material_data.description
+                    ? isDataVideo.material_data.description
+                    : "Не найдено описание о фильме"}
+                </p>
 
                 <button
                   style={testToggle ? { bottom: "-25px" } : { bottom: "0px" }}
@@ -480,7 +438,7 @@ function VideoPlayer() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default VideoPlayer;
+export default VideoPlayer

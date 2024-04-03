@@ -1,11 +1,7 @@
-import React, { lazy, Suspense } from "react";
-import { createRoot } from 'react-dom';
-const App = lazy(() => import("./App"));
-import { registerLicense } from "@syncfusion/ej2-base";
-import { ContextProvider } from "./context/ContextProvider";
-registerLicense(
-  "Ngo9BigBOggjHTQxAR8/V1NAaF5cWWJCf0x0R3xbf1x0ZFZMY1pbRnFPMyBoS35RdURhW3xedHVUR2hcUUd0"
-);
+import React, { lazy, Suspense } from "react"
+import { createRoot } from "react-dom"
+const App = lazy(() => import("./App"))
+import { ContextProvider } from "./context/ContextProvider"
 
 const loadingMarkup = (
   <div
@@ -29,9 +25,9 @@ const loadingMarkup = (
       alt="loading..."
     />
   </div>
-);
+)
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <ContextProvider>
     <React.StrictMode>
       <Suspense fallback={loadingMarkup}>
@@ -39,4 +35,4 @@ createRoot(document.getElementById('root')).render(
       </Suspense>
     </React.StrictMode>
   </ContextProvider>
-);
+)
