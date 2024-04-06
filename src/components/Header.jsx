@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import Search from "./Search";
-import SnowAnimtion from "./SnowAnimtion";
-import { CloseSvg, SvgSearch, SvgMenu } from "./SvgEl/SvgEl";
-import { useStateContext } from "../context/ContextProvider";
+import { NavLink } from "react-router-dom"
+import { useState } from "react"
+import Search from "./Search"
+import SnowAnimtion from "./SnowAnimtion"
+import { CloseSvg, SvgSearch, SvgMenu } from "./SvgEl/SvgEl"
+import { useStateContext } from "../context/ContextProvider"
 
 function Header() {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false)
 
   const {
     isToggle,
@@ -15,25 +15,25 @@ function Header() {
     setToggleSeach,
     toggleSeach,
     setIsUrl,
-  } = useStateContext();
+  } = useStateContext()
 
   function toggleOver() {
-    const inputVa = document.querySelectorAll(".inputEl");
+    const inputVa = document.querySelectorAll(".inputEl")
 
-    document.querySelector("body").style.overflow = "auto";
-    setToggleSeach(false);
+    document.querySelector("body").style.overflow = "auto"
+    setToggleSeach(false)
     setIsUrl(
       "https://kodikapi.com/search?token=465c15438e7799bee14ea8965dc6e845&title="
-    );
+    )
     inputVa.forEach((item) => {
-      item.value = "";
-    });
+      item.value = ""
+    })
   }
 
   const handleClick = (toggle) => {
-    setToggle(toggle);
-    setToggleSeach(toggle);
-  };
+    setToggle(toggle)
+    setToggleSeach(toggle)
+  }
 
   return (
     <>
@@ -43,7 +43,7 @@ function Header() {
       ></div>
       <header className="App__header">
         <div className="header__box">
-          <SnowAnimtion />
+          {/* <SnowAnimtion /> */}
           <div
             className={
               toggle ? "header__container--mobile" : "header__container--MAC"
@@ -125,7 +125,7 @@ function Header() {
         </div>
       </header>
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header
