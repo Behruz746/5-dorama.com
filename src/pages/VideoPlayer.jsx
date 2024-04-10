@@ -416,6 +416,8 @@ function VideoPlayer() {
             </div>
           </div>
         </div>
+        {/* <!-- Yandex.RTB R-A-7117953-1 --> */}
+        <div id="yandex_rtb_R-A-7117953-1"></div>
       </div>
     </div>
   )
