@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Sliders from "../components/Sliders";
-import Filter from "../components/Filter";
-import Cards from "../components/Cards";
-import { v4 as uuidv4 } from "uuid";
-import { useStateContext } from "../context/ContextProvider";
+import { useEffect, useState } from "react"
+import axios from "axios"
+import Sliders from "../components/Sliders"
+import Filter from "../components/Filter"
+import Cards from "../components/Cards"
+import { v4 as uuidv4 } from "uuid"
+import { useStateContext } from "../context/ContextProvider"
 
 function Movies() {
   const {
@@ -16,15 +16,15 @@ function Movies() {
     isCheckCountry,
     isCheckTypem,
     isFilterToggle,
-  } = useStateContext();
-  const [isFilterData, setIsFilterData] = useState([]);
-  const [toggleData, setToggleData] = useState(false);
+  } = useStateContext()
+  const [isFilterData, setIsFilterData] = useState([])
+  const [toggleData, setToggleData] = useState(false)
 
   useEffect(() => {
     if (isCheckCountry || isCheckCatigory || isCheckYear) {
-      setToggleData(true);
+      setToggleData(true)
     } else {
-      setToggleData(false);
+      setToggleData(false)
     }
 
     const fetchFilter = async () => {
@@ -45,26 +45,35 @@ function Movies() {
               ? "Япония,Корея Южная,Китай"
               : isCheckCountry.toLowerCase()
           }&translation_id=647,605,674,670,871,794,639,879`
-        );
-        setIsFilterData(data.data.results);
+        )
+        setIsFilterData(data.data.results)
       } catch (error) {
-        console.log("Error: 404;", error);
+        console.log("Error: 404;", error)
       }
-    };
+    }
 
-    fetchFilter();
-  }, [isCheckCountry, isCheckCatigory, isCheckYear, toggleData]);
-
-  console.log(isCheckCountry, isCheckCatigory, isCheckYear);
+    fetchFilter()
+  }, [isCheckCountry, isCheckCatigory, isCheckYear, toggleData])
 
   useEffect(() => {
+    //  Yandex.RTB R-A-7117953-5
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-1",
-        renderTo: "yandex_rtb_R-A-3835914-1",
-      });
-    });
-  }, []);
+        blockId: "R-A-7117953-5",
+        type: "floorAd",
+        platform: "desktop",
+      })
+    })
+
+    // <!-- Yandex.RTB R-A-7117953-4 --> DIV
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-7117953-4",
+        renderTo: "yandex_rtb_R-A-7117953-4",
+        type: "feed",
+      })
+    })
+  }, [])
 
   return (
     <>
@@ -100,7 +109,8 @@ function Movies() {
               linkPage="action"
             />
             <div className="container container--reklama">
-              <div id="yandex_rtb_R-A-3835914-1"></div>
+              {/* <!-- Yandex.RTB R-A-7117953-4 --> */}
+              <div id="yandex_rtb_R-A-7117953-4"></div>
             </div>
             <Sliders
               url="https://kodikapi.com/list?token=465c15438e7799bee14ea8965dc6e845&with_episodes=true&with_material_data=true&limit=12&lgbt=false&kinopoisk_rating=5-10&imdb_rating=5-10&all_genres=биография&year=2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,&countries=Япония,Корея Южная,Китай,&types=foreign-movie"
@@ -166,7 +176,7 @@ function Movies() {
         )}
       </div>
     </>
-  );
+  )
 }
 
-export default Movies;
+export default Movies

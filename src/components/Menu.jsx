@@ -128,7 +128,7 @@ function Menu() {
         onClick={() => setIsToggle(true)}
       >
         <SvgThunder />
-        <h3 style={{ color: "#FFBA33FF" }}>МОД игры</h3>
+        <h3 style={{ color: "#FFBA33FF" }}>Программы и игры</h3>
       </a>
       <a
         href="https://t.me/dorama5bot"
