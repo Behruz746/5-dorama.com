@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
-import { dropData, dropDataMovies } from "../data/data";
+import { useState, useEffect } from "react"
+import { NavLink } from "react-router-dom"
+import { v4 as uuidv4 } from "uuid"
+import { dropData, dropDataMovies } from "../data/data"
 import {
   SvgEl,
   SvgDorama,
@@ -12,42 +12,42 @@ import {
   SvgPeople,
   SvgMessage,
   SvgPlay,
-} from "./SvgEl/SvgEl";
-import { useStateContext } from "../context/ContextProvider";
+} from "./SvgEl/SvgEl"
+import { useStateContext } from "../context/ContextProvider"
 
 function Menu() {
-  const { isToggle, setIsToggle } = useStateContext();
-  const [isArrorToggle00, setIsArrowToggle00] = useState(false);
-  const [isArrorToggle01, setIsArrowToggle01] = useState(false);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const { isToggle, setIsToggle } = useStateContext()
+  const [isArrorToggle00, setIsArrowToggle00] = useState(false)
+  const [isArrorToggle01, setIsArrowToggle01] = useState(false)
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight)
 
   useEffect(() => {
-    const navListEl = document.querySelector(".nav__list");
+    const navListEl = document.querySelector(".nav__list")
     const handleResize = () => {
-      setWindowHeight(window.innerHeight);
-      navListEl.style.height = `${window.innerHeight - 100}px`;
-    };
-    window.addEventListener("resize", handleResize);
-    handleResize();
+      setWindowHeight(window.innerHeight)
+      navListEl.style.height = `${window.innerHeight - 100}px`
+    }
+    window.addEventListener("resize", handleResize)
+    handleResize()
     return () => {
-      window.removeEventListener("resize", handleResize);
-      navListEl.style.height = `${window.innerHeight - 100}px`;
-    };
-  }, [windowHeight]);
+      window.removeEventListener("resize", handleResize)
+      navListEl.style.height = `${window.innerHeight - 100}px`
+    }
+  }, [windowHeight])
 
   const scrollFun = (event, index, id) => {
-    const targetId = id.slice(index);
-    const targetElement = document.querySelector(targetId);
+    const targetId = id.slice(index)
+    const targetElement = document.querySelector(targetId)
     if (targetElement) {
-      event.preventDefault();
-      const targetOffsetTop = targetElement.offsetTop;
-      const scrollToPosition = targetOffsetTop - 180; // 180px tepaga kotariladi
+      event.preventDefault()
+      const targetOffsetTop = targetElement.offsetTop
+      const scrollToPosition = targetOffsetTop - 180 // 180px tepaga kotariladi
       window.scrollTo({
         top: scrollToPosition,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
 
   const ListDrop = () => (
     <div
@@ -68,7 +68,7 @@ function Menu() {
         </div>
       ))}
     </div>
-  );
+  )
 
   const ListMovies = () => (
     <div
@@ -91,7 +91,7 @@ function Menu() {
         ))}
       </div>
     </div>
-  );
+  )
 
   const BottomMenu = () => (
     <div
@@ -120,27 +120,27 @@ function Menu() {
         <h3>О нашем проекте</h3>
       </NavLink> */}
       </>
-      <NavLink
+      <a
         target="_blank"
-        to="https://www.buymeacoffee.com/5dorama"
+        href="https://www.uzapp.store/"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
         onClick={() => setIsToggle(true)}
       >
         <SvgThunder />
-        <h3 style={{ color: "#FFBA33FF" }}>Поддержать проект</h3>
-      </NavLink>
-      <NavLink
-        to="https://t.me/dorama5bot"
+        <h3 style={{ color: "#FFBA33FF" }}>МОД игры</h3>
+      </a>
+      <a
+        href="https://t.me/dorama5bot"
         className={isToggle ? "list__item" : "list__link list__link--active"}
         key={uuidv4()}
         onClick={() => setIsToggle(true)}
       >
         <SvgMessage />
         <h3>Связаться с нами</h3>
-      </NavLink>
+      </a>
     </div>
-  );
+  )
 
   return (
     <div className={isToggle ? "App__nav" : "App__nav App__nav--active"}>
@@ -216,8 +216,8 @@ function Menu() {
                 <div
                   className="image__box"
                   onClick={() => {
-                    setIsArrowToggle00(!isArrorToggle00);
-                    setIsArrowToggle01(false);
+                    setIsArrowToggle00(!isArrorToggle00)
+                    setIsArrowToggle01(false)
                   }}
                 >
                   <img
@@ -255,8 +255,8 @@ function Menu() {
                 <div
                   className="image__box"
                   onClick={() => {
-                    setIsArrowToggle01(!isArrorToggle01);
-                    setIsArrowToggle00(false);
+                    setIsArrowToggle01(!isArrorToggle01)
+                    setIsArrowToggle00(false)
                   }}
                 >
                   <img
@@ -290,7 +290,7 @@ function Menu() {
         </h1>
       </nav>
     </div>
-  );
+  )
 }
 
-export default Menu;
+export default Menu

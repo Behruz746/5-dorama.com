@@ -27,7 +27,7 @@ export const dataNav = [
     toggle: true,
     toggleIcon: "./images/svg/arrow-down__icon.svg",
   },
-];
+]
 
 export const dropData = [
   // {
@@ -70,7 +70,7 @@ export const dropData = [
     name: "Аниме Сериал",
     link: "/dramas#AnimeSerial",
   },
-];
+]
 
 export const dropDataMovies = [
   // {
@@ -113,7 +113,7 @@ export const dropDataMovies = [
     name: "Аниме",
     link: "/movies#AnimeMovie",
   },
-];
+]
 
 export const famousData = [
   {
@@ -127,9 +127,9 @@ export const famousData = [
     link: "*",
   },
   {
-    text: "Поддержать проект",
+    text: "МОД игры",
     icon: "",
-    link: "https://www.buymeacoffee.com/5dorama",
+    link: "https://www.uzapp.store",
     target: "true",
     color: "#FFBA33FF",
   },
@@ -138,7 +138,7 @@ export const famousData = [
     icon: "../../../public/images/svg/message__icon.svg",
     link: "*",
   },
-];
+]
 
 export const dataSlider = [
   {
@@ -157,7 +157,7 @@ export const dataSlider = [
     image: "https://i.imgur.com/UdwKJgU.png",
     link: "/",
   },
-];
+]
 
 export const headerSliderList = [
   {
@@ -180,7 +180,7 @@ export const headerSliderList = [
     desktopImg: "./images/png/backound__img05.webp",
     mobileImg: "https://i.imgur.com/uYX0agI.png",
   },
-];
+]
 
 export const dropCotryList = [
   {
@@ -214,4 +214,4 @@ export const dropCotryList = [
   {
     text: "Аниме",
   },
-];
+]

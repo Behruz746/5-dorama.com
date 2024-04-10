@@ -128,6 +128,17 @@ function VideoPlayer() {
       }
     }
   }, [isdataType])
+
+  useEffect(() => {
+    // <!-- Yandex.RTB R-A-7117953-1 -->
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        blockId: "R-A-7117953-1",
+        renderTo: "yandex_rtb_R-A-7117953-1",
+      })
+    })
+  }, [])
+
   ///////////// Components ////////////////
   const SerialBlock = () => (
     <>
