@@ -1,19 +1,12 @@
 // Compoenents
-import Sliders from "../components/Sliders";
-import HeaderSlider from "../components/HeaderSlider";
-import { useEffect } from "react";
+import Sliders from "../components/Sliders"
+import HeaderSlider from "../components/HeaderSlider"
+import { useEffect } from "react"
 
 function Home() {
   useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-7",
-        renderTo: "yandex_rtb_R-A-3835914-7",
-      });
-    });
-
-    document.title = "5dorama - Смотрите дорамы онлайн бесплатно";
-  }, []);
+    document.title = "5dorama - Смотрите дорамы онлайн бесплатно"
+  }, [])
 
   return (
     <div className="App__home w-full page">
@@ -48,7 +41,7 @@ function Home() {
         linkPage="/category-movies/anime"
       />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

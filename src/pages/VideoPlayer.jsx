@@ -128,26 +128,6 @@ function VideoPlayer() {
       }
     }
   }, [isdataType])
-
-  useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-11",
-        type: "rewarded",
-        platform: "desktop",
-      })
-    })
-  }, [])
-
-  useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-7",
-        renderTo: "yandex_rtb_R-A-3835914-7",
-      })
-    })
-  }, [])
-
   ///////////// Components ////////////////
   const SerialBlock = () => (
     <>

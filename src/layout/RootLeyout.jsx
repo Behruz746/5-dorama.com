@@ -1,24 +1,14 @@
-import { useEffect } from "react";
-import { Outlet } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useEffect } from "react"
+import { Outlet } from "react-router-dom"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 // Components
-import Header from "../components/Header";
-import Menu from "../components/Menu";
-import MenuMobile from "../components/MenuMobile";
+import Header from "../components/Header"
+import Menu from "../components/Menu"
+import MenuMobile from "../components/MenuMobile"
 
 function RootLeyout() {
-  useEffect(() => {
-    window.yaContextCb.push(() => {
-      Ya.Context.AdvManager.render({
-        blockId: "R-A-3835914-6",
-        renderTo: "yandex_rtb_R-A-3835914-6",
-        type: "feed",
-      });
-    });
-  }, []);
-
   return (
     <>
       <Header />
@@ -31,7 +21,7 @@ function RootLeyout() {
       <MenuMobile />
       <div className="menu__mobile--clone"></div>
     </>
-  );
+  )
 }
 
-export default RootLeyout;
+export default RootLeyout
