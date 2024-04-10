@@ -412,8 +412,8 @@ function VideoPlayer() {
                 </button>
               </div>
               <VideoActiors />
-              {/* // <!-- Yandex.RTB R-A-3835914-7 --> */}
-              <div id="yandex_rtb_R-A-3835914-7"></div>
+              {/* <!-- Yandex.RTB R-A-7117953-1 --> */}
+              <div id="yandex_rtb_R-A-7117953-1"></div>
             </div>
 
             <div className="Video__container">
@@ -427,8 +427,6 @@ function VideoPlayer() {
             </div>
           </div>
         </div>
-        {/* <!-- Yandex.RTB R-A-7117953-1 --> */}
-        <div id="yandex_rtb_R-A-7117953-1"></div>
       </div>
     </div>
   )
